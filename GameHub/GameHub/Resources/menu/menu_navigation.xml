@@ -1,31 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity">
   <group android:checkableBehavior="single">
     <item
-      android:id="@+id/nav_home"
-      android:icon="@drawable/ic_action_content_create"
-      android:title="Home" />
+        android:id="@+id/nav_hub"
+        android:icon="@drawable/ic_dashboard"
+        android:title="Gaming News" />
     <item
-      android:id="@+id/nav_messages"
-      android:icon="@drawable/ic_action_content_create"
-      android:title="Messages" />
+        android:id="@+id/nav_turniej"
+        android:icon="@drawable/ic_group_work_black_48dp"
+        android:title="Turnieje" />
     <item
-      android:id="@+id/nav_friends"
-      android:icon="@drawable/ic_action_content_create"
-      android:title="Friends" />
+        android:id="@+id/nav_szybkagra"
+        android:icon="@drawable/ic_event"
+        android:title="Szybka Gra" />
     <item
-      android:id="@+id/nav_discussion"
-      android:icon="@drawable/ic_action_content_create"
-      android:title="Discussion" />
+        android:id="@+id/nav_kalendarz"
+        android:icon="@drawable/ic_event"
+        android:title="Kalendarz" />
+    <item
+        android:id="@+id/nav_wydarzenia"
+        android:icon="@drawable/ic_explore_black_48dp"
+        android:title="Wydarzenia" />
+    <item
+        android:id="@+id/nav_znajomi"
+        android:icon="@drawable/ic_forum"
+        android:title="Znajomi" />
+    <item
+        android:id="@+id/nav_szukajgraczy"
+        android:icon="@drawable/ic_explore_black_48dp"
+        android:title="Szukaj graczy" />
   </group>
-  <item android:title="Sub items">
+  <item android:title="Dodaj">
     <menu>
       <item
-        android:icon="@drawable/ic_action_content_create"
-        android:title="Sub item 1" />
+           android:title="Szybką gre"
+           android:id="@+id/nav_dodajsg"
+           android:icon="@drawable/ic_add_black_48dp"/>
       <item
-        android:icon="@drawable/ic_action_content_create"
-        android:title="Sub item 2" />
+           android:title="Turniej"
+           android:id="@+id/nav_dodajt"
+           android:icon="@drawable/ic_add_black_48dp"/>
     </menu>
   </item>
+  <item>
+    <menu>
+      <item
+           android:title="Pomoc" />
+      <item
+           android:title="Zmiany w wersji" />
+      <item
+           android:title="Kontakt" />
+      <item
+           android:title="O GameHub" />
+      <item
+           android:title="Zgłoś błąd" />
+    </menu>
+  </item>
+
 </menu>

@@ -1,17 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android" xmlns:local="http://schemas.android.com/apk/res-auto">>
-  <item
-       android:id="@+id/menu_edit"
+  <!--<item
+       android:id="@+id/menut_edit"
        android:icon="@drawable/ic_action_content_create"
        local:showAsAction="collapseActionView"
-       android:title="Edit" />
+       android:title="Edycja" />
   <item
-       android:id="@+id/menu_save"
+       android:id="@+id/menut_save"
        android:icon="@drawable/ic_action_content_save"
        local:showAsAction="always"
-       android:title="Save" />
+       android:title="Zapisywanie" />-->
   <item
-       android:id="@+id/menu_preferences"
+       android:id="@+id/menut_ustawienia"
        android:showAsAction="withText"
-       android:title="Preferences" />
+       android:icon="@drawable/ic_action_content_create"
+       android:title="Ustawienia" />
 </menu>

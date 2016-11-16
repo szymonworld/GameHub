@@ -6,11 +6,11 @@ using Android.Support.V4.Widget;
 using Android.Widget;
 using SupportToolbar = Android.Support.V7.Widget.Toolbar;
 using Android.Support.Design.Widget;
-
+using Android.Content;
 
 namespace GameHub
 {
-    [Activity(Label = "GameHub", MainLauncher = true, Icon = "@drawable/icon", Theme = "@style/MyTheme")]
+    [Activity(Label = "GameHub")]
 
 
 
@@ -18,6 +18,7 @@ namespace GameHub
     {
 
         private DrawerLayout mDrawerLayout;
+
 
         protected override void OnCreate(Bundle bundle)
         {
@@ -36,7 +37,19 @@ namespace GameHub
             navigationView.NavigationItemSelected += (sender, e) =>
             {
                 e.MenuItem.SetChecked(true);
-                //react to click here and swap fragments or navigate
+                switch (e.MenuItem.ItemId)
+                {
+                    case (Resource.Id.nav_hub):
+                        break;
+                    case (Resource.Id.nav_turniej):
+                        Intent intent = new Intent(this, typeof(LoginSystem));
+                        this.StartActivity(intent);
+
+                        break;
+                    default:
+                        break;
+                }
+
                 mDrawerLayout.CloseDrawers();
 
             };
@@ -54,7 +67,7 @@ namespace GameHub
             {
                 case Android.Resource.Id.Home:
                     mDrawerLayout.OpenDrawer(Android.Support.V4.View.GravityCompat.Start);
-                    return true;
+                    return true;              
             }
 
             Toast.MakeText(this, "Zaznaczone: " + item.TitleFormatted,
