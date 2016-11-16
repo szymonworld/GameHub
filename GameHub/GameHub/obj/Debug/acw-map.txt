@@ -1,7 +1,19 @@
+GameHub.LoginSystem, GameHub;md56ae528d61c96dc74eb64356ec3b54bcd.LoginSystem
+GameHub.LoginSystem, GameHub, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md56ae528d61c96dc74eb64356ec3b54bcd.LoginSystem
+GameHub.LoginSystem;md56ae528d61c96dc74eb64356ec3b54bcd.LoginSystem
+gamehub.LoginSystem;md56ae528d61c96dc74eb64356ec3b54bcd.LoginSystem
+GameHub.dialog_signup, GameHub;md56ae528d61c96dc74eb64356ec3b54bcd.dialog_signup
+GameHub.dialog_signup, GameHub, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md56ae528d61c96dc74eb64356ec3b54bcd.dialog_signup
+GameHub.dialog_signup;md56ae528d61c96dc74eb64356ec3b54bcd.dialog_signup
+gamehub.dialog_signup;md56ae528d61c96dc74eb64356ec3b54bcd.dialog_signup
 GameHub.MainActivity, GameHub;md56ae528d61c96dc74eb64356ec3b54bcd.MainActivity
 GameHub.MainActivity, GameHub, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md56ae528d61c96dc74eb64356ec3b54bcd.MainActivity
 GameHub.MainActivity;md56ae528d61c96dc74eb64356ec3b54bcd.MainActivity
 gamehub.MainActivity;md56ae528d61c96dc74eb64356ec3b54bcd.MainActivity
+GameHub.SplashActivity, GameHub;md56ae528d61c96dc74eb64356ec3b54bcd.SplashActivity
+GameHub.SplashActivity, GameHub, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md56ae528d61c96dc74eb64356ec3b54bcd.SplashActivity
+GameHub.SplashActivity;md56ae528d61c96dc74eb64356ec3b54bcd.SplashActivity
+gamehub.SplashActivity;md56ae528d61c96dc74eb64356ec3b54bcd.SplashActivity
 Android.Support.Design.Widget.Snackbar/SnackbarActionClickImplementor, Xamarin.Android.Support.Design;android.support.design.widget.Snackbar_SnackbarActionClickImplementor
 Android.Support.Design.Widget.Snackbar+SnackbarActionClickImplementor, Xamarin.Android.Support.Design, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;android.support.design.widget.Snackbar_SnackbarActionClickImplementor
 Android.Support.Design.Widget.Snackbar.SnackbarActionClickImplementor;android.support.design.widget.Snackbar_SnackbarActionClickImplementor
