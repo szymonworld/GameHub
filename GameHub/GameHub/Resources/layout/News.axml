@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="fill_parent"
+    android:layout_height="100dp"
+    android:layout_marginTop="1dp"
+    android:background="@android:color/holo_orange_light"
+    android:weightSum="100">
+    <ImageView
+        android:src="@drawable/icon"
+        android:layout_width="0dp"
+        android:layout_height="fill_parent"
+        android:adjustViewBounds="true"
+        android:layout_weight="40"
+        android:maxHeight="5dip"
+        android:scaleType="centerCrop"
+        android:id="@+id/imageViewNews" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:paddingLeft="5dp"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="60"
+        android:id="@+id/linearLayoutNews1">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="20dp"
+            android:paddingBottom="3dp"
+            android:weightSum="100"
+            android:id="@+id/linearLayoutNews2">
+            <TextView
+                android:text="Super tytul"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="80"
+                android:id="@+id/textViewNews1"
+                android:textColor="#777777" />
+            <TextView
+                android:text="15:50"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="20"
+                android:gravity="center_horizontal"
+                android:textColor="#777777"
+                android:id="@+id/textViewNews3" />
+        </LinearLayout>
+        <TextView
+            android:text="nastepujaca informacaj o ..."
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#777777"
+            android:paddingBottom="20dp"
+            android:id="@+id/textViewNews2" />
+    </LinearLayout>
+</LinearLayout>
