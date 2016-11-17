@@ -2,7 +2,7 @@
 <xs:schema xmlns:android="http://schemas.android.com/apk/res/android" attributeFormDefault="qualified" elementFormDefault="unqualified" targetNamespace="http://schemas.android.com/apk/res/android" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:annotation>
     <xs:documentation>v23</xs:documentation>
-    <xs:documentation>2016-11-16 22:29:22</xs:documentation>
+    <xs:documentation>2016-11-18 00:19:57</xs:documentation>
   </xs:annotation>
   <xs:attribute name="accessibilityLiveRegion">
     <xs:annotation>
@@ -2608,9 +2608,117 @@
       </xs:union>
     </xs:simpleType>
   </xs:attribute>
+  <xs:attribute name="layout_gravity">
+    <xs:annotation>
+      <xs:documentation></xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:union memberTypes="xs:string">
+        <xs:simpleType>
+          <xs:restriction base="xs:string" />
+        </xs:simpleType>
+      </xs:union>
+    </xs:simpleType>
+  </xs:attribute>
   <xs:attribute name="layout_height">
     <xs:annotation>
       <xs:documentation>Specifies the basic height of the view. This is a required attribute for any view inside of a containing layout manager. Its value may be a dimension (such as "12dip") for a constant height or one of the special constants.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:union memberTypes="xs:string">
+        <xs:simpleType>
+          <xs:restriction base="xs:string" />
+        </xs:simpleType>
+      </xs:union>
+    </xs:simpleType>
+  </xs:attribute>
+  <xs:attribute name="layout_margin">
+    <xs:annotation>
+      <xs:documentation>Specifies extra space on the left, top, right and bottom sides of this view. This space is outside this view's bounds. Margin values should be positive.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:union memberTypes="xs:string">
+        <xs:simpleType>
+          <xs:restriction base="xs:string" />
+        </xs:simpleType>
+      </xs:union>
+    </xs:simpleType>
+  </xs:attribute>
+  <xs:attribute name="layout_marginBottom">
+    <xs:annotation>
+      <xs:documentation>Specifies extra space on the bottom side of this view. This space is outside this view's bounds. Margin values should be positive.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:union memberTypes="xs:string">
+        <xs:simpleType>
+          <xs:restriction base="xs:string" />
+        </xs:simpleType>
+      </xs:union>
+    </xs:simpleType>
+  </xs:attribute>
+  <xs:attribute name="layout_marginEnd">
+    <xs:annotation>
+      <xs:documentation>Specifies extra space on the end side of this view. This space is outside this view's bounds. Margin values should be positive.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:union memberTypes="xs:string">
+        <xs:simpleType>
+          <xs:restriction base="xs:string" />
+        </xs:simpleType>
+      </xs:union>
+    </xs:simpleType>
+  </xs:attribute>
+  <xs:attribute name="layout_marginLeft">
+    <xs:annotation>
+      <xs:documentation>Specifies extra space on the left side of this view. This space is outside this view's bounds. Margin values should be positive.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:union memberTypes="xs:string">
+        <xs:simpleType>
+          <xs:restriction base="xs:string" />
+        </xs:simpleType>
+      </xs:union>
+    </xs:simpleType>
+  </xs:attribute>
+  <xs:attribute name="layout_marginRight">
+    <xs:annotation>
+      <xs:documentation>Specifies extra space on the right side of this view. This space is outside this view's bounds. Margin values should be positive.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:union memberTypes="xs:string">
+        <xs:simpleType>
+          <xs:restriction base="xs:string" />
+        </xs:simpleType>
+      </xs:union>
+    </xs:simpleType>
+  </xs:attribute>
+  <xs:attribute name="layout_marginStart">
+    <xs:annotation>
+      <xs:documentation>Specifies extra space on the start side of this view. This space is outside this view's bounds. Margin values should be positive.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:union memberTypes="xs:string">
+        <xs:simpleType>
+          <xs:restriction base="xs:string" />
+        </xs:simpleType>
+      </xs:union>
+    </xs:simpleType>
+  </xs:attribute>
+  <xs:attribute name="layout_marginTop">
+    <xs:annotation>
+      <xs:documentation>Specifies extra space on the top side of this view. This space is outside this view's bounds. Margin values should be positive.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:union memberTypes="xs:string">
+        <xs:simpleType>
+          <xs:restriction base="xs:string" />
+        </xs:simpleType>
+      </xs:union>
+    </xs:simpleType>
+  </xs:attribute>
+  <xs:attribute name="layout_weight">
+    <xs:annotation>
+      <xs:documentation></xs:documentation>
     </xs:annotation>
     <xs:simpleType>
       <xs:union memberTypes="xs:string">

@@ -3,7 +3,7 @@
   <xs:import schemaLocation="schemas.android.com.apk.res.android.xsd" namespace="http://schemas.android.com/apk/res/android" />
   <xs:annotation>
     <xs:documentation>v23</xs:documentation>
-    <xs:documentation>2016-11-16 22:29:22</xs:documentation>
+    <xs:documentation>2016-11-18 00:19:57</xs:documentation>
   </xs:annotation>
   <xs:group name="any-view">
     <xs:choice>
@@ -80,6 +80,8 @@
       <xs:element ref="HorizontalScrollView" />
       <xs:element ref="SearchView" />
       <xs:element ref="fragment" />
+      <xs:element ref="de.hdodenhof.circleimageview.CircleImageView" />
+      <xs:element ref="Refractored.Controls.CircleImageView" />
       <xs:element ref="android.support.v7.widget.RecyclerView" />
       <xs:element ref="android.support.v7.widget.ViewStubCompat" />
       <xs:element ref="android.support.v7.widget.SwitchCompat" />
@@ -355,6 +357,15 @@
     <xs:attribute ref="android:scrollIndicators" />
     <xs:attribute ref="android:layout_width" />
     <xs:attribute ref="android:layout_height" />
+    <xs:attribute ref="android:layout_weight" />
+    <xs:attribute ref="android:layout_gravity" />
+    <xs:attribute ref="android:layout_margin" />
+    <xs:attribute ref="android:layout_marginLeft" />
+    <xs:attribute ref="android:layout_marginTop" />
+    <xs:attribute ref="android:layout_marginRight" />
+    <xs:attribute ref="android:layout_marginBottom" />
+    <xs:attribute ref="android:layout_marginStart" />
+    <xs:attribute ref="android:layout_marginEnd" />
     <xs:attribute ref="android:style" />
   </xs:complexType>
   <xs:element name="SurfaceView" type="SurfaceView">
@@ -1403,7 +1414,36 @@
     <xs:attribute ref="android:fragmentAllowReturnTransitionOverlap" />
     <xs:attribute ref="android:layout_width" />
     <xs:attribute ref="android:layout_height" />
+    <xs:attribute ref="android:layout_weight" />
+    <xs:attribute ref="android:layout_gravity" />
+    <xs:attribute ref="android:layout_margin" />
+    <xs:attribute ref="android:layout_marginLeft" />
+    <xs:attribute ref="android:layout_marginTop" />
+    <xs:attribute ref="android:layout_marginRight" />
+    <xs:attribute ref="android:layout_marginBottom" />
+    <xs:attribute ref="android:layout_marginStart" />
+    <xs:attribute ref="android:layout_marginEnd" />
     <xs:attribute ref="android:style" />
+  </xs:complexType>
+  <xs:element name="de.hdodenhof.circleimageview.CircleImageView" type="de.hdodenhof.circleimageview.CircleImageView">
+    <xs:annotation>
+      <xs:documentation>Runtime Type: Refractored.Controls._BaseCircleImageView</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:complexType name="de.hdodenhof.circleimageview.CircleImageView">
+    <xs:complexContent mixed="false">
+      <xs:extension base="ImageView" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Refractored.Controls.CircleImageView" type="Refractored.Controls.CircleImageView">
+    <xs:annotation>
+      <xs:documentation>Runtime Type: Refractored.Controls.CircleImageView</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:complexType name="Refractored.Controls.CircleImageView">
+    <xs:complexContent mixed="false">
+      <xs:extension base="ImageView" />
+    </xs:complexContent>
   </xs:complexType>
   <xs:element name="android.support.v7.widget.RecyclerView" type="android.support.v7.widget.RecyclerView">
     <xs:annotation>
