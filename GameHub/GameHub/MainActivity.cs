@@ -30,6 +30,18 @@ namespace GameHub
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
             SupportActionBar.Title = "Hub";
 
+            /* do wyświetlania newsów w recycler View
+              private RecyclerView mRecyclerView;
+              private RecyclerView.LayoutManager mLayoutManager;
+              private RecyclerView.Adapter mAdapter;
+
+            mRecyclerView = FindViewById<RecyclerView>(Resource.Id.recyclerView);
+            mLayoutManager = new LinearLayoutManager(this);
+            mRecyclerView.SetLayoutManager(mLayoutManager);
+            mAdapter = new RecyclerAdapter();
+            mRecyclerView.SetAdapter(mAdapter);
+             */
+
 
             mDrawerLayout = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
             NavigationView navigationView = FindViewById<NavigationView>(Resource.Id.nav_view);
