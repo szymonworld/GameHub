@@ -84,7 +84,6 @@
     <Compile Include="Lists\Friends.cs" />
     <Compile Include="LoginSystem.cs" />
     <Compile Include="MainActivity.cs" />
-    <Compile Include="RecyclerAdapter.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SplashActivity.cs" />
