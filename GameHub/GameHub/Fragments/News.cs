@@ -16,20 +16,63 @@ namespace GameHub.Fragments
 {
     public class News : SupportFragment
     {
+
+        private RecyclerView mRecyclerView;
+        private RecyclerView.LayoutManager mLayoutManager;
+        private RecyclerView.Adapter mAdapter;
+
+
         public override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-
-            // Create your fragment here
         }
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
             // Use this to return your custom view for this Fragment
-            // return inflater.Inflate(Resource.Layout.YourFragment, container, false);
 
-            View view= inflater.Inflate(Resource.Layout.News, container, false);
-            return view;
+            mRecyclerView = inflater.Inflate(Resource.Layout.Fragment1, container, false) as RecyclerView;
+            mLayoutManager = new LinearLayoutManager(mRecyclerView.Context);
+            mRecyclerView.SetLayoutManager(mLayoutManager);
+            mAdapter = new RecyclerAdapter();
+            mRecyclerView.SetAdapter(mAdapter);
+
+            return mRecyclerView;
         }
+
+        public class RecyclerAdapter : RecyclerView.Adapter
+        {
+            public RecyclerAdapter()
+            {
+            }
+
+            public class MyView : RecyclerView.ViewHolder
+            {
+                public MyView(View view) : base(view)
+                {
+
+                }
+            }
+
+            public override RecyclerView.ViewHolder OnCreateViewHolder(ViewGroup parent, int viewType)
+            {
+                View row = LayoutInflater.From(parent.Context).Inflate(Resource.Layout.News, parent, false);
+                MyView view = new MyView(row) { };
+                return view;
+            }
+
+            public override void OnBindViewHolder(RecyclerView.ViewHolder holder, int position)
+            {
+                MyView view = holder as MyView;
+            }
+
+            public override int ItemCount
+            {
+                get { return 12; }  //iloœæ newsów w przysz³oœci JakasListaNewsów.Count
+            }
+        }
+
+
+
     }
 }
