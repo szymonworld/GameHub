@@ -16,6 +16,10 @@ namespace GameHub.Fragments
 {
     public class Fragment1 : SupportFragment
     {
+
+        private List<string> list = new List<string>();
+        private RecyclerView.Adapter mAdapter;
+
         public override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -30,27 +34,37 @@ namespace GameHub.Fragments
 
             RecyclerView recyclerView = inflater.Inflate(Resource.Layout.Fragment1, container, false) as RecyclerView;
 
-            SetUpRecyclerView(recyclerView);
+            GetRandomSubList(Friends.NickStrings, 12);  // dodanie 12 obiektów do listy 
+
+            var mLayoutManager = new LinearLayoutManager(recyclerView.Context);
+            var onScrollListener = new RecyclerViewOnScrollListener(mLayoutManager);
+            recyclerView.AddOnScrollListener(onScrollListener);
+            recyclerView.SetLayoutManager(mLayoutManager);
+            mAdapter = new SimpleStringRecyclerViewAdapter(recyclerView.Context, list, Activity.Resources);
+            recyclerView.SetAdapter(mAdapter);
+
+            // Dodanie nowych obiektów do listy po dojechaniu na dó³
+            onScrollListener.LoadMoreEvent += (object sender, EventArgs e) => {
+
+                GetRandomSubList(Friends.NickStrings, 5); // generowanie i dodanie noeych obiektów
+
+                mAdapter.NotifyDataSetChanged(); 
+            };
+            
             return recyclerView;
         }
 
-        private void SetUpRecyclerView(RecyclerView recyclerView)
-        {
-            var values = GetRandomSubList(Friends.NickStrings, 50);
 
-            recyclerView.SetLayoutManager(new LinearLayoutManager(recyclerView.Context));
-            recyclerView.SetAdapter(new SimpleStringRecyclerViewAdapter(recyclerView.Context, values, Activity.Resources));
-        }
-
-        private List<String> GetRandomSubList(List<string> items, int a)
+        private void GetRandomSubList(List<string> items, int a)
         {
-            List<string> list = new List<string>();
+            //List<string> list = new List<string>();
             Random random = new Random();
-            while (list.Count < a)
+            while (a > 0)
             {
                 list.Add(items[random.Next(items.Count)]);
+                a--;
             }
-            return list;
+            //return list;
         }
 
         public class SimpleStringRecyclerViewAdapter : RecyclerView.Adapter

@@ -18,9 +18,7 @@ namespace GameHub.Fragments
     {
 
         private RecyclerView mRecyclerView;
-        private RecyclerView.LayoutManager mLayoutManager;
         private RecyclerView.Adapter mAdapter;
-
 
         public override void OnCreate(Bundle savedInstanceState)
         {
@@ -31,23 +29,46 @@ namespace GameHub.Fragments
         {
             // Use this to return your custom view for this Fragment
 
+            int iloscnewsow = 12; //Startowa iloœæ newsóe
             mRecyclerView = inflater.Inflate(Resource.Layout.Fragment1, container, false) as RecyclerView;
-            mLayoutManager = new LinearLayoutManager(mRecyclerView.Context);
+            var mLayoutManager = new LinearLayoutManager(mRecyclerView.Context);
+            mAdapter = new RecyclerAdapter(iloscnewsow);
+
+            var onScrollListener = new RecyclerViewOnScrollListener(mLayoutManager);
+
+            mRecyclerView.AddOnScrollListener(onScrollListener);
             mRecyclerView.SetLayoutManager(mLayoutManager);
-            mAdapter = new RecyclerAdapter();
             mRecyclerView.SetAdapter(mAdapter);
+
+            // £adowanie nastêpnych newsów po dojechaniu na sam dó³ listy newsów
+            onScrollListener.LoadMoreEvent += (object sender, EventArgs e) => {
+
+                iloscnewsow += 5;  // zwiêksz iloœc newsów o 5 w póŸniejszym czasie ³adowanie do listy nowych obiektów
+                
+                //mAdapter.NotifyDataSetChanged();
+                mAdapter = new RecyclerAdapter(iloscnewsow);
+                mRecyclerView.SetAdapter(mAdapter);
+                
+            };
 
             return mRecyclerView;
         }
 
         public class RecyclerAdapter : RecyclerView.Adapter
         {
-            public RecyclerAdapter()
+
+            public int liczba = 12;
+
+            public RecyclerAdapter(int ilosc)
             {
+
+                liczba = ilosc;
             }
 
             public class MyView : RecyclerView.ViewHolder
             {
+
+                public TextView mName { get; set; }
                 public MyView(View view) : base(view)
                 {
 
@@ -57,22 +78,33 @@ namespace GameHub.Fragments
             public override RecyclerView.ViewHolder OnCreateViewHolder(ViewGroup parent, int viewType)
             {
                 View row = LayoutInflater.From(parent.Context).Inflate(Resource.Layout.News, parent, false);
-                MyView view = new MyView(row) { };
+
+                TextView txtName = row.FindViewById<TextView>(Resource.Id.textViewNews3);
+
+
+                MyView view = new MyView(row) { mName = txtName };
                 return view;
             }
 
             public override void OnBindViewHolder(RecyclerView.ViewHolder holder, int position)
             {
                 MyView view = holder as MyView;
+
+                view.mName.Text = "15:" + Convert.ToString(10 + position);
             }
 
             public override int ItemCount
             {
-                get { return 12; }  //iloœæ newsów w przysz³oœci JakasListaNewsów.Count
+                get { return liczba; }  //iloœæ newsów w przysz³oœci JakasListaNewsów.Count
             }
-        }
 
+            public void Zmienilosc(int a)
+            {
+                liczba = a;
 
+            }
+
+        } 
 
     }
 }

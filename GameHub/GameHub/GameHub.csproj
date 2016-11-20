@@ -81,6 +81,7 @@
   <ItemGroup>
     <Compile Include="Fragments\Fragment1.cs" />
     <Compile Include="Fragments\News.cs" />
+    <Compile Include="Fragments\RecyclerViewOnScrollListener.cs" />
     <Compile Include="Lists\Friends.cs" />
     <Compile Include="LoginSystem.cs" />
     <Compile Include="MainActivity.cs" />
@@ -105,9 +106,14 @@
     <AndroidResource Include="Resources\layout\News.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\layout\Fragment1.axml" />
+    <AndroidResource Include="Resources\layout\Fragment1.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
     <AndroidResource Include="Resources\layout\List_Item.axml" />
     <AndroidResource Include="Resources\layout\ViewPager.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\Logowanie.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
