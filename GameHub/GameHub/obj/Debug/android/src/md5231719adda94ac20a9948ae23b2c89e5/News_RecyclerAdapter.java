@@ -1,7 +1,7 @@
-package md56ae528d61c96dc74eb64356ec3b54bcd;
+package md5231719adda94ac20a9948ae23b2c89e5;
 
 
-public class RecyclerAdapter
+public class News_RecyclerAdapter
 	extends android.support.v7.widget.RecyclerView.Adapter
 	implements
 		mono.android.IGCUserPeer
@@ -14,15 +14,22 @@ public class RecyclerAdapter
 			"n_onBindViewHolder:(Landroid/support/v7/widget/RecyclerView$ViewHolder;I)V:GetOnBindViewHolder_Landroid_support_v7_widget_RecyclerView_ViewHolder_IHandler\n" +
 			"n_getItemCount:()I:GetGetItemCountHandler\n" +
 			"";
-		mono.android.Runtime.register ("GameHub.RecyclerAdapter, GameHub, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", RecyclerAdapter.class, __md_methods);
+		mono.android.Runtime.register ("GameHub.Fragments.News+RecyclerAdapter, GameHub, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", News_RecyclerAdapter.class, __md_methods);
 	}
 
 
-	public RecyclerAdapter () throws java.lang.Throwable
+	public News_RecyclerAdapter () throws java.lang.Throwable
 	{
 		super ();
-		if (getClass () == RecyclerAdapter.class)
-			mono.android.TypeManager.Activate ("GameHub.RecyclerAdapter, GameHub, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "", this, new java.lang.Object[] {  });
+		if (getClass () == News_RecyclerAdapter.class)
+			mono.android.TypeManager.Activate ("GameHub.Fragments.News+RecyclerAdapter, GameHub, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "", this, new java.lang.Object[] {  });
+	}
+
+	public News_RecyclerAdapter (int p0) throws java.lang.Throwable
+	{
+		super ();
+		if (getClass () == News_RecyclerAdapter.class)
+			mono.android.TypeManager.Activate ("GameHub.Fragments.News+RecyclerAdapter, GameHub, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "System.Int32, mscorlib, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e", this, new java.lang.Object[] { p0 });
 	}
 
 

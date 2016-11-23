@@ -19,12 +19,14 @@ public final class R {
         public static int abc_slide_in_top=0x7f040007;
         public static int abc_slide_out_bottom=0x7f040008;
         public static int abc_slide_out_top=0x7f040009;
-        public static int design_bottom_sheet_slide_in=0x7f04000a;
-        public static int design_bottom_sheet_slide_out=0x7f04000b;
-        public static int design_fab_in=0x7f04000c;
-        public static int design_fab_out=0x7f04000d;
-        public static int design_snackbar_in=0x7f04000e;
-        public static int design_snackbar_out=0x7f04000f;
+        public static int animright=0x7f04000a;
+        public static int animright2=0x7f04000b;
+        public static int design_bottom_sheet_slide_in=0x7f04000c;
+        public static int design_bottom_sheet_slide_out=0x7f04000d;
+        public static int design_fab_in=0x7f04000e;
+        public static int design_fab_out=0x7f04000f;
+        public static int design_snackbar_in=0x7f040010;
+        public static int design_snackbar_out=0x7f040011;
     }
     public static final class attr {
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
@@ -2566,7 +2568,8 @@ containing a value of this type.
         public static int select_dialog_singlechoice_material=0x7f030036;
         public static int support_simple_spinner_dropdown_item=0x7f030037;
         public static int toolbar=0x7f030038;
-        public static int viewpager=0x7f030039;
+        public static int tournament=0x7f030039;
+        public static int viewpager=0x7f03003a;
     }
     public static final class menu {
         public static int menu_navigation=0x7f0c0000;

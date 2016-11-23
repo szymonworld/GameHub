@@ -30,7 +30,7 @@ namespace GameHub.Fragments
             // Use this to return your custom view for this Fragment
 
             int iloscnewsow = 12; //Startowa iloœæ newsóe
-            mRecyclerView = inflater.Inflate(Resource.Layout.Fragment1, container, false) as RecyclerView;
+            mRecyclerView = inflater.Inflate(Resource.Layout.Friends, container, false) as RecyclerView;
             var mLayoutManager = new LinearLayoutManager(mRecyclerView.Context);
             mAdapter = new RecyclerAdapter(iloscnewsow);
 
@@ -50,6 +50,7 @@ namespace GameHub.Fragments
                 mRecyclerView.SetAdapter(mAdapter);
                 
             };
+
 
             return mRecyclerView;
         }

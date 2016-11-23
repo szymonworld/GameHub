@@ -79,9 +79,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Fragments\Fragment1.cs" />
+    <Compile Include="Fragments\Friends.cs" />
+    <Compile Include="Fragments\Hub.cs" />
     <Compile Include="Fragments\News.cs" />
     <Compile Include="Fragments\RecyclerViewOnScrollListener.cs" />
+    <Compile Include="Fragments\Tournament.cs" />
     <Compile Include="Lists\Friends.cs" />
     <Compile Include="LoginSystem.cs" />
     <Compile Include="MainActivity.cs" />
@@ -106,14 +108,14 @@
     <AndroidResource Include="Resources\layout\News.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\layout\Fragment1.axml">
+    <AndroidResource Include="Resources\layout\Friends.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\List_Item.axml" />
-    <AndroidResource Include="Resources\layout\ViewPager.axml">
+    <AndroidResource Include="Resources\layout\Tournament.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\layout\Logowanie.axml">
+    <AndroidResource Include="Resources\layout\Hub.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
@@ -449,6 +451,12 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values\Dimens.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Anim\animRight.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Anim\animRight2.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

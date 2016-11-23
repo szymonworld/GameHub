@@ -35,7 +35,7 @@ namespace GameHub.Fragments
 
             if ((visibleItemCount + pastVisiblesItems) >= totalItemCount)
             {
-                Thread.Sleep(500);   // w póŸniejszym czasie wywaliæ bo nie potrzebnie opóŸnia ³adowanie !!
+                Thread.Sleep(0);   // w póŸniejszym czasie wywaliæ bo nie potrzebnie opóŸnia ³adowanie !!
                 LoadMoreEvent(this, null);
                 LayoutManager.ScrollToPosition(pastVisiblesItems);
             }

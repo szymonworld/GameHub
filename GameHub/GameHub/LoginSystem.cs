@@ -13,7 +13,7 @@ using System.Threading;
 
 namespace GameHub
 {
-    [Activity(Label = "GameHub", MainLauncher = true, Icon = "@drawable/icon4", Theme = "@style/MyTheme")]
+    [Activity(Label = "GameHub", MainLauncher = false, Icon = "@drawable/icon4", Theme = "@style/MyTheme")]
     public class LoginSystem : Activity
     {
         private ProgressBar mProgressBar;

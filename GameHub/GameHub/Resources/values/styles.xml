@@ -3,7 +3,7 @@
   <style name="MyTheme" parent="MyTheme.Base">
   </style>
   <!-- Base theme applied no matter what API -->
-  <style name="MyTheme.Base" parent="Theme.AppCompat.Light.DarkActionBar">
+  <style name="MyTheme.Base" parent="Theme.AppCompat.Light.NoActionBar">
     <!--If you are using revision 22.1 please use just windowNoTitle. Without android:-->
     <item name="windowNoTitle">true</item>
     <!--We will be using the toolbar so no need to show ActionBar-->
@@ -18,6 +18,10 @@
     <item name="colorAccent">#FFC107</item>
     <!-- You can also set colorControlNormal, colorControlActivated
          colorControlHighlight and colorSwitchThumbNormal. -->
+
+    <item name="android:textColor">#BDBDBD</item>
+    <item name="android:navigationBarColor">#03A9F4</item>
+    <!--<item name="android:background">#212531</item>-->
   </style>
   <style name="MyTheme.Splash" parent ="Theme.AppCompat.Light">
     <item name="android:windowBackground">@drawable/splash_screen</item>

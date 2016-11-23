@@ -11,10 +11,11 @@ using Android.Content;
 using Android.Content.Res;
 using Android.Widget;
 using GameHub.Lists;
+using Android.Support.Design.Widget;
 
 namespace GameHub.Fragments
 {
-    public class Fragment1 : SupportFragment
+    public class Friends : SupportFragment
     {
 
         private List<string> list = new List<string>();
@@ -32,9 +33,9 @@ namespace GameHub.Fragments
             // Use this to return your custom view for this Fragment
             // return inflater.Inflate(Resource.Layout.YourFragment, container, false);
 
-            RecyclerView recyclerView = inflater.Inflate(Resource.Layout.Fragment1, container, false) as RecyclerView;
+            RecyclerView recyclerView = inflater.Inflate(Resource.Layout.Friends, container, false) as RecyclerView;
 
-            GetRandomSubList(Friends.NickStrings, 12);  // dodanie 12 obiektów do listy 
+            GetRandomSubList(Lists.Friends.NickStrings, 12);  // dodanie 12 obiektów do listy 
 
             var mLayoutManager = new LinearLayoutManager(recyclerView.Context);
             var onScrollListener = new RecyclerViewOnScrollListener(mLayoutManager);
@@ -46,11 +47,17 @@ namespace GameHub.Fragments
             // Dodanie nowych obiektów do listy po dojechaniu na dó³
             onScrollListener.LoadMoreEvent += (object sender, EventArgs e) => {
 
-                GetRandomSubList(Friends.NickStrings, 5); // generowanie i dodanie noeych obiektów
+                GetRandomSubList(Lists.Friends.NickStrings, 5); // generowanie i dodanie noeych obiektów
 
                 mAdapter.NotifyDataSetChanged(); 
             };
-            
+
+            //NIE DZIA£A
+            //var view = LayoutInflater.From(container.Context).Inflate(Resource.Layout.Hub, container, false);
+
+            //AppBarLayout appBarLayout = view.FindViewById<AppBarLayout>(Resource.Id.appbar);
+            //appBarLayout.SetExpanded(true, true);
+
             return recyclerView;
         }
 
@@ -99,7 +106,7 @@ namespace GameHub.Fragments
                 simpleHolder.mBoundString = mValues[position];
                 simpleHolder.mTxtView.Text = mValues[position];
 
-                int drawableID = Friends.RandomNick;
+                int drawableID = Lists.Friends.RandomNick;
                 BitmapFactory.Options options = new BitmapFactory.Options();
 
                 if (mCalculatedSizes.ContainsKey(drawableID))
@@ -113,7 +120,7 @@ namespace GameHub.Fragments
 
                     BitmapFactory.DecodeResource(mResource, drawableID, options);
 
-                    options.InSampleSize = Friends.CalculateInSampleSize(options, 100, 100);
+                    options.InSampleSize = Lists.Friends.CalculateInSampleSize(options, 100, 100);
                     options.InJustDecodeBounds = false;
 
                     mCalculatedSizes.Add(drawableID, options.InSampleSize);

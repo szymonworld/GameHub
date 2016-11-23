@@ -15,7 +15,7 @@ using Android.Util;
 
 namespace GameHub
 {
-    [Activity(Theme = "@style/MyTheme.Splash", MainLauncher = false, NoHistory = true)]
+    [Activity(Theme = "@style/MyTheme.Splash", MainLauncher = true, NoHistory = true)]
     public class SplashActivity : AppCompatActivity
     {
         static readonly string TAG = "X:" + typeof(SplashActivity).Name;

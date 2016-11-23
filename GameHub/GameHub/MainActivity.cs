@@ -16,10 +16,12 @@ using Android.Support.V4.App;
 using System.Collections.Generic;
 using Java.Lang;
 using GameHub.Fragments;
+using Android.Views.Animations;
+using Android.Content.PM;
 
 namespace GameHub
 {
-    [Activity(Label = "GameHub")]
+    [Activity(Label = "GameHub", ScreenOrientation = ScreenOrientation.Portrait) ]
 
 
 
@@ -27,44 +29,74 @@ namespace GameHub
     {
 
         private DrawerLayout mDrawerLayout;
+        private Android.Support.V7.App.ActionBarDrawerToggle drawerToggle;
+        private SupportToolbar toolbar;
+        private NavigationView navigationView;
+
+
 
 
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
             SetContentView(Resource.Layout.Main);
-            SupportToolbar toolbar = FindViewById<SupportToolbar>(Resource.Id.toolbar);
+            toolbar = FindViewById<SupportToolbar>(Resource.Id.toolbar);
             SetSupportActionBar(toolbar);
             SupportActionBar.SetHomeAsUpIndicator(Resource.Drawable.ic_menu);
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
             SupportActionBar.Title = "Hub";
 
+            SupportFragment newFragment = new Hub();
+            var trans = SupportFragmentManager.BeginTransaction();
+            trans.Add(Resource.Id.flContent, newFragment, "Hub");
+
+            trans.Commit();
+            SupportActionBar.Title = "Hub";
+
+
             mDrawerLayout = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
-            NavigationView navigationView = FindViewById<NavigationView>(Resource.Id.nav_view);
+            navigationView = FindViewById<NavigationView>(Resource.Id.nav_view);
 
-            //Szymon H
-            //var trans = SupportFragmentManager.BeginTransaction();
-            //trans.Add(Resource.Id.fragmentContainer,new Fragment1(), "Fragment1");
-            //trans.Commit();
 
-            ////////
-            TabLayout tabs = FindViewById<TabLayout>(Resource.Id.tabs);
-            ViewPager viewPager = FindViewById<ViewPager>(Resource.Id.viewpager);
-
-            SetUpViewPager(viewPager);
-
-            tabs.SetupWithViewPager(viewPager);
-            /////////
             navigationView.NavigationItemSelected += (sender, e) =>
             {
                 e.MenuItem.SetChecked(true);
                 switch (e.MenuItem.ItemId)
                 {
                     case (Resource.Id.nav_hub):
+                        newFragment = new Hub();
+                        trans = SupportFragmentManager.BeginTransaction();
+                        trans.Replace(Resource.Id.flContent, newFragment, "Hub");
+                        trans.AddToBackStack(null);
+                        trans.Commit();
+                        SupportActionBar.Title = "Hub";
+
+                        // Do przerobienia na Xamarina - chowanie toolbara (In Progress...)
+                        //Toolbar collapsingToolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
+                        //AppBarLayout.LayoutParams parameters = (AppBarLayout.LayoutParams)collapsingToolbar.LayoutParameters;
+                        //parameters.ScrollFlags(AppBarLayout.LayoutParams.ScrollFlagEnterAlways); // list other flags here by |
+                        //collapsingToolbar.setLayoutParams(parameters);
+
+                        // ? Przejście na Activity
+                        //Intent intent = new Intent(this, typeof(MainActivity));
+                        //this.StartActivity(intent);
+
+                        //OverridePendingTransition(Resource.Animation.animRight, Resource.Animation.animRight2);
+
                         break;
                     case (Resource.Id.nav_turniej):
-                        Intent intent = new Intent(this, typeof(LoginSystem));
-                        this.StartActivity(intent);
+                        newFragment = new Friends();
+                        trans = SupportFragmentManager.BeginTransaction();
+                        trans.Replace(Resource.Id.flContent, newFragment, "Znajomi");
+                        trans.AddToBackStack(null);
+                        trans.Commit();
+                        SupportActionBar.Title = "Znajomi";
+
+                        // ? Przejście na Activity
+                        //intent = new Intent(this, typeof(Tournament));
+                        //this.StartActivity(intent);
+
+                        //OverridePendingTransition(Resource.Animation.animRight, Resource.Animation.animRight2);
 
                         break;
                     default:
@@ -73,8 +105,13 @@ namespace GameHub
 
                 mDrawerLayout.CloseDrawers();
 
+
+
+
+
             };
         }
+
 
         public override bool OnCreateOptionsMenu(IMenu menu)
         {
@@ -97,50 +134,9 @@ namespace GameHub
 
         }
 
-        private void SetUpViewPager(ViewPager viewPager)
-        {
-            TabAdapter adapter = new TabAdapter(SupportFragmentManager);
-            adapter.AddFragment(new News(), "Gaming News");
-            adapter.AddFragment(new Fragment1(), "Wydarzenia");
 
-            viewPager.Adapter = adapter;
-        }
     }
 
-    public class TabAdapter : FragmentPagerAdapter
-    {
-        public List<SupportFragment> Fragments { get; set; }
-        public List<string> FragmentNames { get; set; }
 
-        public TabAdapter(SupportFragmentManager sfm) : base(sfm)
-        {
-            Fragments = new List<SupportFragment>();
-            FragmentNames = new List<string>();
-        }
-
-        public void AddFragment(SupportFragment fragment, string name)
-        {
-            Fragments.Add(fragment);
-            FragmentNames.Add(name);
-        }
-
-        public override int Count
-        {
-            get
-            {
-                return Fragments.Count;
-            }
-        }
-
-        public override SupportFragment GetItem(int position)
-        {
-            return Fragments[position];
-        }
-
-        public override ICharSequence GetPageTitleFormatted(int position)
-        {
-            return new Java.Lang.String(FragmentNames[position]);
-        }
-    }
 }
 
