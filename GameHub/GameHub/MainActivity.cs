@@ -84,7 +84,7 @@ namespace GameHub
                         //OverridePendingTransition(Resource.Animation.animRight, Resource.Animation.animRight2);
 
                         break;
-                    case (Resource.Id.nav_turniej):
+                    case (Resource.Id.nav_znajomi):
                         newFragment = new Friends();
                         trans = SupportFragmentManager.BeginTransaction();
                         trans.Replace(Resource.Id.flContent, newFragment, "Znajomi");

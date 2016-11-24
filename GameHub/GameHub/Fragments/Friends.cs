@@ -32,6 +32,8 @@ namespace GameHub.Fragments
         {
             // Use this to return your custom view for this Fragment
             // return inflater.Inflate(Resource.Layout.YourFragment, container, false);
+            
+
 
             RecyclerView recyclerView = inflater.Inflate(Resource.Layout.Friends, container, false) as RecyclerView;
 

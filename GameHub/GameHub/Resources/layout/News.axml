@@ -4,7 +4,7 @@
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:layout_marginTop="1dp"
-    android:background="#f9f9f9"
+    
     android:weightSum="100">
     <ImageView
         android:src="@drawable/icon"
@@ -40,8 +40,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="80"
-                android:id="@+id/textViewNews1"
-                android:textColor="#777777" />
+                android:id="@+id/textViewNews1"/>
             <TextView
                 android:text="15:50"
                 android:textAppearance="?android:attr/textAppearanceSmall"
@@ -49,7 +48,6 @@
                 android:layout_height="match_parent"
                 android:layout_weight="20"
                 android:gravity="center_horizontal"
-                android:textColor="#777777"
                 android:id="@+id/textViewNews3" />
         </LinearLayout>
         <TextView

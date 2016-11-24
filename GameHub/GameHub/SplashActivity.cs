@@ -12,10 +12,11 @@ using Android.Widget;
 using Android.Support.V7.App;
 using System.Threading.Tasks;
 using Android.Util;
+using Android.Content.PM;
 
 namespace GameHub
 {
-    [Activity(Theme = "@style/MyTheme.Splash", MainLauncher = true, NoHistory = true)]
+    [Activity(Theme = "@style/MyTheme.Splash", MainLauncher = true, NoHistory = true, ScreenOrientation = ScreenOrientation.Portrait)]
     public class SplashActivity : AppCompatActivity
     {
         static readonly string TAG = "X:" + typeof(SplashActivity).Name;
@@ -23,6 +24,8 @@ namespace GameHub
         public override void OnCreate(Bundle savedInstanceState, PersistableBundle persistentState)
         {
             base.OnCreate(savedInstanceState, persistentState);
+            RequestWindowFeature(WindowFeatures.NoTitle);
+            ActionBar.Hide();
             Log.Debug(TAG, "SplashActivity.OnCreate");
         }
 

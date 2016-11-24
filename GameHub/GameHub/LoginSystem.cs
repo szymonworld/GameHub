@@ -10,10 +10,11 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using System.Threading;
+using Android.Content.PM;
 
 namespace GameHub
 {
-    [Activity(Label = "GameHub", MainLauncher = false, Icon = "@drawable/icon4", Theme = "@style/MyTheme")]
+    [Activity(Label = "GameHub", MainLauncher = false, Icon = "@drawable/icon4", Theme = "@style/MyTheme", ScreenOrientation = ScreenOrientation.Portrait)]
     public class LoginSystem : Activity
     {
         private ProgressBar mProgressBar;
@@ -23,7 +24,7 @@ namespace GameHub
         {
             base.OnCreate(savedInstanceState);
             RequestWindowFeature(WindowFeatures.NoTitle);
-            
+
             SetContentView(Resource.Layout.Login);
 
             mBtnSignUp = FindViewById<Button>(Resource.Id.btnSignUp);

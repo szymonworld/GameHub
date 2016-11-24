@@ -19,9 +19,9 @@
         android:icon="@drawable/ic_event"
         android:title="Szybka Gra" />
     <item
-        android:id="@+id/nav_kalendarz"
-        android:icon="@drawable/ic_event"
-        android:title="Kalendarz" />
+    android:id="@+id/nav_szukajgraczy"
+    android:icon="@drawable/ic_explore_black_48dp"
+    android:title="Szukaj graczy" />
     <item
         android:id="@+id/nav_wydarzenia"
         android:icon="@drawable/ic_explore_black_48dp"
@@ -30,10 +30,7 @@
         android:id="@+id/nav_znajomi"
         android:icon="@drawable/ic_forum"
         android:title="Znajomi" />
-    <item
-        android:id="@+id/nav_szukajgraczy"
-        android:icon="@drawable/ic_explore_black_48dp"
-        android:title="Szukaj graczy" />
+
   </group>
   <item android:title="Dodaj">
     <menu>
