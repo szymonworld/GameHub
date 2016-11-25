@@ -40,19 +40,16 @@ namespace GameHub
         {
             base.OnCreate(bundle);
             SetContentView(Resource.Layout.Main);
-            toolbar = FindViewById<SupportToolbar>(Resource.Id.toolbar);
-            SetSupportActionBar(toolbar);
-            SupportActionBar.SetHomeAsUpIndicator(Resource.Drawable.ic_menu);
-            SupportActionBar.SetDisplayHomeAsUpEnabled(true);
-            SupportActionBar.Title = "Hub";
+            //toolbar = FindViewById<SupportToolbar>(Resource.Id.toolbar);
+            //SetSupportActionBar(toolbar);
+            //SupportActionBar.SetHomeAsUpIndicator(Resource.Drawable.ic_menu);
+            //SupportActionBar.SetDisplayHomeAsUpEnabled(true);
+            //SupportActionBar.Title = "Hub";
 
             SupportFragment newFragment = new Hub();
             var trans = SupportFragmentManager.BeginTransaction();
             trans.Add(Resource.Id.flContent, newFragment, "Hub");
-
             trans.Commit();
-            SupportActionBar.Title = "Hub";
-
 
             mDrawerLayout = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
             navigationView = FindViewById<NavigationView>(Resource.Id.nav_view);
@@ -69,7 +66,7 @@ namespace GameHub
                         trans.Replace(Resource.Id.flContent, newFragment, "Hub");
                         trans.AddToBackStack(null);
                         trans.Commit();
-                        SupportActionBar.Title = "Hub";
+                        //SupportActionBar.Title = "Hub";
 
                         // Do przerobienia na Xamarina - chowanie toolbara (In Progress...)
                         //Toolbar collapsingToolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
@@ -90,7 +87,7 @@ namespace GameHub
                         trans.Replace(Resource.Id.flContent, newFragment, "Znajomi");
                         trans.AddToBackStack(null);
                         trans.Commit();
-                        SupportActionBar.Title = "Znajomi";
+                        //SupportActionBar.Title = "Znajomi";
 
                         // ? Przejście na Activity
                         //intent = new Intent(this, typeof(Tournament));

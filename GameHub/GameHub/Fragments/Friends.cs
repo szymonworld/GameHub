@@ -24,20 +24,13 @@ namespace GameHub.Fragments
         public override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-
-            // Create your fragment here
         }
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
-            // Use this to return your custom view for this Fragment
-            // return inflater.Inflate(Resource.Layout.YourFragment, container, false);
-            
-
-
             RecyclerView recyclerView = inflater.Inflate(Resource.Layout.Friends, container, false) as RecyclerView;
 
-            GetRandomSubList(Lists.Friends.NickStrings, 12);  // dodanie 12 obiektów do listy 
+            GetRandomSubList(Lists.Friends.NickStrings, 30);  // dodanie 30 obiektów do listy 
 
             var mLayoutManager = new LinearLayoutManager(recyclerView.Context);
             var onScrollListener = new RecyclerViewOnScrollListener(mLayoutManager);

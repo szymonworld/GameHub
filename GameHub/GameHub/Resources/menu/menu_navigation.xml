@@ -16,7 +16,7 @@
         android:title="Turnieje" />
     <item
         android:id="@+id/nav_szybkagra"
-        android:icon="@drawable/ic_event"
+        android:icon="@drawable/ic_play_arrow_black_48dp"
         android:title="Szybka Gra" />
     <item
     android:id="@+id/nav_szukajgraczy"
@@ -24,7 +24,7 @@
     android:title="Szukaj graczy" />
     <item
         android:id="@+id/nav_wydarzenia"
-        android:icon="@drawable/ic_explore_black_48dp"
+        android:icon="@drawable/ic_event_available_black_48dp"
         android:title="Wydarzenia" />
     <item
         android:id="@+id/nav_znajomi"

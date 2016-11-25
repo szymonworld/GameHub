@@ -51,9 +51,17 @@ namespace GameHub.Fragments
         {
             var view = LayoutInflater.From(container.Context).Inflate(Resource.Layout.Hub, container, false);
 
+
             toolbar = view.FindViewById<SupportToolbar>(Resource.Id.toolbar);
-            
+            ((AppCompatActivity) this.Activity).SetSupportActionBar(toolbar);
+            ((AppCompatActivity)this.Activity).SupportActionBar.SetHomeAsUpIndicator(Resource.Drawable.ic_menu);
+            ((AppCompatActivity)this.Activity).SupportActionBar.SetDisplayHomeAsUpEnabled(true);
+            ((AppCompatActivity)this.Activity).SupportActionBar.Title = "HUB";
+
             tabs = view.FindViewById<TabLayout>(Resource.Id.tabsHub);
+
+            
+            
             viewPager = view.FindViewById<ViewPager>(Resource.Id.viewpagerHub);
 
             SetUpViewPager(viewPager);
@@ -67,8 +75,8 @@ namespace GameHub.Fragments
         private void SetUpViewPager(ViewPager viewPager)
         {
             TabAdapter adapter = new TabAdapter(ChildFragmentManager);
-            adapter.AddFragment(new News(), "Gaming News");
-            adapter.AddFragment(new Friends(), "Wydarzenia");
+            adapter.AddFragment(new News(), "Wiadomoœci", (int) Resource.Drawable.ic_gamepad_white_24dp);
+            adapter.AddFragment(new Friends(), "Wydarzenia",(int) Resource.Drawable.ic_timelapse_white_24dp);
 
             viewPager.Adapter = adapter;
         }
@@ -78,17 +86,24 @@ namespace GameHub.Fragments
     {
         public List<SupportFragment> Fragments { get; set; }
         public List<string> FragmentNames { get; set; }
+        public List<int> FragmentIcon { get; set; }
+
+        //public int FragmentIcon;
 
         public TabAdapter(SupportFragmentManager sfm) : base(sfm)
         {
             Fragments = new List<SupportFragment>();
             FragmentNames = new List<string>();
+            FragmentIcon = new List<int>();
         }
 
-        public void AddFragment(SupportFragment fragment, string name)
+        public void AddFragment(SupportFragment fragment, string name, int icon)
         {
             Fragments.Add(fragment);
             FragmentNames.Add(name);
+            FragmentIcon.Add(icon);
+            //FragmentIcon = icon;
+            
         }
 
         public override int Count
@@ -104,9 +119,20 @@ namespace GameHub.Fragments
             return Fragments[position];
         }
 
-        public override ICharSequence GetPageTitleFormatted(int position)
+        //public override ICharSequence GetPageTitleFormatted(int position)
+        //{
+        //    return new Java.Lang.String(FragmentNames[position]);
+        //}
+
+        public override Java.Lang.ICharSequence GetPageTitleFormatted(int position)
         {
-            return new Java.Lang.String(FragmentNames[position]);
+            var image = Application.Context.Resources.GetDrawable(FragmentIcon[position]);
+            image.SetBounds(0, 0, image.IntrinsicWidth, image.IntrinsicHeight);
+
+            var spannableString = new Android.Text.SpannableString("[icon]");
+            var imageSpan = new Android.Text.Style.ImageSpan(image, Android.Text.Style.SpanAlign.Bottom);
+            spannableString.SetSpan(imageSpan, 0, 1, Android.Text.SpanTypes.ExclusiveExclusive);
+            return spannableString;
         }
     }
 }
