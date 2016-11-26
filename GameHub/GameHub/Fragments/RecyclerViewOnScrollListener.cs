@@ -5,7 +5,6 @@ using System.Text;
 using Android.Support.V7.Widget;
 using Android.App;
 using Android.Content;
-using System.Threading;
 using Android.OS;
 using Android.Runtime;
 using Android.Views;
@@ -35,7 +34,6 @@ namespace GameHub.Fragments
 
             if ((visibleItemCount + pastVisiblesItems) >= totalItemCount)
             {
-                Thread.Sleep(0);   // w póŸniejszym czasie wywaliæ bo nie potrzebnie opóŸnia ³adowanie !!
                 LoadMoreEvent(this, null);
                 LayoutManager.ScrollToPosition(pastVisiblesItems);
             }

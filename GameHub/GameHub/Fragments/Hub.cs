@@ -60,8 +60,7 @@ namespace GameHub.Fragments
 
             tabs = view.FindViewById<TabLayout>(Resource.Id.tabsHub);
 
-            
-            
+
             viewPager = view.FindViewById<ViewPager>(Resource.Id.viewpagerHub);
 
             SetUpViewPager(viewPager);
@@ -76,7 +75,7 @@ namespace GameHub.Fragments
         {
             TabAdapter adapter = new TabAdapter(ChildFragmentManager);
             adapter.AddFragment(new News(), "Wiadomoœci", (int) Resource.Drawable.ic_gamepad_white_24dp);
-            adapter.AddFragment(new Friends(), "Wydarzenia",(int) Resource.Drawable.ic_timelapse_white_24dp);
+            adapter.AddFragment(new Wydarzenia(), "Wydarzenia",(int) Resource.Drawable.ic_timelapse_white_24dp);
 
             viewPager.Adapter = adapter;
         }
