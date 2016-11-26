@@ -1,1 +1,1 @@
-<resources><string name="Hello">Hello World, Click Me!</string><string name="ApplicationName">GameHub</string></resources>
+<resources><string name="Hello">Hello World, Click Me!</string><string name="ApplicationName">GameHub</string><string name="checkin">Checkin</string><string name="menu_settings">Settings</string></resources>

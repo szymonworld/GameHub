@@ -5,12 +5,13 @@ using Android.Support.V7.Widget;
 using Android.Views;
 using SupportFragment = Android.Support.V4.App.Fragment;
 using System.Collections.Generic;
+using GameHub.Lists;
 using Android.Graphics;
 using Android.Util;
 using Android.Content;
 using Android.Content.Res;
 using Android.Widget;
-using GameHub.Lists;
+using DesignLibrary.Helpers;
 
 namespace GameHub.Fragments
 {
@@ -27,7 +28,6 @@ namespace GameHub.Fragments
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
-            // Use this to return your custom view for this Fragment
 
             int iloscnewsow = 12; //Startowa iloœæ newsóe
             mRecyclerView = inflater.Inflate(Resource.Layout.Friends, container, false) as RecyclerView;
@@ -39,6 +39,16 @@ namespace GameHub.Fragments
             mRecyclerView.AddOnScrollListener(onScrollListener);
             mRecyclerView.SetLayoutManager(mLayoutManager);
             mRecyclerView.SetAdapter(mAdapter);
+
+
+            mRecyclerView.SetItemClickListener((rv, position, view) =>
+            {
+                Context context = view.Context;
+                Intent intent = new Intent(context, typeof(EnterPage));
+                //intent.PutExtra("Nag³ówek 2", 1);
+
+                context.StartActivity(intent);
+            });
 
             // £adowanie nastêpnych newsów po dojechaniu na sam dó³ listy newsów
             onScrollListener.LoadMoreEvent += (object sender, EventArgs e) => {
