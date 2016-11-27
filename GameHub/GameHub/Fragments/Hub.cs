@@ -50,6 +50,7 @@ namespace GameHub.Fragments
             TabAdapter adapter = new TabAdapter(ChildFragmentManager, this);
             adapter.AddFragment(new News(), "Wiadomoœci", (int)Resource.Drawable.ic_gamepad_white_24dp);
             adapter.AddFragment(new Wydarzenia(), "Wydarzenia", (int)Resource.Drawable.ic_timelapse_white_24dp);
+            adapter.AddFragment(new NotificationPanel(), "Powiadomienia", (int)Resource.Drawable.ic_menu_paste_holo_dark);
 
             viewPager.Adapter = adapter;
             viewPager.AddOnPageChangeListener(new MyPageChangeListener(this, adapter.FragmentNames));

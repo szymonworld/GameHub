@@ -126,11 +126,13 @@ namespace GameHub.Fragments
                 //view.mTime.Text = Convert.ToString(lista_wydarzen[indexPosition].czy_turniej);
                 if (lista_wydarzen[indexPosition].czy_turniej == 0)
                 {
-                    view.mLayout.SetBackgroundColor(Android.Graphics.Color.ParseColor("#2196f3"));
+                    view.mLayout.SetBackgroundResource(Resource.Drawable.Tournament);
+                    //view.mLayout.SetBackgroundColor(Android.Graphics.Color.ParseColor("#2196f3"));
                 }
                 else
                 {
-                    view.mLayout.SetBackgroundColor(Android.Graphics.Color.ParseColor("#ef6c00"));
+                    view.mLayout.SetBackgroundResource(Resource.Drawable.QuickGame);
+                    //view.mLayout.SetBackgroundColor(Android.Graphics.Color.ParseColor("#ef6c00"));
                 }
 
             }

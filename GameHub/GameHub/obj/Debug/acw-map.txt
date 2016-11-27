@@ -38,6 +38,10 @@ GameHub.Fragments.Hub, GameHub;md5231719adda94ac20a9948ae23b2c89e5.Hub
 GameHub.Fragments.Hub, GameHub, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5231719adda94ac20a9948ae23b2c89e5.Hub
 GameHub.Fragments.Hub;md5231719adda94ac20a9948ae23b2c89e5.Hub
 gamehub.fragments.Hub;md5231719adda94ac20a9948ae23b2c89e5.Hub
+GameHub.Fragments.MyPageChangeListener, GameHub;md5231719adda94ac20a9948ae23b2c89e5.MyPageChangeListener
+GameHub.Fragments.MyPageChangeListener, GameHub, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5231719adda94ac20a9948ae23b2c89e5.MyPageChangeListener
+GameHub.Fragments.MyPageChangeListener;md5231719adda94ac20a9948ae23b2c89e5.MyPageChangeListener
+gamehub.fragments.MyPageChangeListener;md5231719adda94ac20a9948ae23b2c89e5.MyPageChangeListener
 GameHub.Fragments.TabAdapter, GameHub;md5231719adda94ac20a9948ae23b2c89e5.TabAdapter
 GameHub.Fragments.TabAdapter, GameHub, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5231719adda94ac20a9948ae23b2c89e5.TabAdapter
 GameHub.Fragments.TabAdapter;md5231719adda94ac20a9948ae23b2c89e5.TabAdapter
@@ -54,6 +58,10 @@ GameHub.Fragments.News/RecyclerAdapter/MyView, GameHub;md5231719adda94ac20a9948a
 GameHub.Fragments.News+RecyclerAdapter+MyView, GameHub, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5231719adda94ac20a9948ae23b2c89e5.News_RecyclerAdapter_MyView
 GameHub.Fragments.News.RecyclerAdapter.MyView;md5231719adda94ac20a9948ae23b2c89e5.News_RecyclerAdapter_MyView
 gamehub.fragments.News_RecyclerAdapter_MyView;md5231719adda94ac20a9948ae23b2c89e5.News_RecyclerAdapter_MyView
+GameHub.Fragments.NotificationPanel, GameHub;md5231719adda94ac20a9948ae23b2c89e5.NotificationPanel
+GameHub.Fragments.NotificationPanel, GameHub, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5231719adda94ac20a9948ae23b2c89e5.NotificationPanel
+GameHub.Fragments.NotificationPanel;md5231719adda94ac20a9948ae23b2c89e5.NotificationPanel
+gamehub.fragments.NotificationPanel;md5231719adda94ac20a9948ae23b2c89e5.NotificationPanel
 GameHub.Fragments.RecyclerViewOnScrollListener, GameHub;md5231719adda94ac20a9948ae23b2c89e5.RecyclerViewOnScrollListener
 GameHub.Fragments.RecyclerViewOnScrollListener, GameHub, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5231719adda94ac20a9948ae23b2c89e5.RecyclerViewOnScrollListener
 GameHub.Fragments.RecyclerViewOnScrollListener;md5231719adda94ac20a9948ae23b2c89e5.RecyclerViewOnScrollListener

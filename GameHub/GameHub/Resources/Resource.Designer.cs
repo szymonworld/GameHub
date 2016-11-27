@@ -1885,124 +1885,133 @@ namespace GameHub
 			public const int abc_textfield_search_material = 2130837578;
 			
 			// aapt resource value: 0x7f02004b
-			public const int ButtonLogin = 2130837579;
+			public const int Add = 2130837579;
 			
 			// aapt resource value: 0x7f02004c
-			public const int buttonSingupStyle = 2130837580;
+			public const int ButtonLogin = 2130837580;
 			
 			// aapt resource value: 0x7f02004d
-			public const int design_fab_background = 2130837581;
+			public const int buttonSingupStyle = 2130837581;
 			
 			// aapt resource value: 0x7f02004e
-			public const int design_snackbar_background = 2130837582;
+			public const int design_fab_background = 2130837582;
 			
 			// aapt resource value: 0x7f02004f
-			public const int edit_text_style = 2130837583;
+			public const int design_snackbar_background = 2130837583;
 			
 			// aapt resource value: 0x7f020050
-			public const int ic_account_circle_black_48dp = 2130837584;
+			public const int edit_text_style = 2130837584;
 			
 			// aapt resource value: 0x7f020051
-			public const int ic_action_content_create = 2130837585;
+			public const int ic_account_circle_black_48dp = 2130837585;
 			
 			// aapt resource value: 0x7f020052
-			public const int ic_action_content_save = 2130837586;
+			public const int ic_action_content_create = 2130837586;
 			
 			// aapt resource value: 0x7f020053
-			public const int ic_add_black_48dp = 2130837587;
+			public const int ic_action_content_save = 2130837587;
 			
 			// aapt resource value: 0x7f020054
-			public const int ic_create_black_48dp = 2130837588;
+			public const int ic_add_black_48dp = 2130837588;
 			
 			// aapt resource value: 0x7f020055
-			public const int ic_dashboard = 2130837589;
+			public const int ic_create_black_48dp = 2130837589;
 			
 			// aapt resource value: 0x7f020056
-			public const int ic_device_hub_white_24dp = 2130837590;
+			public const int ic_dashboard = 2130837590;
 			
 			// aapt resource value: 0x7f020057
-			public const int ic_discuss = 2130837591;
+			public const int ic_device_hub_white_24dp = 2130837591;
 			
 			// aapt resource value: 0x7f020058
-			public const int ic_done = 2130837592;
+			public const int ic_discuss = 2130837592;
 			
 			// aapt resource value: 0x7f020059
-			public const int ic_event = 2130837593;
+			public const int ic_done = 2130837593;
 			
 			// aapt resource value: 0x7f02005a
-			public const int ic_event_available_black_48dp = 2130837594;
+			public const int ic_event = 2130837594;
 			
 			// aapt resource value: 0x7f02005b
-			public const int ic_explore_black_48dp = 2130837595;
+			public const int ic_event_available_black_48dp = 2130837595;
 			
 			// aapt resource value: 0x7f02005c
-			public const int ic_forum = 2130837596;
+			public const int ic_explore_black_48dp = 2130837596;
 			
 			// aapt resource value: 0x7f02005d
-			public const int ic_gamepad_white_24dp = 2130837597;
+			public const int ic_forum = 2130837597;
 			
 			// aapt resource value: 0x7f02005e
-			public const int ic_group_work_black_48dp = 2130837598;
+			public const int ic_gamepad_white_24dp = 2130837598;
 			
 			// aapt resource value: 0x7f02005f
-			public const int ic_group_work_white_48dp = 2130837599;
+			public const int ic_group_work_black_48dp = 2130837599;
 			
 			// aapt resource value: 0x7f020060
-			public const int ic_headset = 2130837600;
+			public const int ic_group_work_white_48dp = 2130837600;
 			
 			// aapt resource value: 0x7f020061
-			public const int ic_menu = 2130837601;
+			public const int ic_headset = 2130837601;
 			
 			// aapt resource value: 0x7f020062
-			public const int ic_menu_copy_holo_dark = 2130837602;
+			public const int ic_menu = 2130837602;
 			
 			// aapt resource value: 0x7f020063
-			public const int ic_menu_cut_holo_dark = 2130837603;
+			public const int ic_menu_copy_holo_dark = 2130837603;
 			
 			// aapt resource value: 0x7f020064
-			public const int ic_menu_paste_holo_dark = 2130837604;
+			public const int ic_menu_cut_holo_dark = 2130837604;
 			
 			// aapt resource value: 0x7f020065
-			public const int ic_menu_search_holo_dark = 2130837605;
+			public const int ic_menu_paste_holo_dark = 2130837605;
 			
 			// aapt resource value: 0x7f020066
-			public const int ic_play_arrow_black_48dp = 2130837606;
+			public const int ic_menu_search_holo_dark = 2130837606;
 			
 			// aapt resource value: 0x7f020067
-			public const int ic_send_black_48dp = 2130837607;
+			public const int ic_play_arrow_black_48dp = 2130837607;
 			
 			// aapt resource value: 0x7f020068
-			public const int ic_timelapse_white_24dp = 2130837608;
+			public const int ic_send_black_48dp = 2130837608;
 			
 			// aapt resource value: 0x7f020069
-			public const int Icon = 2130837609;
+			public const int ic_timelapse_white_24dp = 2130837609;
 			
 			// aapt resource value: 0x7f02006a
-			public const int Icon2 = 2130837610;
+			public const int Icon = 2130837610;
 			
 			// aapt resource value: 0x7f02006b
-			public const int icon3 = 2130837611;
+			public const int Icon2 = 2130837611;
 			
 			// aapt resource value: 0x7f02006c
-			public const int Icon4 = 2130837612;
+			public const int icon3 = 2130837612;
 			
 			// aapt resource value: 0x7f02006d
-			public const int navWallpaper = 2130837613;
-			
-			// aapt resource value: 0x7f020072
-			public const int notification_template_icon_bg = 2130837618;
+			public const int Icon4 = 2130837613;
 			
 			// aapt resource value: 0x7f02006e
-			public const int ProgressBAr = 2130837614;
+			public const int navWallpaper = 2130837614;
+			
+			// aapt resource value: 0x7f020075
+			public const int notification_template_icon_bg = 2130837621;
 			
 			// aapt resource value: 0x7f02006f
-			public const int SelectedItemMenu = 2130837615;
+			public const int ProgressBAr = 2130837615;
 			
 			// aapt resource value: 0x7f020070
-			public const int splash_screen = 2130837616;
+			public const int QuickGame = 2130837616;
 			
 			// aapt resource value: 0x7f020071
-			public const int TabLayout = 2130837617;
+			public const int SelectedItemMenu = 2130837617;
+			
+			// aapt resource value: 0x7f020072
+			public const int splash_screen = 2130837618;
+			
+			// aapt resource value: 0x7f020073
+			public const int TabLayout = 2130837619;
+			
+			// aapt resource value: 0x7f020074
+			public const int Tournament = 2130837620;
 			
 			static Drawable()
 			{
@@ -2097,6 +2106,9 @@ namespace GameHub
 			
 			// aapt resource value: 0x7f060080
 			public const int btnSignUp = 2131099776;
+			
+			// aapt resource value: 0x7f0600a3
+			public const int button1 = 2131099811;
 			
 			// aapt resource value: 0x7f060044
 			public const int buttonPanel = 2131099716;
@@ -2245,17 +2257,20 @@ namespace GameHub
 			// aapt resource value: 0x7f060098
 			public const int line3 = 2131099800;
 			
+			// aapt resource value: 0x7f06009d
+			public const int linearLayout1 = 2131099805;
+			
 			// aapt resource value: 0x7f06008a
 			public const int linearLayoutNews1 = 2131099786;
 			
 			// aapt resource value: 0x7f06008b
 			public const int linearLayoutNews2 = 2131099787;
 			
-			// aapt resource value: 0x7f06009d
-			public const int linearLayoutWydarzenia1 = 2131099805;
-			
 			// aapt resource value: 0x7f06009e
-			public const int linearLayoutWydarzenia2 = 2131099806;
+			public const int linearLayoutWydarzenia1 = 2131099806;
+			
+			// aapt resource value: 0x7f06009f
+			public const int linearLayoutWydarzenia2 = 2131099807;
 			
 			// aapt resource value: 0x7f06000b
 			public const int listMode = 2131099659;
@@ -2269,8 +2284,8 @@ namespace GameHub
 			// aapt resource value: 0x7f060092
 			public const int media_actions = 2131099794;
 			
-			// aapt resource value: 0x7f0600ac
-			public const int menut_ustawienia = 2131099820;
+			// aapt resource value: 0x7f0600ae
+			public const int menut_ustawienia = 2131099822;
 			
 			// aapt resource value: 0x7f06001d
 			public const int middle = 2131099677;
@@ -2281,32 +2296,32 @@ namespace GameHub
 			// aapt resource value: 0x7f060016
 			public const int multiply = 2131099670;
 			
-			// aapt resource value: 0x7f0600aa
-			public const int nav_dodajsg = 2131099818;
+			// aapt resource value: 0x7f0600ac
+			public const int nav_dodajsg = 2131099820;
 			
-			// aapt resource value: 0x7f0600ab
-			public const int nav_dodajt = 2131099819;
-			
-			// aapt resource value: 0x7f0600a4
-			public const int nav_hub = 2131099812;
-			
-			// aapt resource value: 0x7f0600a7
-			public const int nav_szukajgraczy = 2131099815;
+			// aapt resource value: 0x7f0600ad
+			public const int nav_dodajt = 2131099821;
 			
 			// aapt resource value: 0x7f0600a6
-			public const int nav_szybkagra = 2131099814;
+			public const int nav_hub = 2131099814;
 			
-			// aapt resource value: 0x7f0600a5
-			public const int nav_turniej = 2131099813;
+			// aapt resource value: 0x7f0600a9
+			public const int nav_szukajgraczy = 2131099817;
+			
+			// aapt resource value: 0x7f0600a8
+			public const int nav_szybkagra = 2131099816;
+			
+			// aapt resource value: 0x7f0600a7
+			public const int nav_turniej = 2131099815;
 			
 			// aapt resource value: 0x7f060084
 			public const int nav_view = 2131099780;
 			
-			// aapt resource value: 0x7f0600a8
-			public const int nav_wydarzenia = 2131099816;
+			// aapt resource value: 0x7f0600aa
+			public const int nav_wydarzenia = 2131099818;
 			
-			// aapt resource value: 0x7f0600a9
-			public const int nav_znajomi = 2131099817;
+			// aapt resource value: 0x7f0600ab
+			public const int nav_znajomi = 2131099819;
 			
 			// aapt resource value: 0x7f06006d
 			public const int navigation_header_container = 2131099757;
@@ -2443,14 +2458,14 @@ namespace GameHub
 			// aapt resource value: 0x7f060065
 			public const int submit_area = 2131099749;
 			
-			// aapt resource value: 0x7f0600a2
-			public const int tabIcon = 2131099810;
+			// aapt resource value: 0x7f0600a4
+			public const int tabIcon = 2131099812;
 			
 			// aapt resource value: 0x7f06000d
 			public const int tabMode = 2131099661;
 			
-			// aapt resource value: 0x7f0600a3
-			public const int tabText = 2131099811;
+			// aapt resource value: 0x7f0600a5
+			public const int tabText = 2131099813;
 			
 			// aapt resource value: 0x7f06007a
 			public const int tabsHub = 2131099770;
@@ -2476,14 +2491,14 @@ namespace GameHub
 			// aapt resource value: 0x7f06008d
 			public const int textViewNews3 = 2131099789;
 			
-			// aapt resource value: 0x7f06009f
-			public const int textViewWydarzenia1 = 2131099807;
+			// aapt resource value: 0x7f0600a0
+			public const int textViewWydarzenia1 = 2131099808;
+			
+			// aapt resource value: 0x7f0600a2
+			public const int textViewWydarzenia2 = 2131099810;
 			
 			// aapt resource value: 0x7f0600a1
-			public const int textViewWydarzenia2 = 2131099809;
-			
-			// aapt resource value: 0x7f0600a0
-			public const int textViewWydarzenia3 = 2131099808;
+			public const int textViewWydarzenia3 = 2131099809;
 			
 			// aapt resource value: 0x7f060095
 			public const int time = 2131099797;
@@ -2749,22 +2764,25 @@ namespace GameHub
 			public const int notification_template_part_time = 2130903094;
 			
 			// aapt resource value: 0x7f030037
-			public const int select_dialog_item_material = 2130903095;
+			public const int NotificationPanel = 2130903095;
 			
 			// aapt resource value: 0x7f030038
-			public const int select_dialog_multichoice_material = 2130903096;
+			public const int select_dialog_item_material = 2130903096;
 			
 			// aapt resource value: 0x7f030039
-			public const int select_dialog_singlechoice_material = 2130903097;
+			public const int select_dialog_multichoice_material = 2130903097;
 			
 			// aapt resource value: 0x7f03003a
-			public const int support_simple_spinner_dropdown_item = 2130903098;
+			public const int select_dialog_singlechoice_material = 2130903098;
 			
 			// aapt resource value: 0x7f03003b
-			public const int Tournament = 2130903099;
+			public const int support_simple_spinner_dropdown_item = 2130903099;
 			
 			// aapt resource value: 0x7f03003c
-			public const int Wydarzenia = 2130903100;
+			public const int Tournament = 2130903100;
+			
+			// aapt resource value: 0x7f03003d
+			public const int Wydarzenia = 2130903101;
 			
 			static Layout()
 			{

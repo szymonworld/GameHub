@@ -87,6 +87,7 @@
     <Compile Include="Fragments\Friends.cs" />
     <Compile Include="Fragments\Hub.cs" />
     <Compile Include="Fragments\News.cs" />
+    <Compile Include="Fragments\NotificationPanel.cs" />
     <Compile Include="Fragments\RecyclerViewOnScrollListener.cs" />
     <Compile Include="Fragments\Tournament.cs" />
     <Compile Include="Fragments\Wydarzenia.cs" />
@@ -129,6 +130,9 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\MainEnterPage.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\NotificationPanel.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
@@ -566,6 +570,15 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-xxxhdpi\ic_timelapse_white_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\QuickGame.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\Tournament.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\Add.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
