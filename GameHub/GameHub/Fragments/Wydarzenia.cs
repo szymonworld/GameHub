@@ -10,6 +10,7 @@ using Android.Content;
 using Android.OS;
 using Android.Runtime;
 using Android.Widget;
+using Android.Support.V7.App;
 
 namespace GameHub.Fragments
 {
@@ -52,6 +53,9 @@ namespace GameHub.Fragments
                 mAdapter = new RecyclerAdapter(lista_wydarzen);
                 mRecyclerView.SetAdapter(mAdapter);
             };
+
+            ((AppCompatActivity)this.Activity).SupportActionBar.Title = "Wydarzenia";
+
             return mRecyclerView;
         }
 

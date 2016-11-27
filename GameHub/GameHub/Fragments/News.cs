@@ -12,6 +12,7 @@ using Android.Content;
 using Android.Content.Res;
 using Android.Widget;
 using DesignLibrary.Helpers;
+using Android.Support.V7.App;
 
 namespace GameHub.Fragments
 {
@@ -61,6 +62,7 @@ namespace GameHub.Fragments
                 
             };
 
+            ((AppCompatActivity)this.Activity).SupportActionBar.Title = "Wiadomoœci";
 
             return mRecyclerView;
         }

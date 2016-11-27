@@ -44,7 +44,6 @@ namespace GameHub.Fragments
 
             return view;
 
-
         }
         private void SetUpViewPager(ViewPager viewPager)
         {
@@ -52,10 +51,8 @@ namespace GameHub.Fragments
             adapter.AddFragment(new News(), "Wiadomoœci", (int)Resource.Drawable.ic_gamepad_white_24dp);
             adapter.AddFragment(new Wydarzenia(), "Wydarzenia", (int)Resource.Drawable.ic_timelapse_white_24dp);
 
-
-
-
             viewPager.Adapter = adapter;
+            viewPager.AddOnPageChangeListener(new MyPageChangeListener(this, adapter.FragmentNames));
         }
 
         public void Title(string title)
@@ -63,9 +60,31 @@ namespace GameHub.Fragments
             ((AppCompatActivity)this.Activity).SupportActionBar.Title = title;
         }
 
-
-
     }
+
+    class MyPageChangeListener : Java.Lang.Object, ViewPager.IOnPageChangeListener
+    {
+        private Hub currentHub;
+        private List<string> fragmentNames;
+
+        public MyPageChangeListener(Hub currentHub, List<string> fragmentNames)
+        {
+            this.currentHub = currentHub;
+            this.fragmentNames = fragmentNames;
+        }
+        public void OnPageScrolled(int position, float positionOffset, int positionOffsetPixels)
+        {
+        }
+
+        public void OnPageScrollStateChanged(int position)
+        {
+        }
+        public void OnPageSelected(int position)
+        {
+            currentHub.Title(fragmentNames[position]);
+        }
+    }
+
     public class TabAdapter : FragmentPagerAdapter
     {
         protected Hub hub;
@@ -100,7 +119,6 @@ namespace GameHub.Fragments
 
         public override SupportFragment GetItem(int position)
         {
-            hub.Title(FragmentNames[position]);
             return Fragments[position];
         }
 
