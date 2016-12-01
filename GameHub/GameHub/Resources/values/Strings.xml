@@ -1,8 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--PL-->
 <resources>
     <string name="Hello">Hello World, Click Me!</string>
     <string name="ApplicationName">GameHub</string>
 
+  
+  <!--Menu-->
+  <string name="nav_hub">Hub</string>
+  <string name="nav_tournament">Turnieje</string>
+  <string name="nav_quickgame">Szybka gra</string>
+  <string name="nav_findplayers">Znajdz Graczy</string>
+  <string name="nav_events">Wydarzenia</string>
+  <string name="nav_friends">Znajomi</string>
+  <string name="nav_addTitle">Dodaj</string>
+  <string name="nav_addQuickgame">Szybką gre</string>
+  <string name="nav_addTournament">Turniej</string>
+  <string name="nav_other">Inne</string>
+  <!--...-->
+  
+  
+  <!--Tablayout-->
+  <string name="tab_news">Wiadomości</string>
+  <string name="tab_events">Wydarzenia</string>
+  <string name="tab_notification">Powiadomienia</string>
+  
+  
+  
+  
+  
   <string name="checkin">Checkin</string>
   <string name="menu_settings">Settings</string>
 </resources>

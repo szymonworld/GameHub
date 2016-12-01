@@ -2552,15 +2552,15 @@ containing a value of this type.
         public static final int middle=0x7f06001d;
         public static final int mini=0x7f060037;
         public static final int multiply=0x7f060016;
-        public static final int nav_dodajsg=0x7f0600ac;
-        public static final int nav_dodajt=0x7f0600ad;
+        public static final int nav_addQuickgame=0x7f0600ac;
+        public static final int nav_addTournament=0x7f0600ad;
+        public static final int nav_events=0x7f0600aa;
+        public static final int nav_findplayers=0x7f0600a9;
+        public static final int nav_friends=0x7f0600ab;
         public static final int nav_hub=0x7f0600a6;
-        public static final int nav_szukajgraczy=0x7f0600a9;
-        public static final int nav_szybkagra=0x7f0600a8;
-        public static final int nav_turniej=0x7f0600a7;
+        public static final int nav_quickgame=0x7f0600a8;
+        public static final int nav_tournament=0x7f0600a7;
         public static final int nav_view=0x7f060084;
-        public static final int nav_wydarzenia=0x7f0600aa;
-        public static final int nav_znajomi=0x7f0600ab;
         public static final int navigation_header_container=0x7f06006d;
         public static final int never=0x7f060021;
         public static final int none=0x7f060010;
@@ -2740,9 +2740,27 @@ containing a value of this type.
         public static final int appbar_scrolling_view_behavior=0x7f090014;
         public static final int bottom_sheet_behavior=0x7f090015;
         public static final int character_counter_pattern=0x7f090016;
-        public static final int checkin=0x7f090019;
-        public static final int menu_settings=0x7f09001a;
+        public static final int checkin=0x7f090026;
+        public static final int menu_settings=0x7f090027;
+        public static final int nav_addQuickgame=0x7f090020;
+        public static final int nav_addTitle=0x7f09001f;
+        public static final int nav_addTournament=0x7f090021;
+        public static final int nav_events=0x7f09001d;
+        public static final int nav_findplayers=0x7f09001c;
+        public static final int nav_friends=0x7f09001e;
+        /** Menu
+         */
+        public static final int nav_hub=0x7f090019;
+        public static final int nav_other=0x7f090022;
+        public static final int nav_quickgame=0x7f09001b;
+        public static final int nav_tournament=0x7f09001a;
         public static final int status_bar_notification_info_overflow=0x7f090013;
+        public static final int tab_events=0x7f090024;
+        /** ...
+Tablayout
+         */
+        public static final int tab_news=0x7f090023;
+        public static final int tab_notification=0x7f090025;
     }
     public static final class style {
         public static final int AlertDialog_AppCompat=0x7f07008a;
@@ -2905,9 +2923,6 @@ containing a value of this type.
     
          */
         public static final int MyTheme=0x7f07015b;
-        /**  Base theme applied no matter what API 
-<item name="android:background">#212531</item>
-         */
         public static final int MyTheme_Base=0x7f07015c;
         public static final int MyTheme_Splash=0x7f07015d;
         public static final int Platform_AppCompat=0x7f07001b;

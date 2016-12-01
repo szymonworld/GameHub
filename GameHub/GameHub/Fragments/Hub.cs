@@ -5,6 +5,8 @@ using Android.Support.V4.App;
 using Android.Support.V4.View;
 using Android.Support.V7.App;
 using Android.Views;
+using Android.Content;
+using System;
 using System.Collections.Generic;
 using SupportFragment = Android.Support.V4.App.Fragment;
 using SupportFragmentManager = Android.Support.V4.App.FragmentManager;
@@ -17,6 +19,8 @@ namespace GameHub.Fragments
         ViewPager viewPager;
         TabLayout tabs;
         SupportToolbar toolbar;
+        
+
         public override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -48,9 +52,9 @@ namespace GameHub.Fragments
         private void SetUpViewPager(ViewPager viewPager)
         {
             TabAdapter adapter = new TabAdapter(ChildFragmentManager, this);
-            adapter.AddFragment(new News(), "Wiadomoœci", (int)Resource.Drawable.ic_gamepad_white_24dp);
-            adapter.AddFragment(new Wydarzenia(), "Wydarzenia", (int)Resource.Drawable.ic_timelapse_white_24dp);
-            adapter.AddFragment(new NotificationPanel(), "Powiadomienia", (int)Resource.Drawable.ic_menu_paste_holo_dark);
+            adapter.AddFragment(new News(), GetString(Resource.String.tab_news), Resource.Drawable.ic_gamepad_white_24dp);
+            adapter.AddFragment(new Wydarzenia(), GetString(Resource.String.tab_events), Resource.Drawable.ic_timelapse_white_24dp);
+            adapter.AddFragment(new NotificationPanel(), GetString(Resource.String.tab_notification), Resource.Drawable.ic_menu_paste_holo_dark);
 
             viewPager.Adapter = adapter;
             viewPager.AddOnPageChangeListener(new MyPageChangeListener(this, adapter.FragmentNames));

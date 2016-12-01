@@ -2297,31 +2297,31 @@ namespace GameHub
 			public const int multiply = 2131099670;
 			
 			// aapt resource value: 0x7f0600ac
-			public const int nav_dodajsg = 2131099820;
+			public const int nav_addQuickgame = 2131099820;
 			
 			// aapt resource value: 0x7f0600ad
-			public const int nav_dodajt = 2131099821;
+			public const int nav_addTournament = 2131099821;
+			
+			// aapt resource value: 0x7f0600aa
+			public const int nav_events = 2131099818;
+			
+			// aapt resource value: 0x7f0600a9
+			public const int nav_findplayers = 2131099817;
+			
+			// aapt resource value: 0x7f0600ab
+			public const int nav_friends = 2131099819;
 			
 			// aapt resource value: 0x7f0600a6
 			public const int nav_hub = 2131099814;
 			
-			// aapt resource value: 0x7f0600a9
-			public const int nav_szukajgraczy = 2131099817;
-			
 			// aapt resource value: 0x7f0600a8
-			public const int nav_szybkagra = 2131099816;
+			public const int nav_quickgame = 2131099816;
 			
 			// aapt resource value: 0x7f0600a7
-			public const int nav_turniej = 2131099815;
+			public const int nav_tournament = 2131099815;
 			
 			// aapt resource value: 0x7f060084
 			public const int nav_view = 2131099780;
-			
-			// aapt resource value: 0x7f0600aa
-			public const int nav_wydarzenia = 2131099818;
-			
-			// aapt resource value: 0x7f0600ab
-			public const int nav_znajomi = 2131099819;
 			
 			// aapt resource value: 0x7f06006d
 			public const int navigation_header_container = 2131099757;
@@ -2888,14 +2888,53 @@ namespace GameHub
 			// aapt resource value: 0x7f090016
 			public const int character_counter_pattern = 2131296278;
 			
+			// aapt resource value: 0x7f090026
+			public const int checkin = 2131296294;
+			
+			// aapt resource value: 0x7f090027
+			public const int menu_settings = 2131296295;
+			
+			// aapt resource value: 0x7f090020
+			public const int nav_addQuickgame = 2131296288;
+			
+			// aapt resource value: 0x7f09001f
+			public const int nav_addTitle = 2131296287;
+			
+			// aapt resource value: 0x7f090021
+			public const int nav_addTournament = 2131296289;
+			
+			// aapt resource value: 0x7f09001d
+			public const int nav_events = 2131296285;
+			
+			// aapt resource value: 0x7f09001c
+			public const int nav_findplayers = 2131296284;
+			
+			// aapt resource value: 0x7f09001e
+			public const int nav_friends = 2131296286;
+			
 			// aapt resource value: 0x7f090019
-			public const int checkin = 2131296281;
+			public const int nav_hub = 2131296281;
+			
+			// aapt resource value: 0x7f090022
+			public const int nav_other = 2131296290;
+			
+			// aapt resource value: 0x7f09001b
+			public const int nav_quickgame = 2131296283;
 			
 			// aapt resource value: 0x7f09001a
-			public const int menu_settings = 2131296282;
+			public const int nav_tournament = 2131296282;
 			
 			// aapt resource value: 0x7f090013
 			public const int status_bar_notification_info_overflow = 2131296275;
+			
+			// aapt resource value: 0x7f090024
+			public const int tab_events = 2131296292;
+			
+			// aapt resource value: 0x7f090023
+			public const int tab_news = 2131296291;
+			
+			// aapt resource value: 0x7f090025
+			public const int tab_notification = 2131296293;
 			
 			static String()
 			{

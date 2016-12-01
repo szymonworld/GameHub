@@ -40,11 +40,6 @@ namespace GameHub
         {
             base.OnCreate(bundle);
             SetContentView(Resource.Layout.Main);
-            //toolbar = FindViewById<SupportToolbar>(Resource.Id.toolbar);
-            //SetSupportActionBar(toolbar);
-            //SupportActionBar.SetHomeAsUpIndicator(Resource.Drawable.ic_menu);
-            //SupportActionBar.SetDisplayHomeAsUpEnabled(true);
-            //SupportActionBar.Title = "Hub";
 
             SupportFragment newFragment = new Hub();
             var trans = SupportFragmentManager.BeginTransaction();
@@ -66,34 +61,26 @@ namespace GameHub
                         trans.Replace(Resource.Id.flContent, newFragment, "Hub");
                         trans.AddToBackStack(null);
                         trans.Commit();
-                        //SupportActionBar.Title = "Hub";
-
-                        // Do przerobienia na Xamarina - chowanie toolbara (In Progress...)
-                        //Toolbar collapsingToolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
-                        //AppBarLayout.LayoutParams parameters = (AppBarLayout.LayoutParams)collapsingToolbar.LayoutParameters;
-                        //parameters.ScrollFlags(AppBarLayout.LayoutParams.ScrollFlagEnterAlways); // list other flags here by |
-                        //collapsingToolbar.setLayoutParams(parameters);
 
                         // ? Przejście na Activity
                         //Intent intent = new Intent(this, typeof(MainActivity));
                         //this.StartActivity(intent);
 
-                        //OverridePendingTransition(Resource.Animation.animRight, Resource.Animation.animRight2);
+                        OverridePendingTransition(Resource.Animation.animRight, Resource.Animation.animRight2);
 
                         break;
-                    case (Resource.Id.nav_znajomi):
+                    case (Resource.Id.nav_friends):
                         newFragment = new Friends();
                         trans = SupportFragmentManager.BeginTransaction();
                         trans.Replace(Resource.Id.flContent, newFragment, "Znajomi");
                         trans.AddToBackStack(null);
                         trans.Commit();
-                        //SupportActionBar.Title = "Znajomi";
 
                         // ? Przejście na Activity
                         //intent = new Intent(this, typeof(Tournament));
                         //this.StartActivity(intent);
 
-                        //OverridePendingTransition(Resource.Animation.animRight, Resource.Animation.animRight2);
+                        OverridePendingTransition(Resource.Animation.animRight, Resource.Animation.animRight2);
 
                         break;
                     default:
