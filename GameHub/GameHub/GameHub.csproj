@@ -86,6 +86,7 @@
     <Compile Include="EnterPage.cs" />
     <Compile Include="Fragments\Friends.cs" />
     <Compile Include="Fragments\Hub.cs" />
+    <Compile Include="Fragments\Chat.cs" />
     <Compile Include="Fragments\News.cs" />
     <Compile Include="Fragments\NotificationPanel.cs" />
     <Compile Include="Fragments\RecyclerViewOnScrollListener.cs" />
@@ -136,6 +137,12 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\NotificationClickPanel.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\Chat.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\ChatMessage.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
@@ -624,6 +631,9 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-xxxhdpi\ic_notifications_white_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\send.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
