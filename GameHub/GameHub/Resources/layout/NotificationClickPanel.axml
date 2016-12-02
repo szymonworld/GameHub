@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:theme="@style/MyTheme"
+    android:background="#212531"
+    android:padding="20dp">
+    <TextView
+        android:text="Przyjąć zaproszenie ?"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView1"
+        android:gravity="center"
+        android:textSize="20sp" />
+    <Button
+        android:text="@string/not_accept"
+        android:layout_width="300dp"
+        android:layout_height="70dp"
+        android:id="@+id/buttonAccept"
+        android:layout_margin="10dp"
+        android:background="#333d59"
+        android:drawableLeft="@drawable/acceptsmall" />
+    <Button
+        android:text="@string/not_denied"
+        android:layout_width="300dp"
+        android:layout_height="70dp"
+        android:id="@+id/buttonDenied"
+        android:layout_margin="10dp"
+        android:background="#333d59"
+        android:drawableLeft="@drawable/deniedsmall" />
+</LinearLayout>

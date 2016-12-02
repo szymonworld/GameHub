@@ -2417,46 +2417,49 @@ containing a value of this type.
         public static int abc_textfield_search_activated_mtrl_alpha=0x7f020048;
         public static int abc_textfield_search_default_mtrl_alpha=0x7f020049;
         public static int abc_textfield_search_material=0x7f02004a;
-        public static int buttonlogin=0x7f02004b;
-        public static int buttonsingupstyle=0x7f02004c;
-        public static int design_fab_background=0x7f02004d;
-        public static int design_snackbar_background=0x7f02004e;
-        public static int edit_text_style=0x7f02004f;
-        public static int ic_account_circle_black_48dp=0x7f020050;
-        public static int ic_action_content_create=0x7f020051;
-        public static int ic_action_content_save=0x7f020052;
-        public static int ic_add_black_48dp=0x7f020053;
-        public static int ic_create_black_48dp=0x7f020054;
-        public static int ic_dashboard=0x7f020055;
-        public static int ic_device_hub_white_24dp=0x7f020056;
-        public static int ic_discuss=0x7f020057;
-        public static int ic_done=0x7f020058;
-        public static int ic_event=0x7f020059;
-        public static int ic_event_available_black_48dp=0x7f02005a;
-        public static int ic_explore_black_48dp=0x7f02005b;
-        public static int ic_forum=0x7f02005c;
-        public static int ic_gamepad_white_24dp=0x7f02005d;
-        public static int ic_group_work_black_48dp=0x7f02005e;
-        public static int ic_group_work_white_48dp=0x7f02005f;
-        public static int ic_headset=0x7f020060;
-        public static int ic_menu=0x7f020061;
-        public static int ic_menu_copy_holo_dark=0x7f020062;
-        public static int ic_menu_cut_holo_dark=0x7f020063;
-        public static int ic_menu_paste_holo_dark=0x7f020064;
-        public static int ic_menu_search_holo_dark=0x7f020065;
-        public static int ic_play_arrow_black_48dp=0x7f020066;
-        public static int ic_send_black_48dp=0x7f020067;
-        public static int ic_timelapse_white_24dp=0x7f020068;
-        public static int icon=0x7f020069;
-        public static int icon2=0x7f02006a;
-        public static int icon3=0x7f02006b;
-        public static int icon4=0x7f02006c;
-        public static int navwallpaper=0x7f02006d;
-        public static int notification_template_icon_bg=0x7f020072;
-        public static int progressbar=0x7f02006e;
-        public static int selecteditemmenu=0x7f02006f;
-        public static int splash_screen=0x7f020070;
-        public static int tablayout=0x7f020071;
+        public static int add=0x7f02004b;
+        public static int buttonlogin=0x7f02004c;
+        public static int buttonsingupstyle=0x7f02004d;
+        public static int design_fab_background=0x7f02004e;
+        public static int design_snackbar_background=0x7f02004f;
+        public static int edit_text_style=0x7f020050;
+        public static int ic_account_circle_black_48dp=0x7f020051;
+        public static int ic_action_content_create=0x7f020052;
+        public static int ic_action_content_save=0x7f020053;
+        public static int ic_add_black_48dp=0x7f020054;
+        public static int ic_create_black_48dp=0x7f020055;
+        public static int ic_dashboard=0x7f020056;
+        public static int ic_device_hub_white_24dp=0x7f020057;
+        public static int ic_discuss=0x7f020058;
+        public static int ic_done=0x7f020059;
+        public static int ic_event=0x7f02005a;
+        public static int ic_event_available_black_48dp=0x7f02005b;
+        public static int ic_explore_black_48dp=0x7f02005c;
+        public static int ic_forum=0x7f02005d;
+        public static int ic_gamepad_white_24dp=0x7f02005e;
+        public static int ic_group_work_black_48dp=0x7f02005f;
+        public static int ic_group_work_white_48dp=0x7f020060;
+        public static int ic_headset=0x7f020061;
+        public static int ic_menu=0x7f020062;
+        public static int ic_menu_copy_holo_dark=0x7f020063;
+        public static int ic_menu_cut_holo_dark=0x7f020064;
+        public static int ic_menu_paste_holo_dark=0x7f020065;
+        public static int ic_menu_search_holo_dark=0x7f020066;
+        public static int ic_play_arrow_black_48dp=0x7f020067;
+        public static int ic_send_black_48dp=0x7f020068;
+        public static int ic_timelapse_white_24dp=0x7f020069;
+        public static int icon=0x7f02006a;
+        public static int icon2=0x7f02006b;
+        public static int icon3=0x7f02006c;
+        public static int icon4=0x7f02006d;
+        public static int navwallpaper=0x7f02006e;
+        public static int notification_template_icon_bg=0x7f020075;
+        public static int progressbar=0x7f02006f;
+        public static int quickgame=0x7f020070;
+        public static int selecteditemmenu=0x7f020071;
+        public static int splash_screen=0x7f020072;
+        public static int tablayout=0x7f020073;
+        public static int tournament=0x7f020074;
     }
     public static final class id {
         public static int aa=0x7f060076;
@@ -2486,6 +2489,7 @@ containing a value of this type.
         public static int btnDialogEmail=0x7f060075;
         public static int btnSignIn=0x7f06007f;
         public static int btnSignUp=0x7f060080;
+        public static int button1=0x7f06009c;
         public static int buttonPanel=0x7f060044;
         public static int cancel_action=0x7f060090;
         public static int center=0x7f06002b;
@@ -2497,7 +2501,7 @@ containing a value of this type.
         public static int clip_vertical=0x7f060034;
         public static int collapseActionView=0x7f06001f;
         public static int collapsing_toolbar=0x7f060086;
-        public static int colorLayoutWydarzenia=0x7f06009c;
+        public static int colorLayoutWydarzenia=0x7f06009d;
         public static int contentPanel=0x7f06004a;
         public static int custom=0x7f060050;
         public static int customPanel=0x7f06004f;
@@ -2535,27 +2539,28 @@ containing a value of this type.
         public static int left=0x7f06002f;
         public static int line1=0x7f060094;
         public static int line3=0x7f060098;
+        public static int linearLayout1=0x7f06009e;
         public static int linearLayoutNews1=0x7f06008a;
         public static int linearLayoutNews2=0x7f06008b;
-        public static int linearLayoutWydarzenia1=0x7f06009d;
-        public static int linearLayoutWydarzenia2=0x7f06009e;
+        public static int linearLayoutWydarzenia1=0x7f06009f;
+        public static int linearLayoutWydarzenia2=0x7f0600a0;
         public static int listMode=0x7f06000b;
         public static int list_item=0x7f060041;
         public static int main_content=0x7f060085;
         public static int media_actions=0x7f060092;
-        public static int menut_ustawienia=0x7f0600ac;
+        public static int menut_ustawienia=0x7f0600ae;
         public static int middle=0x7f06001d;
         public static int mini=0x7f060037;
         public static int multiply=0x7f060016;
-        public static int nav_dodajsg=0x7f0600aa;
-        public static int nav_dodajt=0x7f0600ab;
-        public static int nav_hub=0x7f0600a4;
-        public static int nav_szukajgraczy=0x7f0600a7;
-        public static int nav_szybkagra=0x7f0600a6;
-        public static int nav_turniej=0x7f0600a5;
+        public static int nav_addQuickgame=0x7f0600ac;
+        public static int nav_addTournament=0x7f0600ad;
+        public static int nav_events=0x7f0600aa;
+        public static int nav_findplayers=0x7f0600a9;
+        public static int nav_friends=0x7f0600ab;
+        public static int nav_hub=0x7f0600a6;
+        public static int nav_quickgame=0x7f0600a8;
+        public static int nav_tournament=0x7f0600a7;
         public static int nav_view=0x7f060084;
-        public static int nav_wydarzenia=0x7f0600a8;
-        public static int nav_znajomi=0x7f0600a9;
         public static int navigation_header_container=0x7f06006d;
         public static int never=0x7f060021;
         public static int none=0x7f060010;
@@ -2601,9 +2606,9 @@ containing a value of this type.
         public static int start=0x7f060031;
         public static int status_bar_latest_event_content=0x7f060091;
         public static int submit_area=0x7f060065;
-        public static int tabIcon=0x7f0600a2;
+        public static int tabIcon=0x7f0600a4;
         public static int tabMode=0x7f06000d;
-        public static int tabText=0x7f0600a3;
+        public static int tabText=0x7f0600a5;
         public static int tabsHub=0x7f06007a;
         public static int text=0x7f060099;
         public static int text1=0x7f06007d;
@@ -2612,9 +2617,9 @@ containing a value of this type.
         public static int textViewNews1=0x7f06008c;
         public static int textViewNews2=0x7f06008e;
         public static int textViewNews3=0x7f06008d;
-        public static int textViewWydarzenia1=0x7f06009f;
-        public static int textViewWydarzenia2=0x7f0600a1;
-        public static int textViewWydarzenia3=0x7f0600a0;
+        public static int textViewWydarzenia1=0x7f0600a1;
+        public static int textViewWydarzenia2=0x7f0600a3;
+        public static int textViewWydarzenia3=0x7f0600a2;
         public static int time=0x7f060095;
         public static int title=0x7f060043;
         public static int title_template=0x7f060048;
@@ -2698,12 +2703,14 @@ containing a value of this type.
         public static int notification_template_media=0x7f030034;
         public static int notification_template_part_chronometer=0x7f030035;
         public static int notification_template_part_time=0x7f030036;
-        public static int select_dialog_item_material=0x7f030037;
-        public static int select_dialog_multichoice_material=0x7f030038;
-        public static int select_dialog_singlechoice_material=0x7f030039;
-        public static int support_simple_spinner_dropdown_item=0x7f03003a;
-        public static int tournament=0x7f03003b;
-        public static int wydarzenia=0x7f03003c;
+        public static int notificationclickpanel=0x7f030037;
+        public static int notificationpanel=0x7f030038;
+        public static int select_dialog_item_material=0x7f030039;
+        public static int select_dialog_multichoice_material=0x7f03003a;
+        public static int select_dialog_singlechoice_material=0x7f03003b;
+        public static int support_simple_spinner_dropdown_item=0x7f03003c;
+        public static int tournament=0x7f03003d;
+        public static int wydarzenia=0x7f03003e;
     }
     public static final class menu {
         public static int menu_navigation=0x7f0c0000;
@@ -2734,9 +2741,32 @@ containing a value of this type.
         public static int appbar_scrolling_view_behavior=0x7f090014;
         public static int bottom_sheet_behavior=0x7f090015;
         public static int character_counter_pattern=0x7f090016;
-        public static int checkin=0x7f090019;
-        public static int menu_settings=0x7f09001a;
+        public static int checkin=0x7f090029;
+        public static int menu_settings=0x7f09002a;
+        public static int nav_addQuickgame=0x7f090020;
+        public static int nav_addTitle=0x7f09001f;
+        public static int nav_addTournament=0x7f090021;
+        public static int nav_events=0x7f09001d;
+        public static int nav_findplayers=0x7f09001c;
+        public static int nav_friends=0x7f09001e;
+        /** Menu
+         */
+        public static int nav_hub=0x7f090019;
+        public static int nav_other=0x7f090022;
+        public static int nav_quickgame=0x7f09001b;
+        public static int nav_tournament=0x7f09001a;
+        public static int not_description=0x7f090027;
+        public static int not_titleQuickGame=0x7f090028;
+        /** Notification
+         */
+        public static int not_titleTournament=0x7f090026;
         public static int status_bar_notification_info_overflow=0x7f090013;
+        public static int tab_events=0x7f090024;
+        /** ...
+Tablayout
+         */
+        public static int tab_news=0x7f090023;
+        public static int tab_notification=0x7f090025;
     }
     public static final class style {
         public static int AlertDialog_AppCompat=0x7f07008a;
@@ -2899,9 +2929,6 @@ containing a value of this type.
     
          */
         public static int MyTheme=0x7f07015b;
-        /**  Base theme applied no matter what API 
-<item name="android:background">#212531</item>
-         */
         public static int MyTheme_Base=0x7f07015c;
         public static int MyTheme_Splash=0x7f07015d;
         public static int Platform_AppCompat=0x7f07001b;

@@ -30,6 +30,10 @@
         android:id="@+id/nav_friends"
         android:icon="@drawable/ic_forum"
         android:title="@string/nav_friends" />
+    <item
+    android:id="@+id/nav_profile"
+    android:icon="@drawable/ic_account_circle_black_48dp"
+    android:title="@string/nav_profile" />
 
   </group>
   <item android:title="@string/nav_addTitle">

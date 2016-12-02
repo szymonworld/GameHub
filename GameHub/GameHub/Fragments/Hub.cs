@@ -11,6 +11,7 @@ using System.Collections.Generic;
 using SupportFragment = Android.Support.V4.App.Fragment;
 using SupportFragmentManager = Android.Support.V4.App.FragmentManager;
 using SupportToolbar = Android.Support.V7.Widget.Toolbar;
+using Android.Widget;
 
 namespace GameHub.Fragments
 {
@@ -53,8 +54,8 @@ namespace GameHub.Fragments
         {
             TabAdapter adapter = new TabAdapter(ChildFragmentManager, this);
             adapter.AddFragment(new News(), GetString(Resource.String.tab_news), Resource.Drawable.ic_gamepad_white_24dp);
-            adapter.AddFragment(new Wydarzenia(), GetString(Resource.String.tab_events), Resource.Drawable.ic_timelapse_white_24dp);
-            adapter.AddFragment(new NotificationPanel(), GetString(Resource.String.tab_notification), Resource.Drawable.ic_menu_paste_holo_dark);
+            adapter.AddFragment(new Wydarzenia(), GetString(Resource.String.tab_events), Resource.Drawable.ic_event_white_24dp);
+            adapter.AddFragment(new NotificationPanel(), GetString(Resource.String.tab_notification), Resource.Drawable.ic_notifications_white_24dp);
 
             viewPager.Adapter = adapter;
             viewPager.AddOnPageChangeListener(new MyPageChangeListener(this, adapter.FragmentNames));
