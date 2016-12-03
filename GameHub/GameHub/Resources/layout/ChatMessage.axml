@@ -21,14 +21,14 @@
         android:id="@+id/linearLayoutMessage1">
       <de.hdodenhof.circleimageview.CircleImageView
           android:layout_width="40dp"
+          android:id="@+id/imageCustomerIcon"
           android:layout_height="40dp"
-          android:src="@drawable/icon"
+          android:src="@drawable/acceptsmall"
           android:layout_marginLeft="7dp"
           android:layout_marginRight="10dp"
           android:layout_marginTop="10dp"
           android:layout_centerVertical="true"
-          android:scaleType="centerCrop"
-          android:id="@+id/imageCustomerIcon" />
+          android:scaleType="centerCrop" />
     </LinearLayout>
     <LinearLayout
         android:orientation="vertical"

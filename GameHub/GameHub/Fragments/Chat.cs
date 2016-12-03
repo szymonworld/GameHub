@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Android.App;
 using Android.OS;
 using SupportToolbar = Android.Support.V7.Widget.Toolbar;
+using Refractored.Controls;
 using Android.Support.V7.App;
 using Android.Support.Design.Widget;
 using Android.Widget;
@@ -12,10 +13,9 @@ using Android.Content.PM;
 
 namespace GameHub
 {
-    [Activity(Label = "EnterPage", ScreenOrientation = ScreenOrientation.Portrait)]
+    [Activity(Label = "Chat", ScreenOrientation = ScreenOrientation.Portrait)]
     public class Chat : AppCompatActivity
     {
-
         private RecyclerView mRecyclerView;
         private RecyclerView.Adapter mAdapter;
         private List<Message_class> message_list = new List<Message_class>();
@@ -23,7 +23,6 @@ namespace GameHub
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-
             SetContentView(Resource.Layout.Chat);
 
             for (int a = 0; a < 1; a++)
@@ -48,7 +47,6 @@ namespace GameHub
         {
             Generator();
             mAdapter.NotifyDataSetChanged();
-
         }
 
         public void Generator()
@@ -57,12 +55,10 @@ namespace GameHub
             message_list.Add(new_message);
         }
 
-
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
             return base.OnOptionsItemSelected(item);
         }
-
 
         public class RecyclerAdapter : RecyclerView.Adapter
         {
@@ -71,13 +67,13 @@ namespace GameHub
 
             public RecyclerAdapter(List<Message_class> list)
             {
-
                 message_list = list;
             }
 
             public class MyView : RecyclerView.ViewHolder
             {
                 public View mMainView { get; set; }
+                public CircleImageView mImage { get; set; }
                 public TextView mNick { get; set; }
                 public TextView mText { get; set; }
                 public TextView mTime { get; set; }
@@ -94,8 +90,7 @@ namespace GameHub
                 TextView txtNick = row.FindViewById<TextView>(Resource.Id.textViewMessage1);
                 TextView txtText = row.FindViewById<TextView>(Resource.Id.textViewMessage2);
                 TextView txtTime = row.FindViewById<TextView>(Resource.Id.textViewMessage3);
-
-
+                //CircleImageView cimage = row.FindViewById<CircleImageView>(Resource.Id.imageCustomerIcon);
 
                 MyView view = new MyView(row) { mNick = txtNick, mText = txtText, mTime = txtTime };
                 return view;
@@ -110,7 +105,7 @@ namespace GameHub
                 view.mNick.Text = message_list[indexPosition].nick;
                 view.mText.Text = message_list[indexPosition].text;
                 view.mTime.Text = message_list[indexPosition].time;
-
+                //view.mImage.SetImageResource(Resource.Drawable.acceptsmall);
             }
 
             public override int ItemCount
