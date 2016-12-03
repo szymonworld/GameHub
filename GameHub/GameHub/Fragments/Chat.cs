@@ -90,9 +90,9 @@ namespace GameHub
                 TextView txtNick = row.FindViewById<TextView>(Resource.Id.textViewMessage1);
                 TextView txtText = row.FindViewById<TextView>(Resource.Id.textViewMessage2);
                 TextView txtTime = row.FindViewById<TextView>(Resource.Id.textViewMessage3);
-                //CircleImageView cimage = row.FindViewById<CircleImageView>(Resource.Id.imageCustomerIcon);
+                CircleImageView cimage = row.FindViewById<CircleImageView>(Resource.Id.imageCustomerIcon);
 
-                MyView view = new MyView(row) { mNick = txtNick, mText = txtText, mTime = txtTime };
+                MyView view = new MyView(row) { mNick = txtNick, mText = txtText, mTime = txtTime, mImage = cimage };
                 return view;
             }
 
@@ -105,7 +105,7 @@ namespace GameHub
                 view.mNick.Text = message_list[indexPosition].nick;
                 view.mText.Text = message_list[indexPosition].text;
                 view.mTime.Text = message_list[indexPosition].time;
-                //view.mImage.SetImageResource(Resource.Drawable.acceptsmall);
+                view.mImage.SetImageResource(Resource.Drawable.acceptsmall);
             }
 
             public override int ItemCount

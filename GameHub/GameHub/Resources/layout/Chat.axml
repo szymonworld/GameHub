@@ -58,7 +58,7 @@
             android:maxLines="3"
             android:textColorHint="#CFD8DC"
             android:textColor="#CFD8DC"
-            android:hint="Write a message" />
+            android:hint="@string/cha_hint" />
         <ImageView
             android:layout_width="0dp"
             android:id="@+id/sendImage"

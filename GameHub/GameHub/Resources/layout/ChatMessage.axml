@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:paddingRight="14dp"
@@ -19,7 +20,7 @@
         android:layout_height="match_parent"
         android:layout_weight="15"
         android:id="@+id/linearLayoutMessage1">
-      <de.hdodenhof.circleimageview.CircleImageView
+      <refractored.controls.CircleImageView
           android:layout_width="40dp"
           android:id="@+id/imageCustomerIcon"
           android:layout_height="40dp"

@@ -35,4 +35,8 @@
   
   <string name="checkin">Checkin</string>
   <string name="menu_settings">Settings</string>
+
+  <!--Chat-->
+  <string name="cha_hint">Napisz wiadomość</string>
+  
 </resources>
