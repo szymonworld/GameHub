@@ -24,6 +24,10 @@
   <string name="tab_news">Wiadomości</string>
   <string name="tab_events">Wydarzenia</string>
   <string name="tab_notification">Powiadomienia</string>
+
+  <string name="tab_description">Opis</string>
+  <string name="tab_accounts">Konta</string>
+  <string name="tab_friends">Znajomi</string>
   
   <!--Notification-->
   <string name="not_titleTournament">Zaproszenie na Turniej</string>
@@ -38,5 +42,9 @@
 
   <!--Chat-->
   <string name="cha_hint">Napisz wiadomość</string>
+
+  <!--Profile-->
+  <string name="pro_country">Kraj: </string>
+  <string name="pro_reputation">Reputacja: </string>
   
 </resources>

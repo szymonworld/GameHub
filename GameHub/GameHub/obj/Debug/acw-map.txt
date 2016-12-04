@@ -6,6 +6,18 @@ GameHub.EnterPage, GameHub;md56ae528d61c96dc74eb64356ec3b54bcd.EnterPage
 GameHub.EnterPage, GameHub, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md56ae528d61c96dc74eb64356ec3b54bcd.EnterPage
 GameHub.EnterPage;md56ae528d61c96dc74eb64356ec3b54bcd.EnterPage
 gamehub.EnterPage;md56ae528d61c96dc74eb64356ec3b54bcd.EnterPage
+GameHub.Chat, GameHub;md56ae528d61c96dc74eb64356ec3b54bcd.Chat
+GameHub.Chat, GameHub, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md56ae528d61c96dc74eb64356ec3b54bcd.Chat
+GameHub.Chat;md56ae528d61c96dc74eb64356ec3b54bcd.Chat
+gamehub.Chat;md56ae528d61c96dc74eb64356ec3b54bcd.Chat
+GameHub.Chat/RecyclerAdapter, GameHub;md56ae528d61c96dc74eb64356ec3b54bcd.Chat_RecyclerAdapter
+GameHub.Chat+RecyclerAdapter, GameHub, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md56ae528d61c96dc74eb64356ec3b54bcd.Chat_RecyclerAdapter
+GameHub.Chat.RecyclerAdapter;md56ae528d61c96dc74eb64356ec3b54bcd.Chat_RecyclerAdapter
+gamehub.Chat_RecyclerAdapter;md56ae528d61c96dc74eb64356ec3b54bcd.Chat_RecyclerAdapter
+GameHub.Chat/RecyclerAdapter/MyView, GameHub;md56ae528d61c96dc74eb64356ec3b54bcd.Chat_RecyclerAdapter_MyView
+GameHub.Chat+RecyclerAdapter+MyView, GameHub, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md56ae528d61c96dc74eb64356ec3b54bcd.Chat_RecyclerAdapter_MyView
+GameHub.Chat.RecyclerAdapter.MyView;md56ae528d61c96dc74eb64356ec3b54bcd.Chat_RecyclerAdapter_MyView
+gamehub.Chat_RecyclerAdapter_MyView;md56ae528d61c96dc74eb64356ec3b54bcd.Chat_RecyclerAdapter_MyView
 GameHub.LoginSystem, GameHub;md56ae528d61c96dc74eb64356ec3b54bcd.LoginSystem
 GameHub.LoginSystem, GameHub, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md56ae528d61c96dc74eb64356ec3b54bcd.LoginSystem
 GameHub.LoginSystem;md56ae528d61c96dc74eb64356ec3b54bcd.LoginSystem
@@ -18,6 +30,14 @@ GameHub.MainActivity, GameHub;md56ae528d61c96dc74eb64356ec3b54bcd.MainActivity
 GameHub.MainActivity, GameHub, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md56ae528d61c96dc74eb64356ec3b54bcd.MainActivity
 GameHub.MainActivity;md56ae528d61c96dc74eb64356ec3b54bcd.MainActivity
 gamehub.MainActivity;md56ae528d61c96dc74eb64356ec3b54bcd.MainActivity
+GameHub.Profile, GameHub;md56ae528d61c96dc74eb64356ec3b54bcd.Profile
+GameHub.Profile, GameHub, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md56ae528d61c96dc74eb64356ec3b54bcd.Profile
+GameHub.Profile;md56ae528d61c96dc74eb64356ec3b54bcd.Profile
+gamehub.Profile;md56ae528d61c96dc74eb64356ec3b54bcd.Profile
+GameHub.TabAdapter, GameHub;md56ae528d61c96dc74eb64356ec3b54bcd.TabAdapter
+GameHub.TabAdapter, GameHub, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md56ae528d61c96dc74eb64356ec3b54bcd.TabAdapter
+GameHub.TabAdapter;md56ae528d61c96dc74eb64356ec3b54bcd.TabAdapter
+gamehub.TabAdapter;md56ae528d61c96dc74eb64356ec3b54bcd.TabAdapter
 GameHub.SplashActivity, GameHub;md56ae528d61c96dc74eb64356ec3b54bcd.SplashActivity
 GameHub.SplashActivity, GameHub, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md56ae528d61c96dc74eb64356ec3b54bcd.SplashActivity
 GameHub.SplashActivity;md56ae528d61c96dc74eb64356ec3b54bcd.SplashActivity
@@ -74,6 +94,18 @@ GameHub.Fragments.NotificationPanel/NotificationClickPanel, GameHub;md5231719add
 GameHub.Fragments.NotificationPanel+NotificationClickPanel, GameHub, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5231719adda94ac20a9948ae23b2c89e5.NotificationPanel_NotificationClickPanel
 GameHub.Fragments.NotificationPanel.NotificationClickPanel;md5231719adda94ac20a9948ae23b2c89e5.NotificationPanel_NotificationClickPanel
 gamehub.fragments.NotificationPanel_NotificationClickPanel;md5231719adda94ac20a9948ae23b2c89e5.NotificationPanel_NotificationClickPanel
+GameHub.Fragments.ProfileAccounts, GameHub;md5231719adda94ac20a9948ae23b2c89e5.ProfileAccounts
+GameHub.Fragments.ProfileAccounts, GameHub, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5231719adda94ac20a9948ae23b2c89e5.ProfileAccounts
+GameHub.Fragments.ProfileAccounts;md5231719adda94ac20a9948ae23b2c89e5.ProfileAccounts
+gamehub.fragments.ProfileAccounts;md5231719adda94ac20a9948ae23b2c89e5.ProfileAccounts
+GameHub.Fragments.ProfileDescription, GameHub;md5231719adda94ac20a9948ae23b2c89e5.ProfileDescription
+GameHub.Fragments.ProfileDescription, GameHub, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5231719adda94ac20a9948ae23b2c89e5.ProfileDescription
+GameHub.Fragments.ProfileDescription;md5231719adda94ac20a9948ae23b2c89e5.ProfileDescription
+gamehub.fragments.ProfileDescription;md5231719adda94ac20a9948ae23b2c89e5.ProfileDescription
+GameHub.Fragments.ProfileFriends, GameHub;md5231719adda94ac20a9948ae23b2c89e5.ProfileFriends
+GameHub.Fragments.ProfileFriends, GameHub, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5231719adda94ac20a9948ae23b2c89e5.ProfileFriends
+GameHub.Fragments.ProfileFriends;md5231719adda94ac20a9948ae23b2c89e5.ProfileFriends
+gamehub.fragments.ProfileFriends;md5231719adda94ac20a9948ae23b2c89e5.ProfileFriends
 GameHub.Fragments.RecyclerViewOnScrollListener, GameHub;md5231719adda94ac20a9948ae23b2c89e5.RecyclerViewOnScrollListener
 GameHub.Fragments.RecyclerViewOnScrollListener, GameHub, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5231719adda94ac20a9948ae23b2c89e5.RecyclerViewOnScrollListener
 GameHub.Fragments.RecyclerViewOnScrollListener;md5231719adda94ac20a9948ae23b2c89e5.RecyclerViewOnScrollListener

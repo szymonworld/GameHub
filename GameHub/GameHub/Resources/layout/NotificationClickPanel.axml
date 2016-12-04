@@ -16,15 +16,16 @@
     <Button
         android:text="@string/not_accept"
         android:layout_width="300dp"
-        android:layout_height="70dp"
+        android:layout_height="50dp"
         android:id="@+id/buttonAccept"
         android:layout_margin="10dp"
         android:background="#333d59"
-        android:drawableLeft="@drawable/acceptsmall" />
+        android:drawableLeft="@drawable/acceptsmall"
+        android:drawingCacheQuality="high" />
     <Button
         android:text="@string/not_denied"
         android:layout_width="300dp"
-        android:layout_height="70dp"
+        android:layout_height="50dp"
         android:id="@+id/buttonDenied"
         android:layout_margin="10dp"
         android:background="#333d59"

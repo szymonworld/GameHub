@@ -52,6 +52,7 @@ namespace GameHub
 
             navigationView.NavigationItemSelected += (sender, e) =>
             {
+                Intent intent;
                 e.MenuItem.SetChecked(true);
                 switch (e.MenuItem.ItemId)
                 {
@@ -85,7 +86,13 @@ namespace GameHub
                         break;
                         
                     case (Resource.Id.nav_findplayers):
-                        Intent intent = new Intent(this, typeof(Chat));
+                        intent = new Intent(this, typeof(Chat));
+                        this.StartActivity(intent);
+
+                        break;
+
+                    case (Resource.Id.nav_profile):
+                        intent = new Intent(this, typeof(Profile));
                         this.StartActivity(intent);
 
                         break;

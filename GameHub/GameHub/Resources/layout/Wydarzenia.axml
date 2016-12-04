@@ -35,9 +35,10 @@
                 android:weightSum="100">
                 <LinearLayout
                     android:orientation="vertical"
-                    android:layout_width="0dp"
-                    android:layout_height="fill_parent"
-                    android:layout_weight="15" />
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="15"
+                    android:id="@+id/linearLayout1" />
                 <LinearLayout
                     android:orientation="vertical"
                     android:minWidth="25px"
@@ -76,11 +77,12 @@
                     <TextView
                         android:text="nastepujaca informacaj o ..."
                         android:textAppearance="?android:attr/textAppearanceSmall"
-                        android:layout_width="match_parent"
+                        android:layout_width="121.0dp"
                         android:layout_height="wrap_content"
                         android:textColor="#777777"
-                        android:paddingBottom="20dp"
-                        android:id="@+id/textViewWydarzenia2" />
+                        android:paddingBottom="5dp"
+                        android:id="@+id/textViewWydarzenia2"
+                        android:layout_marginRight="0.0dp" />
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
