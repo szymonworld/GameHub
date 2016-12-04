@@ -678,6 +678,15 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\Icon_xbox.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\menu\Profile_ToolbarMenu.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\ic_micon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\ic_micoff.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
      Other similar extension points exist, see Microsoft.Common.targets.

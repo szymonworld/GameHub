@@ -1984,82 +1984,88 @@ namespace GameHub
 			public const int ic_menu_search_holo_dark = 2130837611;
 			
 			// aapt resource value: 0x7f02006c
-			public const int ic_notifications_white_24dp = 2130837612;
+			public const int ic_micoff = 2130837612;
 			
 			// aapt resource value: 0x7f02006d
-			public const int ic_play_arrow_black_48dp = 2130837613;
+			public const int ic_micon = 2130837613;
 			
 			// aapt resource value: 0x7f02006e
-			public const int ic_send_black_48dp = 2130837614;
+			public const int ic_notifications_white_24dp = 2130837614;
 			
 			// aapt resource value: 0x7f02006f
-			public const int ic_timelapse_white_24dp = 2130837615;
+			public const int ic_play_arrow_black_48dp = 2130837615;
 			
 			// aapt resource value: 0x7f020070
-			public const int Icon = 2130837616;
+			public const int ic_send_black_48dp = 2130837616;
 			
 			// aapt resource value: 0x7f020071
-			public const int Icon2 = 2130837617;
+			public const int ic_timelapse_white_24dp = 2130837617;
 			
 			// aapt resource value: 0x7f020072
-			public const int icon3 = 2130837618;
+			public const int Icon = 2130837618;
 			
 			// aapt resource value: 0x7f020073
-			public const int Icon4 = 2130837619;
+			public const int Icon2 = 2130837619;
 			
 			// aapt resource value: 0x7f020074
-			public const int Icon_battle = 2130837620;
+			public const int icon3 = 2130837620;
 			
 			// aapt resource value: 0x7f020075
-			public const int Icon_discord = 2130837621;
+			public const int Icon4 = 2130837621;
 			
 			// aapt resource value: 0x7f020076
-			public const int Icon_lol = 2130837622;
+			public const int Icon_battle = 2130837622;
 			
 			// aapt resource value: 0x7f020077
-			public const int Icon_origin = 2130837623;
+			public const int Icon_discord = 2130837623;
 			
 			// aapt resource value: 0x7f020078
-			public const int Icon_psn = 2130837624;
+			public const int Icon_lol = 2130837624;
 			
 			// aapt resource value: 0x7f020079
-			public const int Icon_skype = 2130837625;
+			public const int Icon_origin = 2130837625;
 			
 			// aapt resource value: 0x7f02007a
-			public const int Icon_steam = 2130837626;
+			public const int Icon_psn = 2130837626;
 			
 			// aapt resource value: 0x7f02007b
-			public const int Icon_uplay = 2130837627;
+			public const int Icon_skype = 2130837627;
 			
 			// aapt resource value: 0x7f02007c
-			public const int Icon_xbox = 2130837628;
+			public const int Icon_steam = 2130837628;
 			
 			// aapt resource value: 0x7f02007d
-			public const int navWallpaper = 2130837629;
-			
-			// aapt resource value: 0x7f020085
-			public const int notification_template_icon_bg = 2130837637;
+			public const int Icon_uplay = 2130837629;
 			
 			// aapt resource value: 0x7f02007e
-			public const int ProgressBAr = 2130837630;
+			public const int Icon_xbox = 2130837630;
 			
 			// aapt resource value: 0x7f02007f
-			public const int QuickGame = 2130837631;
+			public const int navWallpaper = 2130837631;
+			
+			// aapt resource value: 0x7f020087
+			public const int notification_template_icon_bg = 2130837639;
 			
 			// aapt resource value: 0x7f020080
-			public const int SelectedItemMenu = 2130837632;
+			public const int ProgressBAr = 2130837632;
 			
 			// aapt resource value: 0x7f020081
-			public const int send = 2130837633;
+			public const int QuickGame = 2130837633;
 			
 			// aapt resource value: 0x7f020082
-			public const int splash_screen = 2130837634;
+			public const int SelectedItemMenu = 2130837634;
 			
 			// aapt resource value: 0x7f020083
-			public const int TabLayout = 2130837635;
+			public const int send = 2130837635;
 			
 			// aapt resource value: 0x7f020084
-			public const int Tournament = 2130837636;
+			public const int splash_screen = 2130837636;
+			
+			// aapt resource value: 0x7f020085
+			public const int TabLayout = 2130837637;
+			
+			// aapt resource value: 0x7f020086
+			public const int Tournament = 2130837638;
 			
 			static Drawable()
 			{
@@ -2074,8 +2080,8 @@ namespace GameHub
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f0600b0
-			public const int Icon_platform = 2131099824;
+			// aapt resource value: 0x7f0600b1
+			public const int Icon_platform = 2131099825;
 			
 			// aapt resource value: 0x7f060080
 			public const int aa = 2131099776;
@@ -2350,8 +2356,17 @@ namespace GameHub
 			// aapt resource value: 0x7f06009a
 			public const int media_actions = 2131099802;
 			
-			// aapt resource value: 0x7f0600bc
-			public const int menut_ustawienia = 2131099836;
+			// aapt resource value: 0x7f0600bd
+			public const int menut_edit = 2131099837;
+			
+			// aapt resource value: 0x7f0600be
+			public const int menut_save = 2131099838;
+			
+			// aapt resource value: 0x7f0600bf
+			public const int menut_ustawienia = 2131099839;
+			
+			// aapt resource value: 0x7f0600ae
+			public const int micro = 2131099822;
 			
 			// aapt resource value: 0x7f06001d
 			public const int middle = 2131099677;
@@ -2362,32 +2377,32 @@ namespace GameHub
 			// aapt resource value: 0x7f060016
 			public const int multiply = 2131099670;
 			
-			// aapt resource value: 0x7f0600ba
-			public const int nav_addQuickgame = 2131099834;
-			
 			// aapt resource value: 0x7f0600bb
-			public const int nav_addTournament = 2131099835;
+			public const int nav_addQuickgame = 2131099835;
 			
-			// aapt resource value: 0x7f0600b7
-			public const int nav_events = 2131099831;
-			
-			// aapt resource value: 0x7f0600b6
-			public const int nav_findplayers = 2131099830;
+			// aapt resource value: 0x7f0600bc
+			public const int nav_addTournament = 2131099836;
 			
 			// aapt resource value: 0x7f0600b8
-			public const int nav_friends = 2131099832;
+			public const int nav_events = 2131099832;
 			
-			// aapt resource value: 0x7f0600b3
-			public const int nav_hub = 2131099827;
+			// aapt resource value: 0x7f0600b7
+			public const int nav_findplayers = 2131099831;
 			
 			// aapt resource value: 0x7f0600b9
-			public const int nav_profile = 2131099833;
-			
-			// aapt resource value: 0x7f0600b5
-			public const int nav_quickgame = 2131099829;
+			public const int nav_friends = 2131099833;
 			
 			// aapt resource value: 0x7f0600b4
-			public const int nav_tournament = 2131099828;
+			public const int nav_hub = 2131099828;
+			
+			// aapt resource value: 0x7f0600ba
+			public const int nav_profile = 2131099834;
+			
+			// aapt resource value: 0x7f0600b6
+			public const int nav_quickgame = 2131099830;
+			
+			// aapt resource value: 0x7f0600b5
+			public const int nav_tournament = 2131099829;
 			
 			// aapt resource value: 0x7f06008d
 			public const int nav_view = 2131099789;
@@ -2413,11 +2428,11 @@ namespace GameHub
 			// aapt resource value: 0x7f060029
 			public const int pin = 2131099689;
 			
-			// aapt resource value: 0x7f0600ae
-			public const int pro_country = 2131099822;
-			
 			// aapt resource value: 0x7f0600af
-			public const int pro_reputation = 2131099823;
+			public const int pro_country = 2131099823;
+			
+			// aapt resource value: 0x7f0600b0
+			public const int pro_reputation = 2131099824;
 			
 			// aapt resource value: 0x7f06008a
 			public const int progressBar1 = 2131099786;
@@ -2536,14 +2551,14 @@ namespace GameHub
 			// aapt resource value: 0x7f060065
 			public const int submit_area = 2131099749;
 			
-			// aapt resource value: 0x7f0600b1
-			public const int tabIcon = 2131099825;
+			// aapt resource value: 0x7f0600b2
+			public const int tabIcon = 2131099826;
 			
 			// aapt resource value: 0x7f06000d
 			public const int tabMode = 2131099661;
 			
-			// aapt resource value: 0x7f0600b2
-			public const int tabText = 2131099826;
+			// aapt resource value: 0x7f0600b3
+			public const int tabText = 2131099827;
 			
 			// aapt resource value: 0x7f060083
 			public const int tabsHub = 2131099779;
@@ -2912,7 +2927,10 @@ namespace GameHub
 			public const int menu_navigation = 2131492864;
 			
 			// aapt resource value: 0x7f0c0001
-			public const int toolbarMenu = 2131492865;
+			public const int Profile_ToolbarMenu = 2131492865;
+			
+			// aapt resource value: 0x7f0c0002
+			public const int toolbarMenu = 2131492866;
 			
 			static Menu()
 			{

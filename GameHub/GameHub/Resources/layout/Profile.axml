@@ -4,7 +4,8 @@
     android:id="@+id/main_content"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true">
+    android:fitsSystemWindows="true"
+                                                 android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
   <android.support.design.widget.AppBarLayout
       android:id="@+id/appbar"
       android:layout_width="match_parent"
@@ -100,21 +101,21 @@ android:layout_height="wrap_content">
                     android:paddingBottom="3dp"
                     android:weightSum="100"
                     android:id="@+id/linearLayoutWydarzenia2">
+                  
                   <TextView
                       android:text="SeherimMaster"
                       android:textAppearance="?android:attr/textAppearanceMedium"
                       android:layout_width="0dp"
-                      android:layout_height="match_parent"
+                      android:layout_height="wrap_content"
                       android:layout_weight="80"
                       android:id="@+id/textViewWydarzenia1" />
-                  <TextView
-                      android:text=""
-                      android:textAppearance="?android:attr/textAppearanceSmall"
-                      android:layout_width="0dp"
-                      android:layout_height="match_parent"
+                  <ImageView 
+                      android:src="@drawable/ic_micon"
+                      android:layout_width="20dp"
+                      android:layout_height="20dp"
                       android:layout_weight="20"
                       android:gravity="center_horizontal"
-                      android:id="@+id/textViewWydarzenia3" />
+                      android:id="@+id/micro" />
                 </LinearLayout>
                                     <GridLayout
                         android:layout_width="wrap_content"
@@ -173,7 +174,6 @@ android:layout_height="wrap_content">
           android:id="@+id/toolbar"
           android:layout_width="match_parent"
           android:layout_height="?attr/actionBarSize"
-          app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
           app:layout_scrollFlags="scroll|enterAlways" />
       app:layout_collapseMode="pin" />
 
@@ -187,6 +187,7 @@ android:layout_height="wrap_content">
 
 
     </android.support.design.widget.CollapsingToolbarLayout>
+    
   </android.support.design.widget.AppBarLayout>
 
 

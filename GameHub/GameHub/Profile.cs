@@ -56,6 +56,10 @@ namespace GameHub
                 case Android.Resource.Id.Home:
                     Finish();
                     return true;
+
+                    Toast.MakeText(this, "Zaznoczono: " + item.TitleFormatted,
+    ToastLength.Short).Show();
+                    return base.OnOptionsItemSelected(item);
             }
 
             return base.OnOptionsItemSelected(item);
@@ -70,6 +74,13 @@ namespace GameHub
 
             viewPager.Adapter = adapter;
         }
+
+        public override bool OnCreateOptionsMenu(IMenu menu)
+        {
+            MenuInflater.Inflate(Resource.Menu.Profile_ToolbarMenu, menu);
+            return base.OnCreateOptionsMenu(menu);
+        }
+
     }
 
     public class TabAdapter : FragmentPagerAdapter

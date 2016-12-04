@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" xmlns:local="http://schemas.android.com/apk/res-auto">
+  >
+  <item
+       android:id="@+id/menut_edit"
+       android:icon="@drawable/ic_discuss"
+       local:showAsAction="withText"
+       android:title="Wyślij wiadomość" />
+  <item
+       android:id="@+id/menut_save"
+       android:icon="@drawable/ic_add_black_48dp"
+       local:showAsAction="withText"
+       android:title="Dodaj do znajomych" />
+  <item
+       android:id="@+id/menut_ustawienia"
+       android:showAsAction="withText"
+       android:icon="@drawable/ic_action_content_create"
+       android:title="Edycja" />
+</menu>
+

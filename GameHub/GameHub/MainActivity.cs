@@ -87,13 +87,17 @@ namespace GameHub
                         
                     case (Resource.Id.nav_findplayers):
                         intent = new Intent(this, typeof(Chat));
+                        OverridePendingTransition(Resource.Animation.animRight, Resource.Animation.animRight2);
                         this.StartActivity(intent);
+                        
 
                         break;
 
                     case (Resource.Id.nav_profile):
                         intent = new Intent(this, typeof(Profile));
+                        OverridePendingTransition(Resource.Animation.animRight, Resource.Animation.animRight2);
                         this.StartActivity(intent);
+                        
 
                         break;
 

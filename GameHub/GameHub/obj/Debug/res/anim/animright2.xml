@@ -1,1 +1,1 @@
-<set xmlns:android="http://schemas.android.com/apk/res/android"><translate android:fromXDelta="0" android:toXDelta="-100%p" android:duration="@android:integer/config_mediumAnimTime" /></set>
+<set xmlns:android="http://schemas.android.com/apk/res/android"><objectAnimator android:valueFrom="-180" android:valueTo="0" android:propertyName="rotationY" android:duration="0" /></set>
