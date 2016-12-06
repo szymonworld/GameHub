@@ -4,6 +4,10 @@ using Android.App;
 using Android.OS;
 using SupportToolbar = Android.Support.V7.Widget.Toolbar;
 using Refractored.Controls;
+using System.Security.Cryptography;
+using System.Text;
+using System.IO;
+using GameHub.Fragments;
 using Android.Support.V7.App;
 using Android.Support.Design.Widget;
 using Android.Widget;
@@ -18,6 +22,7 @@ namespace GameHub
     {
         private RecyclerView mRecyclerView;
         private RecyclerView.Adapter mAdapter;
+        private LinearLayoutManager mLayoutManager;
         private List<Message_class> message_list = new List<Message_class>();
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -25,34 +30,105 @@ namespace GameHub
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Chat);
 
-            for (int a = 0; a < 1; a++)
-            {
-                Generator();
-            }
-
             ImageView imagev = FindViewById<ImageView>(Resource.Id.sendImage);
             //imagev.SetOnClickListener(SendClickListener);
             imagev.Click += delegate { SendClickListener(); };
             mRecyclerView = FindViewById<RecyclerView>(Resource.Id.recyclerview);
-            var mLayoutManager = new LinearLayoutManager(mRecyclerView.Context);
+            mLayoutManager = new LinearLayoutManager(mRecyclerView.Context);
             mAdapter = new RecyclerAdapter(message_list);
             mLayoutManager.StackFromEnd = true;
             mLayoutManager.ReverseLayout = true;
+            var onScrollListener = new RecyclerViewOnScrollListener(mLayoutManager);
+            mRecyclerView.AddOnScrollListener(onScrollListener);
             mRecyclerView.SetLayoutManager(mLayoutManager);
             mRecyclerView.SetAdapter(mAdapter);
 
+            onScrollListener.LoadMoreEvent += (object sender, EventArgs e) => {
+                if (message_list[0].id > 0)
+                {
+                    //Load_History(new List<Message_class>());
+                }
+                else
+                {
+                    mRecyclerView.RemoveOnScrollListener(onScrollListener);
+                }
+            };
+
+        }
+
+        public void AngrySimon()
+        {
+
+            System.Threading.Thread.Sleep(500);
+            List<string> an = new List<string>();
+            var asset = Assets.Open("AngrySimon");
+            StreamReader sraa = new StreamReader(asset);
+            while (!sraa.EndOfStream)
+            {
+                an.Add(sraa.ReadLine());
+            }
+            Random rnd = new Random();
+            int lo = rnd.Next(1, 72);
+            string str = an[lo];
+            str = str.Replace(" ", "+");
+            byte[] bytes = Convert.FromBase64String(str);
+            using (Aes angrySimon = Aes.Create())
+            {
+                Rfc2898DeriveBytes pdb = new Rfc2898DeriveBytes("AngrySimon", new byte[] { 0x49, 0x76, 0x61, 0x6e, 0x20, 0x4d, 0x65, 0x64, 0x76, 0x65, 0x64, 0x65, 0x76 });
+                angrySimon.Key = pdb.GetBytes(32);
+                angrySimon.IV = pdb.GetBytes(16);
+                using (MemoryStream ms = new MemoryStream())
+                {
+                    using (CryptoStream cs = new CryptoStream(ms, angrySimon.CreateDecryptor(), CryptoStreamMode.Write))
+                    {
+                        cs.Write(bytes, 0, bytes.Length);
+                        cs.Close();
+                    }
+                    str = Encoding.Unicode.GetString(ms.ToArray());
+                }
+            }
+            DateTime date = DateTime.Now;
+            Generator("AngrySimon", str, date, Resource.Drawable.deniedsmall);
         }
 
         public void SendClickListener()
         {
-            Generator();
-            mAdapter.NotifyDataSetChanged();
+            EditText chatmessage = FindViewById<EditText>(Resource.Id.editTextM);
+            if (chatmessage.Text != "" && chatmessage.Text != " ")
+            {
+                DateTime date = DateTime.Now;
+                Generator("Nick", chatmessage.Text, date);
+                chatmessage.Text = "";
+
+                AngrySimon();
+            }
         }
 
-        public void Generator()
+
+        public void Load_History(List<Message_class> history_list)
         {
-            Message_class new_message = new Message_class("franek" + Convert.ToString(message_list.Count), "co ty tutaj robisz", "Wczora z wieczora");
+            for (int a = 0; a < 5; a++)
+            {
+                if (message_list[0].id > 0)
+                {
+                    Message_class mes = history_list[message_list[0].id - 1];
+                    message_list.Insert(0, mes);
+                }
+            }
+            int numberOfChild = mRecyclerView.ChildCount;
+            mAdapter.NotifyDataSetChanged();
+            mLayoutManager.ScrollToPosition(numberOfChild);
+        }
+
+
+        public void Generator(string Nick, string message, DateTime date, int photo = Resource.Drawable.acceptsmall)
+        {
+            Message_class new_message = new Message_class(Nick, message, Convert.ToString(date.Day) + ":" + Convert.ToString(date.Month) + ":" + Convert.ToString(date.Year) + " " + Convert.ToString(date.Hour) + ":" + Convert.ToString(date.Minute));
+            new_message.uri = photo;
+            new_message.id = message_list.Count;
             message_list.Add(new_message);
+            mAdapter.NotifyDataSetChanged();
+            mLayoutManager.ScrollToPosition(0);
         }
 
         public override bool OnOptionsItemSelected(IMenuItem item)
@@ -105,7 +181,7 @@ namespace GameHub
                 view.mNick.Text = message_list[indexPosition].nick;
                 view.mText.Text = message_list[indexPosition].text;
                 view.mTime.Text = message_list[indexPosition].time;
-                view.mImage.SetImageResource(Resource.Drawable.acceptsmall);
+                view.mImage.SetImageResource(message_list[indexPosition].uri);
             }
 
             public override int ItemCount
@@ -117,9 +193,12 @@ namespace GameHub
 
         public class Message_class
         {
+            public int id = 0;
             public string nick;
             public string text;
             public string time;
+            public int uri = Resource.Drawable.acceptsmall;
+
             public Message_class(string nick1, string text1, string time1)
             {
                 nick = nick1;
@@ -128,6 +207,5 @@ namespace GameHub
             }
 
         }
-
     }
 }

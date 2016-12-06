@@ -54,6 +54,7 @@
         <EditText
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:id="@+id/editTextM"
             android:layout_weight="85"
             android:maxLines="3"
             android:textColorHint="#CFD8DC"
