@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android"
-            android:background="#FF212531">
+            android:background="#FF212531"
+            android:fitsSystemWindows="true">
   <item>
     <color android:color="#FF212531"/>
   </item>

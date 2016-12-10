@@ -47,4 +47,19 @@
   <string name="pro_country">Kraj: </string>
   <string name="pro_reputation">Reputacja: </string>
   
+  <!--Login-->
+
+  <string name="LoginIn_Email">E-mail</string>
+  <string name="LoginIn_Password">Hasło</string>
+  <string name="LoginIn_ButtonLogin">Zaloguj się</string>
+
+  <string name="LoginUp_Nick">Pseudonim</string>
+  <string name="LoginUp_Email">E-mail</string>
+  <string name="LoginUp_Password">Hasło</string>
+  <string name="LoginUp_PasswordConfirm">Potwierdź hasło</string>
+  <string name="LoginUp_ButtonRegister">Zarejestruj się</string>
+
+  <string name="Login_ButtonLogin">Logowanie</string>
+  <string name="Login_ButtonRegister">Rejestracja</string>
+  
 </resources>

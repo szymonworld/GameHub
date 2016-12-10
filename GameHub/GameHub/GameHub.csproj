@@ -87,6 +87,8 @@
     <Compile Include="Fragments\Friends.cs" />
     <Compile Include="Fragments\Hub.cs" />
     <Compile Include="Fragments\Chat.cs" />
+    <Compile Include="Fragments\LoginIN.cs" />
+    <Compile Include="Fragments\LoginUP.cs" />
     <Compile Include="Fragments\News.cs" />
     <Compile Include="Fragments\NotificationPanel.cs" />
     <Compile Include="Fragments\ProfileAccounts.cs" />
@@ -94,7 +96,7 @@
     <Compile Include="Fragments\ProfileFriends.cs" />
     <Compile Include="Fragments\RecyclerViewOnScrollListener.cs" />
     <Compile Include="Fragments\Tournament.cs" />
-    <Compile Include="Fragments\Wydarzenia.cs" />
+    <Compile Include="Fragments\Events.cs" />
     <Compile Include="Lists\ExtensionMethods.cs" />
     <Compile Include="Lists\Friends.cs" />
     <Compile Include="LoginSystem.cs" />
@@ -132,7 +134,7 @@
     <AndroidResource Include="Resources\layout\Hub.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\layout\Wydarzenia.axml">
+    <AndroidResource Include="Resources\layout\Events.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\MainEnterPage.axml">
@@ -162,6 +164,15 @@
     <AndroidResource Include="Resources\layout\ProfileAccounts.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
+    <AndroidResource Include="Resources\layout\LoginUP.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\LoginIN.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\LoginMenu.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Main.axml">
@@ -169,7 +180,9 @@
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\values\Strings.xml" />
+    <AndroidResource Include="Resources\values\Strings.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\Icon.png" />
@@ -368,12 +381,12 @@
     <AndroidResource Include="Resources\drawable-xxxhdpi\ic_menu.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\ButtonLogin.xml">
+    <AndroidResource Include="Resources\drawable\ButtonBlue.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\buttonSingupStyle.xml">
+    <AndroidResource Include="Resources\drawable\ButtonOrange.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
@@ -486,7 +499,9 @@
     <AndroidResource Include="Resources\drawable\Icon4.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\splash_screen.xml" />
+    <AndroidResource Include="Resources\drawable\splash_screen.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values\Dimens.xml" />
@@ -687,6 +702,15 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\ic_micoff.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\ic_lock_outline_black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\ic_mail_outline_black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\ic_perm_identity_black.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

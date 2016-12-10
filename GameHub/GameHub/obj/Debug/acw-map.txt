@@ -22,10 +22,6 @@ GameHub.LoginSystem, GameHub;md56ae528d61c96dc74eb64356ec3b54bcd.LoginSystem
 GameHub.LoginSystem, GameHub, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md56ae528d61c96dc74eb64356ec3b54bcd.LoginSystem
 GameHub.LoginSystem;md56ae528d61c96dc74eb64356ec3b54bcd.LoginSystem
 gamehub.LoginSystem;md56ae528d61c96dc74eb64356ec3b54bcd.LoginSystem
-GameHub.dialog_signup, GameHub;md56ae528d61c96dc74eb64356ec3b54bcd.dialog_signup
-GameHub.dialog_signup, GameHub, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md56ae528d61c96dc74eb64356ec3b54bcd.dialog_signup
-GameHub.dialog_signup;md56ae528d61c96dc74eb64356ec3b54bcd.dialog_signup
-gamehub.dialog_signup;md56ae528d61c96dc74eb64356ec3b54bcd.dialog_signup
 GameHub.MainActivity, GameHub;md56ae528d61c96dc74eb64356ec3b54bcd.MainActivity
 GameHub.MainActivity, GameHub, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md56ae528d61c96dc74eb64356ec3b54bcd.MainActivity
 GameHub.MainActivity;md56ae528d61c96dc74eb64356ec3b54bcd.MainActivity
@@ -66,6 +62,18 @@ GameHub.Fragments.TabAdapter, GameHub;md5231719adda94ac20a9948ae23b2c89e5.TabAda
 GameHub.Fragments.TabAdapter, GameHub, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5231719adda94ac20a9948ae23b2c89e5.TabAdapter
 GameHub.Fragments.TabAdapter;md5231719adda94ac20a9948ae23b2c89e5.TabAdapter
 gamehub.fragments.TabAdapter;md5231719adda94ac20a9948ae23b2c89e5.TabAdapter
+GameHub.Fragments.LoginIN, GameHub;md5231719adda94ac20a9948ae23b2c89e5.LoginIN
+GameHub.Fragments.LoginIN, GameHub, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5231719adda94ac20a9948ae23b2c89e5.LoginIN
+GameHub.Fragments.LoginIN;md5231719adda94ac20a9948ae23b2c89e5.LoginIN
+gamehub.fragments.LoginIN;md5231719adda94ac20a9948ae23b2c89e5.LoginIN
+GameHub.Fragments.LoginUP, GameHub;md5231719adda94ac20a9948ae23b2c89e5.LoginUP
+GameHub.Fragments.LoginUP, GameHub, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5231719adda94ac20a9948ae23b2c89e5.LoginUP
+GameHub.Fragments.LoginUP;md5231719adda94ac20a9948ae23b2c89e5.LoginUP
+gamehub.fragments.LoginUP;md5231719adda94ac20a9948ae23b2c89e5.LoginUP
+GameHub.Fragments.dialog_signup, GameHub;md5231719adda94ac20a9948ae23b2c89e5.dialog_signup
+GameHub.Fragments.dialog_signup, GameHub, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5231719adda94ac20a9948ae23b2c89e5.dialog_signup
+GameHub.Fragments.dialog_signup;md5231719adda94ac20a9948ae23b2c89e5.dialog_signup
+gamehub.fragments.dialog_signup;md5231719adda94ac20a9948ae23b2c89e5.dialog_signup
 GameHub.Fragments.News, GameHub;md5231719adda94ac20a9948ae23b2c89e5.News
 GameHub.Fragments.News, GameHub, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5231719adda94ac20a9948ae23b2c89e5.News
 GameHub.Fragments.News;md5231719adda94ac20a9948ae23b2c89e5.News
@@ -114,18 +122,18 @@ GameHub.Fragments.Tournament, GameHub;md5231719adda94ac20a9948ae23b2c89e5.Tourna
 GameHub.Fragments.Tournament, GameHub, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5231719adda94ac20a9948ae23b2c89e5.Tournament
 GameHub.Fragments.Tournament;md5231719adda94ac20a9948ae23b2c89e5.Tournament
 gamehub.fragments.Tournament;md5231719adda94ac20a9948ae23b2c89e5.Tournament
-GameHub.Fragments.Wydarzenia, GameHub;md5231719adda94ac20a9948ae23b2c89e5.Wydarzenia
-GameHub.Fragments.Wydarzenia, GameHub, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5231719adda94ac20a9948ae23b2c89e5.Wydarzenia
-GameHub.Fragments.Wydarzenia;md5231719adda94ac20a9948ae23b2c89e5.Wydarzenia
-gamehub.fragments.Wydarzenia;md5231719adda94ac20a9948ae23b2c89e5.Wydarzenia
-GameHub.Fragments.Wydarzenia/RecyclerAdapter, GameHub;md5231719adda94ac20a9948ae23b2c89e5.Wydarzenia_RecyclerAdapter
-GameHub.Fragments.Wydarzenia+RecyclerAdapter, GameHub, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5231719adda94ac20a9948ae23b2c89e5.Wydarzenia_RecyclerAdapter
-GameHub.Fragments.Wydarzenia.RecyclerAdapter;md5231719adda94ac20a9948ae23b2c89e5.Wydarzenia_RecyclerAdapter
-gamehub.fragments.Wydarzenia_RecyclerAdapter;md5231719adda94ac20a9948ae23b2c89e5.Wydarzenia_RecyclerAdapter
-GameHub.Fragments.Wydarzenia/RecyclerAdapter/MyView, GameHub;md5231719adda94ac20a9948ae23b2c89e5.Wydarzenia_RecyclerAdapter_MyView
-GameHub.Fragments.Wydarzenia+RecyclerAdapter+MyView, GameHub, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5231719adda94ac20a9948ae23b2c89e5.Wydarzenia_RecyclerAdapter_MyView
-GameHub.Fragments.Wydarzenia.RecyclerAdapter.MyView;md5231719adda94ac20a9948ae23b2c89e5.Wydarzenia_RecyclerAdapter_MyView
-gamehub.fragments.Wydarzenia_RecyclerAdapter_MyView;md5231719adda94ac20a9948ae23b2c89e5.Wydarzenia_RecyclerAdapter_MyView
+GameHub.Fragments.Events, GameHub;md5231719adda94ac20a9948ae23b2c89e5.Events
+GameHub.Fragments.Events, GameHub, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5231719adda94ac20a9948ae23b2c89e5.Events
+GameHub.Fragments.Events;md5231719adda94ac20a9948ae23b2c89e5.Events
+gamehub.fragments.Events;md5231719adda94ac20a9948ae23b2c89e5.Events
+GameHub.Fragments.Events/RecyclerAdapter, GameHub;md5231719adda94ac20a9948ae23b2c89e5.Events_RecyclerAdapter
+GameHub.Fragments.Events+RecyclerAdapter, GameHub, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5231719adda94ac20a9948ae23b2c89e5.Events_RecyclerAdapter
+GameHub.Fragments.Events.RecyclerAdapter;md5231719adda94ac20a9948ae23b2c89e5.Events_RecyclerAdapter
+gamehub.fragments.Events_RecyclerAdapter;md5231719adda94ac20a9948ae23b2c89e5.Events_RecyclerAdapter
+GameHub.Fragments.Events/RecyclerAdapter/MyView, GameHub;md5231719adda94ac20a9948ae23b2c89e5.Events_RecyclerAdapter_MyView
+GameHub.Fragments.Events+RecyclerAdapter+MyView, GameHub, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5231719adda94ac20a9948ae23b2c89e5.Events_RecyclerAdapter_MyView
+GameHub.Fragments.Events.RecyclerAdapter.MyView;md5231719adda94ac20a9948ae23b2c89e5.Events_RecyclerAdapter_MyView
+gamehub.fragments.Events_RecyclerAdapter_MyView;md5231719adda94ac20a9948ae23b2c89e5.Events_RecyclerAdapter_MyView
 Refractored.Controls.CircleImageView, Refractored.Controls.CircleImageView;md5eae3ad6ed1b7f6713979aa7524906105.CircleImageView
 Refractored.Controls.CircleImageView, Refractored.Controls.CircleImageView, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5eae3ad6ed1b7f6713979aa7524906105.CircleImageView
 Refractored.Controls.CircleImageView;md5eae3ad6ed1b7f6713979aa7524906105.CircleImageView

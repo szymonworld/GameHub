@@ -14,7 +14,7 @@ using Android.Support.V7.App;
 
 namespace GameHub.Fragments
 {
-    class Wydarzenia : SupportFragment
+    class Events : SupportFragment
     {
 
         private RecyclerView mRecyclerView;
@@ -102,7 +102,7 @@ namespace GameHub.Fragments
 
             public override RecyclerView.ViewHolder OnCreateViewHolder(ViewGroup parent, int viewType)
             {
-                View row = LayoutInflater.From(parent.Context).Inflate(Resource.Layout.Wydarzenia, parent, false);
+                View row = LayoutInflater.From(parent.Context).Inflate(Resource.Layout.Events, parent, false);
 
                 TextView txtTitle = row.FindViewById<TextView>(Resource.Id.textViewWydarzenia1);
                 TextView txtText = row.FindViewById<TextView>(Resource.Id.textViewWydarzenia2);
