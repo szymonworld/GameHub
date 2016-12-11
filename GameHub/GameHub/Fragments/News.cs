@@ -45,7 +45,7 @@ namespace GameHub.Fragments
             mRecyclerView.SetItemClickListener((rv, position, view) =>
             {
                 Context context = view.Context;
-                Intent intent = new Intent(context, typeof(EnterPage));
+                Intent intent = new Intent(context, typeof(ArticlePage));
                 //intent.PutExtra("Nag³ówek 2", 1);
 
                 context.StartActivity(intent);

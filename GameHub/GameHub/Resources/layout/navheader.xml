@@ -3,13 +3,29 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="150dp"
-    android:theme="@style/ThemeOverlay.AppCompat.Dark">
+    android:id="@+id/navheader"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
   <ImageView
       android:id="@+id/imgViewHeader"
       android:layout_width="match_parent"
       android:layout_height="match_parent"
       android:src="@drawable/navWallpaper"
-      android:scaleType="centerCrop" />
+      android:scaleType="centerCrop"
+      android:clickable="true"
+      android:focusable="true"
+    android:focusableInTouchMode="true"/>
+  <refractored.controls.CircleImageView
+                android:layout_width="70dp"
+                android:id="@+id/imageCustomerIcon"
+                android:layout_height="70dp"
+                android:src="@drawable/Icon2"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="30dp"
+                android:layout_centerVertical="true"
+                android:fitsSystemWindows="true"
+                android:scaleType="centerCrop" />
   <TextView
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"

@@ -18,6 +18,7 @@ using Java.Lang;
 using GameHub.Fragments;
 using Android.Views.Animations;
 using Android.Content.PM;
+using System;
 
 namespace GameHub
 {
@@ -40,11 +41,20 @@ namespace GameHub
         {
             base.OnCreate(bundle);
             SetContentView(Resource.Layout.Main);
-
+            Intent intent;
             SupportFragment newFragment = new Hub();
             var trans = SupportFragmentManager.BeginTransaction();
             trans.Add(Resource.Id.flContent, newFragment, "Hub");
             trans.Commit();
+
+            //View navheader = FindViewById(Resource.Id.navheader);
+            //ImageView iv = navheader.FindViewById<ImageView>(Resource.Id.imgViewHeader);
+            //iv.Click += delegate
+            //{
+            //    intent = new Intent(this, typeof(Profile));
+            //    OverridePendingTransition(Resource.Animation.animRight, Resource.Animation.animRight2);
+            //    this.StartActivity(intent);
+            //};
 
             mDrawerLayout = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
             navigationView = FindViewById<NavigationView>(Resource.Id.nav_view);
@@ -52,7 +62,7 @@ namespace GameHub
 
             navigationView.NavigationItemSelected += (sender, e) =>
             {
-                Intent intent;
+                
                 e.MenuItem.SetChecked(true);
                 switch (e.MenuItem.ItemId)
                 {

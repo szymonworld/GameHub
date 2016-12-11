@@ -2,10 +2,10 @@ DesignLibrary.Helpers.AttachStateChangeListener, GameHub;md5d9044594ed195b06f2b1
 DesignLibrary.Helpers.AttachStateChangeListener, GameHub, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5d9044594ed195b06f2b174b4af99aa72.AttachStateChangeListener
 DesignLibrary.Helpers.AttachStateChangeListener;md5d9044594ed195b06f2b174b4af99aa72.AttachStateChangeListener
 designlibrary.helpers.AttachStateChangeListener;md5d9044594ed195b06f2b174b4af99aa72.AttachStateChangeListener
-GameHub.EnterPage, GameHub;md56ae528d61c96dc74eb64356ec3b54bcd.EnterPage
-GameHub.EnterPage, GameHub, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md56ae528d61c96dc74eb64356ec3b54bcd.EnterPage
-GameHub.EnterPage;md56ae528d61c96dc74eb64356ec3b54bcd.EnterPage
-gamehub.EnterPage;md56ae528d61c96dc74eb64356ec3b54bcd.EnterPage
+GameHub.ArticlePage, GameHub;md56ae528d61c96dc74eb64356ec3b54bcd.ArticlePage
+GameHub.ArticlePage, GameHub, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md56ae528d61c96dc74eb64356ec3b54bcd.ArticlePage
+GameHub.ArticlePage;md56ae528d61c96dc74eb64356ec3b54bcd.ArticlePage
+gamehub.ArticlePage;md56ae528d61c96dc74eb64356ec3b54bcd.ArticlePage
 GameHub.Chat, GameHub;md56ae528d61c96dc74eb64356ec3b54bcd.Chat
 GameHub.Chat, GameHub, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md56ae528d61c96dc74eb64356ec3b54bcd.Chat
 GameHub.Chat;md56ae528d61c96dc74eb64356ec3b54bcd.Chat

@@ -83,7 +83,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EnterPage.cs" />
+    <Compile Include="ArticlePage.cs" />
     <Compile Include="Fragments\Friends.cs" />
     <Compile Include="Fragments\Hub.cs" />
     <Compile Include="Fragments\Chat.cs" />
@@ -137,7 +137,7 @@
     <AndroidResource Include="Resources\layout\Events.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\layout\MainEnterPage.axml">
+    <AndroidResource Include="Resources\layout\ArticlePageLayout.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\NotificationPanel.axml">

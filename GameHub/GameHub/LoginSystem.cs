@@ -34,10 +34,11 @@ namespace GameHub
             RequestWindowFeature(WindowFeatures.NoTitle);
             SetContentView(Resource.Layout.Login);
             Android.Support.V4.App.FragmentTransaction fragmentTransaction;
+            View menulayout = FindViewById(Resource.Id.menulogin);
             LoginUP loginup = new LoginUP();
             LoginIN loginin = new LoginIN();
-            mBtnSignUp = FindViewById<Button>(Resource.Id.SignUpMenu);
-            mBtnSignIn = FindViewById<Button>(Resource.Id.SignInMenu);
+            mBtnSignUp = menulayout.FindViewById<Button>(Resource.Id.SignUpMenu);
+            mBtnSignIn = menulayout.FindViewById<Button>(Resource.Id.SignInMenu);
 
             mBtnSignUp.Click += (object sender, EventArgs args) =>
             {
