@@ -370,6 +370,9 @@ I:\GameHub GitHub\GameHub\GameHub\GameHub\obj\Debug\res\layout\profileaccounts.x
 I:\GameHub GitHub\GameHub\GameHub\GameHub\obj\Debug\res\layout\loginup.xml
 I:\GameHub GitHub\GameHub\GameHub\GameHub\obj\Debug\res\layout\loginin.xml
 I:\GameHub GitHub\GameHub\GameHub\GameHub\obj\Debug\res\layout\loginmenu.xml
+I:\GameHub GitHub\GameHub\GameHub\GameHub\obj\Debug\res\layout\settings.xml
+I:\GameHub GitHub\GameHub\GameHub\GameHub\obj\Debug\res\layout\profilesettings.xml
+I:\GameHub GitHub\GameHub\GameHub\GameHub\obj\Debug\res\layout\browser.xml
 I:\GameHub GitHub\GameHub\GameHub\GameHub\obj\Debug\res\layout\main.xml
 I:\GameHub GitHub\GameHub\GameHub\GameHub\obj\Debug\res\values\strings.xml
 I:\GameHub GitHub\GameHub\GameHub\GameHub\obj\Debug\res\drawable\icon.png
@@ -542,7 +545,6 @@ I:\GameHub GitHub\GameHub\GameHub\GameHub\obj\Debug\res\drawable\ic_perm_identit
 I:\GameHub GitHub\GameHub\GameHub\GameHub\obj\Debug\R.cs.flag
 I:\GameHub GitHub\GameHub\GameHub\GameHub\obj\Debug\uploadflags.txt
 I:\GameHub GitHub\GameHub\GameHub\GameHub\bin\Debug\GameHub.dll.mdb
-I:\GameHub GitHub\GameHub\GameHub\GameHub\obj\Debug\GameHub.csprojResolveAssemblyReference.cache
 I:\GameHub GitHub\GameHub\GameHub\GameHub\bin\Debug\Java.Interop.dll.mdb
 I:\GameHub GitHub\GameHub\GameHub\GameHub\bin\Debug\Mono.Android.dll.mdb
 I:\GameHub GitHub\GameHub\GameHub\GameHub\bin\Debug\mscorlib.dll.mdb
@@ -566,5 +568,6 @@ I:\GameHub GitHub\GameHub\GameHub\GameHub\obj\Debug\android\assets\System.Runtim
 I:\GameHub GitHub\GameHub\GameHub\GameHub\obj\Debug\android\assets\System.ServiceModel.Internals.dll.mdb
 I:\GameHub GitHub\GameHub\GameHub\GameHub\obj\Debug\android\assets\System.Xml.dll.mdb
 I:\GameHub GitHub\GameHub\GameHub\GameHub\obj\Debug\android\assets\System.Xml.Linq.dll.mdb
+I:\GameHub GitHub\GameHub\GameHub\GameHub\obj\Debug\GameHub.csprojResolveAssemblyReference.cache
 I:\GameHub GitHub\GameHub\GameHub\GameHub\obj\Debug\GameHub.dll.mdb
 I:\GameHub GitHub\GameHub\GameHub\GameHub\bin\Debug\GameHub.dll.mdb

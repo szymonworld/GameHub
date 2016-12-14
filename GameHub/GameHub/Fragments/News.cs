@@ -44,9 +44,10 @@ namespace GameHub.Fragments
 
             mRecyclerView.SetItemClickListener((rv, position, view) =>
             {
+                string Link = "http://www.gry-online.pl/";
                 Context context = view.Context;
-                Intent intent = new Intent(context, typeof(ArticlePage));
-                //intent.PutExtra("Nag³ówek 2", 1);
+                Intent intent = new Intent(context, typeof(Browser));
+                intent.PutExtra("BrowserLink", Link);
 
                 context.StartActivity(intent);
             });

@@ -6,6 +6,10 @@ GameHub.ArticlePage, GameHub;md56ae528d61c96dc74eb64356ec3b54bcd.ArticlePage
 GameHub.ArticlePage, GameHub, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md56ae528d61c96dc74eb64356ec3b54bcd.ArticlePage
 GameHub.ArticlePage;md56ae528d61c96dc74eb64356ec3b54bcd.ArticlePage
 gamehub.ArticlePage;md56ae528d61c96dc74eb64356ec3b54bcd.ArticlePage
+GameHub.Browser, GameHub;md56ae528d61c96dc74eb64356ec3b54bcd.Browser
+GameHub.Browser, GameHub, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md56ae528d61c96dc74eb64356ec3b54bcd.Browser
+GameHub.Browser;md56ae528d61c96dc74eb64356ec3b54bcd.Browser
+gamehub.Browser;md56ae528d61c96dc74eb64356ec3b54bcd.Browser
 GameHub.Chat, GameHub;md56ae528d61c96dc74eb64356ec3b54bcd.Chat
 GameHub.Chat, GameHub, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md56ae528d61c96dc74eb64356ec3b54bcd.Chat
 GameHub.Chat;md56ae528d61c96dc74eb64356ec3b54bcd.Chat
@@ -34,6 +38,14 @@ GameHub.TabAdapter, GameHub;md56ae528d61c96dc74eb64356ec3b54bcd.TabAdapter
 GameHub.TabAdapter, GameHub, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md56ae528d61c96dc74eb64356ec3b54bcd.TabAdapter
 GameHub.TabAdapter;md56ae528d61c96dc74eb64356ec3b54bcd.TabAdapter
 gamehub.TabAdapter;md56ae528d61c96dc74eb64356ec3b54bcd.TabAdapter
+GameHub.ProfileSettings, GameHub;md56ae528d61c96dc74eb64356ec3b54bcd.ProfileSettings
+GameHub.ProfileSettings, GameHub, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md56ae528d61c96dc74eb64356ec3b54bcd.ProfileSettings
+GameHub.ProfileSettings;md56ae528d61c96dc74eb64356ec3b54bcd.ProfileSettings
+gamehub.ProfileSettings;md56ae528d61c96dc74eb64356ec3b54bcd.ProfileSettings
+GameHub.Settings, GameHub;md56ae528d61c96dc74eb64356ec3b54bcd.Settings
+GameHub.Settings, GameHub, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md56ae528d61c96dc74eb64356ec3b54bcd.Settings
+GameHub.Settings;md56ae528d61c96dc74eb64356ec3b54bcd.Settings
+gamehub.Settings;md56ae528d61c96dc74eb64356ec3b54bcd.Settings
 GameHub.SplashActivity, GameHub;md56ae528d61c96dc74eb64356ec3b54bcd.SplashActivity
 GameHub.SplashActivity, GameHub, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md56ae528d61c96dc74eb64356ec3b54bcd.SplashActivity
 GameHub.SplashActivity;md56ae528d61c96dc74eb64356ec3b54bcd.SplashActivity

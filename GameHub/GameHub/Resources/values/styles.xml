@@ -10,7 +10,6 @@
     <item name="colorAccent">#FFC107</item>
     <item name="android:textColor">#BDBDBD</item>
     <item name="android:navigationBarColor">#03A9F4</item>
-
   </style>
   <style name="MyTheme.Splash" parent ="Theme.AppCompat">
     <item name="android:windowBackground">@drawable/splash_screen</item>
@@ -31,6 +30,20 @@
     <item name="android:paddingTop">24dp</item>
     <item name="android:paddingBottom">24dp</item>
     <item name="android:orientation">vertical</item>
+  </style>
+
+  <style name="DarkTheme" parent="Theme.AppCompat">
+    <item name="windowNoTitle">true</item>
+    <item name="windowActionBar">false</item>
+    <item name="colorPrimary">#333d59</item>
+    <item name="colorPrimaryDark">#212531</item>
+    <item name="colorAccent">#FFC107</item>
+    <item name="android:background">#212531</item>
+    <item name="android:textColor">#BDBDBD</item>
+    <item name="android:navigationBarColor">#03A9F4</item>
+  </style>
+  <style name="DarkThemeToolbar" parent="DarkTheme">
+    <item name="android:background">#333d59</item>
   </style>
 
 </resources>

@@ -36,7 +36,6 @@
   <string name="not_accept">Akceptuj</string>
   <string name="not_denied">Odrzuć</string>
   
-  
   <string name="checkin">Checkin</string>
   <string name="menu_settings">Settings</string>
 
@@ -48,7 +47,6 @@
   <string name="pro_reputation">Reputacja: </string>
   
   <!--Login-->
-
   <string name="LoginIn_Email">E-mail</string>
   <string name="LoginIn_Password">Hasło</string>
   <string name="LoginIn_ButtonLogin">Zaloguj się</string>
@@ -62,4 +60,32 @@
   <string name="Login_ButtonLogin">Logowanie</string>
   <string name="Login_ButtonRegister">Rejestracja</string>
   
+  <!--Settings-->
+  <string name="Settings_Title">Ustawienia</string>
+  <string name="Settings_Notification">Powiadomienia</string>
+  
+  <!--Profil Toolbar-->
+  <string name="ProfilToolbarSendMessage">Wyślij wiadomość</string>
+  <string name="ProfilToolbarAddFriend">Dodaj do znajomych</string>
+  <string name="ProfilToolbarEdit">Edytuj profil</string>
+  
+  <!--Profil Settings-->
+  <string name="ProSetTitle">Ustawienia</string>
+  <string name="ProSetNickChange">Zmiana pseudonimu</string>
+  <string name="ProSetNick">Pseudonim</string>
+  <string name="ProSetEmailChange">Zmiana adresu email</string>
+  <string name="ProSetEmail">E-mail</string>
+  <string name="ProSetCountryChange">Zmiana kraju</string>
+  <string name="ProSetCountry">Kraj</string>
+  <string name="ProSetPassChange">Zmiana hasła</string>
+  <string name="ProSetPass">Hasło</string>
+  <string name="ProSetDesChange">Zmiana opisu</string>
+  <string name="ProSetDes">Opis...</string>
+  <string name="ProSetMic">Korzystasz z mikrofonu ?</string>
+  <string name="ProSetPicChange">Zmień Zdjęcie</string>
+  
+  <!--Main Toolbar-->
+  <string name="MainToolbarSettings">Ustawienia</string>
+
+
 </resources>

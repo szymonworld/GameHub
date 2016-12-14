@@ -6,6 +6,10 @@
     android:layout_weight="100"
     android:background="#212531"
     android:clickable="true">
+  <View
+    android:layout_width="fill_parent"
+    android:layout_height="1dp"
+    android:background="#FF0000FF" />
     <EditText
         android:inputType="textPersonName"
         android:layout_width="match_parent"

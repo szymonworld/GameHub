@@ -138,10 +138,16 @@ namespace GameHub
                 case Android.Resource.Id.Home:
                     mDrawerLayout.OpenDrawer(Android.Support.V4.View.GravityCompat.Start);
                     return true;
+                    break;
+                case Resource.Id.menut_ustawienia:
+                    Intent intent = new Intent(this, typeof(Settings));
+                    OverridePendingTransition(Resource.Animation.animRight, Resource.Animation.animRight2);
+                    this.StartActivity(intent);
+                    break;
             }
 
-            Toast.MakeText(this, "Zaznaczone: " + item.TitleFormatted,
-                ToastLength.Short).Show();
+            //Toast.MakeText(this, "Zaznaczone: " + item.TitleFormatted,
+            //    ToastLength.Short).Show();
             return base.OnOptionsItemSelected(item);
 
         }

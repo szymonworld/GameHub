@@ -57,9 +57,11 @@ namespace GameHub
                     Finish();
                     return true;
 
-                    Toast.MakeText(this, "Zaznoczono: " + item.TitleFormatted,
-    ToastLength.Short).Show();
-                    return base.OnOptionsItemSelected(item);
+                case Resource.Id.ProfilToolbarEdit:
+                    Intent intent = new Intent(this, typeof(ProfileSettings));
+                    OverridePendingTransition(Resource.Animation.animRight, Resource.Animation.animRight2);
+                    this.StartActivity(intent);
+                    break;
             }
 
             return base.OnOptionsItemSelected(item);

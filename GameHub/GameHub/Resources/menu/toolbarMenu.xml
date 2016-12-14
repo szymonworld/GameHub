@@ -14,5 +14,5 @@
        android:id="@+id/menut_ustawienia"
        android:showAsAction="withText"
        android:icon="@drawable/ic_action_content_create"
-       android:title="Ustawienia" />
+       android:title="@string/MainToolbarSettings" />
 </menu>

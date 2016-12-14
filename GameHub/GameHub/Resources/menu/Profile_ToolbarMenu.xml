@@ -2,19 +2,19 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android" xmlns:local="http://schemas.android.com/apk/res-auto">
   >
   <item
-       android:id="@+id/menut_edit"
+       android:id="@+id/ProfilToolbarSendMessage"
        android:icon="@drawable/ic_discuss"
        local:showAsAction="withText"
-       android:title="Wyślij wiadomość" />
+       android:title="@string/ProfilToolbarSendMessage" />
   <item
-       android:id="@+id/menut_save"
+       android:id="@+id/ProfilToolbarAddFriend"
        android:icon="@drawable/ic_add_black_48dp"
        local:showAsAction="withText"
-       android:title="Dodaj do znajomych" />
+       android:title="@string/ProfilToolbarAddFriend" />
   <item
-       android:id="@+id/menut_ustawienia"
+       android:id="@+id/ProfilToolbarEdit"
        android:showAsAction="withText"
        android:icon="@drawable/ic_action_content_create"
-       android:title="Edycja" />
+       android:title="@string/ProfilToolbarEdit" />
 </menu>
 
