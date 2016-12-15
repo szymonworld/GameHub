@@ -24,6 +24,8 @@ namespace GameHub
         private RecyclerView.Adapter mAdapter;
         private LinearLayoutManager mLayoutManager;
         private List<Message_class> message_list = new List<Message_class>();
+        private List<Message_class> messageHistory_list = new List<Message_class>();
+        private ReadWriteAppFile historia;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -43,10 +45,32 @@ namespace GameHub
             mRecyclerView.SetLayoutManager(mLayoutManager);
             mRecyclerView.SetAdapter(mAdapter);
 
+            historia = new ReadWriteAppFile("chat");
+            try
+            {
+                var restoredOject = historia.RestoreObject();
+                messageHistory_list = (List<Message_class>)restoredOject;
+                int k = 0;
+
+                for (int i = 0; i <= 10; i++)
+                {
+                    if (messageHistory_list.Count >= k + 1)
+                    {
+                        DateTime date = DateTime.Now;
+                        Message_class mes = messageHistory_list[messageHistory_list.Count - (k + 1)];
+                        message_list.Insert(0, mes);
+                        k++;
+                    }
+                }
+                mAdapter.NotifyDataSetChanged();
+                mLayoutManager.ScrollToPosition(0);
+            }
+            catch { }
+
             onScrollListener.LoadMoreEvent += (object sender, EventArgs e) => {
                 if (message_list[0].id > 0)
                 {
-                    //Load_History(new List<Message_class>());
+                    Load_History(messageHistory_list);
                 }
                 else
                 {
@@ -96,18 +120,22 @@ namespace GameHub
             EditText chatmessage = FindViewById<EditText>(Resource.Id.editTextM);
             if (chatmessage.Text != "" && chatmessage.Text != " ")
             {
+
                 DateTime date = DateTime.Now;
                 Generator("Nick", chatmessage.Text, date);
                 chatmessage.Text = "";
 
                 AngrySimon();
+
+
             }
         }
 
 
         public void Load_History(List<Message_class> history_list)
         {
-            for (int a = 0; a < 5; a++)
+            //System.Threading.Thread.Sleep(2000);
+            for (int a = 0; a <= 5; a++)
             {
                 if (message_list[0].id > 0)
                 {
@@ -125,10 +153,12 @@ namespace GameHub
         {
             Message_class new_message = new Message_class(Nick, message, Convert.ToString(date.Day) + ":" + Convert.ToString(date.Month) + ":" + Convert.ToString(date.Year) + " " + Convert.ToString(date.Hour) + ":" + Convert.ToString(date.Minute));
             new_message.uri = photo;
-            new_message.id = message_list.Count;
+            new_message.id = messageHistory_list.Count;
             message_list.Add(new_message);
+            messageHistory_list.Add(new_message);
             mAdapter.NotifyDataSetChanged();
             mLayoutManager.ScrollToPosition(0);
+            historia.SaveObject(messageHistory_list);
         }
 
         public override bool OnOptionsItemSelected(IMenuItem item)
@@ -191,6 +221,7 @@ namespace GameHub
 
         }
 
+        [Serializable()]
         public class Message_class
         {
             public int id = 0;
