@@ -30,6 +30,7 @@
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:text="SeherimMaster"
+      android:id="@+id/textCustomer2"
       android:textAppearance="@style/TextAppearance.AppCompat.Body1"
       android:textColor="#fff"
       android:layout_gravity="top"

@@ -19,6 +19,7 @@ using GameHub.Fragments;
 using Android.Views.Animations;
 using Android.Content.PM;
 using System;
+using Refractored.Controls;
 
 namespace GameHub
 {
@@ -35,8 +36,6 @@ namespace GameHub
         private NavigationView navigationView;
 
 
-
-
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
@@ -47,18 +46,19 @@ namespace GameHub
             trans.Add(Resource.Id.flContent, newFragment, "Hub");
             trans.Commit();
 
-            //View navheader = FindViewById(Resource.Id.navheader);
-            //ImageView iv = navheader.FindViewById<ImageView>(Resource.Id.imgViewHeader);
-            //iv.Click += delegate
-            //{
-            //    intent = new Intent(this, typeof(Profile));
-            //    OverridePendingTransition(Resource.Animation.animRight, Resource.Animation.animRight2);
-            //    this.StartActivity(intent);
-            //};
-
             mDrawerLayout = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
             navigationView = FindViewById<NavigationView>(Resource.Id.nav_view);
 
+            View navheader = navigationView.GetHeaderView(0);
+            TextView profilename = (TextView)navheader.FindViewById(Resource.Id.textCustomer2);
+            profilename.Text = "SeherimMaster";
+            CircleImageView iv = (CircleImageView)navheader.FindViewById(Resource.Id.imageCustomerIcon);
+            iv.Click += delegate
+            {
+                intent = new Intent(this, typeof(Profile));
+                OverridePendingTransition(Resource.Animation.animRight, Resource.Animation.animRight2);
+                this.StartActivity(intent);
+            };
 
             navigationView.NavigationItemSelected += (sender, e) =>
             {
@@ -66,6 +66,7 @@ namespace GameHub
                 e.MenuItem.SetChecked(true);
                 switch (e.MenuItem.ItemId)
                 {
+                    
                     case (Resource.Id.nav_hub):
                         newFragment = new Hub();
                         trans = SupportFragmentManager.BeginTransaction();
@@ -123,6 +124,13 @@ namespace GameHub
 
             };
         }
+
+        //public void SendClickListener()
+        //{
+        //    intent = new Intent(this, typeof(Profile));
+        //    OverridePendingTransition(Resource.Animation.animRight, Resource.Animation.animRight2);
+        //    this.StartActivity(intent);
+       // }
 
 
         public override bool OnCreateOptionsMenu(IMenu menu)
