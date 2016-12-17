@@ -11,6 +11,7 @@ using Android.Runtime;
 using Android.Util;
 using Android.Views;
 using Android.Widget;
+using System.Json;
 
 namespace GameHub.Fragments
 {
@@ -19,8 +20,6 @@ namespace GameHub.Fragments
         public override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-
-
         }
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
@@ -28,11 +27,32 @@ namespace GameHub.Fragments
             View view = inflater.Inflate(Resource.Layout.LoginIN, container, false);
             Button login = view.FindViewById<Button>(Resource.Id.LoginIn_ButtonLogin);
 
-            login.Click += (object sender, EventArgs args) =>
+            login.Click += async(object sender, EventArgs args) =>
             {
-                Context context = view.Context;
-                Intent intent = new Intent(context, typeof(MainActivity));
-                context.StartActivity(intent);
+                bool internetConnection = await API.checkForInternetConnection();
+
+                if (internetConnection)
+                {
+                    EditText email = view.FindViewById<EditText>(Resource.Id.input_Email_In);
+                    EditText password = view.FindViewById<EditText>(Resource.Id.input_Password_In);
+
+                    bool authentificated = await API.authentification(email.Text, password.Text);
+
+                    if (authentificated)
+                    {
+                            Context context = view.Context;
+                            Intent intent = new Intent(context, typeof(MainActivity));
+                            context.StartActivity(intent);
+                    }
+                    else
+                    {
+                        Toast.MakeText(view.Context, GetString(Resource.String.InvalidLoginOrPassword), ToastLength.Short).Show();
+                    }
+                }
+                else
+                {
+                    Toast.MakeText(view.Context, GetString(Resource.String.NoInternetConnection), ToastLength.Short).Show();
+                }
             };
 
 

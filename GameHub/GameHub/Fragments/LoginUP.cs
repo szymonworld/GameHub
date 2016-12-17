@@ -20,8 +20,6 @@ namespace GameHub.Fragments
         public override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-
-            // Create your fragment here
         }
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
@@ -29,11 +27,71 @@ namespace GameHub.Fragments
             view = inflater.Inflate(Resource.Layout.LoginUP, container, false);
             Button login = view.FindViewById<Button>(Resource.Id.LoginUp_ButtonRegister);
 
-            login.Click += (object sender, EventArgs args) =>
+            login.Click += async (object sender, EventArgs args) =>
             {
-                Context context = view.Context;
-                Intent intent = new Intent(context, typeof(MainActivity));
-                context.StartActivity(intent);
+                bool internetConnection = await API.checkForInternetConnection();
+
+                if (internetConnection)
+                {
+                    EditText email = view.FindViewById<EditText>(Resource.Id.input_Email);
+
+                    bool accountExist = await API.isAccountExist(email.Text);
+
+                    if (!accountExist)
+                    {
+                        EditText password = view.FindViewById<EditText>(Resource.Id.input_Password);
+                        EditText passwordConfirm = view.FindViewById<EditText>(Resource.Id.input_PasswordConfirm);
+
+                        if (password.Text.Count() > 8)
+                        {
+
+                            if (password.Text == passwordConfirm.Text)
+                            {
+                                EditText nickname = view.FindViewById<EditText>(Resource.Id.input_Nick);
+                                if (nickname.Text.Count() > 0)
+                                {
+                                    Account account = new Account() { Email = email.Text, Password = password.Text, Login = nickname.Text };
+
+                                    bool accountCreated = await API.createAccount(account);
+                                    if (accountCreated)
+                                    { 
+                                        Context context = view.Context;
+                                        Intent intent = new Intent(context, typeof(MainActivity));
+                                        context.StartActivity(intent);
+                                    }
+                                    else
+                                    {
+                                        Toast.MakeText(view.Context, GetString(Resource.String.CannotCreateAccount), ToastLength.Short).Show();
+                                    }
+                                }
+                                else
+                                {
+                                    Toast.MakeText(view.Context, GetString(Resource.String.TypeNickname), ToastLength.Short).Show();
+                                }
+
+                            }
+                            else
+                            {
+                                Toast.MakeText(view.Context, GetString(Resource.String.PasswordsNotEqual), ToastLength.Short).Show();
+                            }
+
+                        }
+                        else
+                        {
+                            Toast.MakeText(view.Context, GetString(Resource.String.PasswordTooShort), ToastLength.Short).Show();
+                        }
+
+                    }
+                    else
+                    {
+                        Toast.MakeText(view.Context, GetString(Resource.String.AccountExist), ToastLength.Short).Show();
+                    }
+                }
+                else
+                {
+                    Toast.MakeText(view.Context, GetString(Resource.String.NoInternetConnection), ToastLength.Short).Show();
+                }
+
             };
 
             return view;

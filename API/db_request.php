@@ -1,9 +1,8 @@
 <?php
  
 require_once __DIR__ . '/db_connect.php';
- 
-$response = array();
-$requestType = array("createGame","createAccount","getAccountByLogin");
+error_reporting(E_ERROR | E_PARSE);
+
 $selectedType = null;
 $conn = null;
 
@@ -15,7 +14,7 @@ if(checkType())
 function checkType()
 {
 	global $conn;
-	for ($i = 0; $i < 3; $i++) 
+	for ($i = 0; $i < 16; $i++) 
 	{
 		if($_GET['type'] == $i)
 		{
@@ -48,47 +47,60 @@ function parseType()
 	switch ($selectedType) 
 	{
 		case 0:
-			createAccount($_GET['login'], $_GET['password'], $_GET['firstname'], $_GET['lastname']);
+			if(isset($_GET['email']) and isset($_GET['password']))
+			{
+				createAccount($_GET['login'], $_GET['password'], $_GET['firstname'], $_GET['lastname'], $_GET['email'], $_GET['mic'], $_GET['pic'], $_GET['status'], $_GET['lang'], $_GET['rep'],$_GET['psn'], $_GET['xbox'], $_GET['steam'], $_GET['origin'], $_GET['discord'], $_GET['uplay'], $_GET['battle'], $_GET['lol'], $_GET['skype']);
+			}
+			else
+			{
+				jsonResponse(0,"Invalid parameters.");
+			}
 			break;
 		case 1:
-			createEvent($_GET['name'], $_GET['desc'], $_GET['date'], $_GET['gameid']);
+			getAccountByEmail($_GET['email']);
 			break;
 		case 2:
-			getAccountByLogin($_GET['login']);
+			createEvent($_GET['email'], $_GET['password'], $_GET['eventName'], $_GET['description'], $_GET['date'], $_GET['game']);
 			break;
 		case 3:
-			createEvent($_GET['login'], $_GET['password'], $_GET['eventName'], $_GET['description'], $_GET['date'], $_GET['game']);
+			getEvent($_GET['email'], $_GET['password'], $_GET['eventid']);
 			break;
 		case 4:
-			getEvent($_GET['login'], $_GET['password'], $_GET['eventid']);
+			addEvent($_GET['email'], $_GET['password'], $_GET['eventName'], $_GET['gameid'], $_GET['description'], $_GET['date']);
 			break;
 		case 5:
-			addEvent($_GET['login'], $_GET['password'], $_GET['eventName'], $_GET['gameid'], $_GET['description'], $_GET['date']);
+			getEventParticipants($_GET['email'], $_GET['password'], $_GET['eventid']);
 			break;
 		case 6:
-			getEventParticipants($_GET['login'], $_GET['password'], $_GET['eventid']);
+			addEventParticipant($_GET['email'], $_GET['password'], $_GET['eventid'], $_GET['accountid']);
 			break;
 		case 7:
-			addEventParticipant($_GET['login'], $_GET['password'], $_GET['eventid'], $_GET['accountid']);
+			getFriends($_GET['email'], $_GET['password']);
 			break;
 		case 8:
-			getFriends($_GET['login'], $_GET['password']);
+			addFriend($_GET['email'], $_GET['password'], $_GET['accountid']);
 			break;
 		case 9:
-			addFriend($_GET['login'], $_GET['password'], $_GET['accountid']);
+			deleteFriend($_GET['email'], $_GET['password'], $_GET['accountid']);
 			break;
 		case 10:
-			deleteFriend($_GET['login'], $_GET['password'], $_GET['accountid']);
+			getInvitations($_GET['email'], $_GET['password']);
 			break;
 		case 11:
-			getInvitations($_GET['login'], $_GET['password']);
+			addInvitation($_GET['email'], $_GET['password'], $_GET['accountid'], $_GET['eventid']);
 			break;
 		case 12:
-			addInvitation($_GET['login'], $_GET['password'], $_GET['accountid'], $_GET['eventid']);
+			deleteInvitation($_GET['email'], $_GET['password'], $_GET['inviteid']);
 			break;
 		case 13:
-			deleteInvitation($_GET['login'], $_GET['password'], $_GET['inviteid']);
+			login($_GET['email'], $_GET['password']);
 			break;
+		case 14:
+			isAccountExist($_GET['email']);
+			break;	
+		case 15:
+			getHashByEmail($_GET['email']);
+			break;				
 		default:
 			break;
 		
@@ -96,40 +108,50 @@ function parseType()
 }
  
  
-function authenticate($login, $password)
+function authenticate($email, $password)
 {
 	//return password_verify($password, loadHashByLogin($login));
-	return $password == loadHashByLogin($login);
+	if(strlen($password) > 1)
+	{
+		return password_verify($password, loadHashByEmail($email));
+		//return $password == loadHashByEmail($email);
+	}
+	else
+	{
+		jsonResponse(0,"Invalid password.");
+	}
 }
  
-function loadHashByLogin($login)
+function loadHashByEmail($email)
 {
 	global $conn;
-	$query = $conn->prepare("SELECT Password FROM Accounts WHERE Login = :login");
-	$query->bindValue(':login', $login);
+	$query = $conn->prepare("SELECT Password FROM Accounts WHERE Email = :email");
+	$query->bindValue(':email', $email);
 	$query->execute();
-	return $query->fetch();
+	$res = $query->fetch();
+	return $res['Password'];
 }
 
-function isLoginExist($login)
+function isEmailExist($email)
 {
 	global $conn;
-	$query = $conn->prepare("SELECT count(*) FROM Accounts WHERE Login = :login"); 
-	$query->bindValue(":login",$login);
+	$query = $conn->prepare("SELECT count(*) FROM Accounts WHERE Email = :email"); 
+	$query->bindValue(":email",$email);
 	$query->execute(); 
 	return $query->fetchColumn() > 0; 	
 }
 
 function jsonResponse($success, $message)
 {
+	$response = array();
 	$response["success"] = $success;
 	$response["message"] = $message;	
 	echo json_encode($response);	
 }
 
-function createEvent($login, $password, $eventName, $description, $date, $game)	 
+function createEvent($email, $password, $eventName, $description, $date, $game)	 
 {
-	if(authenticate($login, $password))
+	if(authenticate($email, $password))
 	{	
 		try 
 		{  
@@ -162,9 +184,9 @@ function createEvent($login, $password, $eventName, $description, $date, $game)
 	
 }
 
-function getEvent($login, $password, $eventID)
+function getEvent($email, $password, $eventID)
 {
-	if(authenticate($login, $password))
+	if(authenticate($email, $password))
 	{	
 		global $conn;
 		$query = $conn->prepare("SELECT * FROM Events WHERE EventID = :eventID"); 
@@ -172,6 +194,7 @@ function getEvent($login, $password, $eventID)
 		$query->execute(); 		
 		$fetch = $query->fetch();
 		
+		$response = array();
 		$response['EventName'] = $fetch['EventName'];
 		$response['GameID'] = $fetch['GameID'];
 		$response['Description'] = $fetch['Description'];
@@ -179,12 +202,16 @@ function getEvent($login, $password, $eventID)
 		
 		echo json_encode($response);
 	}
+	else
+	{
+		jsonResponse(0, "Error.");
+	}
 	
 }
 
-function addEvent($login, $password, $eventName, $gameID, $description, $date)
+function addEvent($email, $password, $eventName, $gameID, $description, $date)
 {
-	if(authenticate($login, $password))
+	if(authenticate($email, $password))
 	{	
 		
 		try 
@@ -212,30 +239,42 @@ function addEvent($login, $password, $eventName, $gameID, $description, $date)
 			jsonResponse(0, "Error.");
 		}
 	}
+	else
+	{
+		jsonResponse(0, "Error.");
+	}
 }
 
-function getEventParticipants($login, $password, $eventID)
+function getEventParticipants($email, $password, $eventID)
 {
-	if(authenticate($login, $password))
+	if(authenticate($email, $password))
 	{	
 		global $conn;
 		$query = $conn->prepare("SELECT * FROM EventParticipants WHERE EventID = :eventID"); 
 		$query->bindValue(":eventID",$eventID);
 		$query->execute(); 		
+		$response = array();
+		$response['events'] = array();
 		
 		while($fetch = $query->fetch())
 		{
-			$response['ParticipationID'] = $fetch['ParticipationID'];
-			$response['AccountID'] = $fetch['AccountID'];
-			echo json_encode($response);
+			$event = array();
+			$event['ParticipationID'] = $fetch['ParticipationID'];
+			$event['AccountID'] = $fetch['AccountID'];
+			array_push($response['events'], $event);
+			
 		}	
-
+		echo json_encode($response);
 	}	
+	else
+	{
+		jsonResponse(0, "Error.");
+	}
 }
 
-function addEventParticipant($login, $password, $eventID, $accountID)
+function addEventParticipant($email, $password, $eventID, $accountID)
 {
-	if(authenticate($login, $password))
+	if(authenticate($email, $password))
 	{	
 		
 		try 
@@ -261,41 +300,54 @@ function addEventParticipant($login, $password, $eventID, $accountID)
 			jsonResponse(0, "Error.");
 		}
 	}
+	else
+	{
+		jsonResponse(0, "Error.");
+	}
 }
 
-function getFriends($login, $password)
+function getFriends($email, $password)
 {
-	if(authenticate($login, $password))
+	if(authenticate($email, $password))
 	{	
 		global $conn;
 		
-		$query = $conn->prepare("SELECT AccountID FROM Accounts WHERE Login = :login");
-		$query->bindValue(':login', $login);
+		$query = $conn->prepare("SELECT AccountID FROM Accounts WHERE Email = :email");
+		$query->bindValue(':email', $email);
 		$query->execute();
 		$accountID = $query->fetch();
 		
 		$query = $conn->prepare("SELECT * FROM Friends WHERE AccountID1 = :accountID"); 
 		$query->bindValue(":accountID",$accountID['AccountID']);
 		$query->execute(); 		
+		$response = array();
+		$response['friends'] = array();
 		
 		while($fetch = $query->fetch())
 		{
-			$response['FriendshipID'] = $fetch['FriendshipID'];
-			$response['AccountID2'] = $fetch['AccountID2'];
-			echo json_encode($response);
+			$friend = array();
+			$friend['FriendshipID'] = $fetch['FriendshipID'];
+			$friend['AccountID2'] = $fetch['AccountID2'];
+			array_push($response['friends'], $friend);
+			
 		}	
 		
+		echo json_encode($response);
 	}	
+	else
+	{
+		jsonResponse(0, "Error.");
+	}
 }
 
-function addFriend($login, $password, $AccountID2)
+function addFriend($email, $password, $AccountID2)
 {
-	if(authenticate($login, $password))
+	if(authenticate($email, $password))
 	{	
 		global $conn;
 		
-		$query = $conn->prepare("SELECT AccountID FROM Accounts WHERE Login = :login");
-		$query->bindValue(':login', $login);
+		$query = $conn->prepare("SELECT AccountID FROM Accounts WHERE Email = :email");
+		$query->bindValue(':email', $Email);
 		$query->execute();
 		$accountID = $query->fetch();
 		
@@ -321,16 +373,20 @@ function addFriend($login, $password, $AccountID2)
 			jsonResponse(0, "Error.");
 		}
 	}
+	else
+	{
+		jsonResponse(0, "Error.");
+	}
 }
 
-function deleteFriend($login, $password, $AccountID2)
+function deleteFriend($email, $password, $AccountID2)
 {
-	if(authenticate($login, $password))
+	if(authenticate($email, $password))
 	{	
 		global $conn;
 		
-		$query = $conn->prepare("SELECT AccountID FROM Accounts WHERE Login = :login");
-		$query->bindValue(':login', $login);
+		$query = $conn->prepare("SELECT AccountID FROM Accounts WHERE Email = :email");
+		$query->bindValue(':email', $email);
 		$query->execute();
 		$accountID = $query->fetch();
 		
@@ -354,40 +410,52 @@ function deleteFriend($login, $password, $AccountID2)
 			jsonResponse(0, "Error.");
 		}
 	}
+	else
+	{
+		jsonResponse(0, "Error.");
+	}
 }
 
-function getInvitations($login, $password)
+function getInvitations($email, $password)
 {
-	if(authenticate($login, $password))
+	if(authenticate($email, $password))
 	{	
 		global $conn;
 		
-		$query = $conn->prepare("SELECT AccountID FROM Accounts WHERE Login = :login");
-		$query->bindValue(':login', $login);
+		$query = $conn->prepare("SELECT AccountID FROM Accounts WHERE Email = :email");
+		$query->bindValue(':email', $email);
 		$query->execute();
 		$accountID = $query->fetch();
 		
 		$query = $conn->prepare("SELECT * FROM Invitations WHERE AccountID = :accountID"); 
 		$query->bindValue(":accountID",$accountID['AccountID']);
 		$query->execute(); 		
-
+		$response = array();
+		$response['invitations'] = array();
+		
 		while($fetch = $query->fetch())
 		{
-			$response['InviteID'] = $fetch['InviteID'];
-			$response['EventID'] = $fetch['EventID'];
-			echo json_encode($response);
-		}			
+			$invite['InviteID'] = $fetch['InviteID'];
+			$invite['EventID'] = $fetch['EventID'];
+			array_push($response['invitations'], $invite);
+			
+		}	
+		echo json_encode($response);		
+	}
+	else
+	{
+		jsonResponse(0, "Error.");
 	}	
 }
 
-function addInvitation($login, $password, $AccountID, $EventID)
+function addInvitation($email, $password, $AccountID, $EventID)
 {
-	if(authenticate($login, $password))
+	if(authenticate($email, $password))
 	{	
 		global $conn;
 		
-		$query = $conn->prepare("SELECT AccountID FROM Accounts WHERE Login = :login");
-		$query->bindValue(':login', $login);
+		$query = $conn->prepare("SELECT AccountID FROM Accounts WHERE Email = :email");
+		$query->bindValue(':email', $email);
 		$query->execute();
 		$accountID = $query->fetch();
 		
@@ -413,11 +481,15 @@ function addInvitation($login, $password, $AccountID, $EventID)
 			jsonResponse(0, "Error.");
 		}
 	}
+	else
+	{
+		jsonResponse(0, "Error.");
+	}
 }
 
-function deleteInvitation($login, $password, $inviteID)
+function deleteInvitation($email, $password, $inviteID)
 {
-	if(authenticate($login, $password))
+	if(authenticate($email, $password))
 	{	
 		global $conn;
 		
@@ -440,13 +512,17 @@ function deleteInvitation($login, $password, $inviteID)
 			jsonResponse(0, "Error.");
 		}
 	}
+	else
+	{
+		jsonResponse(0, "Error.");
+	}
 }
 
 function createAccount($login, $password, $firstname, $lastname, $email, $mic, $pic, $status, $lang, $rep,
 					   $PSN_Account, $XBOX_Account, $STEAM_Account, $ORIGIN_Account, $DISCORD_Account, $UPLAY_Account, $BATTLE_Account, $LOL_Account, $SKYPE_Account)
 {
 	
-	if(!isLoginExist($login))
+	if(!isEmailExist($email))
 	{	
 		try 
 		{  
@@ -470,22 +546,9 @@ function createAccount($login, $password, $firstname, $lastname, $email, $mic, $
 			$query->execute();
 			
 			$conn->commit();
-			
-			jsonResponse(1, "Account created.");
-	  
-		} 
-		catch (Exception $e) 																																																																								
-		{
-			$conn->rollBack();
-			jsonResponse(0, "Error.");
-		}
-		
-		try 
-		{  
-			global $conn;
-			
+
 			$conn->beginTransaction();
-			getAccountByLogin($login);
+			//getAccountByLogin($login);
 			$query = $conn->prepare("INSERT INTO LinkAccount(PSN_Account, XBOX_Account, STEAM_Account, ORIGIN_Account, DISCORD_Account, UPLAY_Account, BATTLE_Account, LOL_Account, SKYPE_Account, AccountID ) 
 									 VALUES(:PSN_Account, :XBOX_Account, :STEAM_Account, :ORIGIN_Account, :DISCORD_Account, :UPLAY_Account, :BATTLE_Account, :LOL_Account, :SKYPE_Account, :AccountID)");
 									 
@@ -498,12 +561,13 @@ function createAccount($login, $password, $firstname, $lastname, $email, $mic, $
 			$query->bindValue(':BATTLE_Account', $BATTLE_Account);
 			$query->bindValue(':LOL_Account', $LOL_Account);
 			$query->bindValue(':SKYPE_Account', $SKYPE_Account);
-			$acc = getAccountByLogin($login);
+			$acc = getAccountByEmail($email, false);
 			$query->bindValue(':AccountID', $acc['AccountID']);
 			$query->execute();
 			
 			$conn->commit();
 			
+			//jsonResponse(1, "Profile created.");
 			jsonResponse(1, "Profile created.");
 	  
 		} 
@@ -511,6 +575,7 @@ function createAccount($login, $password, $firstname, $lastname, $email, $mic, $
 		{
 			$conn->rollBack();
 			jsonResponse(0, "Error.");
+			return 0;
 		}		
 			
 			
@@ -522,17 +587,69 @@ function createAccount($login, $password, $firstname, $lastname, $email, $mic, $
 	
 }
 
-
-function getAccountByLogin($login)
+function updateAccount($email, $password, $column, $value)
 {
-	if(isLoginExist($login))
+	switch ($selectedType) 
+	{
+		case 0://Password
+			$query = 'UPDATE Accounts SET Accounts.Password=:value WHERE Accounts.Login=:login';
+			break;
+		case 1://Last
+			$query = 'UPDATE Accounts SET Accounts.Password=:value WHERE Accounts.Login=:login';
+			break;
+		case 2:
+			$query = 'UPDATE Accounts SET Accounts.Password=:value WHERE Accounts.Login=:login';
+			break;
+		case 3:
+			$query = 'UPDATE Accounts SET Accounts.Password=:value WHERE Accounts.Login=:login';
+			break;
+		case 4:
+			$query = 'UPDATE Accounts SET Accounts.Password=:value WHERE Accounts.Login=:login';
+			break;
+		case 5:
+			$query = 'UPDATE Accounts SET Accounts.Password=:value WHERE Accounts.Login=:login';
+			break;
+		case 6:
+			$query = 'UPDATE Accounts SET Accounts.Password=:value WHERE Accounts.Login=:login';
+			break;
+		case 7:
+			$query = 'UPDATE Accounts SET Accounts.Password=:value WHERE Accounts.Login=:login';
+			break;
+		case 8:
+			$query = 'UPDATE Accounts SET Accounts.Password=:value WHERE Accounts.Login=:login';
+			break;
+		case 9:
+			$query = 'UPDATE Accounts SET Accounts.Password=:value WHERE Accounts.Login=:login';
+			break;
+		case 10:
+			$query = 'UPDATE Accounts SET Accounts.Password=:value WHERE Accounts.Login=:login';
+			break;
+		case 11:
+			$query = 'UPDATE Accounts SET Accounts.Password=:value WHERE Accounts.Login=:login';
+			break;
+		case 12:
+			$query = 'UPDATE Accounts SET Accounts.Password=:value WHERE Accounts.Login=:login';
+			break;
+		case 13:
+			$query = 'UPDATE Accounts SET Accounts.Password=:value WHERE Accounts.Login=:login';
+			break;
+		default:
+			break;
+		
+	}	
+}
+
+function getAccountByEmail($email, $json = true)
+{
+	if(isEmailExist($email))
 	{
 			global $conn;
 			
-			$query = $conn->prepare("SELECT FirstName, LastName, Email, Microphone, ProfilePicture, Status, Language, RepPoint FROM Accounts WHERE Login = :login");
-			$query->bindValue(':login', $login);
+			$query = $conn->prepare("SELECT AccountID, Login, FirstName, LastName, Email, Microphone, ProfilePicture, Status, Language, RepPoint FROM Accounts WHERE Email = :email");
+			$query->bindValue(':email', $email);
 			$query->execute();
 			$fetch = $query->fetch();
+			$response = array();
 			$response['AccountID'] = $fetch['AccountID'];
 			$response['Login'] = $fetch['Login'];
 			$response['FirstName'] = $fetch['FirstName'];
@@ -544,10 +661,58 @@ function getAccountByLogin($login)
 			$response['Status'] = $fetch['Status'];		
 			$response['Language'] = $fetch['Language'];		
 			$response['RepPoint'] = $fetch['RepPoint'];		
+			$response['success'] = 1;		
 			
-			echo json_encode($response);
+			if($json)
+				echo json_encode($response);
+	}
+	else
+	{
+		
+		jsonResponse(0,"Account not exist.");
 	}
 	
 }
 
+function login($email, $password)
+{
+	if(authenticate($email, $password) == true) 
+	{
+		jsonResponse(1,"Logged");
+	}
+	else	
+	{
+		jsonResponse(0,"Invalid");	
+	}
+}
+
+function isAccountExist($email)
+{
+	if(isEmailExist($email) == true) 
+	{
+		jsonResponse(1,"Exist");
+	}
+	else	
+	{
+		jsonResponse(0,"Not");	 
+	}
+}
+
+function getHashByEmail($email)
+{
+	$response = array();
+	$hash = loadHashByEmail($email);
+	if(strlen($hash) > 5)
+	{
+		$response['success'] = 1;
+		$response['Password'] = $hash;
+		echo json_encode($response);
+	}
+	else
+	{
+		$response['success'] = 0;
+		echo json_encode($response);		
+	}
+
+}
 ?>

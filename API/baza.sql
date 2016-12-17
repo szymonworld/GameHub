@@ -6,7 +6,7 @@ CREATE TABLE Accounts
     Login varchar(255),
     Password varchar(255),
     Email varchar(255),
-    Description varchar(MAX),
+    Description TEXT,
     Microphone bit,
     ProfilePicture varchar(255),
     Status varchar(255),

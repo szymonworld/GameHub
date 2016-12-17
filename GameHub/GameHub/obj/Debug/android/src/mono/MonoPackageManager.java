@@ -99,6 +99,7 @@ class MonoPackageManager_Resources {
 	public static final String[] Assemblies = new String[]{
 		/* We need to ensure that "GameHub.dll" comes first in this list. */
 		"GameHub.dll",
+		"BCrypt.Net.dll",
 		"Refractored.Controls.CircleImageView.dll",
 		"Xamarin.Android.Support.Animated.Vector.Drawable.dll",
 		"Xamarin.Android.Support.Design.dll",

@@ -86,6 +86,16 @@
   
   <!--Main Toolbar-->
   <string name="MainToolbarSettings">Ustawienia</string>
-
+  
+  <!--Login Singup Form-->
+  <string name="NoInternetConnection">Brak połączenia z siecią.</string>
+  <string name="InvalidPassword">Hasło jest nieprawidłowe.</string>
+  <string name="InvalidLoginOrPassword">Login lub hasło jest nieprawidłowe.</string>
+  <string name="AccountExist">Podany e-mail jest już używany.</string>
+  <string name="PasswordTooShort">Wybrane hasło jest zbyt krótkie.</string>
+  <string name="PasswordsNotEqual">Podane hasła nie są takie same.</string>
+  <string name="TypeNickname">Podaj swój pseudonim.</string>
+  <string name="CannotCreateAccount">Nie można utworzyć konta.</string>
+  
 
 </resources>
