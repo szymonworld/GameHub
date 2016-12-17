@@ -29,7 +29,8 @@ namespace GameHub
 
     public class MainActivity : AppCompatActivity
     {
-
+        private static string LoginDataUser;
+        private ISharedPreferences pref;
         private DrawerLayout mDrawerLayout;
         private Android.Support.V7.App.ActionBarDrawerToggle drawerToggle;
         private SupportToolbar toolbar;
@@ -139,6 +140,7 @@ namespace GameHub
 
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
+            Intent intent;
             switch (item.ItemId)
             {
                 case Android.Resource.Id.Home:
@@ -146,9 +148,20 @@ namespace GameHub
                     return true;
                     break;
                 case Resource.Id.menut_ustawienia:
-                    Intent intent = new Intent(this, typeof(Settings));
+                    intent = new Intent(this, typeof(Settings));
                     OverridePendingTransition(Resource.Animation.animRight, Resource.Animation.animRight2);
                     this.StartActivity(intent);
+                    Finish();
+                    break;
+                case Resource.Id.MainToolbarLogout:
+                    pref = GetSharedPreferences(LoginDataUser, FileCreationMode.Private);
+                    ISharedPreferencesEditor PrefEdit = pref.Edit();
+                    PrefEdit.Clear();
+                    PrefEdit.Apply();
+                    intent = new Intent(this, typeof(LoginSystem));
+                    OverridePendingTransition(Resource.Animation.animRight, Resource.Animation.animRight2);
+                    this.StartActivity(intent);
+                    Finish();
                     break;
             }
 

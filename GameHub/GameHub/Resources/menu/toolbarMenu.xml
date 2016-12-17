@@ -15,4 +15,9 @@
        android:showAsAction="withText"
        android:icon="@drawable/ic_action_content_create"
        android:title="@string/MainToolbarSettings" />
+  <item
+     android:id="@+id/MainToolbarLogout"
+     android:showAsAction="withText"
+     android:icon="@drawable/ic_action_content_create"
+     android:title="Wyloguj" />
 </menu>

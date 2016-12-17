@@ -12,11 +12,14 @@ using Android.Views;
 using Android.Widget;
 using System.Threading;
 using Android.Support.Design.Widget;
+using Android.Support.V7.App;
 
 namespace GameHub.Fragments
 {
     public class LoginUP : SupportFragment
     {
+        private static string LoginDataUser;
+        private ISharedPreferences pref;
         View view;
         public override void OnCreate(Bundle savedInstanceState)
         {
@@ -26,6 +29,9 @@ namespace GameHub.Fragments
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
             view = inflater.Inflate(Resource.Layout.LoginUP, container, false);
+
+            pref = ((AppCompatActivity)this.Activity).GetSharedPreferences(LoginDataUser, FileCreationMode.Private);
+
             Button login = view.FindViewById<Button>(Resource.Id.LoginUp_ButtonRegister);
 
 
@@ -33,10 +39,11 @@ namespace GameHub.Fragments
             login.Click += async (object sender, EventArgs args) =>
             {
                 bool internetConnection = await API.checkForInternetConnection();
-
+                ProgressDialog dialog;
                 if (internetConnection)
                 {
                     EditText email = view.FindViewById<EditText>(Resource.Id.input_Email);
+                    dialog = ProgressDialog.Show(view.Context, "", GetString(Resource.String.LoginLoading), true);
 
                     bool accountExist = await API.isAccountExist(email.Text);
 
@@ -45,7 +52,7 @@ namespace GameHub.Fragments
                         EditText password = view.FindViewById<EditText>(Resource.Id.input_Password);
                         EditText passwordConfirm = view.FindViewById<EditText>(Resource.Id.input_PasswordConfirm);
 
-                        if (password.Text.Count() > 8)
+                        if (password.Text.Count() > 0)
                         {
 
                             if (password.Text == passwordConfirm.Text)
@@ -57,19 +64,23 @@ namespace GameHub.Fragments
 
                                     bool accountCreated = await API.createAccount(account);
                                     if (accountCreated)
-                                    { 
+                                    {
+                                        dialog.Dismiss();
+                                        SaveData();
                                         Context context = view.Context;
                                         Intent intent = new Intent(context, typeof(MainActivity));
                                         context.StartActivity(intent);
                                     }
                                     else
                                     {
+                                        dialog.Dismiss();
                                         Snackbar snackbar1 = Snackbar.Make(view, GetString(Resource.String.CannotCreateAccount), Snackbar.LengthShort);
                                         snackbar1.Show();
                                     }
                                 }
                                 else
                                 {
+                                    dialog.Dismiss();
                                     Snackbar snackbar1 = Snackbar.Make(view, GetString(Resource.String.TypeNickname), Snackbar.LengthShort);
                                     snackbar1.Show();
                                 }
@@ -77,6 +88,7 @@ namespace GameHub.Fragments
                             }
                             else
                             {
+                                dialog.Dismiss();
                                 Snackbar snackbar1 = Snackbar.Make(view, GetString(Resource.String.PasswordsNotEqual), Snackbar.LengthShort);
                                 snackbar1.Show();
                             }
@@ -84,6 +96,7 @@ namespace GameHub.Fragments
                         }
                         else
                         {
+                            dialog.Dismiss();
                             Snackbar snackbar1 = Snackbar.Make(view, GetString(Resource.String.PasswordTooShort), Snackbar.LengthShort);
                             snackbar1.Show();
                         }
@@ -91,12 +104,14 @@ namespace GameHub.Fragments
                     }
                     else
                     {
+                        dialog.Dismiss();
                         Snackbar snackbar1 = Snackbar.Make(view, GetString(Resource.String.AccountExist), Snackbar.LengthShort);
                         snackbar1.Show();
                     }
                 }
                 else
                 {
+                    
                     Snackbar snackbar1 = Snackbar.Make(view, GetString(Resource.String.NoInternetConnection), Snackbar.LengthShort);
                     snackbar1.Show();
                 }
@@ -129,6 +144,16 @@ namespace GameHub.Fragments
 
             // RunOnUiThread(() => { mProgressBar.Visibility = Android.Views.ViewStates.Invisible; });
 
+        }
+        private void SaveData()
+        {
+            EditText password = view.FindViewById<EditText>(Resource.Id.input_Password);
+            EditText email = view.FindViewById<EditText>(Resource.Id.input_Email);
+
+            ISharedPreferencesEditor PrefEdit = pref.Edit();
+            PrefEdit.PutString("PrefEmailUser", email.Text.ToString());
+            PrefEdit.PutString("PrefPasswordUser", password.Text.ToString());
+            PrefEdit.Apply();
         }
     }
 
