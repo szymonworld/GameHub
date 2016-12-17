@@ -11,6 +11,7 @@ using Android.Util;
 using Android.Views;
 using Android.Widget;
 using System.Threading;
+using Android.Support.Design.Widget;
 
 namespace GameHub.Fragments
 {
@@ -26,6 +27,8 @@ namespace GameHub.Fragments
         {
             view = inflater.Inflate(Resource.Layout.LoginUP, container, false);
             Button login = view.FindViewById<Button>(Resource.Id.LoginUp_ButtonRegister);
+
+
 
             login.Click += async (object sender, EventArgs args) =>
             {
@@ -61,35 +64,41 @@ namespace GameHub.Fragments
                                     }
                                     else
                                     {
-                                        Toast.MakeText(view.Context, GetString(Resource.String.CannotCreateAccount), ToastLength.Short).Show();
+                                        Snackbar snackbar1 = Snackbar.Make(view, GetString(Resource.String.CannotCreateAccount), Snackbar.LengthShort);
+                                        snackbar1.Show();
                                     }
                                 }
                                 else
                                 {
-                                    Toast.MakeText(view.Context, GetString(Resource.String.TypeNickname), ToastLength.Short).Show();
+                                    Snackbar snackbar1 = Snackbar.Make(view, GetString(Resource.String.TypeNickname), Snackbar.LengthShort);
+                                    snackbar1.Show();
                                 }
 
                             }
                             else
                             {
-                                Toast.MakeText(view.Context, GetString(Resource.String.PasswordsNotEqual), ToastLength.Short).Show();
+                                Snackbar snackbar1 = Snackbar.Make(view, GetString(Resource.String.PasswordsNotEqual), Snackbar.LengthShort);
+                                snackbar1.Show();
                             }
 
                         }
                         else
                         {
-                            Toast.MakeText(view.Context, GetString(Resource.String.PasswordTooShort), ToastLength.Short).Show();
+                            Snackbar snackbar1 = Snackbar.Make(view, GetString(Resource.String.PasswordTooShort), Snackbar.LengthShort);
+                            snackbar1.Show();
                         }
 
                     }
                     else
                     {
-                        Toast.MakeText(view.Context, GetString(Resource.String.AccountExist), ToastLength.Short).Show();
+                        Snackbar snackbar1 = Snackbar.Make(view, GetString(Resource.String.AccountExist), Snackbar.LengthShort);
+                        snackbar1.Show();
                     }
                 }
                 else
                 {
-                    Toast.MakeText(view.Context, GetString(Resource.String.NoInternetConnection), ToastLength.Short).Show();
+                    Snackbar snackbar1 = Snackbar.Make(view, GetString(Resource.String.NoInternetConnection), Snackbar.LengthShort);
+                    snackbar1.Show();
                 }
 
             };
@@ -101,8 +110,6 @@ namespace GameHub.Fragments
         {
             Context context = view.Context;
             Intent intent = new Intent(context, typeof(MainActivity));
-            //intent.PutExtra("Nag³ówek 2", 1);
-
             context.StartActivity(intent);
         }
 

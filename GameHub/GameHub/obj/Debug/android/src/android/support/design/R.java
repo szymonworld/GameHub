@@ -2795,8 +2795,12 @@ containing a value of this type.
         public static int toolbarmenu=0x7f0c0002;
     }
     public static final class string {
+        public static int AccountExist=0x7f090054;
         public static int ApplicationName=0x7f090018;
+        public static int CannotCreateAccount=0x7f090058;
         public static int Hello=0x7f090017;
+        public static int InvalidLoginOrPassword=0x7f090053;
+        public static int InvalidPassword=0x7f090052;
         public static int LoginIn_ButtonLogin=0x7f090036;
         /** Login
          */
@@ -2812,6 +2816,11 @@ containing a value of this type.
         /** Main Toolbar
          */
         public static int MainToolbarSettings=0x7f090050;
+        /** Login Singup Form
+         */
+        public static int NoInternetConnection=0x7f090051;
+        public static int PasswordTooShort=0x7f090055;
+        public static int PasswordsNotEqual=0x7f090056;
         public static int ProSetCountry=0x7f090049;
         public static int ProSetCountryChange=0x7f090048;
         public static int ProSetDes=0x7f09004d;
@@ -2836,6 +2845,7 @@ containing a value of this type.
         /** Settings
          */
         public static int Settings_Title=0x7f09003e;
+        public static int TypeNickname=0x7f090057;
         public static int abc_action_bar_home_description=0x7f090000;
         public static int abc_action_bar_home_description_format=0x7f090001;
         public static int abc_action_bar_home_subtitle_description_format=0x7f090002;

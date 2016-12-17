@@ -106,6 +106,7 @@
     <Compile Include="Fragments\RecyclerViewOnScrollListener.cs" />
     <Compile Include="Fragments\Tournament.cs" />
     <Compile Include="Fragments\Events.cs" />
+    <Compile Include="FriendList.cs" />
     <Compile Include="Lists\ExtensionMethods.cs" />
     <Compile Include="Lists\Friends.cs" />
     <Compile Include="LoginSystem.cs" />
@@ -192,6 +193,9 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\Browser.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\FriendList.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

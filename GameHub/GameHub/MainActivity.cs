@@ -82,20 +82,18 @@ namespace GameHub
 
                         break;
                     case (Resource.Id.nav_friends):
-                        newFragment = new Friends();
-                        trans = SupportFragmentManager.BeginTransaction();
-                        trans.Replace(Resource.Id.flContent, newFragment, "Znajomi");
-                        trans.AddToBackStack(null);
-                        trans.Commit();
+                        intent = new Intent(this, typeof(FriendList));
+                        OverridePendingTransition(Resource.Animation.animRight, Resource.Animation.animRight2);
+                        this.StartActivity(intent);
 
                         // ? Przejście na Activity
                         //intent = new Intent(this, typeof(Tournament));
                         //this.StartActivity(intent);
 
-                        OverridePendingTransition(Resource.Animation.animRight, Resource.Animation.animRight2);
+                        //OverridePendingTransition(Resource.Animation.animRight, Resource.Animation.animRight2);
 
                         break;
-                        
+
                     case (Resource.Id.nav_findplayers):
                         intent = new Intent(this, typeof(Chat));
                         OverridePendingTransition(Resource.Animation.animRight, Resource.Animation.animRight2);

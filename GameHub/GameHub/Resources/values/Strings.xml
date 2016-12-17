@@ -96,6 +96,9 @@
   <string name="PasswordsNotEqual">Podane hasła nie są takie same.</string>
   <string name="TypeNickname">Podaj swój pseudonim.</string>
   <string name="CannotCreateAccount">Nie można utworzyć konta.</string>
+
+  <!--FriendList-->
+  <string name="Friends_Title">Znajomi</string>
   
 
 </resources>

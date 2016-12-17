@@ -12,6 +12,7 @@ using Android.Util;
 using Android.Views;
 using Android.Widget;
 using System.Json;
+using Android.Support.Design.Widget;
 
 namespace GameHub.Fragments
 {
@@ -46,12 +47,14 @@ namespace GameHub.Fragments
                     }
                     else
                     {
-                        Toast.MakeText(view.Context, GetString(Resource.String.InvalidLoginOrPassword), ToastLength.Short).Show();
+                        Snackbar snackbar1 = Snackbar.Make(view, GetString(Resource.String.InvalidLoginOrPassword), Snackbar.LengthShort);
+                        snackbar1.Show();
                     }
                 }
                 else
                 {
-                    Toast.MakeText(view.Context, GetString(Resource.String.NoInternetConnection), ToastLength.Short).Show();
+                    Snackbar snackbar1 = Snackbar.Make(view, GetString(Resource.String.NoInternetConnection), Snackbar.LengthShort);
+                    snackbar1.Show();
                 }
             };
 
