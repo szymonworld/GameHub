@@ -29,6 +29,7 @@ namespace GameHub.Fragments
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
+
             for (int a = 0; a < 15; a++)
             {
                 Generuj_wydarzenie();
@@ -43,7 +44,8 @@ namespace GameHub.Fragments
             mRecyclerView.SetAdapter(mAdapter);
 
             // £adowanie nastêpnych wydarzeñ po dojechaniu na sam dó³
-            onScrollListener.LoadMoreEvent += (object sender, EventArgs e) => {
+            onScrollListener.LoadMoreEvent += (object sender, EventArgs e) =>
+            {
 
                 for (int a = 0; a < 5; a++)
                 {
@@ -66,13 +68,13 @@ namespace GameHub.Fragments
             // Wydarzenie nowe_wydarzenie = new Wydarzenie(random, "text ---- Text", "Wydarzenie", 20, 15);
             if (naprzemiennieSzybkaITurniej == 0)
             {
-                Wydarzenie nowe_wydarzenie = new Wydarzenie(naprzemiennieSzybkaITurniej, "text ---- Text", "Wydarzenie", 20, 15);
+                Wydarzenie nowe_wydarzenie = new Wydarzenie(naprzemiennieSzybkaITurniej, "ATH CUP", "Informatycy", "Budowlanka", "18.05 22:15", "My Little Pony");
                 naprzemiennieSzybkaITurniej = 1;
                 lista_wydarzen.Add(nowe_wydarzenie);
             }
             else
             {
-                Wydarzenie nowe_wydarzenie = new Wydarzenie(naprzemiennieSzybkaITurniej, "text ---- Text", "Wydarzenie", 20, 15);
+                Wydarzenie nowe_wydarzenie = new Wydarzenie(naprzemiennieSzybkaITurniej, "Turniej Gfinity 2016 PRO League", "Virtus.pro", "Fnatic", "28.05 20:15", "Counter-Strike: Global Offensive");
                 naprzemiennieSzybkaITurniej = 0;
                 lista_wydarzen.Add(nowe_wydarzenie);
             }
@@ -90,9 +92,11 @@ namespace GameHub.Fragments
             public class MyView : RecyclerView.ViewHolder
             {
                 public View mMainView { get; set; }
-                public TextView mTitle { get; set; }
-                public TextView mText { get; set; }
-                public TextView mTime { get; set; }
+                public TextView ETitle { get; set; }
+                public TextView EFTeam { get; set; }
+                public TextView ESTeam { get; set; }
+                public TextView EDate { get; set; }
+                public TextView EGame { get; set; }
                 public LinearLayout mLayout { get; set; }
                 public MyView(View view) : base(view)
                 {
@@ -104,13 +108,19 @@ namespace GameHub.Fragments
             {
                 View row = LayoutInflater.From(parent.Context).Inflate(Resource.Layout.Events, parent, false);
 
-                TextView txtTitle = row.FindViewById<TextView>(Resource.Id.textViewWydarzenia1);
-                TextView txtText = row.FindViewById<TextView>(Resource.Id.textViewWydarzenia2);
-                TextView txtTime = row.FindViewById<TextView>(Resource.Id.textViewWydarzenia3);
+                TextView EventTitle = row.FindViewById<TextView>(Resource.Id.EventTitle);
+                TextView EventFirstTeam = row.FindViewById<TextView>(Resource.Id.EventFirstTeam);
+                TextView EventSecondaryTeam = row.FindViewById<TextView>(Resource.Id.EventSecondaryTeam);
+                TextView EventDate = row.FindViewById<TextView>(Resource.Id.EventDate);
+                TextView EventGame = row.FindViewById<TextView>(Resource.Id.EventGame);
+
+
+
+                Refractored.Controls.CircleImageView platform = row.FindViewById<Refractored.Controls.CircleImageView>(Resource.Id.EventPlatformIcon);
                 LinearLayout colorLi = row.FindViewById<LinearLayout>(Resource.Id.colorLayoutWydarzenia);
                 //li.SetBackgroundColor(Android.Graphics.Color.Red);
 
-                MyView view = new MyView(row) { mTitle = txtTitle, mText = txtText, mTime = txtTime, mLayout = colorLi };
+                MyView view = new MyView(row) { ETitle = EventTitle, EFTeam = EventFirstTeam, ESTeam = EventSecondaryTeam, EDate = EventDate, EGame = EventGame , mLayout = colorLi };
                 return view;
             }
 
@@ -120,11 +130,13 @@ namespace GameHub.Fragments
 
                 int indexPosition = (lista_wydarzen.Count - 1) - position;
                 //iew.mMainView.Click += mMainView_Click;
-                view.mTitle.Text = lista_wydarzen[indexPosition].wydarzenie_tytul;
-                view.mText.Text = lista_wydarzen[indexPosition].wydarzenie_text;
-                view.mTime.Text = lista_wydarzen[indexPosition].wydarzenie_czas;
+                view.ETitle.Text = lista_wydarzen[indexPosition].etitle;
+                view.EFTeam.Text = lista_wydarzen[indexPosition].efteam;
+                view.ESTeam.Text = lista_wydarzen[indexPosition].esteam;
+                view.EDate.Text = lista_wydarzen[indexPosition].edate;
+                view.EGame.Text = lista_wydarzen[indexPosition].egame;
                 //view.mTime.Text = Convert.ToString(lista_wydarzen[indexPosition].czy_turniej);
-                if (lista_wydarzen[indexPosition].czy_turniej == 0)
+                if (lista_wydarzen[indexPosition].ift == 0)
                 {
                     view.mLayout.SetBackgroundResource(Resource.Drawable.Tournament);
                     //view.mLayout.SetBackgroundColor(Android.Graphics.Color.ParseColor("#2196f3"));
@@ -145,21 +157,26 @@ namespace GameHub.Fragments
 
         public class Wydarzenie
         {
-            public int czy_turniej = 0;
-            public string wydarzenie_text;
-            public string wydarzenie_tytul;
-            public string wydarzenie_czas;
-            public Wydarzenie(int czyturniej, string Text, string tytul, int godzina, int minuta)
+            public int ift = 0;
+            public string etitle;
+            public string efteam;
+            public string esteam;
+            public string edate;
+            public string egame;
+            public Wydarzenie(int ifTournament, string title, string team1, string team2, string date, string game)
             {
-                czy_turniej = czyturniej;
-                wydarzenie_text = Text;
-                wydarzenie_tytul = tytul;
-                Czas(godzina, minuta);
+                ift = ifTournament;
+                etitle = title;
+                efteam = team1;
+                esteam = team2;
+                edate = date;
+                egame = game;
+                //Czas(godzina, minuta);
             }
 
             private void Czas(int godzina, int minuta)
             {
-                wydarzenie_czas = Convert.ToString(godzina) + ":" + Convert.ToString(minuta);
+               // wydarzenie_czas = Convert.ToString(godzina) + ":" + Convert.ToString(minuta);
             }
         }
 

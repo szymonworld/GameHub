@@ -20,6 +20,7 @@ using Android.Support.V7.App;
 using Android.Support.V4.Widget;
 using GameHub.Fragments;
 using System.Json;
+using Android.Graphics;
 
 namespace GameHub
 {
@@ -84,7 +85,10 @@ namespace GameHub
 
                 if ((pref.GetString("PrefEmailUser", "").Count() > 0) && (pref.GetString("PrefPasswordUser", "").Count() > 0))
                 {
-                     dialog = ProgressDialog.Show(this, "", GetString(Resource.String.LoginLoading), true);
+                     dialog = new ProgressDialog(this, Resource.Style.AppCompatAlertDialogStyle);
+                    dialog.SetMessage(GetString(Resource.String.LoginLoading));
+                    dialog.Show();
+                    
                     bool internetConnection = await API.checkForInternetConnection();
 
                     if (internetConnection)
@@ -102,13 +106,17 @@ namespace GameHub
                         {
                             dialog.Dismiss();
                             Snackbar snackbar1 = Snackbar.Make(view, GetString(Resource.String.InvalidLoginOrPassword), Snackbar.LengthShort);
+                            View snackBarView = snackbar1.View;
+                            snackBarView.SetBackgroundColor(Color.ParseColor("#333d59"));
                             snackbar1.Show();
                         }
                     }
                     else
                     {
                         dialog.Dismiss();
-                        Snackbar snackbar1 = Snackbar.Make(view, GetString(Resource.String.NoInternetConnection), Snackbar.LengthShort);
+                        Snackbar snackbar1 = Snackbar.Make(view, GetString(Resource.String.InvalidLoginOrPassword), Snackbar.LengthShort);
+                        View snackBarView = snackbar1.View;
+                        snackBarView.SetBackgroundColor(Color.ParseColor("#333d59"));
                         snackbar1.Show();
                     }
                 }

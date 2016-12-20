@@ -3,21 +3,22 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#212531"
     android:id="@+id/LoginFrame"
-    android:fitsSystemWindows="true">
+    android:background="@drawable/background"
+             android:fitsSystemWindows="true">>
+  
     <Button
         android:background="@drawable/ButtonBlue"
         android:text="GO!"
         android:layout_width="match_parent"
-        android:layout_height="73.5dp"
+        android:layout_height="40dp"
         android:id="@+id/go"
         android:textSize="15sp"
         android:textColor="#ffffffff"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="200dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
+        android:layout_marginRight="20.0dp"
         android:layout_gravity="bottom" />
     <Button
         android:background="@drawable/ButtonBlue"
@@ -51,7 +52,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/imageView1"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="20dp"
         android:layout_gravity="center_horizontal" />
 <!--<RelativeLayout
         android:layout_height="0dp"

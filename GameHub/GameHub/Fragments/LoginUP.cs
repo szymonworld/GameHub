@@ -13,6 +13,8 @@ using Android.Widget;
 using System.Threading;
 using Android.Support.Design.Widget;
 using Android.Support.V7.App;
+using GameHub.Fragments;
+using Android.Graphics;
 
 namespace GameHub.Fragments
 {
@@ -35,6 +37,15 @@ namespace GameHub.Fragments
             Button login = view.FindViewById<Button>(Resource.Id.LoginUp_ButtonRegister);
 
 
+            TextView gotologin = view.FindViewById<TextView>(Resource.Id.gotologin);
+            gotologin.Click += delegate {
+
+                var newFragment = new LoginIN();
+                var ft = FragmentManager.BeginTransaction();
+                ft.Replace(Resource.Id.LoginFrame, newFragment);
+                ft.AddToBackStack(null);
+                ft.Commit();
+            };
 
             login.Click += async (object sender, EventArgs args) =>
             {
@@ -43,7 +54,9 @@ namespace GameHub.Fragments
                 if (internetConnection)
                 {
                     EditText email = view.FindViewById<EditText>(Resource.Id.input_Email);
-                    dialog = ProgressDialog.Show(view.Context, "", GetString(Resource.String.LoginLoading), true);
+                    dialog = new ProgressDialog(this.Activity, Resource.Style.AppCompatAlertDialogStyle);
+                    dialog.SetMessage(GetString(Resource.String.LoginLoading));
+                    dialog.Show();
 
                     bool accountExist = await API.isAccountExist(email.Text);
 
@@ -74,14 +87,18 @@ namespace GameHub.Fragments
                                     else
                                     {
                                         dialog.Dismiss();
-                                        Snackbar snackbar1 = Snackbar.Make(view, GetString(Resource.String.CannotCreateAccount), Snackbar.LengthShort);
+                                        Snackbar snackbar1 = Snackbar.Make(view, GetString(Resource.String.InvalidLoginOrPassword), Snackbar.LengthShort);
+                                        View snackBarView = snackbar1.View;
+                                        snackBarView.SetBackgroundColor(Color.ParseColor("#333d59"));
                                         snackbar1.Show();
                                     }
                                 }
                                 else
                                 {
                                     dialog.Dismiss();
-                                    Snackbar snackbar1 = Snackbar.Make(view, GetString(Resource.String.TypeNickname), Snackbar.LengthShort);
+                                    Snackbar snackbar1 = Snackbar.Make(view, GetString(Resource.String.InvalidLoginOrPassword), Snackbar.LengthShort);
+                                    View snackBarView = snackbar1.View;
+                                    snackBarView.SetBackgroundColor(Color.ParseColor("#333d59"));
                                     snackbar1.Show();
                                 }
 
@@ -89,7 +106,9 @@ namespace GameHub.Fragments
                             else
                             {
                                 dialog.Dismiss();
-                                Snackbar snackbar1 = Snackbar.Make(view, GetString(Resource.String.PasswordsNotEqual), Snackbar.LengthShort);
+                                Snackbar snackbar1 = Snackbar.Make(view, GetString(Resource.String.InvalidLoginOrPassword), Snackbar.LengthShort);
+                                View snackBarView = snackbar1.View;
+                                snackBarView.SetBackgroundColor(Color.ParseColor("#333d59"));
                                 snackbar1.Show();
                             }
 
@@ -97,7 +116,9 @@ namespace GameHub.Fragments
                         else
                         {
                             dialog.Dismiss();
-                            Snackbar snackbar1 = Snackbar.Make(view, GetString(Resource.String.PasswordTooShort), Snackbar.LengthShort);
+                            Snackbar snackbar1 = Snackbar.Make(view, GetString(Resource.String.InvalidLoginOrPassword), Snackbar.LengthShort);
+                            View snackBarView = snackbar1.View;
+                            snackBarView.SetBackgroundColor(Color.ParseColor("#333d59"));
                             snackbar1.Show();
                         }
 
@@ -105,14 +126,18 @@ namespace GameHub.Fragments
                     else
                     {
                         dialog.Dismiss();
-                        Snackbar snackbar1 = Snackbar.Make(view, GetString(Resource.String.AccountExist), Snackbar.LengthShort);
+                        Snackbar snackbar1 = Snackbar.Make(view, GetString(Resource.String.InvalidLoginOrPassword), Snackbar.LengthShort);
+                        View snackBarView = snackbar1.View;
+                        snackBarView.SetBackgroundColor(Color.ParseColor("#333d59"));
                         snackbar1.Show();
                     }
                 }
                 else
                 {
-                    
-                    Snackbar snackbar1 = Snackbar.Make(view, GetString(Resource.String.NoInternetConnection), Snackbar.LengthShort);
+
+                    Snackbar snackbar1 = Snackbar.Make(view, GetString(Resource.String.InvalidLoginOrPassword), Snackbar.LengthShort);
+                    View snackBarView = snackbar1.View;
+                    snackBarView.SetBackgroundColor(Color.ParseColor("#333d59"));
                     snackbar1.Show();
                 }
 

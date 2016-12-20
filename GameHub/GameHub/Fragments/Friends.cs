@@ -12,6 +12,8 @@ using Android.Content.Res;
 using Android.Widget;
 using GameHub.Lists;
 using Android.Support.Design.Widget;
+using DesignLibrary.Helpers;
+using Android.Support.V7.App;
 
 namespace GameHub.Fragments
 {
@@ -39,6 +41,16 @@ namespace GameHub.Fragments
             mAdapter = new SimpleStringRecyclerViewAdapter(recyclerView.Context, list, Activity.Resources);
             recyclerView.SetAdapter(mAdapter);
 
+
+            recyclerView.SetItemClickListener((rv, position, view) =>
+            {
+                //var newFragment = new Chat();
+                //var ft = FragmentManager.BeginTransaction();
+                //ft.Replace(Resource.Id.flContent, newFragment);
+                //ft.AddToBackStack(null);
+                //ft.Commit();
+            });
+
             // Dodanie nowych obiektów do listy po dojechaniu na dó³
             onScrollListener.LoadMoreEvent += (object sender, EventArgs e) => {
 
@@ -46,6 +58,7 @@ namespace GameHub.Fragments
 
                 mAdapter.NotifyDataSetChanged(); 
             };
+
 
             //NIE DZIA£A
             //var view = LayoutInflater.From(container.Context).Inflate(Resource.Layout.Hub, container, false);

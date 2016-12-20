@@ -151,7 +151,6 @@ namespace GameHub
                     intent = new Intent(this, typeof(Settings));
                     OverridePendingTransition(Resource.Animation.animRight, Resource.Animation.animRight2);
                     this.StartActivity(intent);
-                    Finish();
                     break;
                 case Resource.Id.MainToolbarLogout:
                     pref = GetSharedPreferences(LoginDataUser, FileCreationMode.Private);

@@ -6,19 +6,20 @@
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginBottom="3dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginRight="2dp"
+        android:layout_marginBottom="2dp"
         card_view:cardBackgroundColor="#252d41"
         card_view:cardElevation="5dp"
         card_view:cardUseCompatPadding="true"
-        card_view:cardCornerRadius="0dp">
+        card_view:cardCornerRadius="0dp"
+        android:layout_marginStart="2dp">
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="50dp"
             android:layout_height="140dp"
-            android:id="@+id/colorLayoutWydarzenia" />
+            android:id="@+id/colorLayoutWydarzenia"
+            android:background="@drawable/tournament" />
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="fill_parent"
@@ -27,12 +28,14 @@
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
             android:clipChildren="true"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:id="@+id/linearLayout2">
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:weightSum="100">
+                android:weightSum="100"
+                android:id="@+id/linearLayout1">
                 <LinearLayout
                     android:orientation="vertical"
                     android:layout_width="wrap_content"
@@ -54,35 +57,114 @@
                         android:minHeight="25px"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:paddingTop="20dp"
+                        android:paddingTop="5dp"
                         android:paddingBottom="3dp"
                         android:weightSum="100"
                         android:id="@+id/linearLayoutWydarzenia2">
                         <TextView
-                            android:text="Super tytul"
+                            android:text="Turniej GFINITY 2016"
                             android:textAppearance="?android:attr/textAppearanceMedium"
-                            android:layout_width="0dp"
                             android:layout_height="match_parent"
+                            android:id="@+id/EventTitle"
+                            android:layout_gravity="center"
                             android:layout_weight="80"
-                            android:id="@+id/textViewWydarzenia1" />
-                        <TextView
-                            android:text="15:50"
-                            android:textAppearance="?android:attr/textAppearanceSmall"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="20"
-                            android:gravity="center_horizontal"
-                            android:id="@+id/textViewWydarzenia3" />
+                            android:textStyle="bold"
+                            android:layout_width="264.0dp"
+                            style="@style/Base.TextAppearance.AppCompat" />
+                        <refractored.controls.CircleImageView
+                            android:layout_width="20dp"
+                            android:id="@+id/EventPlatformIcon"
+                            android:layout_height="20dp"
+                            android:src="@drawable/Icon_steam"
+                            android:scaleType="centerCrop"
+                            android:layout_marginRight="15dp"
+                            android:layout_gravity="clip_vertical" />
                     </LinearLayout>
-                    <TextView
-                        android:text="nastepujaca informacaj o ..."
-                        android:textAppearance="?android:attr/textAppearanceSmall"
-                        android:layout_width="121.0dp"
+                    <GridLayout
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="#777777"
-                        android:paddingBottom="5dp"
-                        android:id="@+id/textViewWydarzenia2"
-                        android:layout_marginRight="0.0dp" />
+                        android:layout_gravity="center"
+                        android:id="@+id/gridLayout1"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginBottom="10dp">
+                        <TextView
+                            android:text="Virtus.pro"
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/button_material_light"
+                            android:paddingBottom="5dp"
+                            android:id="@+id/EventFirstTeam"
+                            android:textSize="17dp"
+                            android:textStyle="italic" />
+                        <TextView
+                            android:text="vs."
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="#777777"
+                            android:paddingBottom="0dp"
+                            android:paddingLeft="10dp"
+                            android:paddingRight="10dp"
+                            android:id="@+id/vs" />
+                        <TextView
+                            android:text="Fnatic"
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/button_material_light"
+                            android:paddingBottom="0dp"
+                            android:paddingLeft="5dp"
+                            android:id="@+id/EventSecondaryTeam"
+                            android:textSize="17dp"
+                            android:textStyle="italic" />
+                    </GridLayout>
+                    <GridLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/gridLayout2">
+                        <TextView
+                            android:text="Data: "
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="#777777"
+                            android:id="@+id/Date" />
+                        <TextView
+                            android:text="18.05 15:50"
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="#777777"
+                            android:paddingLeft="5dp"
+                            android:id="@+id/EventDate" />
+                    </GridLayout>
+                    <View
+                        android:layout_width="wrap_content"
+                        android:layout_height="1dp"
+                        android:background="#FF484C56"
+                        android:alpha="0.5" />
+                    <GridLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:id="@+id/gridLayout2">
+                        <TextView
+                            android:text="Gra: "
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="#777777"
+                            android:id="@+id/Game" />
+                        <TextView
+                            android:text="Counter-Strike: Global Offensive"
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="#777777"
+                            android:paddingLeft="5dp"
+                            android:id="@+id/EventGame"
+                            style="@style/Base.TextAppearance.AppCompat" />
+                    </GridLayout>
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>

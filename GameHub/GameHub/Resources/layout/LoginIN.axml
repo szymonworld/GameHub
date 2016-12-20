@@ -1,11 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_weight="100"
-    android:background="#212531"
+    android:background="@drawable/background"
+    android:fitsSystemWindows="true"
     android:clickable="true">
+  <ImageView
+      android:src="@drawable/icon4"
+      android:layout_width="match_parent"
+      android:layout_height="100dp"
+      android:id="@+id/imageView1"
+      android:layout_centerHorizontal="true"
+      android:layout_marginTop="20dp"
+      android:layout_gravity="center_horizontal" />
   <EditText
       android:inputType="textEmailAddress"
       android:layout_width="match_parent"
@@ -15,13 +24,14 @@
       android:hint="@string/LoginIn_Email"
       android:textColor="#000"
       android:textColorHint="#626a77"
-      android:layout_marginLeft="50dp"
-      android:layout_marginRight="50dp"
-      android:layout_marginTop="80dp"
-      android:alpha="0.8"
+      android:layout_marginLeft="30dp"
+      android:layout_marginRight="30dp"
+      android:layout_marginTop="15dp"
+      android:alpha="0.7"
       android:textStyle="normal"
       android:typeface="normal"
-      android:drawableLeft="@drawable/ic_mail_outline_black" />
+      android:drawableLeft="@drawable/ic_mail_outline_black"
+      style="@style/Base.TextAppearance.AppCompat" />
   <EditText
       android:inputType="textPassword"
       android:layout_width="match_parent"
@@ -31,31 +41,33 @@
       android:hint="@string/LoginIn_Password"
       android:textColor="#000"
       android:textColorHint="#626a77"
+      android:layout_marginLeft="30dp"
+      android:layout_marginRight="30dp"
+      android:layout_marginTop="5dp"
+      android:drawableLeft="@drawable/ic_lock_outline_black"
+      android:alpha="0.7"
+      android:textStyle="normal"
+      android:typeface="normal"
+      style="@style/Base.TextAppearance.AppCompat" />
+  <Button
+      android:background="@drawable/ButtonBlue"
+      android:text="@string/LoginIn_ButtonLogin"
+      android:layout_width="match_parent"
+      android:layout_height="50dp"
+      android:id="@+id/LoginIn_ButtonLogin"
+      android:textSize="15sp"
+      android:textColor="#ffffffff"
       android:layout_marginLeft="50dp"
       android:layout_marginRight="50dp"
-      android:layout_marginTop="130dp"
-      android:drawableLeft="@drawable/ic_lock_outline_black"
-      android:alpha="0.8"
-      android:textStyle="normal"
-      android:typeface="normal" />
-
-  <RelativeLayout
-      android:layout_width="wrap_content"
-      android:layout_height="match_parent"
-      android:layout_below="@id/txtPassword"
-      android:layout_marginBottom="20dp"
-      android:layout_marginTop="400dp">
-    <Button
-        android:background="@drawable/ButtonBlue"
-        android:text="@string/LoginIn_ButtonLogin"
-        android:layout_width="match_parent"
-        android:layout_height="73.5dp"
-        android:id="@+id/LoginIn_ButtonLogin"
-        android:textSize="15sp"
-        android:textColor="#ffffffff"
-        android:layout_alignParentBottom="true"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_weight="100" />
-  </RelativeLayout>
-</FrameLayout>
+      android:layout_marginTop="10dp"
+      android:alpha="0.9" />
+  <TextView
+      android:text="Zapomniałeś hasła ?"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:id="@+id/lostpass"
+      android:layout_gravity="center"
+      android:gravity="center"
+      android:layout_marginTop="10dp"
+      android:clickable="true"/>
+</LinearLayout>

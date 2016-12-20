@@ -14,6 +14,7 @@ using Android.Widget;
 using System.Json;
 using Android.Support.Design.Widget;
 using Android.Support.V7.App;
+using Android.Graphics;
 
 namespace GameHub.Fragments
 {
@@ -39,10 +40,20 @@ namespace GameHub.Fragments
             ProgressDialog dialog;
             Button login = view.FindViewById<Button>(Resource.Id.LoginIn_ButtonLogin);
 
+            TextView lostpassword = view.FindViewById<TextView>(Resource.Id.lostpass);
+            lostpassword.Click += delegate {
+                var uri = Android.Net.Uri.Parse("http://www.google.com");
+                var intent = new Intent(Intent.ActionView, uri);
+                StartActivity(intent);
+            };
+
+
             login.Click += async(object sender, EventArgs args) =>
             {
                 bool internetConnection = await API.checkForInternetConnection();
-                dialog = ProgressDialog.Show(view.Context, "", GetString(Resource.String.LoginLoading), true);
+                dialog = new ProgressDialog(this.Activity, Resource.Style.AppCompatAlertDialogStyle);
+                dialog.SetMessage(GetString(Resource.String.LoginLoading));
+                dialog.Show();
                 if (internetConnection)
                 {
                      email = view.FindViewById<EditText>(Resource.Id.input_Email_In);
@@ -62,13 +73,17 @@ namespace GameHub.Fragments
                     {
                         dialog.Dismiss();
                         Snackbar snackbar1 = Snackbar.Make(view, GetString(Resource.String.InvalidLoginOrPassword), Snackbar.LengthShort);
+                        View snackBarView = snackbar1.View;
+                        snackBarView.SetBackgroundColor(Color.ParseColor("#333d59"));
                         snackbar1.Show();
                     }
                 }
                 else
                 {
                     dialog.Dismiss();
-                    Snackbar snackbar1 = Snackbar.Make(view, GetString(Resource.String.NoInternetConnection), Snackbar.LengthShort);
+                    Snackbar snackbar1 = Snackbar.Make(view, GetString(Resource.String.InvalidLoginOrPassword), Snackbar.LengthShort);
+                    View snackBarView = snackbar1.View;
+                    snackBarView.SetBackgroundColor(Color.ParseColor("#333d59"));
                     snackbar1.Show();
                 }
             };
