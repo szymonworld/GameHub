@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using SupportToolbar = Android.Support.V7.Widget.Toolbar;
+using SupportFragment = Android.Support.V4.App.Fragment;
 using Android.App;
 using Android.Content;
 using Android.OS;
@@ -16,11 +17,13 @@ using GameHub.Fragments;
 using Android.Util;
 using Android.Content.Res;
 using Android.Support.Design.Widget;
+using DesignLibrary.Helpers;
+using static Android.Content.ClipData;
 
 namespace GameHub
 {
     [Activity(Label = "FriendList")]
-    public class FriendList : AppCompatActivity
+    public class FriendList : SupportFragment
     {
 
         private List<string> list = new List<string>();
@@ -28,17 +31,25 @@ namespace GameHub
         private RecyclerView mRecyclerView;
 
 
-        protected override void OnCreate(Bundle savedInstanceState)
+        public override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
+        }
 
-            SetContentView(Resource.Layout.FriendList);
-            SupportToolbar toolBar = FindViewById<SupportToolbar>(Resource.Id.toolbar);
-            SetSupportActionBar(toolBar);
-            SupportActionBar.SetDisplayHomeAsUpEnabled(true);
-            SupportActionBar.Title = GetString(Resource.String.Friends_Title);
 
-            mRecyclerView = FindViewById<RecyclerView>(Resource.Id.recyclerview);
+        public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
+        {
+
+            View view2 = inflater.Inflate(Resource.Layout.FriendList, container, false);
+
+            SupportToolbar toolBar = view2.FindViewById<SupportToolbar>(Resource.Id.toolbar);
+            ((AppCompatActivity)this.Activity).SetSupportActionBar(toolBar);
+            ((AppCompatActivity)this.Activity).SupportActionBar.SetHomeAsUpIndicator(Resource.Drawable.ic_menu);
+            ((AppCompatActivity)this.Activity).SupportActionBar.SetDisplayHomeAsUpEnabled(true);
+            ((AppCompatActivity)this.Activity).SupportActionBar.Title = GetString(Resource.String.Friends_Title);
+
+
+            mRecyclerView = view2.FindViewById<RecyclerView>(Resource.Id.recyclerview);
 
             int uri2 = Resource.Drawable.Icon2;
             GetRandomSubList(Lists.Friends.NickStrings, 2);  // dodanie 30 obiektów do listy 
@@ -48,9 +59,10 @@ namespace GameHub
             mRecyclerView.AddOnScrollListener(onScrollListener);
             mRecyclerView.SetLayoutManager(mLayoutManager);
             mAdapter = new SimpleStringRecyclerViewAdapter(mRecyclerView.Context, list, uri2);
+            
             mRecyclerView.SetAdapter(mAdapter);
 
-            FloatingActionButton myFab = (FloatingActionButton)FindViewById(Resource.Id.fab);
+            FloatingActionButton myFab = (FloatingActionButton)view2.FindViewById(Resource.Id.fab);
             myFab.Click += delegate
             {
                 GetRandomSubList(Lists.Friends.NickStrings, 1);
@@ -66,6 +78,17 @@ namespace GameHub
                 mRecyclerView.SetAdapter(mAdapter);
                 mAdapter.NotifyDataSetChanged();
             };
+            
+            mRecyclerView.SetItemClickListener((rv, position, view) =>
+            {
+                
+                TextView mTxtView = view.FindViewById<TextView>(Resource.Id.text1);
+                Context context = view2.Context;
+                Intent intent = new Intent(context, typeof(Chat));
+                intent.PutExtra("Name", mTxtView.Text);
+                context.StartActivity(intent);
+            });
+            
 
             // Dodanie nowych obiektów do listy po dojechaniu na dó³
             onScrollListener.LoadMoreEvent += (object sender, EventArgs e) => {
@@ -75,14 +98,18 @@ namespace GameHub
                 //mAdapter.NotifyDataSetChanged();
             };
 
+            return view2;
+
         }
 
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
+            GetRandomSubList(Lists.Friends.NickStrings, 2);
             switch (item.ItemId)
             {
                 case Android.Resource.Id.Home:
-                    Finish();
+                    GetRandomSubList(Lists.Friends.NickStrings, 2);
+                    ((AppCompatActivity)this.Activity).Finish();
                     return true;
             }
 
@@ -101,17 +128,19 @@ namespace GameHub
             //return list;
         }
 
+       
         public class SimpleStringRecyclerViewAdapter : RecyclerView.Adapter
         {
             private readonly TypedValue mTypedValue = new TypedValue();
             private int mBackground;
             private List<string> mValues;
+            public event EventHandler<int> ItemClick;
             private Dictionary<int, int> mCalculatedSizes;
             private int uri;
 
             public SimpleStringRecyclerViewAdapter(Context context, List<string> items, int resource)
             {
-                context.Theme.ResolveAttribute(Resource.Attribute.selectableItemBackground, mTypedValue, true);
+                //context.Theme.ResolveAttribute(Resource.Attribute.colorPrimary, mTypedValue, true);
                 mBackground = mTypedValue.ResourceId;
                 mValues = items;
                 uri = resource;
@@ -126,6 +155,11 @@ namespace GameHub
                 {
                     return mValues.Count;
                 }
+            }
+            void OnClick(int position)
+            {
+                if (ItemClick != null)
+                    ItemClick(this, position);
             }
 
             public override async void OnBindViewHolder(RecyclerView.ViewHolder holder, int position)
@@ -163,9 +197,10 @@ namespace GameHub
             public override RecyclerView.ViewHolder OnCreateViewHolder(ViewGroup parent, int viewType)
             {
                 View view = LayoutInflater.From(parent.Context).Inflate(Resource.Layout.List_Item, parent, false);
-                view.SetBackgroundResource(mBackground);
+                //view.SetBackgroundResource(mBackground);
 
-                return new SimpleViewHolder(view);
+
+                return new SimpleViewHolder(view, OnClick);
             }
         }
         public class SimpleViewHolder : RecyclerView.ViewHolder
@@ -175,11 +210,12 @@ namespace GameHub
             public readonly ImageView mImageView;
             public readonly TextView mTxtView;
 
-            public SimpleViewHolder(View view) : base(view)
+            public SimpleViewHolder(View view, Action<int> listener) : base(view)
             {
                 mView = view;
                 mImageView = view.FindViewById<ImageView>(Resource.Id.avatar);
                 mTxtView = view.FindViewById<TextView>(Resource.Id.text1);
+                view.Click += (sender, e) => listener(Position);
             }
 
             public override string ToString()

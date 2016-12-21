@@ -83,10 +83,19 @@ namespace GameHub
 
                         break;
                     case (Resource.Id.nav_friends):
+                        newFragment = new FriendList();
+                        trans = SupportFragmentManager.BeginTransaction();
+                        //trans.Remove(newFragment);
+                        //trans.Add(Resource.Id.LoginFrame, newFragment);
+                        trans.Replace(Resource.Id.flContent, newFragment, "Znajomi");
+                        trans.AddToBackStack(null);
+                        trans.Commit();
+                        OverridePendingTransition(Resource.Animation.animRight, Resource.Animation.animRight2);
+                        /*
                         intent = new Intent(this, typeof(FriendList));
                         OverridePendingTransition(Resource.Animation.animRight, Resource.Animation.animRight2);
                         this.StartActivity(intent);
-
+                        */
                         // ? Przejście na Activity
                         //intent = new Intent(this, typeof(Tournament));
                         //this.StartActivity(intent);

@@ -32,6 +32,12 @@ namespace GameHub
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Chat);
 
+            SupportToolbar toolBar = FindViewById<SupportToolbar>(Resource.Id.toolbar);
+            SetSupportActionBar(toolBar);
+            SupportActionBar.SetDisplayHomeAsUpEnabled(true);
+            string friend = Intent.GetStringExtra("Name");
+            SupportActionBar.Title = friend;
+
             ImageView imagev = FindViewById<ImageView>(Resource.Id.sendImage);
             //imagev.SetOnClickListener(SendClickListener);
             imagev.Click += delegate { SendClickListener(); };
@@ -45,7 +51,7 @@ namespace GameHub
             mRecyclerView.SetLayoutManager(mLayoutManager);
             mRecyclerView.SetAdapter(mAdapter);
 
-            historia = new ReadWriteAppFile("chat");
+            historia = new ReadWriteAppFile(friend);
             try
             {
                 var restoredOject = historia.RestoreObject();
@@ -148,6 +154,17 @@ namespace GameHub
             mLayoutManager.ScrollToPosition(numberOfChild);
         }
 
+        public override bool OnOptionsItemSelected(IMenuItem item)
+        {
+            switch (item.ItemId)
+            {
+                case Android.Resource.Id.Home:
+                    Finish();
+                    return true;
+            }
+
+            return base.OnOptionsItemSelected(item);
+        }
 
         public void Generator(string Nick, string message, DateTime date, int photo = Resource.Drawable.acceptsmall)
         {
@@ -161,10 +178,6 @@ namespace GameHub
             historia.SaveObject(messageHistory_list);
         }
 
-        public override bool OnOptionsItemSelected(IMenuItem item)
-        {
-            return base.OnOptionsItemSelected(item);
-        }
 
         public class RecyclerAdapter : RecyclerView.Adapter
         {
