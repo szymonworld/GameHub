@@ -47,8 +47,7 @@ namespace GameHub.Fragments
                 StartActivity(intent);
             };
 
-
-            login.Click += async(object sender, EventArgs args) =>
+            login.Click += async (object sender, EventArgs args) =>
             {
                 bool internetConnection = await API.checkForInternetConnection();
                 dialog = new ProgressDialog(this.Activity, Resource.Style.AppCompatAlertDialogStyle);
@@ -56,36 +55,29 @@ namespace GameHub.Fragments
                 dialog.Show();
                 if (internetConnection)
                 {
-                     email = view.FindViewById<EditText>(Resource.Id.input_Email_In);
-                     password = view.FindViewById<EditText>(Resource.Id.input_Password_In);
+                    email = view.FindViewById<EditText>(Resource.Id.input_Email_In);
+                    password = view.FindViewById<EditText>(Resource.Id.input_Password_In);
 
                     bool authentificated = await API.authentification(email.Text, password.Text);
 
                     if (authentificated)
                     {
-                              dialog.Dismiss();
-                            SaveData();
-                            Context context = view.Context;
-                            Intent intent = new Intent(context, typeof(MainActivity));
-                            context.StartActivity(intent);
+                        SaveData();
+                        Context context = view.Context;
+                        Intent intent = new Intent(context, typeof(MainActivity));
+                        context.StartActivity(intent);
                     }
                     else
                     {
-                        dialog.Dismiss();
-                        Snackbar snackbar1 = Snackbar.Make(view, GetString(Resource.String.InvalidLoginOrPassword), Snackbar.LengthShort);
-                        View snackBarView = snackbar1.View;
-                        snackBarView.SetBackgroundColor(Color.ParseColor("#333d59"));
-                        snackbar1.Show();
+                        ShowSnack(view, GetString(Resource.String.InvalidLoginOrPassword));
                     }
                 }
                 else
                 {
-                    dialog.Dismiss();
-                    Snackbar snackbar1 = Snackbar.Make(view, GetString(Resource.String.InvalidLoginOrPassword), Snackbar.LengthShort);
-                    View snackBarView = snackbar1.View;
-                    snackBarView.SetBackgroundColor(Color.ParseColor("#333d59"));
-                    snackbar1.Show();
+                    ShowSnack(view, GetString(Resource.String.NoInternetConnection));
                 }
+
+                dialog.Dismiss();
             };
 
 
@@ -107,6 +99,13 @@ namespace GameHub.Fragments
             email.Text = pref.GetString("PrefEmailUser", "");
             password.Text = pref.GetString("PrefPasswordUser", "");
             
+        }
+        private void ShowSnack(View view, string msg)
+        {
+            Snackbar snackbar1 = Snackbar.Make(view, msg, Snackbar.LengthShort);
+            View snackBarView = snackbar1.View;
+            snackBarView.SetBackgroundColor(Color.ParseColor("#333d59"));
+            snackbar1.Show();
         }
     }
 }

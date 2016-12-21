@@ -1,10 +1,11 @@
 ﻿using System.Json;
+using System;
 
 namespace GameHub
 {
-    class Account
+    public class Account
     {
-        public int AccountID { get; }
+        public int AccountID { get; set; }
         public string LastName { get; set; }
         public string FirstName { get; set; }
         public string Login { get; set; }
@@ -36,28 +37,28 @@ namespace GameHub
         public Account()
         {
             this.AccountID = 0;
-            this.LastName = null;
-            this.FirstName = null;
-            this.Login = null;
-            this.Password = null;
-            this.Email = null;
-            this.Description = null;
+            this.LastName = "";
+            this.FirstName = "";
+            this.Login = "";
+            this.Password = "";
+            this.Email = "";
+            this.Description = "";
             this.Microphone = false;
-            this.ProfilePicture = null;
-            this.Status = null;
-            this.Language = null;
+            this.ProfilePicture = "";
+            this.Status = "";
+            this.Language = "";
             this.RepPoint = 0;
         }
-        public Account(JsonValue json)
+        public Account(JsonValue json) //TODO: jakis problem z odczytem majka
         {
             this.AccountID = json["AccountID"];
             this.LastName = json["LastName"];
             this.FirstName = json["FirstName"];
             this.Login = json["Login"];
-            this.Password = json["Password"];
+            //this.Password = json["Password"];
             this.Email = json["Email"];
             this.Description = json["Description"];
-            this.Microphone = json["Microphone"];
+          //  this.Microphone = json["Microphone"];
             this.ProfilePicture = json["ProfilePicture"];
             this.Status = json["Status"];
             this.Language = json["Language"];

@@ -10,7 +10,6 @@ using SupportFragment = Android.Support.V4.App.Fragment;
 using SupportFragmentManager = Android.Support.V4.App.FragmentManager;
 using Android.Support.Design.Widget;
 using Android.Content;
-
 using Android.Support.V4.View;
 using Android.Support.V4.App;
 using System.Collections.Generic;
@@ -20,13 +19,11 @@ using Android.Views.Animations;
 using Android.Content.PM;
 using System;
 using Refractored.Controls;
+using System.Threading.Tasks;
 
 namespace GameHub
 {
     [Activity(Label = "GameHub", ScreenOrientation = ScreenOrientation.Portrait) ]
-
-
-
     public class MainActivity : AppCompatActivity
     {
         private static string LoginDataUser;
@@ -35,12 +32,13 @@ namespace GameHub
         private Android.Support.V7.App.ActionBarDrawerToggle drawerToggle;
         private SupportToolbar toolbar;
         private NavigationView navigationView;
+        public Account currentAccount;
 
-
-        protected override void OnCreate(Bundle bundle)
+        protected async override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
             SetContentView(Resource.Layout.Main);
+
             Intent intent;
             SupportFragment newFragment = new Hub();
             var trans = SupportFragmentManager.BeginTransaction();
@@ -51,8 +49,6 @@ namespace GameHub
             navigationView = FindViewById<NavigationView>(Resource.Id.nav_view);
 
             View navheader = navigationView.GetHeaderView(0);
-            TextView profilename = (TextView)navheader.FindViewById(Resource.Id.textCustomer2);
-            profilename.Text = "SeherimMaster";
             CircleImageView iv = (CircleImageView)navheader.FindViewById(Resource.Id.imageCustomerIcon);
             iv.Click += delegate
             {
@@ -60,6 +56,8 @@ namespace GameHub
                 OverridePendingTransition(Resource.Animation.animRight, Resource.Animation.animRight2);
                 this.StartActivity(intent);
             };
+
+            await LoadAccount();
 
             navigationView.NavigationItemSelected += (sender, e) =>
             {
@@ -138,9 +136,16 @@ namespace GameHub
         //    intent = new Intent(this, typeof(Profile));
         //    OverridePendingTransition(Resource.Animation.animRight, Resource.Animation.animRight2);
         //    this.StartActivity(intent);
-       // }
+        // }
+        // }
+        private async Task LoadAccount()
+        {
+            pref = ((AppCompatActivity)this).GetSharedPreferences(LoginDataUser, FileCreationMode.Private);
+            currentAccount = await API.getAccountByEmail(pref.GetString("PrefEmailUser", ""));
+            TextView profilename = (TextView)navigationView.GetHeaderView(0).FindViewById(Resource.Id.textCustomer2);
+            profilename.Text = currentAccount.Login;
 
-
+        }
         public override bool OnCreateOptionsMenu(IMenu menu)
         {
             MenuInflater.Inflate(Resource.Menu.toolbarMenu, menu);

@@ -81,3 +81,16 @@ CREATE TABLE Invitations
 	CONSTRAINT fk_IEventID FOREIGN KEY (EventID) REFERENCES Events(EventID),
 	CONSTRAINT fk_IAccountID FOREIGN KEY (AccountID) REFERENCES Accounts(AccountID)
 );
+
+CREATE TABLE Messages
+(
+	MessageID int NOT NULL AUTO_INCREMENT,
+	SenderAccountID int,
+	ReceiverAccountID int,
+	Message TEXT,
+	Version int,
+	Date varchar(255),
+	PRIMARY KEY (MessageID),
+	CONSTRAINT SenderAccountID FOREIGN KEY (SenderAccountID) REFERENCES Accounts(AccountID),
+	CONSTRAINT ReceiverAccountID FOREIGN KEY (ReceiverAccountID) REFERENCES Accounts(AccountID)
+);

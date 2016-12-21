@@ -86,59 +86,37 @@ namespace GameHub.Fragments
                                     }
                                     else
                                     {
-                                        dialog.Dismiss();
-                                        Snackbar snackbar1 = Snackbar.Make(view, GetString(Resource.String.InvalidLoginOrPassword), Snackbar.LengthShort);
-                                        View snackBarView = snackbar1.View;
-                                        snackBarView.SetBackgroundColor(Color.ParseColor("#333d59"));
-                                        snackbar1.Show();
+                                        ShowSnack(view, GetString(Resource.String.CannotCreateAccount));
                                     }
                                 }
                                 else
                                 {
-                                    dialog.Dismiss();
-                                    Snackbar snackbar1 = Snackbar.Make(view, GetString(Resource.String.InvalidLoginOrPassword), Snackbar.LengthShort);
-                                    View snackBarView = snackbar1.View;
-                                    snackBarView.SetBackgroundColor(Color.ParseColor("#333d59"));
-                                    snackbar1.Show();
+                                    ShowSnack(view, GetString(Resource.String.TypeNickname));
                                 }
 
                             }
                             else
                             {
-                                dialog.Dismiss();
-                                Snackbar snackbar1 = Snackbar.Make(view, GetString(Resource.String.InvalidLoginOrPassword), Snackbar.LengthShort);
-                                View snackBarView = snackbar1.View;
-                                snackBarView.SetBackgroundColor(Color.ParseColor("#333d59"));
-                                snackbar1.Show();
+                                ShowSnack(view, GetString(Resource.String.PasswordsNotEqual));
                             }
 
                         }
                         else
                         {
-                            dialog.Dismiss();
-                            Snackbar snackbar1 = Snackbar.Make(view, GetString(Resource.String.InvalidLoginOrPassword), Snackbar.LengthShort);
-                            View snackBarView = snackbar1.View;
-                            snackBarView.SetBackgroundColor(Color.ParseColor("#333d59"));
-                            snackbar1.Show();
+                            ShowSnack(view, GetString(Resource.String.PasswordTooShort));
                         }
 
                     }
                     else
                     {
-                        dialog.Dismiss();
-                        Snackbar snackbar1 = Snackbar.Make(view, GetString(Resource.String.InvalidLoginOrPassword), Snackbar.LengthShort);
-                        View snackBarView = snackbar1.View;
-                        snackBarView.SetBackgroundColor(Color.ParseColor("#333d59"));
-                        snackbar1.Show();
+                        ShowSnack(view, GetString(Resource.String.AccountExist));
                     }
+
+                    dialog.Dismiss();
                 }
                 else
                 {
-
-                    Snackbar snackbar1 = Snackbar.Make(view, GetString(Resource.String.InvalidLoginOrPassword), Snackbar.LengthShort);
-                    View snackBarView = snackbar1.View;
-                    snackBarView.SetBackgroundColor(Color.ParseColor("#333d59"));
-                    snackbar1.Show();
+                    ShowSnack(view, GetString(Resource.String.NoInternetConnection));
                 }
 
             };
@@ -158,9 +136,6 @@ namespace GameHub.Fragments
             // mProgressBar.Visibility = Android.Views.ViewStates.Visible;
             Thread t1 = new Thread(ActLikeARequest);
             t1.Start();
-
-
-
         }
 
         private void ActLikeARequest()
@@ -179,6 +154,13 @@ namespace GameHub.Fragments
             PrefEdit.PutString("PrefEmailUser", email.Text.ToString());
             PrefEdit.PutString("PrefPasswordUser", password.Text.ToString());
             PrefEdit.Apply();
+        }
+        private void ShowSnack(View view, string msg)
+        {
+            Snackbar snackbar1 = Snackbar.Make(view, msg, Snackbar.LengthShort);
+            View snackBarView = snackbar1.View;
+            snackBarView.SetBackgroundColor(Color.ParseColor("#333d59"));
+            snackbar1.Show();
         }
     }
 

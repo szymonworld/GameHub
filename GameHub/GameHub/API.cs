@@ -28,6 +28,7 @@ namespace GameHub
         }
         public static async Task<Account> getAccountByEmail(string email)
         {
+
             try
             {
                 HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(new System.Uri(Apiurl + "?type=1&email=" + email));
@@ -37,13 +38,14 @@ namespace GameHub
                     using (Stream stream = response.GetResponseStream())
                     {
                         JsonValue json = await Task.Run(() => JsonObject.Load(stream));
-                        return new Account(json);
+                        return json["success"] == 1 ? new Account(json) : null;
                     }
                 }
 
             }
             catch
             {
+                
                 return null;
             }
         }

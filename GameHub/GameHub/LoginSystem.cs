@@ -77,18 +77,25 @@ namespace GameHub
             };
         }
 
+        private void ShowSnack(View view, string msg)
+        {
+            Snackbar snackbar1 = Snackbar.Make(view, msg, Snackbar.LengthShort);
+            View snackBarView = snackbar1.View;
+            snackBarView.SetBackgroundColor(Color.ParseColor("#333d59"));
+            snackbar1.Show();
+        }
+
         private async void AutoLog()
         {
             ProgressDialog dialog;
             if ((pref.GetString("PrefEmailUser", "") != null) && (pref.GetString("PrefPasswordUser", "") != null))
             {
-
                 if ((pref.GetString("PrefEmailUser", "").Count() > 0) && (pref.GetString("PrefPasswordUser", "").Count() > 0))
                 {
-                     dialog = new ProgressDialog(this, Resource.Style.AppCompatAlertDialogStyle);
+                    dialog = new ProgressDialog(this, Resource.Style.AppCompatAlertDialogStyle);
                     dialog.SetMessage(GetString(Resource.String.LoginLoading));
                     dialog.Show();
-                    
+
                     bool internetConnection = await API.checkForInternetConnection();
 
                     if (internetConnection)
@@ -97,37 +104,23 @@ namespace GameHub
 
                         if (authentificated)
                         {
-
                             Context context = view.Context;
                             Intent intent = new Intent(context, typeof(MainActivity));
                             context.StartActivity(intent);
                         }
                         else
                         {
-                            dialog.Dismiss();
-                            Snackbar snackbar1 = Snackbar.Make(view, GetString(Resource.String.InvalidLoginOrPassword), Snackbar.LengthShort);
-                            View snackBarView = snackbar1.View;
-                            snackBarView.SetBackgroundColor(Color.ParseColor("#333d59"));
-                            snackbar1.Show();
+                            ShowSnack(view, GetString(Resource.String.InvalidLoginOrPassword));
                         }
                     }
                     else
                     {
-                        dialog.Dismiss();
-                        Snackbar snackbar1 = Snackbar.Make(view, GetString(Resource.String.InvalidLoginOrPassword), Snackbar.LengthShort);
-                        View snackBarView = snackbar1.View;
-                        snackBarView.SetBackgroundColor(Color.ParseColor("#333d59"));
-                        snackbar1.Show();
+                        ShowSnack(view, GetString(Resource.String.NoInternetConnection));
                     }
-                }
-                else
-                {
-                    
 
+                    dialog.Dismiss();
                 }
             }
-
-
         }
     }
 }
