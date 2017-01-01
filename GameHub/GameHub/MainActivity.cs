@@ -70,7 +70,6 @@ namespace GameHub
                         newFragment = new Hub();
                         trans = SupportFragmentManager.BeginTransaction();
                         trans.Replace(Resource.Id.flContent, newFragment, "Hub");
-                        trans.AddToBackStack(null);
                         trans.Commit();
 
                         // ? Przejście na Activity
@@ -80,13 +79,38 @@ namespace GameHub
                         OverridePendingTransition(Resource.Animation.animRight, Resource.Animation.animRight2);
 
                         break;
+
+                    case (Resource.Id.nav_tournament):
+                        newFragment = new Tournament();
+                        trans = SupportFragmentManager.BeginTransaction();
+                        trans.Replace(Resource.Id.flContent, newFragment, "Turnieje");
+                        trans.Commit();
+                        OverridePendingTransition(Resource.Animation.animRight, Resource.Animation.animRight2);
+
+                        break;
+
+                    case (Resource.Id.nav_quickgame):
+                        newFragment = new Quickgame();
+                        trans = SupportFragmentManager.BeginTransaction();
+                        trans.Replace(Resource.Id.flContent, newFragment, "Szybka gra");
+                        trans.Commit();
+                        OverridePendingTransition(Resource.Animation.animRight, Resource.Animation.animRight2);
+
+                        break;
+
+                    case (Resource.Id.nav_findplayers):
+                        newFragment = new Findplayers();
+                        trans = SupportFragmentManager.BeginTransaction();
+                        trans.Replace(Resource.Id.flContent, newFragment, "Znajdz gracza");
+                        trans.Commit();
+                        OverridePendingTransition(Resource.Animation.animRight, Resource.Animation.animRight2);
+                        break;
                     case (Resource.Id.nav_friends):
                         newFragment = new FriendList();
                         trans = SupportFragmentManager.BeginTransaction();
                         //trans.Remove(newFragment);
                         //trans.Add(Resource.Id.LoginFrame, newFragment);
                         trans.Replace(Resource.Id.flContent, newFragment, "Znajomi");
-                        trans.AddToBackStack(null);
                         trans.Commit();
                         OverridePendingTransition(Resource.Animation.animRight, Resource.Animation.animRight2);
                         /*
@@ -102,13 +126,13 @@ namespace GameHub
 
                         break;
 
-                    case (Resource.Id.nav_findplayers):
-                        intent = new Intent(this, typeof(Chat));
-                        OverridePendingTransition(Resource.Animation.animRight, Resource.Animation.animRight2);
-                        this.StartActivity(intent);
+                    //case (Resource.Id.nav_findplayers):
+                    //    intent = new Intent(this, typeof(Chat));
+                    //    OverridePendingTransition(Resource.Animation.animRight, Resource.Animation.animRight2);
+                    //    this.StartActivity(intent);
                         
 
-                        break;
+                    //    break;
 
                     case (Resource.Id.nav_profile):
                         intent = new Intent(this, typeof(Profile));

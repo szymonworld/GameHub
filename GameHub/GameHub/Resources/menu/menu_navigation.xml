@@ -23,10 +23,6 @@
     android:icon="@drawable/ic_explore_black_48dp"
     android:title="@string/nav_findplayers" />
     <item
-        android:id="@+id/nav_events"
-        android:icon="@drawable/ic_event_available_black_48dp"
-        android:title="@string/nav_events" />
-    <item
         android:id="@+id/nav_friends"
         android:icon="@drawable/ic_forum"
         android:title="@string/nav_friends" />

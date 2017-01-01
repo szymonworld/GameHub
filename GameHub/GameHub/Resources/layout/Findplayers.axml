@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+  <LinearLayout
+      android:orientation="vertical"
+      android:id="@+id/layoutl"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:fitsSystemWindows="true"
+      android:theme="@style/DarkTheme">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:fitsSystemWindows="true"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="@style/DarkThemeToolbar" />
+    <EditText
+    android:inputType="textPersonName"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/input_Nick"
+    android:background="@drawable/edit_text_style"
+    android:hint="@string/LoginUp_Nick"
+    android:textColor="#000"
+    android:textColorHint="#626a77"
+    android:layout_marginLeft="30dp"
+    android:layout_marginRight="30dp"
+    android:layout_marginTop="15dp"
+    android:alpha="0.7"
+    android:textStyle="normal"
+    android:typeface="normal"
+    android:drawableLeft="@drawable/ic_perm_identity_black"
+    style="@style/Base.TextAppearance.AppCompat" />
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+  </LinearLayout>
+</android.support.design.widget.CoordinatorLayout>

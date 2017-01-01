@@ -8,9 +8,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="2dp"
         android:layout_marginRight="2dp"
-        android:layout_marginBottom="2dp"
         card_view:cardBackgroundColor="#252d41"
-        card_view:cardElevation="5dp"
         card_view:cardUseCompatPadding="true"
         card_view:cardCornerRadius="0dp"
         android:layout_marginStart="2dp">
@@ -26,8 +24,6 @@
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:clipChildren="true"
             android:layout_height="wrap_content"
             android:id="@+id/linearLayout2">
             <LinearLayout
@@ -128,14 +124,14 @@
                             android:textAppearance="?android:attr/textAppearanceSmall"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:textColor="#777777"
+                            android:textColor="#cccccc"
                             android:id="@+id/Date" />
                         <TextView
                             android:text="18.05 15:50"
                             android:textAppearance="?android:attr/textAppearanceSmall"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:textColor="#777777"
+                            android:textColor="#9b9b9b"
                             android:paddingLeft="5dp"
                             android:id="@+id/EventDate" />
                     </GridLayout>
@@ -153,14 +149,14 @@
                             android:textAppearance="?android:attr/textAppearanceSmall"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:textColor="#777777"
+                            android:textColor="@color/button_material_light"
                             android:id="@+id/Game" />
                         <TextView
                             android:text="Counter-Strike: Global Offensive"
                             android:textAppearance="?android:attr/textAppearanceSmall"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:textColor="#777777"
+                            android:textColor="#9b9b9b"
                             android:paddingLeft="5dp"
                             android:id="@+id/EventGame"
                             style="@style/Base.TextAppearance.AppCompat" />

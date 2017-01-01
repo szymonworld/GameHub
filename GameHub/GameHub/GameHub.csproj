@@ -93,6 +93,7 @@
     <Compile Include="Browser.cs" />
     <Compile Include="DatabaseClasses\Account.cs" />
     <Compile Include="DatabaseClasses\LinkAccount.cs" />
+    <Compile Include="Fragments\Findplayers.cs" />
     <Compile Include="Fragments\Friends.cs" />
     <Compile Include="Fragments\Hub.cs" />
     <Compile Include="Chat.cs" />
@@ -103,6 +104,7 @@
     <Compile Include="Fragments\ProfileAccounts.cs" />
     <Compile Include="Fragments\ProfileDescription.cs" />
     <Compile Include="Fragments\ProfileFriends.cs" />
+    <Compile Include="Fragments\Quickgame.cs" />
     <Compile Include="Fragments\RecyclerViewOnScrollListener.cs" />
     <Compile Include="Fragments\Tournament.cs" />
     <Compile Include="Fragments\Events.cs" />
@@ -140,7 +142,9 @@
     <AndroidResource Include="Resources\layout\Friends.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\layout\List_Item.axml" />
+    <AndroidResource Include="Resources\layout\List_Item.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
     <AndroidResource Include="Resources\layout\Tournament.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
@@ -199,6 +203,15 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\Loading.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\TournamentList.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\Quickgame.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\Findplayers.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
@@ -743,6 +756,16 @@
   <ItemGroup>
     <Content Include="LICENSE.txt" />
     <AndroidResource Include="Resources\drawable\background.jpg" />
+    <AndroidResource Include="Resources\drawable-hdpi\navWallpaper.jpg" />
+    <AndroidResource Include="Resources\drawable-hdpi\background.jpg" />
+    <AndroidResource Include="Resources\drawable-mdpi\navWallpaper.jpg" />
+    <AndroidResource Include="Resources\drawable-mdpi\background.jpg" />
+    <AndroidResource Include="Resources\drawable-xhdpi\navWallpaper.jpg" />
+    <AndroidResource Include="Resources\drawable-xhdpi\background.jpg" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\navWallpaper.jpg" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\background.jpg" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\navWallpaper.jpg" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\background.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

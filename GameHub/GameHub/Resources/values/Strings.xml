@@ -100,7 +100,15 @@
 
   <!--FriendList-->
   <string name="Friends_Title">Znajomi</string>
+
+  <!--Tournament-->
+  <string name="Tournament_Title">Turniej</string>
   
+  <!--Quickgame-->
+  <string name="Quickgame_Title">Szybka gra</string>
+
+  <!--FindPlayers-->
+  <string name="Findplayers_Title">Znajdź gracza</string>
   
   
 

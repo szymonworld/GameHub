@@ -2493,10 +2493,10 @@ containing a value of this type.
         public static int EventTitle=0x7f06008b;
         public static int Game=0x7f060094;
         public static int Icon_platform=0x7f0600d0;
-        public static int LoginFrame=0x7f06009e;
-        public static int LoginIn_ButtonLogin=0x7f0600a3;
+        public static int LoginFrame=0x7f06009f;
+        public static int LoginIn_ButtonLogin=0x7f0600a4;
         public static int LoginUp_ButtonRegister=0x7f0600ac;
-        public static int MainToolbarLogout=0x7f0600ed;
+        public static int MainToolbarLogout=0x7f0600ec;
         public static int ProSetCountry=0x7f0600d7;
         public static int ProSetCountryChange=0x7f0600d6;
         public static int ProSetDes=0x7f0600db;
@@ -2509,11 +2509,11 @@ containing a value of this type.
         public static int ProSetPass=0x7f0600d9;
         public static int ProSetPassChange=0x7f0600d8;
         public static int ProSetPicChange=0x7f0600d1;
-        public static int ProfilToolbarAddFriend=0x7f0600ea;
-        public static int ProfilToolbarEdit=0x7f0600eb;
-        public static int ProfilToolbarSendMessage=0x7f0600e9;
-        public static int SignInMenu=0x7f0600a6;
-        public static int SignUpMenu=0x7f0600a7;
+        public static int ProfilToolbarAddFriend=0x7f0600e9;
+        public static int ProfilToolbarEdit=0x7f0600ea;
+        public static int ProfilToolbarSendMessage=0x7f0600e8;
+        public static int SignInMenu=0x7f0600a7;
+        public static int SignUpMenu=0x7f0600a8;
         public static int aa=0x7f060096;
         public static int action0=0x7f0600ba;
         public static int action_bar=0x7f06005a;
@@ -2534,7 +2534,7 @@ containing a value of this type.
         public static int alertTitle=0x7f060049;
         public static int always=0x7f06001e;
         public static int appbar=0x7f06006a;
-        public static int avatar=0x7f06009b;
+        public static int avatar=0x7f06009c;
         public static int backdrop=0x7f06006c;
         public static int beginning=0x7f06001b;
         public static int bottom=0x7f06002a;
@@ -2553,7 +2553,7 @@ containing a value of this type.
         public static int collapseActionView=0x7f06001f;
         public static int collapsing_toolbar=0x7f06006b;
         public static int colorLayoutWydarzenia=0x7f060086;
-        public static int contentLoadingProgressBar1=0x7f06009d;
+        public static int contentLoadingProgressBar1=0x7f06009e;
         public static int contentPanel=0x7f06004a;
         public static int custom=0x7f060050;
         public static int customPanel=0x7f06004f;
@@ -2575,13 +2575,13 @@ containing a value of this type.
         public static int exitUntilCollapsed=0x7f060025;
         public static int expand_activities_button=0x7f06003e;
         public static int expanded_menu=0x7f060051;
-        public static int fab=0x7f060098;
+        public static int fab=0x7f060099;
         public static int fill=0x7f060035;
         public static int fill_horizontal=0x7f060036;
         public static int fill_vertical=0x7f06002e;
         public static int fixed=0x7f060038;
         public static int flContent=0x7f0600af;
-        public static int go=0x7f0600a5;
+        public static int go=0x7f0600a6;
         public static int gotologin=0x7f0600ad;
         public static int gridLayout1=0x7f06008d;
         public static int gridLayout2=0x7f060091;
@@ -2591,16 +2591,16 @@ containing a value of this type.
         public static int ifRoom=0x7f060020;
         public static int image=0x7f06003f;
         public static int imageCustomerIcon=0x7f060073;
-        public static int imageView1=0x7f0600a0;
+        public static int imageView1=0x7f0600a1;
         public static int imageViewNews=0x7f0600b4;
         public static int imgViewHeader=0x7f0600b2;
         public static int info=0x7f0600c5;
         public static int input_Email=0x7f0600a9;
-        public static int input_Email_In=0x7f0600a1;
-        public static int input_Nick=0x7f0600a8;
+        public static int input_Email_In=0x7f0600a2;
+        public static int input_Nick=0x7f060098;
         public static int input_Password=0x7f0600aa;
         public static int input_PasswordConfirm=0x7f0600ab;
-        public static int input_Password_In=0x7f0600a2;
+        public static int input_Password_In=0x7f0600a3;
         public static int item_touch_helper_previous_elevation=0x7f060000;
         public static int layoutl=0x7f060097;
         public static int left=0x7f06002f;
@@ -2617,22 +2617,21 @@ containing a value of this type.
         public static int linearLayoutWydarzenia2=0x7f06008a;
         public static int listMode=0x7f06000b;
         public static int list_item=0x7f060041;
-        public static int lostpass=0x7f0600a4;
+        public static int lostpass=0x7f0600a5;
         public static int main_content=0x7f060069;
         public static int media_actions=0x7f0600bd;
-        public static int menulogin=0x7f06009f;
-        public static int menut_ustawienia=0x7f0600ec;
+        public static int menulogin=0x7f0600a0;
+        public static int menut_ustawienia=0x7f0600eb;
         public static int micro=0x7f0600cd;
         public static int middle=0x7f06001d;
         public static int mini=0x7f060037;
         public static int multiply=0x7f060016;
-        public static int nav_addQuickgame=0x7f0600e7;
-        public static int nav_addTournament=0x7f0600e8;
-        public static int nav_events=0x7f0600e4;
+        public static int nav_addQuickgame=0x7f0600e6;
+        public static int nav_addTournament=0x7f0600e7;
         public static int nav_findplayers=0x7f0600e3;
-        public static int nav_friends=0x7f0600e5;
+        public static int nav_friends=0x7f0600e4;
         public static int nav_hub=0x7f0600e0;
-        public static int nav_profile=0x7f0600e6;
+        public static int nav_profile=0x7f0600e5;
         public static int nav_quickgame=0x7f0600e2;
         public static int nav_tournament=0x7f0600e1;
         public static int nav_view=0x7f0600b0;
@@ -2688,9 +2687,9 @@ containing a value of this type.
         public static int tabIcon=0x7f0600de;
         public static int tabMode=0x7f06000d;
         public static int tabText=0x7f0600df;
-        public static int tabsHub=0x7f060099;
+        public static int tabsHub=0x7f06009a;
         public static int text=0x7f0600c4;
-        public static int text1=0x7f06009c;
+        public static int text1=0x7f06009d;
         public static int text2=0x7f0600c2;
         public static int textCustomer2=0x7f0600b3;
         public static int textSpacerNoButtons=0x7f06004d;
@@ -2717,7 +2716,7 @@ containing a value of this type.
         public static int up=0x7f060009;
         public static int useLogo=0x7f060014;
         public static int view_offset_helper=0x7f06000a;
-        public static int viewpagerHub=0x7f06009a;
+        public static int viewpagerHub=0x7f06009b;
         public static int vs=0x7f06008f;
         public static int webView1=0x7f06006e;
         public static int withText=0x7f060022;
@@ -2777,39 +2776,42 @@ containing a value of this type.
         public static int dialog_signup=0x7f030029;
         public static int events=0x7f03002a;
         public static int fab=0x7f03002b;
-        public static int friendlist=0x7f03002c;
-        public static int friends=0x7f03002d;
-        public static int hub=0x7f03002e;
-        public static int list_item=0x7f03002f;
-        public static int loading=0x7f030030;
-        public static int login=0x7f030031;
-        public static int loginin=0x7f030032;
-        public static int loginmenu=0x7f030033;
-        public static int loginup=0x7f030034;
-        public static int main=0x7f030035;
-        public static int navheader=0x7f030036;
-        public static int news=0x7f030037;
-        public static int notification_media_action=0x7f030038;
-        public static int notification_media_cancel_action=0x7f030039;
-        public static int notification_template_big_media=0x7f03003a;
-        public static int notification_template_big_media_narrow=0x7f03003b;
-        public static int notification_template_lines=0x7f03003c;
-        public static int notification_template_media=0x7f03003d;
-        public static int notification_template_part_chronometer=0x7f03003e;
-        public static int notification_template_part_time=0x7f03003f;
-        public static int notificationclickpanel=0x7f030040;
-        public static int notificationpanel=0x7f030041;
-        public static int profile=0x7f030042;
-        public static int profileaccounts=0x7f030043;
-        public static int profiledescription=0x7f030044;
-        public static int profilefriends=0x7f030045;
-        public static int profilesettings=0x7f030046;
-        public static int select_dialog_item_material=0x7f030047;
-        public static int select_dialog_multichoice_material=0x7f030048;
-        public static int select_dialog_singlechoice_material=0x7f030049;
-        public static int settings=0x7f03004a;
-        public static int support_simple_spinner_dropdown_item=0x7f03004b;
-        public static int tournament=0x7f03004c;
+        public static int findplayers=0x7f03002c;
+        public static int friendlist=0x7f03002d;
+        public static int friends=0x7f03002e;
+        public static int hub=0x7f03002f;
+        public static int list_item=0x7f030030;
+        public static int loading=0x7f030031;
+        public static int login=0x7f030032;
+        public static int loginin=0x7f030033;
+        public static int loginmenu=0x7f030034;
+        public static int loginup=0x7f030035;
+        public static int main=0x7f030036;
+        public static int navheader=0x7f030037;
+        public static int news=0x7f030038;
+        public static int notification_media_action=0x7f030039;
+        public static int notification_media_cancel_action=0x7f03003a;
+        public static int notification_template_big_media=0x7f03003b;
+        public static int notification_template_big_media_narrow=0x7f03003c;
+        public static int notification_template_lines=0x7f03003d;
+        public static int notification_template_media=0x7f03003e;
+        public static int notification_template_part_chronometer=0x7f03003f;
+        public static int notification_template_part_time=0x7f030040;
+        public static int notificationclickpanel=0x7f030041;
+        public static int notificationpanel=0x7f030042;
+        public static int profile=0x7f030043;
+        public static int profileaccounts=0x7f030044;
+        public static int profiledescription=0x7f030045;
+        public static int profilefriends=0x7f030046;
+        public static int profilesettings=0x7f030047;
+        public static int quickgame=0x7f030048;
+        public static int select_dialog_item_material=0x7f030049;
+        public static int select_dialog_multichoice_material=0x7f03004a;
+        public static int select_dialog_singlechoice_material=0x7f03004b;
+        public static int settings=0x7f03004c;
+        public static int support_simple_spinner_dropdown_item=0x7f03004d;
+        public static int tournament=0x7f03004e;
+        public static int tournamentlist=0x7f03004f;
     }
     public static final class menu {
         public static int menu_navigation=0x7f0c0000;
@@ -2820,6 +2822,9 @@ containing a value of this type.
         public static int AccountExist=0x7f090054;
         public static int ApplicationName=0x7f090018;
         public static int CannotCreateAccount=0x7f090058;
+        /** FindPlayers
+         */
+        public static int Findplayers_Title=0x7f09005d;
         /** FriendList
          */
         public static int Friends_Title=0x7f09005a;
@@ -2867,10 +2872,16 @@ containing a value of this type.
         /** Profil Toolbar
          */
         public static int ProfilToolbarSendMessage=0x7f090040;
+        /** Quickgame
+         */
+        public static int Quickgame_Title=0x7f09005c;
         public static int Settings_Notification=0x7f09003f;
         /** Settings
          */
         public static int Settings_Title=0x7f09003e;
+        /** Tournament
+         */
+        public static int Tournament_Title=0x7f09005b;
         public static int TypeNickname=0x7f090057;
         public static int abc_action_bar_home_description=0x7f090000;
         public static int abc_action_bar_home_description_format=0x7f090001;

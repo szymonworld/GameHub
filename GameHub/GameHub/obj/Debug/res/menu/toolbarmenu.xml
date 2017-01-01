@@ -1,4 +1,4 @@
-<menu xmlns:android="http://schemas.android.com/apk/res/android" xmlns:local="http://schemas.android.com/apk/res-auto">&gt;
+<menu xmlns:local="http://schemas.android.com/apk/res-auto" xmlns:android="http://schemas.android.com/apk/res/android">&gt;
   <!--<item
        android:id="@+id/menut_edit"
        android:icon="@drawable/ic_action_content_create"
