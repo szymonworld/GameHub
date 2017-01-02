@@ -77,6 +77,10 @@ namespace GameHub
                 mAdapter = new SimpleStringRecyclerViewAdapter(mRecyclerView.Context, list, uri2);
                 mRecyclerView.SetAdapter(mAdapter);
                 mAdapter.NotifyDataSetChanged();
+
+                FragmentTransaction transaction = ((AppCompatActivity)this.Activity).FragmentManager.BeginTransaction();
+                AddFriendDialogC inviteFriend = new AddFriendDialogC();
+                inviteFriend.Show(transaction, "dialog");
             };
             
             mRecyclerView.SetItemClickListener((rv, position, view) =>
@@ -221,6 +225,60 @@ namespace GameHub
             public override string ToString()
             {
                 return base.ToString() + " '" + mTxtView.Text;
+            }
+        }
+
+        class AddFriendDialogC : DialogFragment
+        {
+            private Button mSendInvitation;
+            private EditText mText;
+
+            public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
+            {
+                base.OnCreateView(inflater, container, savedInstanceState);
+
+                var view = inflater.Inflate(Resource.Layout.AddFriendDialog, container, false);
+
+                mSendInvitation = view.FindViewById<Button>(Resource.Id.buttonAccept);
+                mText = view.FindViewById<EditText>(Resource.Id.input_Email);
+
+                mSendInvitation.Click += MBtnSend_Click;
+
+                return view;
+            }
+
+            private void MBtnSend_Click(object sender, EventArgs e)
+            {
+                string mail = mSendInvitation.Text;
+                try
+                {
+                    var addr = new System.Net.Mail.MailAddress(mSendInvitation.Text);
+                    //mail = addr.Address;
+                }
+                catch
+                {
+                    mail = "err";
+                }
+                
+                
+                if (mail == mSendInvitation.Text)
+                {
+                    this.Dismiss();
+                }
+                else
+                {
+                    //Context.Resources.GetString(Resource.String);
+                    mSendInvitation.SetError("Poda³êœ niepoprawny email!", null);
+                }
+               
+            }
+
+            public override void OnActivityCreated(Bundle savedInstanceState)
+            {
+                Dialog.Window.RequestFeature(WindowFeatures.NoTitle);
+
+                base.OnActivityCreated(savedInstanceState);
+
             }
         }
     }

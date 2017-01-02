@@ -99,6 +99,9 @@
   <string name="LoginLoading">Logowanie...</string>
 
   <!--FriendList-->
+  <string name="Friends_AddFriend">Dodaj znajomego</string>
+  <string name="Friends_InputEmail">Email</string>
+  <string name="Friends_SendInvitation">Wyślij zaproszenie</string>
   <string name="Friends_Title">Znajomi</string>
 
   <!--Tournament-->
