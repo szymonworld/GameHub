@@ -32,7 +32,6 @@ namespace GameHub
         View view;
         private Button mBtnSignUp;
         private Button mBtnSignIn;
-        private Button go;
         protected override void OnCreate(Bundle savedInstanceState)
         {
 
@@ -49,8 +48,7 @@ namespace GameHub
             LoginUP loginup = new LoginUP();
             LoginIN loginin = new LoginIN();
             mBtnSignUp = menulayout.FindViewById<Button>(Resource.Id.SignUpMenu);
-            mBtnSignIn = menulayout.FindViewById<Button>(Resource.Id.SignInMenu);
-            go = menulayout.FindViewById<Button>(Resource.Id.go);      
+            mBtnSignIn = menulayout.FindViewById<Button>(Resource.Id.SignInMenu);    
 
             mBtnSignUp.Click += (object sender, EventArgs args) =>
             {
@@ -69,12 +67,7 @@ namespace GameHub
                 fragmentTransaction.AddToBackStack(null);
                 fragmentTransaction.Commit();
             };
-            go.Click += (object sender, EventArgs args) =>
-            {
-                
-                Intent intent = new Intent(this, typeof(MainActivity));
-                this.StartActivity(intent);
-            };
+
         }
 
         private void ShowSnack(View view, string msg)

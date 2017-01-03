@@ -112,6 +112,9 @@
 
   <!--FindPlayers-->
   <string name="Findplayers_Title">Znajdź gracza</string>
+
+  <!--AddQuickgame-->
+  <string name="AddQuickgame_Title">Dodaj szybką gre</string>
   
   
 

@@ -71,11 +71,6 @@ namespace GameHub
                         trans = SupportFragmentManager.BeginTransaction();
                         trans.Replace(Resource.Id.flContent, newFragment, "Hub");
                         trans.Commit();
-
-                        // ? Przejście na Activity
-                        //Intent intent = new Intent(this, typeof(MainActivity));
-                        //this.StartActivity(intent);
-
                         OverridePendingTransition(Resource.Animation.animRight, Resource.Animation.animRight2);
 
                         break;
@@ -108,37 +103,23 @@ namespace GameHub
                     case (Resource.Id.nav_friends):
                         newFragment = new FriendList();
                         trans = SupportFragmentManager.BeginTransaction();
-                        //trans.Remove(newFragment);
-                        //trans.Add(Resource.Id.LoginFrame, newFragment);
                         trans.Replace(Resource.Id.flContent, newFragment, "Znajomi");
                         trans.Commit();
                         OverridePendingTransition(Resource.Animation.animRight, Resource.Animation.animRight2);
-                        /*
-                        intent = new Intent(this, typeof(FriendList));
-                        OverridePendingTransition(Resource.Animation.animRight, Resource.Animation.animRight2);
-                        this.StartActivity(intent);
-                        */
-                        // ? Przejście na Activity
-                        //intent = new Intent(this, typeof(Tournament));
-                        //this.StartActivity(intent);
-
-                        //OverridePendingTransition(Resource.Animation.animRight, Resource.Animation.animRight2);
-
                         break;
-
-                    //case (Resource.Id.nav_findplayers):
-                    //    intent = new Intent(this, typeof(Chat));
-                    //    OverridePendingTransition(Resource.Animation.animRight, Resource.Animation.animRight2);
-                    //    this.StartActivity(intent);
-                        
-
-                    //    break;
 
                     case (Resource.Id.nav_profile):
                         intent = new Intent(this, typeof(Profile));
                         OverridePendingTransition(Resource.Animation.animRight, Resource.Animation.animRight2);
                         this.StartActivity(intent);
                         
+
+                        break;
+
+                    case (Resource.Id.nav_addQuickgame):
+                        intent = new Intent(this, typeof(AddQuickgame));
+                        OverridePendingTransition(Resource.Animation.animRight, Resource.Animation.animRight2);
+                        this.StartActivity(intent);
 
                         break;
 

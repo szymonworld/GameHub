@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" xmlns:local="http://schemas.android.com/apk/res-auto">
+  >
+  <item
+       android:id="@+id/menut_save"
+       android:icon="@drawable/ic_done"
+       local:showAsAction="always"
+       android:title="Stwórz wydarzenie" />
+</menu>
+
