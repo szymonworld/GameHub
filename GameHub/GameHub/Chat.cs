@@ -44,7 +44,7 @@ namespace GameHub
             mRecyclerView = FindViewById<RecyclerView>(Resource.Id.recyclerview);
             mLayoutManager = new LinearLayoutManager(mRecyclerView.Context);
             mAdapter = new RecyclerAdapter(message_list);
-            mLayoutManager.StackFromEnd = true;
+            mLayoutManager.StackFromEnd = false;
             mLayoutManager.ReverseLayout = true;
             var onScrollListener = new RecyclerViewOnScrollListener(mLayoutManager);
             mRecyclerView.AddOnScrollListener(onScrollListener);
@@ -89,7 +89,7 @@ namespace GameHub
         public void AngrySimon()
         {
 
-            System.Threading.Thread.Sleep(500);
+            //System.Threading.Thread.Sleep(500);
             List<string> an = new List<string>();
             var asset = Assets.Open("AngrySimon");
             StreamReader sraa = new StreamReader(asset);
@@ -135,6 +135,7 @@ namespace GameHub
 
 
             }
+            mLayoutManager.ScrollToPosition(0);
         }
 
 
