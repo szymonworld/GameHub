@@ -10,10 +10,11 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.Support.V7.App;
+using Android.Content.PM;
 
 namespace GameHub
 {
-    [Activity(Label = "Settings")]
+    [Activity(Label = "Settings", ScreenOrientation = ScreenOrientation.Portrait)]
     public class Settings : AppCompatActivity
     {
         protected override void OnCreate(Bundle savedInstanceState)
