@@ -22,6 +22,7 @@ namespace GameHub.Fragments
 
         private List<string> list = new List<string>();
         private RecyclerView.Adapter mAdapter;
+        View view;
 
         public override void OnCreate(Bundle savedInstanceState)
         {
@@ -33,7 +34,7 @@ namespace GameHub.Fragments
             RecyclerView recyclerView = inflater.Inflate(Resource.Layout.Friends, container, false) as RecyclerView;
 
             GetRandomSubList(Lists.Friends.NickStrings, 30);  // dodanie 30 obiektów do listy 
-
+            view = inflater.Inflate(Resource.Layout.Friends, container, false);
             var mLayoutManager = new LinearLayoutManager(recyclerView.Context);
             var onScrollListener = new RecyclerViewOnScrollListener(mLayoutManager);
             recyclerView.AddOnScrollListener(onScrollListener);
@@ -68,6 +69,13 @@ namespace GameHub.Fragments
 
             return recyclerView;
         }
+
+        //public override void OnBackPressed()
+        //{
+        //    Context context = view.Context;
+        //    Intent intent = new Intent(context, typeof(MainActivity));
+        //    context.StartActivity(intent);
+        //}
 
 
         private void GetRandomSubList(List<string> items, int a)

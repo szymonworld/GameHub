@@ -41,6 +41,12 @@ namespace GameHub
             ArrayAdapter<string> adapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleSpinnerDropDownItem, platform);
             dropdown.Adapter = adapter;
 
+
+            Spinner dropdown2 = FindViewById<Spinner>(Resource.Id.spinner2);
+            string[] Duration = new string[] { " 1 ", " 2 ", " 3 ", " 5 ", " 10 ", " 24 " };
+            ArrayAdapter<string> adapter2 = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleSpinnerDropDownItem, Duration);
+            dropdown2.Adapter = adapter2;
+
             var AutoComGameList = new string[] { "CS:GO", "", "LOL", "DOTA", "HS", "Watch Dogs 2", "Call of Duty Modern Warfare 2", "Call of Duty Modern Warfare 2", "Call of Duty Modern Warfare 2", "Call of Duty Modern Warfare 2", "Call of Duty Modern Warfare 2", "Call of Duty Modern Warfare 2", "Call of Duty Modern Warfare 2", "Call of Duty Modern Warfare 2", "Call of Duty Modern Warfare 2", "Call of Duty Modern Warfare 2", "Call of Duty Modern Warfare 2", "Call of Duty Modern Warfare 2", "GTA 5", "Tomb Raider: Rise of the" };
             ArrayAdapter AutoComGameListAdapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleDropDownItem1Line, AutoComGameList);
             var TextGamelist = FindViewById<AutoCompleteTextView>(Resource.Id.autoCompleteTextView1);
@@ -54,6 +60,12 @@ namespace GameHub
             // Create your application here
         }
 
+        public override void OnBackPressed()
+        {
+            Intent intent = new Intent(this, typeof(MainActivity));
+            this.StartActivity(intent);
+            Finish();
+        }
         private void B2_Click(object sender, EventArgs e)
         {
             DateTime time = DateTime.Now;

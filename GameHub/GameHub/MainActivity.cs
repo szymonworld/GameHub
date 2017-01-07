@@ -61,49 +61,72 @@ namespace GameHub
 
             navigationView.NavigationItemSelected += (sender, e) =>
             {
-                
+                SupportFragment frag;
                 e.MenuItem.SetChecked(true);
                 switch (e.MenuItem.ItemId)
                 {
                     
                     case (Resource.Id.nav_hub):
+
+                        frag = (SupportFragment)SupportFragmentManager.FindFragmentByTag("Hub");
                         newFragment = new Hub();
                         trans = SupportFragmentManager.BeginTransaction();
                         trans.Replace(Resource.Id.flContent, newFragment, "Hub");
+                        if (frag == null)
+                        {
+                            trans.AddToBackStack("Hub");
+                        }
                         trans.Commit();
                         OverridePendingTransition(Resource.Animation.animRight, Resource.Animation.animRight2);
-
                         break;
 
                     case (Resource.Id.nav_tournament):
+                         frag = (SupportFragment)SupportFragmentManager.FindFragmentByTag("Turnieje");
                         newFragment = new Tournament();
                         trans = SupportFragmentManager.BeginTransaction();
                         trans.Replace(Resource.Id.flContent, newFragment, "Turnieje");
+                        if (frag == null)
+                        {
+                            trans.AddToBackStack("Turnieje");
+                        }
                         trans.Commit();
                         OverridePendingTransition(Resource.Animation.animRight, Resource.Animation.animRight2);
-
                         break;
 
                     case (Resource.Id.nav_quickgame):
+                        frag = (SupportFragment)SupportFragmentManager.FindFragmentByTag("Szybka gra");
                         newFragment = new Quickgame();
                         trans = SupportFragmentManager.BeginTransaction();
                         trans.Replace(Resource.Id.flContent, newFragment, "Szybka gra");
+                        if (frag == null)
+                        {
+                            trans.AddToBackStack("Szybka gra");
+                        }
                         trans.Commit();
                         OverridePendingTransition(Resource.Animation.animRight, Resource.Animation.animRight2);
-
                         break;
 
                     case (Resource.Id.nav_findplayers):
+                        frag = (SupportFragment)SupportFragmentManager.FindFragmentByTag("Znajdz gracza");
                         newFragment = new Findplayers();
                         trans = SupportFragmentManager.BeginTransaction();
                         trans.Replace(Resource.Id.flContent, newFragment, "Znajdz gracza");
+                        if (frag == null)
+                        {
+                            trans.AddToBackStack("Znajdz gracza");
+                        }
                         trans.Commit();
                         OverridePendingTransition(Resource.Animation.animRight, Resource.Animation.animRight2);
                         break;
                     case (Resource.Id.nav_friends):
+                        frag = (SupportFragment)SupportFragmentManager.FindFragmentByTag("Znajomi");
                         newFragment = new FriendList();
                         trans = SupportFragmentManager.BeginTransaction();
                         trans.Replace(Resource.Id.flContent, newFragment, "Znajomi");
+                        if (frag == null)
+                        {
+                            trans.AddToBackStack("Znajomi");
+                        }
                         trans.Commit();
                         OverridePendingTransition(Resource.Animation.animRight, Resource.Animation.animRight2);
                         break;

@@ -11,6 +11,7 @@ public class AddQuickgame
 	static {
 		__md_methods = 
 			"n_onCreate:(Landroid/os/Bundle;)V:GetOnCreate_Landroid_os_Bundle_Handler\n" +
+			"n_onBackPressed:()V:GetOnBackPressedHandler\n" +
 			"n_onOptionsItemSelected:(Landroid/view/MenuItem;)Z:GetOnOptionsItemSelected_Landroid_view_MenuItem_Handler\n" +
 			"n_onCreateOptionsMenu:(Landroid/view/Menu;)Z:GetOnCreateOptionsMenu_Landroid_view_Menu_Handler\n" +
 			"";
@@ -32,6 +33,14 @@ public class AddQuickgame
 	}
 
 	private native void n_onCreate (android.os.Bundle p0);
+
+
+	public void onBackPressed ()
+	{
+		n_onBackPressed ();
+	}
+
+	private native void n_onBackPressed ();
 
 
 	public boolean onOptionsItemSelected (android.view.MenuItem p0)

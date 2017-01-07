@@ -1,32 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"  xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    android:descendantFocusability="beforeDescendants"
-    android:focusableInTouchMode="true"
-    android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
-
-      <ScrollView
-        android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+    android:background="#212531">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
         android:layout_height="wrap_content"
-        android:fillViewport="true"
-        android:theme="@style/DarkTheme"
-        android:layout_weight="1"
-        android:verticalScrollbarPosition="defaultPosition">
-
+        android:layout_width="match_parent"
+        android:background="?attr/colorPrimary" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        android:layout_weight="1">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:background="#FF212531">
-            <android.support.v7.widget.Toolbar xmlns:app="http://schemas.android.com/apk/res-auto"
-                android:id="@+id/toolbar"
-                android:layout_height="wrap_content"
-                android:layout_width="match_parent"
-                android:fitsSystemWindows="true"
-                android:minHeight="?attr/actionBarSize"
-                android:theme="@style/DarkThemeToolbar" />
             <AutoCompleteTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -85,6 +80,11 @@
                 android:textStyle="normal"
                 android:typeface="normal"
                 style="@style/Base.TextAppearance.AppCompat" />
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="@color/switch_thumb_disabled_material_light"
+                android:alpha="0.5" />
             <GridLayout
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent"
@@ -131,6 +131,38 @@
                 android:paddingBottom="10dp"
                 android:paddingRight="20dp">
                 <TextView
+                    android:text="Czas trwania w godzinach:"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView2"
+                    android:layout_gravity="left" />
+                <Spinner
+                    android:id="@+id/spinner2"
+                    android:layout_height="30dp"
+                    android:spinnerMode="dropdown"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:textColor="#000"
+                    android:alpha="0.7"
+                    android:textColorHint="#626a77"
+                    android:textStyle="normal"
+                    android:typeface="normal"
+                    android:layout_gravity="right"
+                    android:layout_width="wrap_content" />
+            </GridLayout>
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="@color/switch_thumb_disabled_material_light"
+                android:alpha="0.5" />
+            <GridLayout
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:paddingLeft="20dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:paddingRight="20dp">
+                <TextView
                     android:text="Platforma:"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -138,7 +170,7 @@
                     android:layout_gravity="left" />
                 <Spinner
                     android:id="@+id/spinner1"
-                    android:layout_height="wrap_content"
+                    android:layout_height="30dp"
                     android:spinnerMode="dropdown"
                     android:focusable="true"
                     android:focusableInTouchMode="true"
@@ -166,6 +198,11 @@
                 <CheckBox
                     android:id="@+id/checkBox1" />
             </GridLayout>
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="@color/switch_thumb_disabled_material_light"
+                android:alpha="0.5" />
             <GridLayout
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent"
@@ -197,6 +234,11 @@
                     android:background="@drawable/edit_text_style"
                     android:layout_gravity="right" />
             </GridLayout>
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="@color/switch_thumb_disabled_material_light"
+                android:alpha="0.5" />
             <AutoCompleteTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -216,7 +258,7 @@
                 style="@style/Base.TextAppearance.AppCompat"
                 android:focusable="true"
                 android:focusableInTouchMode="true" />
-            <android.support.v7.widget.RecyclerView xmlns:app="http://schemas.android.com/apk/res-auto"
+            <android.support.v7.widget.RecyclerView
                 android:id="@+id/recyclerview"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"

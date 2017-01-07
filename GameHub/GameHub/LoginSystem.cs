@@ -24,7 +24,7 @@ using Android.Graphics;
 
 namespace GameHub
 {
-    [Activity(Label = "GameHub", MainLauncher = false, Icon = "@drawable/icon4", Theme = "@style/MyTheme", NoHistory = true, ScreenOrientation = ScreenOrientation.Portrait)]
+    [Activity(Label = "GameHub", MainLauncher = false, Icon = "@drawable/icon4", Theme = "@style/MyTheme", NoHistory = true, ScreenOrientation = ScreenOrientation.Portrait, WindowSoftInputMode = SoftInput.AdjustResize)]
     public class LoginSystem : AppCompatActivity
     {
         private static string LoginDataUser;
