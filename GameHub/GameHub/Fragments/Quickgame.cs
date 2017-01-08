@@ -110,7 +110,7 @@ namespace GameHub.Fragments
 
         public void Generuj_wydarzenie()
         {
-            Wydarzenie nowe_wydarzenie = new Wydarzenie("ATH CUP", "Informatycy", "Budowlanka", "18.05 22:15", "My Little Pony");
+            Wydarzenie nowe_wydarzenie = new Wydarzenie("ATH CUP", "To jest opis wydarzenia który powinien byæ krótki.", "18.05 22:15", "My Little Pony");
             lista_wydarzen.Add(nowe_wydarzenie);
 
         }
@@ -127,8 +127,8 @@ namespace GameHub.Fragments
             {
                 public View mMainView { get; set; }
                 public TextView ETitle { get; set; }
-                public TextView EFTeam { get; set; }
-                public TextView ESTeam { get; set; }
+                public TextView Description { get; set; }
+
                 public TextView EDate { get; set; }
                 public TextView EGame { get; set; }
                 public LinearLayout mLayout { get; set; }
@@ -140,11 +140,10 @@ namespace GameHub.Fragments
 
             public override RecyclerView.ViewHolder OnCreateViewHolder(ViewGroup parent, int viewType)
             {
-                View row = LayoutInflater.From(parent.Context).Inflate(Resource.Layout.Events, parent, false);
+                View row = LayoutInflater.From(parent.Context).Inflate(Resource.Layout.QuickgameCard, parent, false);
 
                 TextView EventTitle = row.FindViewById<TextView>(Resource.Id.EventTitle);
-                TextView EventFirstTeam = row.FindViewById<TextView>(Resource.Id.EventFirstTeam);
-                TextView EventSecondaryTeam = row.FindViewById<TextView>(Resource.Id.EventSecondaryTeam);
+                TextView Description = row.FindViewById<TextView>(Resource.Id.desc);
                 TextView EventDate = row.FindViewById<TextView>(Resource.Id.EventDate);
                 TextView EventGame = row.FindViewById<TextView>(Resource.Id.EventGame);
 
@@ -154,7 +153,7 @@ namespace GameHub.Fragments
                 LinearLayout colorLi = row.FindViewById<LinearLayout>(Resource.Id.colorLayoutWydarzenia);
                 //li.SetBackgroundColor(Android.Graphics.Color.Red);
 
-                MyView view = new MyView(row) { ETitle = EventTitle, EFTeam = EventFirstTeam, ESTeam = EventSecondaryTeam, EDate = EventDate, EGame = EventGame, mLayout = colorLi };
+                MyView view = new MyView(row) { ETitle = EventTitle, Description = Description, EDate = EventDate, EGame = EventGame, mLayout = colorLi };
                 return view;
             }
 
@@ -165,8 +164,7 @@ namespace GameHub.Fragments
                 int indexPosition = (lista_wydarzen.Count - 1) - position;
                 //iew.mMainView.Click += mMainView_Click;
                 view.ETitle.Text = lista_wydarzen[indexPosition].etitle;
-                view.EFTeam.Text = lista_wydarzen[indexPosition].efteam;
-                view.ESTeam.Text = lista_wydarzen[indexPosition].esteam;
+                view.Description.Text = lista_wydarzen[indexPosition].desc;
                 view.EDate.Text = lista_wydarzen[indexPosition].edate;
                 view.EGame.Text = lista_wydarzen[indexPosition].egame;
                 //view.mTime.Text = Convert.ToString(lista_wydarzen[indexPosition].czy_turniej);
@@ -185,15 +183,13 @@ namespace GameHub.Fragments
         public class Wydarzenie
         {
             public string etitle;
-            public string efteam;
-            public string esteam;
+            public string desc;
             public string edate;
             public string egame;
-            public Wydarzenie(string title, string team1, string team2, string date, string game)
+            public Wydarzenie(string title, string description, string date, string game)
             {
                 etitle = title;
-                efteam = team1;
-                esteam = team2;
+                desc = description;
                 edate = date;
                 egame = game;
                 //Czas(godzina, minuta);

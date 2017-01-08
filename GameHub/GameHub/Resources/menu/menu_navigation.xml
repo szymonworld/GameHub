@@ -44,19 +44,4 @@
            android:icon="@drawable/ic_add_black_48dp"/>
     </menu>
   </item>
-  <item android:title="@string/nav_other">
-    <menu>
-      <item
-           android:title="Pomoc" />
-      <item
-           android:title="Zmiany w wersji" />
-      <item
-           android:title="Kontakt" />
-      <item
-           android:title="O GameHub" />
-      <item
-           android:title="Zgłoś błąd" />
-    </menu>
-  </item>
-
 </menu>

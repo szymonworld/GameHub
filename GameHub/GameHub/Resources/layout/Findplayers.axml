@@ -26,13 +26,12 @@
     android:hint="@string/LoginUp_Nick"
     android:textColor="#000"
     android:textColorHint="#626a77"
-    android:layout_marginLeft="30dp"
-    android:layout_marginRight="30dp"
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp"
     android:layout_marginTop="15dp"
     android:alpha="0.7"
     android:textStyle="normal"
     android:typeface="normal"
-    android:drawableLeft="@drawable/ic_perm_identity_black"
     style="@style/Base.TextAppearance.AppCompat" />
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerview"

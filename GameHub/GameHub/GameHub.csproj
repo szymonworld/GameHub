@@ -219,7 +219,12 @@
     <AndroidResource Include="Resources\layout\AddFriendDialog.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\layout\AddQuickgame.axml" />
+    <AndroidResource Include="Resources\layout\AddQuickgame.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\QuickgameCard.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Main.axml">
