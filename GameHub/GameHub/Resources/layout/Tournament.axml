@@ -30,7 +30,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:clickable="true"
-        android:src="@drawable/ic_add_black_48dp"
+        android:src="@drawable/ic_add_white_48dp"
         app:layout_anchor="@id/layoutl"
         app:layout_anchorGravity="bottom|right|end" />
 </android.support.design.widget.CoordinatorLayout>

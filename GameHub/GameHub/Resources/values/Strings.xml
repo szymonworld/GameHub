@@ -116,6 +116,18 @@
   <!--AddQuickgame-->
   <string name="AddQuickgame_Title">Dodaj szybką gre</string>
   
+  <!--QuickgameDetail-->
+  <string name="QuickgameDetail_Join">Dołącz</string>
+  <string name="QuickgameDetail_Report">Zgłoś</string>
+  <string name="QuickgameDetail_Delete">Usuń wydarzenie</string>
   
+  <!--Dialog-->
+  <string name="Dialog_Positive">Akceptuj</string>
+  <string name="Dialog_Negative">Odrzuć</string>
+  <string name="Dialog_Neutral">OK</string>
+  
+  <!--Browser-->
+  <string name="Browser">Podgląd</string>
+
 
 </resources>

@@ -18,34 +18,35 @@ namespace GameHub
     [Activity(Label = "Browser")]
     public class Browser : AppCompatActivity
     {
-        ProgressBar probar;
-        WebViewClient mWebClient;
+        ProgressBar progressbar;
+        WebClient mWebClient;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
 
             SetContentView(Resource.Layout.Browser);
             //probar = FindViewById<ProgressBar>(Resource.Id.progressBar1);
-            mWebClient = new WebViewClient();
-
-            //mWebClient.onProgressChanged += (int state) =>
-            //{
-            //    if (state == 0)
-            //    {
-            //        probar.Visibility = ViewStates.Invisible;
-            //    }
-            //    else
-            //    {
-            //        probar.Visibility = ViewStates.Visible;
-            //    }
-            //};
-
-
-
+            mWebClient = new WebClient();
+            progressbar = FindViewById<ProgressBar>(Resource.Id.progbar);
             SupportToolbar toolBar = FindViewById<SupportToolbar>(Resource.Id.toolbar);
+            progressbar.Visibility = ViewStates.Invisible;
+
+            mWebClient.onProgressChanged += (int state) =>
+            {
+                if (state == 0)
+                {
+                    progressbar.Visibility = ViewStates.Invisible;
+                }
+                else
+                {
+                    progressbar.Visibility = ViewStates.Visible;
+                }
+            };
+
+
             SetSupportActionBar(toolBar);
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
-            SupportActionBar.Title = "Przegl¹darka";
+            SupportActionBar.Title = GetString(Resource.String.Browser);
             String Link = Intent.GetStringExtra("BrowserLink");
             WebView Browser = FindViewById<WebView>(Resource.Id.webView1);
             Browser.Settings.JavaScriptEnabled = true;
@@ -53,6 +54,36 @@ namespace GameHub
             Browser.LoadUrl("http://www.gry-online.pl/");
 
 
+
+        }
+        public class WebClient : WebViewClient
+        {
+            public delegate void ToggleProgressBar(int state);
+            public ToggleProgressBar onProgressChanged;
+
+            public override bool ShouldOverrideUrlLoading(WebView view, string url)
+            {
+                view.LoadUrl(url);
+                return true;
+            }
+
+            public override void OnPageStarted(WebView view, string url, Bitmap favicon)
+            {
+                if (onProgressChanged != null)
+                {
+                    onProgressChanged.Invoke(1);
+
+                }
+                base.OnPageStarted(view, url, favicon);
+            }
+            public override void OnPageFinished(WebView view, string url)
+            {
+                if (onProgressChanged != null)
+                {
+                    onProgressChanged.Invoke(0);
+                }
+                base.OnPageFinished(view, url);
+            }
 
         }
         public override bool OnOptionsItemSelected(IMenuItem item)
@@ -67,34 +98,5 @@ namespace GameHub
             return base.OnOptionsItemSelected(item);
         }
     }
-    //public class WebClient : WebViewClient
-    //{
-    //    public delegate void ToggleProgressBar(int state);
-    //    public ToggleProgressBar onProgressChanged;
 
-    //    public override bool ShouldOverrideUrlLoading(WebView view, string url)
-    //    {
-    //        view.LoadUrl(url);
-    //        return true;
-    //    }
-
-    //    public override void OnPageStarted(WebView view, string url, Bitmap favicon)
-    //    {
-    //        if (onProgressChanged != null)
-    //        {
-    //            onProgressChanged.Invoke(1);
-
-    //        }
-    //        base.OnPageStarted(view, url, favicon);
-    //    }
-    //    public override void OnPageFinished(WebView view, string url)
-    //    {
-    //        if (onProgressChanged != null)
-    //        {
-    //            onProgressChanged.Invoke(0);
-    //        }
-    //        base.OnPageFinished(view, url);
-    //    }
-
-    //}
 }

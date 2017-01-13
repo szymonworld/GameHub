@@ -7,209 +7,365 @@
     android:orientation="vertical"
     android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
     android:background="#212531">
-  <android.support.v7.widget.Toolbar
-    android:id="@+id/toolbar"
-    android:layout_height="wrap_content"
-    android:layout_width="match_parent"
-    android:background="?attr/colorPrimary" />
-  <ScrollView
-      android:layout_width="match_parent"
-      android:layout_height="match_parent"
-      android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-      android:layout_weight="1">
-    <LinearLayout
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:background="?attr/colorPrimary" />
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:background="#FF212531">
-      <GridLayout
-          android:layout_height="wrap_content"
-          android:layout_width="match_parent"
-          android:paddingLeft="20dp"
-          android:paddingTop="10dp"
-          android:paddingBottom="10dp"
-          android:paddingRight="20dp">
-        <refractored.controls.CircleImageView
-            android:layout_width="100dp"
-            android:id="@+id/imageCustomerIcon"
-            android:layout_height="100dp"
-            android:src="@drawable/Icon2"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_centerVertical="true"
-            android:scaleType="centerCrop" />
-        <Button
-            android:text="@string/ProSetPicChange"
-            android:layout_width="150dp"
-            android:layout_height="50dp"
-            android:id="@+id/ProSetPicChange"
-            android:background="#333d59"
-            android:layout_gravity="center" />
-      </GridLayout>
-      <TextView
-          android:text="@string/ProSetNickChange"
-          android:id="@+id/ProSetNickChange"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:layout_marginLeft="20dp" />
-      <View
-          android:layout_width="fill_parent"
-          android:layout_height="1dp"
-          android:background="@color/switch_thumb_disabled_material_light"
-          android:alpha="0.5" />
-      <EditText
-          android:inputType="textPersonName"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:id="@+id/ProSetNick"
-          android:background="@drawable/edit_text_style"
-          android:hint="@string/ProSetNick"
-          android:focusable="true"
-          android:focusableInTouchMode="true"
-          android:textColor="#000"
-          android:textColorHint="#626a77"
-          android:layout_marginLeft="30dp"
-          android:layout_marginRight="30dp"
-          android:layout_marginTop="15dp"
-          android:layout_marginBottom="15dp"
-          android:alpha="0.7"
-          android:textStyle="normal"
-          android:typeface="normal"
-          style="@style/Base.TextAppearance.AppCompat" />
-      <TextView
-          android:text="@string/ProSetEmailChange"
-          android:id="@+id/ProSetEmailChange"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:layout_marginLeft="20dp" />
-      <View
-          android:layout_width="fill_parent"
-          android:layout_height="1dp"
-          android:background="@color/switch_thumb_disabled_material_light"
-          android:alpha="0.5" />
-      <EditText
-          android:inputType="textEmailAddress"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:id="@+id/ProSetEmail"
-          android:background="@drawable/edit_text_style"
-          android:hint="@string/ProSetEmail"
-          android:textColor="#000"
-          android:textColorHint="#626a77"
-          android:layout_marginLeft="30dp"
-          android:layout_marginRight="30dp"
-          android:layout_marginTop="15dp"
-          android:layout_marginBottom="15dp"
-          android:alpha="0.7"
-          android:textStyle="normal"
-          android:typeface="normal"
-          style="@style/Base.TextAppearance.AppCompat" />
-      <TextView
-          android:text="@string/ProSetCountryChange"
-          android:id="@+id/ProSetCountryChange"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:layout_marginLeft="20dp" />
-      <View
-          android:layout_width="fill_parent"
-          android:layout_height="1dp"
-          android:background="@color/switch_thumb_disabled_material_light"
-          android:alpha="0.5" />
-      <EditText
-          android:inputType="textPersonName"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:id="@+id/ProSetCountry"
-          android:background="@drawable/edit_text_style"
-          android:hint="@string/ProSetCountry"
-          android:textColor="#000"
-          android:textColorHint="#626a77"
-          android:layout_marginLeft="30dp"
-          android:layout_marginRight="30dp"
-          android:layout_marginTop="15dp"
-          android:layout_marginBottom="15dp"
-          android:alpha="0.7"
-          android:textStyle="normal"
-          android:typeface="normal"
-          style="@style/Base.TextAppearance.AppCompat" />
-      <TextView
-          android:text="@string/ProSetPassChange"
-          android:id="@+id/ProSetPassChange"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:layout_marginLeft="20dp" />
-      <View
-          android:layout_width="fill_parent"
-          android:layout_height="1dp"
-          android:background="@color/switch_thumb_disabled_material_light"
-          android:alpha="0.5" />
-      <EditText
-          android:inputType="textPassword"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:id="@+id/ProSetPass"
-          android:background="@drawable/edit_text_style"
-          android:hint="@string/ProSetPass"
-          android:textColor="#000"
-          android:textColorHint="#626a77"
-          android:layout_marginLeft="30dp"
-          android:layout_marginRight="30dp"
-          android:layout_marginTop="15dp"
-          android:layout_marginBottom="15dp"
-          android:alpha="0.7"
-          android:textStyle="normal"
-          android:typeface="normal"
-          style="@style/Base.TextAppearance.AppCompat" />
-      <TextView
-          android:text="@string/ProSetDesChange"
-          android:id="@+id/ProSetDesChange"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:layout_marginLeft="20dp" />
-      <View
-          android:layout_width="fill_parent"
-          android:layout_height="1dp"
-          android:background="@color/switch_thumb_disabled_material_light"
-          android:alpha="0.5" />
-      <EditText
-          android:inputType="textMultiLine"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:id="@+id/ProSetDes"
-          android:background="@drawable/edit_text_style"
-          android:hint="@string/ProSetDes"
-          android:textColor="#000"
-          android:textColorHint="#626a77"
-          android:layout_marginLeft="30dp"
-          android:layout_marginRight="30dp"
-          android:layout_marginTop="15dp"
-          android:layout_marginBottom="15dp"
-          android:alpha="0.7"
-          android:textStyle="normal"
-          android:typeface="normal"
-          style="@style/Base.TextAppearance.AppCompat"
-          android:minHeight="100dp" />
-      <GridLayout
-          android:layout_height="wrap_content"
-          android:layout_width="match_parent"
-          android:paddingLeft="20dp"
-          android:paddingTop="10dp"
-          android:paddingBottom="10dp"
-          android:paddingRight="20dp">
-        <TextView
-            android:text="@string/ProSetMic"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/ProSetMic"
-            android:layout_gravity="left" />
-        <Switch
-            android:layout_height="wrap_content"
-            android:id="@+id/switch1"
-            android:layout_marginLeft="0.0dp"
-            android:layout_width="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_gravity="right" />
-      </GridLayout>
-    </LinearLayout>
-  </ScrollView>
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        android:layout_weight="1">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="#FF212531">
+            <GridLayout
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:paddingLeft="20dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:paddingRight="20dp">
+                <refractored.controls.CircleImageView
+                    android:layout_width="100dp"
+                    android:id="@+id/imageCustomerIcon"
+                    android:layout_height="100dp"
+                    android:src="@drawable/Icon2"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_centerVertical="true"
+                    android:scaleType="centerCrop" />
+                <Button
+                    android:text="@string/ProSetPicChange"
+                    android:layout_width="150dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/ProSetPicChange"
+                    android:background="#333d59"
+                    android:layout_gravity="center" />
+            </GridLayout>
+            <TextView
+                android:text="@string/ProSetNickChange"
+                android:id="@+id/ProSetNickChange"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp" />
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="@color/switch_thumb_disabled_material_light"
+                android:alpha="0.5" />
+            <EditText
+                android:inputType="textPersonName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ProSetNick"
+                android:background="@drawable/edit_text_style"
+                android:hint="@string/ProSetNick"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:textColor="#000"
+                android:textColorHint="#626a77"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                android:alpha="0.7"
+                android:textStyle="normal"
+                android:typeface="normal"
+                style="@style/Base.TextAppearance.AppCompat" />
+            <TextView
+                android:text="@string/ProSetEmailChange"
+                android:id="@+id/ProSetEmailChange"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp" />
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="@color/switch_thumb_disabled_material_light"
+                android:alpha="0.5" />
+            <EditText
+                android:inputType="textEmailAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ProSetEmail"
+                android:background="@drawable/edit_text_style"
+                android:hint="@string/ProSetEmail"
+                android:textColor="#000"
+                android:textColorHint="#626a77"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                android:alpha="0.7"
+                android:textStyle="normal"
+                android:typeface="normal"
+                style="@style/Base.TextAppearance.AppCompat" />
+            <TextView
+                android:text="@string/ProSetCountryChange"
+                android:id="@+id/ProSetCountryChange"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp" />
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="@color/switch_thumb_disabled_material_light"
+                android:alpha="0.5" />
+            <EditText
+                android:inputType="textPersonName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ProSetCountry"
+                android:background="@drawable/edit_text_style"
+                android:hint="@string/ProSetCountry"
+                android:textColor="#000"
+                android:textColorHint="#626a77"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                android:alpha="0.7"
+                android:textStyle="normal"
+                android:typeface="normal"
+                style="@style/Base.TextAppearance.AppCompat" />
+            <TextView
+                android:text="@string/ProSetPassChange"
+                android:id="@+id/ProSetPassChange"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp" />
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="@color/switch_thumb_disabled_material_light"
+                android:alpha="0.5" />
+            <EditText
+                android:inputType="textPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ProSetPass"
+                android:background="@drawable/edit_text_style"
+                android:hint="@string/ProSetPass"
+                android:textColor="#000"
+                android:textColorHint="#626a77"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                android:alpha="0.7"
+                android:textStyle="normal"
+                android:typeface="normal"
+                style="@style/Base.TextAppearance.AppCompat" />
+            <TextView
+                android:text="@string/ProSetDesChange"
+                android:id="@+id/ProSetDesChange"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp" />
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="@color/switch_thumb_disabled_material_light"
+                android:alpha="0.5" />
+            <EditText
+                android:inputType="textMultiLine"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ProSetDes"
+                android:background="@drawable/edit_text_style"
+                android:hint="@string/ProSetDes"
+                android:textColor="#000"
+                android:textColorHint="#626a77"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                android:alpha="0.7"
+                android:textStyle="normal"
+                android:typeface="normal"
+                style="@style/Base.TextAppearance.AppCompat"
+                android:minHeight="100dp" />
+            <GridLayout
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:paddingLeft="20dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:paddingRight="20dp">
+                <TextView
+                    android:text="@string/ProSetMic"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/ProSetMic"
+                    android:layout_gravity="left" />
+                <Switch
+                    android:layout_height="wrap_content"
+                    android:id="@+id/switch1"
+                    android:layout_marginLeft="0.0dp"
+                    android:layout_width="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_gravity="right" />
+            </GridLayout>
+            <TextView
+                android:text="Pseudonimy na platformach:"
+                android:id="@+id/ProSetDesChange"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="15dp" />
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="@color/switch_thumb_disabled_material_light"
+                android:alpha="0.5" />
+            <EditText
+                android:inputType="textPersonName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ProSetCountry"
+                android:background="@drawable/edit_text_style"
+                android:hint="Origin"
+                android:textColor="#000"
+                android:textColorHint="#626a77"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="15dp"
+                android:alpha="0.7"
+                android:textStyle="normal"
+                android:typeface="normal"
+                style="@style/Base.TextAppearance.AppCompat" />
+            <EditText
+                android:inputType="textPersonName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ProSetCountry"
+                android:background="@drawable/edit_text_style"
+                android:hint="Steam"
+                android:textColor="#000"
+                android:textColorHint="#626a77"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="15dp"
+                android:alpha="0.7"
+                android:textStyle="normal"
+                android:typeface="normal"
+                style="@style/Base.TextAppearance.AppCompat" />
+            <EditText
+                android:inputType="textPersonName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ProSetCountry"
+                android:background="@drawable/edit_text_style"
+                android:hint="Blizzard"
+                android:textColor="#000"
+                android:textColorHint="#626a77"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="15dp"
+                android:alpha="0.7"
+                android:textStyle="normal"
+                android:typeface="normal"
+                style="@style/Base.TextAppearance.AppCompat" />
+            <EditText
+                android:inputType="textPersonName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ProSetCountry"
+                android:background="@drawable/edit_text_style"
+                android:hint="PlayStation Network"
+                android:textColor="#000"
+                android:textColorHint="#626a77"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="15dp"
+                android:alpha="0.7"
+                android:textStyle="normal"
+                android:typeface="normal"
+                style="@style/Base.TextAppearance.AppCompat" />
+            <EditText
+                android:inputType="textPersonName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ProSetCountry"
+                android:background="@drawable/edit_text_style"
+                android:hint="XBOX LIVE"
+                android:textColor="#000"
+                android:textColorHint="#626a77"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="15dp"
+                android:alpha="0.7"
+                android:textStyle="normal"
+                android:typeface="normal"
+                style="@style/Base.TextAppearance.AppCompat" />
+            <EditText
+                android:inputType="textPersonName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ProSetCountry"
+                android:background="@drawable/edit_text_style"
+                android:hint="Discord"
+                android:textColor="#000"
+                android:textColorHint="#626a77"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="15dp"
+                android:alpha="0.7"
+                android:textStyle="normal"
+                android:typeface="normal"
+                style="@style/Base.TextAppearance.AppCompat" />
+            <EditText
+                android:inputType="textPersonName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ProSetCountry"
+                android:background="@drawable/edit_text_style"
+                android:hint="Uplay"
+                android:textColor="#000"
+                android:textColorHint="#626a77"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="15dp"
+                android:alpha="0.7"
+                android:textStyle="normal"
+                android:typeface="normal"
+                style="@style/Base.TextAppearance.AppCompat" />
+            <EditText
+                android:inputType="textPersonName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ProSetCountry"
+                android:background="@drawable/edit_text_style"
+                android:hint="Skype"
+                android:textColor="#000"
+                android:textColorHint="#626a77"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="15dp"
+                android:alpha="0.7"
+                android:textStyle="normal"
+                android:typeface="normal"
+                style="@style/Base.TextAppearance.AppCompat" />
+            <EditText
+                android:inputType="textPersonName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ProSetCountry"
+                android:background="@drawable/edit_text_style"
+                android:hint="League of Legends"
+                android:textColor="#000"
+                android:textColorHint="#626a77"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="15dp"
+                android:alpha="0.7"
+                android:textStyle="normal"
+                android:typeface="normal"
+                style="@style/Base.TextAppearance.AppCompat" />
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>

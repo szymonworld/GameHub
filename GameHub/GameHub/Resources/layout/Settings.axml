@@ -57,11 +57,11 @@
                 android:paddingStart="20dp"
                 style="?android:attr/borderlessButtonStyle"
                 android:text="Edytuj profil" />
-          <View
-    android:layout_width="fill_parent"
-    android:layout_height="1dp"
-    android:background="@color/switch_thumb_disabled_material_light"
-    android:alpha="0.5" />
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="@color/switch_thumb_disabled_material_light"
+                android:alpha="0.5" />
             <Button
                 android:text="Wyloguj się"
                 android:id="@+id/logout"

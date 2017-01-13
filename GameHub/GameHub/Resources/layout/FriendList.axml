@@ -9,14 +9,14 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fitsSystemWindows="true"
-        android:theme="@style/DarkTheme">
+        android:background="#FF212531">
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
             android:fitsSystemWindows="true"
             android:minHeight="?attr/actionBarSize"
-            android:theme="@style/DarkThemeToolbar" />
+            android:background="#333d59"/>
         <android.support.v7.widget.RecyclerView
             android:id="@+id/recyclerview"
             android:layout_width="match_parent"
@@ -28,7 +28,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:clickable="true"
-        android:src="@drawable/ic_add_black_48dp"
+        android:src="@drawable/ic_add_white_48dp"
         app:layout_anchor="@id/layoutl"
         app:layout_anchorGravity="bottom|right|end" />
 </android.support.design.widget.CoordinatorLayout>

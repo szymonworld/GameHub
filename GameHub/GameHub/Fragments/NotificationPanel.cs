@@ -45,9 +45,7 @@ namespace GameHub.Fragments
 
             mRecyclerView.SetItemClickListener((rv, position, view) =>
             {
-                FragmentTransaction transaction = ((AppCompatActivity)this.Activity).FragmentManager.BeginTransaction();
-                NotificationClickPanel signupDialog = new NotificationClickPanel();
-                signupDialog.Show(transaction, "dialog fregment");
+                Dialog("Powiadomienia", "Zaakceptowaæ?");
             });
 
             // £adowanie nastêpnych wydarzeñ po dojechaniu na sam dó³
@@ -63,6 +61,27 @@ namespace GameHub.Fragments
             };
 
             return mRecyclerView;
+        }
+
+        void Dialog(string title, string msg)
+        {
+            var builder = new Android.Support.V7.App.AlertDialog.Builder((AppCompatActivity)this.Activity);
+            builder.SetTitle(title);
+            builder.SetMessage(msg);
+            builder.SetPositiveButton(GetString(Resource.String.Dialog_Positive), (EventHandler<DialogClickEventArgs>)null);
+            builder.SetNegativeButton(GetString(Resource.String.Dialog_Negative), (EventHandler<DialogClickEventArgs>)null);
+            var dialog = builder.Create();
+            dialog.Show();
+            var PositiveButton = dialog.GetButton((int)DialogButtonType.Positive);
+            PositiveButton.Click += delegate
+            {
+                dialog.Cancel();
+            };
+            var NegativeButton = dialog.GetButton((int)DialogButtonType.Positive);
+            NegativeButton.Click += delegate
+            {
+                dialog.Cancel();
+            };
         }
 
         public void Generuj_wydarzenie()

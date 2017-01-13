@@ -111,12 +111,16 @@
     <Compile Include="Fragments\Tournament.cs" />
     <Compile Include="Fragments\Events.cs" />
     <Compile Include="Fragments\FriendList.cs" />
+    <Compile Include="Helpers\ConnectAccount.cs" />
+    <Compile Include="InAppClasses\Class_Quickgame.cs" />
+    <Compile Include="InAppClasses\Class_Tournament.cs" />
     <Compile Include="Lists\ExtensionMethods.cs" />
     <Compile Include="Lists\Friends.cs" />
     <Compile Include="LoginSystem.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Profile.cs" />
     <Compile Include="ProfileSettings.cs" />
+    <Compile Include="QuickgameDetail.cs" />
     <Compile Include="ReadWriteAppFile.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -153,7 +157,7 @@
     <AndroidResource Include="Resources\layout\Hub.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\layout\Events.axml">
+    <AndroidResource Include="Resources\layout\TournamentCard.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\ArticlePageLayout.axml">
@@ -223,6 +227,15 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\QuickgameCard.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\QuickgameDetail.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\Event.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\SearchDialog.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
@@ -747,7 +760,9 @@
     <AndroidResource Include="Resources\drawable\Icon_xbox.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\menu\Profile_ToolbarMenu.xml" />
+    <AndroidResource Include="Resources\menu\Profile_ToolbarMenu.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\ic_micon.png" />
@@ -778,6 +793,44 @@
     <AndroidResource Include="Resources\drawable-xxxhdpi\navWallpaper.jpg" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\background.jpg" />
     <AndroidResource Include="Resources\menu\AddQuickgameToolbar.xml" />
+    <AndroidResource Include="Resources\menu\QuickgameDetail_Menu.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable-hdpi\ic_add_white_48dp.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_exit_to_app_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_exit_to_app_white_48dp.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_plus_one_white_48dp.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_search_white_48dp.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_share_white_48dp.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_tune_white_48dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_add_white_48dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_exit_to_app_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_exit_to_app_white_48dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_plus_one_white_48dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_search_white_48dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_tune_white_48dp.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_share_white_48dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_add_white_48dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_exit_to_app_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_exit_to_app_white_48dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_plus_one_white_48dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_search_white_48dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_share_white_48dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_tune_white_48dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_add_white_48dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_exit_to_app_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_exit_to_app_white_48dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_plus_one_white_48dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_search_white_48dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_share_white_48dp.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_tune_white_48dp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_add_white_48dp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_exit_to_app_white_24dp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_exit_to_app_white_48dp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_plus_one_white_48dp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_search_white_48dp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_share_white_48dp.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_tune_white_48dp.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

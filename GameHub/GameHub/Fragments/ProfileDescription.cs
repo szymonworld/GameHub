@@ -24,7 +24,13 @@ namespace GameHub.Fragments
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
-             return inflater.Inflate(Resource.Layout.ProfileDescription, container, false);
+            View view = inflater.Inflate(Resource.Layout.ProfileDescription, container, false);
+            TextView Description = view.FindViewById<TextView>(Resource.Id.Description);
+            Description.Text = "To jest opis graczaTo jest opis graczaTo jest opis graczaTo jest opis graczaTo jest opis graczaTo jest opis graczaTo jest opis graczaTo jest opis graczaTo jest opis graczaTo jest opis graczaTo jest opis graczaTo jest opis graczaTo jest opis graczaTo jest opis graczaTo jest opis graczaTo jest opis graczaTo jest opis graczaTo jest opis graczaTo jest opis graczaTo jest opis graczaTo jest opis graczaTo jest opis graczaTo jest opis graczaTo jest opis graczaTo jest opis graczaTo jest opis graczaTo jest opis graczaTo jest opis graczaTo jest opis graczaTo jest opis graczaTo jest opis graczaTo jest opis graczaTo jest opis graczaTo jest opis graczaTo jest opis graczaTo jest opis graczaTo jest opis graczaTo jest opis graczaTo jest opis graczaTo jest opis graczaTo jest opis graczaTo jest opis graczaTo jest opis graczaTo jest opis graczaTo jest opis graczaTo jest opis graczaTo jest opis gracza";
+
+
+
+            return view;
 
         }
     }

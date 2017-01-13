@@ -82,7 +82,7 @@ namespace GameHub
 
                     case (Resource.Id.nav_tournament):
                          frag = (SupportFragment)SupportFragmentManager.FindFragmentByTag("Turnieje");
-                        newFragment = new Tournament();
+                        newFragment = new Tournament(null,null, null, null, null);
                         trans = SupportFragmentManager.BeginTransaction();
                         trans.Replace(Resource.Id.flContent, newFragment, "Turnieje");
                         if (frag == null)
@@ -204,12 +204,54 @@ namespace GameHub
                     this.StartActivity(intent);
                     Finish();
                     break;
+                case Resource.Id.menut_search:
+                    Dialog();
+                    break;
             }
 
             //Toast.MakeText(this, "Zaznaczone: " + item.TitleFormatted,
             //    ToastLength.Short).Show();
             return base.OnOptionsItemSelected(item);
 
+        }
+        void Dialog()
+        {
+
+
+            var builder = new Android.Support.V7.App.AlertDialog.Builder(this);
+            var dialogview = LayoutInflater.Inflate(Resource.Layout.SearchDialog, null);
+            builder.SetView(dialogview);
+
+            Spinner dropdown = dialogview.FindViewById<Spinner>(Resource.Id.spinner1);
+            string[] platform = new string[] { "Turniej", "Szybka gra" };
+            ArrayAdapter<string> adapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleSpinnerDropDownItem, platform);
+            dropdown.Adapter = adapter;
+
+            Spinner dropdown2 = dialogview.FindViewById<Spinner>(Resource.Id.spinner2);
+            string[] platform2 = new string[] { "Steam", "Origin", "Uplay", "Battle.net", "XBOX LIVE", "PSN", "Skype", "LOL", "Discord" };
+            ArrayAdapter<string> adapter2 = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleSpinnerDropDownItem, platform2);
+            dropdown2.Adapter = adapter2;
+
+            var AutoComGameList = new string[] { "CS:GO", "", "LOL", "DOTA", "HS", "Watch Dogs 2", "Call of Duty Modern Warfare 2", "Call of Duty Modern Warfare 2", "Call of Duty Modern Warfare 2", "Call of Duty Modern Warfare 2", "Call of Duty Modern Warfare 2", "Call of Duty Modern Warfare 2", "Call of Duty Modern Warfare 2", "Call of Duty Modern Warfare 2", "Call of Duty Modern Warfare 2", "Call of Duty Modern Warfare 2", "Call of Duty Modern Warfare 2", "Call of Duty Modern Warfare 2", "GTA 5", "Tomb Raider: Rise of the" };
+            ArrayAdapter AutoComGameListAdapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleDropDownItem1Line, AutoComGameList);
+            var TextGamelist = dialogview.FindViewById<AutoCompleteTextView>(Resource.Id.autoCompleteTextView1);
+            TextGamelist.Adapter = AutoComGameListAdapter;
+
+            dialogview.FindViewById(Resource.Id.spinner1);
+            builder.SetPositiveButton(GetString(Resource.String.Dialog_Positive), (EventHandler<DialogClickEventArgs>)null);
+            builder.SetNegativeButton(GetString(Resource.String.Dialog_Negative), (EventHandler<DialogClickEventArgs>)null);
+            var dialog = builder.Create();
+            dialog.Show();
+            var PositiveButton = dialog.GetButton((int)DialogButtonType.Positive);
+            PositiveButton.Click += delegate
+            {
+                dialog.Cancel();
+            };
+            var NegativeButton = dialog.GetButton((int)DialogButtonType.Positive);
+            NegativeButton.Click += delegate
+            {
+                dialog.Cancel();
+            };
         }
 
 

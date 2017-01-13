@@ -15,6 +15,7 @@ using Android.Support.V7.Widget;
 using Android.Widget;
 using Android.Support.V7.App;
 using Android.Support.Design.Widget;
+using DesignLibrary.Helpers;
 
 namespace GameHub.Fragments
 {
@@ -79,6 +80,13 @@ namespace GameHub.Fragments
                 context.StartActivity(intent);
             };
 
+            mRecyclerView.SetItemClickListener((rv, position, view) =>
+            {
+                Intent intent = new Intent(((AppCompatActivity)this.Activity), typeof(QuickgameDetail));
+                ((AppCompatActivity)this.Activity).StartActivity(intent);
+
+            });
+
 
             return view;
         }
@@ -110,7 +118,7 @@ namespace GameHub.Fragments
 
         public void Generuj_wydarzenie()
         {
-            Wydarzenie nowe_wydarzenie = new Wydarzenie("ATH CUP", "To jest opis wydarzenia który powinien byæ krótki.", "18.05 22:15", "My Little Pony");
+            Wydarzenie nowe_wydarzenie = new Wydarzenie("ATH CUP", "18.05 22:15", "My Little Pony");
             lista_wydarzen.Add(nowe_wydarzenie);
 
         }
@@ -164,7 +172,7 @@ namespace GameHub.Fragments
                 int indexPosition = (lista_wydarzen.Count - 1) - position;
                 //iew.mMainView.Click += mMainView_Click;
                 view.ETitle.Text = lista_wydarzen[indexPosition].etitle;
-                view.Description.Text = lista_wydarzen[indexPosition].desc;
+                //view.Description.Text = lista_wydarzen[indexPosition].desc;
                 view.EDate.Text = lista_wydarzen[indexPosition].edate;
                 view.EGame.Text = lista_wydarzen[indexPosition].egame;
                 //view.mTime.Text = Convert.ToString(lista_wydarzen[indexPosition].czy_turniej);
@@ -183,13 +191,13 @@ namespace GameHub.Fragments
         public class Wydarzenie
         {
             public string etitle;
-            public string desc;
+            //public string desc;
             public string edate;
             public string egame;
-            public Wydarzenie(string title, string description, string date, string game)
+            public Wydarzenie(string title, string date, string game)
             {
                 etitle = title;
-                desc = description;
+                //desc = description;
                 edate = date;
                 egame = game;
                 //Czas(godzina, minuta);

@@ -3,7 +3,7 @@
   >
   <item
        android:id="@+id/menut_save"
-       android:icon="@drawable/ic_done"
+       android:icon="@drawable/ic_add_white_48dp"
        local:showAsAction="always"
        android:title="Stwórz wydarzenie" />
 </menu>

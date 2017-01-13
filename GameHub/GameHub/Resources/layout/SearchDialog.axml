@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:theme="@style/MyTheme"
+    android:background="#212531"
+    android:padding="20dp">
+    <TextView
+        android:text="Filtr wyszukiwania"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView1"
+        android:gravity="center"
+        android:textSize="20sp" />
+    <GridLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingRight="20dp">
+        <TextView
+            android:text="Rodzaj gry:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView2"
+            android:layout_gravity="left" />
+        <Spinner
+            android:id="@+id/spinner1"
+            android:layout_height="30dp"
+            android:spinnerMode="dropdown"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:textColor="#000"
+            android:alpha="0.7"
+            android:textColorHint="#626a77"
+            android:textStyle="normal"
+            android:typeface="normal"
+            android:layout_gravity="right"
+            android:layout_width="wrap_content" />
+    </GridLayout>
+    <GridLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingRight="20dp">
+        <TextView
+            android:text="Platforma"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView2"
+            android:layout_gravity="left" />
+        <Spinner
+            android:id="@+id/spinner2"
+            android:layout_height="30dp"
+            android:spinnerMode="dropdown"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:textColor="#000"
+            android:alpha="0.7"
+            android:textColorHint="#626a77"
+            android:textStyle="normal"
+            android:typeface="normal"
+            android:layout_gravity="right"
+            android:layout_width="wrap_content" />
+    </GridLayout>
+    <GridLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingRight="20dp">
+        <TextView
+            android:text="Gra:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView2"
+            android:layout_gravity="left" />
+      <AutoCompleteTextView
+          android:layout_width="170dp"
+          android:layout_height="wrap_content"
+          android:id="@+id/autoCompleteTextView1"
+          android:imeOptions="actionNext"
+          android:singleLine="true"
+          android:background="@drawable/edit_text_style"
+          android:hint=""
+          android:textColor="#000"
+          android:textColorHint="#626a77"
+          android:alpha="0.7"
+          android:textStyle="normal"
+          android:typeface="normal"
+          style="@style/Base.TextAppearance.AppCompat"
+          android:focusable="true"
+          android:focusableInTouchMode="true" />
+    </GridLayout>
+</LinearLayout>

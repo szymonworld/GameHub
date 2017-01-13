@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -43,7 +43,7 @@ namespace GameHub.Fragments
             mRecyclerView.SetLayoutManager(mLayoutManager);
             mRecyclerView.SetAdapter(mAdapter);
 
-            // £adowanie nastêpnych wydarzeñ po dojechaniu na sam dó³
+            // Â£adowanie nastÃªpnych wydarzeÃ± po dojechaniu na sam dÃ³Â³
             onScrollListener.LoadMoreEvent += (object sender, EventArgs e) =>
             {
 
@@ -106,7 +106,7 @@ namespace GameHub.Fragments
 
             public override RecyclerView.ViewHolder OnCreateViewHolder(ViewGroup parent, int viewType)
             {
-                View row = LayoutInflater.From(parent.Context).Inflate(Resource.Layout.Events, parent, false);
+                View row = LayoutInflater.From(parent.Context).Inflate(Resource.Layout.TournamentCard, parent, false);
 
                 TextView EventTitle = row.FindViewById<TextView>(Resource.Id.EventTitle);
                 TextView EventFirstTeam = row.FindViewById<TextView>(Resource.Id.EventFirstTeam);
@@ -120,7 +120,7 @@ namespace GameHub.Fragments
                 LinearLayout colorLi = row.FindViewById<LinearLayout>(Resource.Id.colorLayoutWydarzenia);
                 //li.SetBackgroundColor(Android.Graphics.Color.Red);
 
-                MyView view = new MyView(row) { ETitle = EventTitle, EFTeam = EventFirstTeam, ESTeam = EventSecondaryTeam, EDate = EventDate, EGame = EventGame , mLayout = colorLi };
+                MyView view = new MyView(row) { ETitle = EventTitle, EFTeam = EventFirstTeam, ESTeam = EventSecondaryTeam, EDate = EventDate, EGame = EventGame, mLayout = colorLi };
                 return view;
             }
 
@@ -151,7 +151,7 @@ namespace GameHub.Fragments
 
             public override int ItemCount
             {
-                get { return lista_wydarzen.Count; }  //iloœæ newsów w przysz³oœci JakasListaNewsów.Count
+                get { return lista_wydarzen.Count; }  //iloÅ“Ã¦ newsÃ³w w przyszÂ³oÅ“ci JakasListaNewsÃ³w.Count
             }
         }
 
@@ -176,7 +176,7 @@ namespace GameHub.Fragments
 
             private void Czas(int godzina, int minuta)
             {
-               // wydarzenie_czas = Convert.ToString(godzina) + ":" + Convert.ToString(minuta);
+                // wydarzenie_czas = Convert.ToString(godzina) + ":" + Convert.ToString(minuta);
             }
         }
 

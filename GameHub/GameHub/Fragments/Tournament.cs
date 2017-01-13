@@ -32,14 +32,35 @@ namespace GameHub.Fragments
         private List<Wydarzenie> lista_wydarzen = new List<Wydarzenie>();
         View view;
         private List<string> list = new List<string>();
-
+        Card c = new Card();
         public override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
         }
 
+        public class Card
+        {
+            public string Title { get; set; }
+            public string FTeam { get; set; }
+            public string STeam { get; set; }
+            public string Date { get; set; }
+            public string Game { get; set; }
+        }
+
+
+        public Tournament(string title, string t1, string t2, string date, string game)
+        {
+            
+            c.Title = title;
+            c.FTeam = t1;
+            c.STeam = t2;
+            c.Date = date;
+            c.Game = game;
+        }
+
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
+            Tournament aaa = new Tournament("Turniej Gfinity 2016 PRO League", "Virtus.pro", "Fnatic", "28.05 20:15", "Counter-Strike: Global Offensive");
             view = inflater.Inflate(Resource.Layout.Tournament, container, false);
             for (int a = 0; a < 15; a++)
             {
@@ -135,7 +156,7 @@ namespace GameHub.Fragments
 
             public override RecyclerView.ViewHolder OnCreateViewHolder(ViewGroup parent, int viewType)
             {
-                View row = LayoutInflater.From(parent.Context).Inflate(Resource.Layout.Events, parent, false);
+                View row = LayoutInflater.From(parent.Context).Inflate(Resource.Layout.TournamentCard, parent, false);
 
                 TextView EventTitle = row.FindViewById<TextView>(Resource.Id.EventTitle);
                 TextView EventFirstTeam = row.FindViewById<TextView>(Resource.Id.EventFirstTeam);

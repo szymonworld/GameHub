@@ -52,7 +52,7 @@
                         android:minWidth="25px"
                         android:minHeight="25px"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="35dp"
                         android:paddingTop="5dp"
                         android:paddingBottom="3dp"
                         android:weightSum="100"
@@ -66,11 +66,12 @@
                             android:layout_weight="80"
                             android:textStyle="bold"
                             android:layout_width="264.0dp"
-                            style="@style/Base.TextAppearance.AppCompat" />
+                            style="@style/Base.TextAppearance.AppCompat"
+                            android:textSize="17dp" />
                         <refractored.controls.CircleImageView
-                            android:layout_width="20dp"
+                            android:layout_width="25dp"
                             android:id="@+id/EventPlatformIcon"
-                            android:layout_height="20dp"
+                            android:layout_height="25dp"
                             android:src="@drawable/Icon_steam"
                             android:scaleType="centerCrop"
                             android:layout_marginRight="15dp"
@@ -78,17 +79,10 @@
                     </LinearLayout>
                     <GridLayout
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/gridLayout1">
-                        <TextView
-                            android:text="dlksfjsdkjfnsdfjksndfjksdfnskjfnsjkdfnsjfnsdfkjsnfskjfdnsdkjfnsdfkjsnfkjsdnfkjsdfnskjdfnsdjkfnskfjnsdjfnskjnsgnskjdgndlksfjsdkjfnsdfjksndfjksdfnskjfnsjkdfnsjfnsdfkjsnfskjfdnsdkjfnsdfkjsnfkjsdnfkjsdfnskjdfnsdjkfnskfjnsdjfnskjnsgnskjdgnsdgkjsdsdlksfjsdkjfnsdfjksndfjksdfnskjfnsjkdfnsjfnsdfkjsnfskjfdnsdkjfnsdfkjsnfkjsdnfkjsdfnskjdfnsdjkfnskfjnsdjfnskjnsgnskjdgnsdgkjsdssdgkjsds"
-                            android:textAppearance="?android:attr/textAppearanceSmall"
-                            android:layout_width="match_parent"
-                            android:layout_height="35dp"
-                            android:textColor="#9b9b9b"
-                            android:id="@+id/desc"
-                            android:layout_marginBottom="5dp" />
-                    </GridLayout>
+                        android:layout_height="30dp"
+                        android:id="@+id/gridLayout1"
+                        android:minWidth="25px"
+                        android:minHeight="25px" />
                     <GridLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
