@@ -12,12 +12,22 @@
         android:id="@+id/avatar"
         android:layout_width="@dimen/list_item_avatar_size"
         android:layout_height="@dimen/list_item_avatar_size"
+        android:clickable ="false"
         android:layout_marginRight="16dp"
         app:civ_border_width="1dp"
         app:civ_border_color="#FF000000" />
     <TextView
         android:id="@+id/text1"
         android:layout_width="match_parent"
+        android:layout_weight="1"
         android:layout_height="wrap_content"
         android:textAppearance="?attr/textAppearanceListItem" />
+  <ImageView
+                android:id="@+id/chat_icon"
+                android:layout_width="144px"
+                android:layout_height="144px"
+                android:padding="2dp"
+                android:clickable ="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_chat"/>
 </LinearLayout>
