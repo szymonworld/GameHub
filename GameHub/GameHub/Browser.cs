@@ -47,11 +47,11 @@ namespace GameHub
             SetSupportActionBar(toolBar);
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
             SupportActionBar.Title = GetString(Resource.String.Browser);
-            String Link = Intent.GetStringExtra("BrowserLink");
+            string Link = Intent.GetStringExtra("BrowserLink");
             WebView Browser = FindViewById<WebView>(Resource.Id.webView1);
             Browser.Settings.JavaScriptEnabled = true;
             Browser.SetWebViewClient(mWebClient);
-            Browser.LoadUrl("http://www.gry-online.pl/");
+            Browser.LoadUrl(Link);
 
 
 

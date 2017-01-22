@@ -1,6 +1,6 @@
-<menu xmlns:local="http://schemas.android.com/apk/res-auto" xmlns:android="http://schemas.android.com/apk/res/android">&gt;
+<menu xmlns:android="http://schemas.android.com/apk/res/android" xmlns:local="http://schemas.android.com/apk/res-auto">&gt;
   <!--<item
        android:id="@+id/menut_edit"
        android:icon="@drawable/ic_action_content_create"
        local:showAsAction="collapseActionView"
-       android:title="Edycja" />--><item android:id="@+id/menut_search" android:icon="@drawable/ic_search_white_48dp" local:showAsAction="always" android:title="Wyszukaj" /><item android:id="@+id/menut_ustawienia" android:showAsAction="withText" android:icon="@drawable/ic_action_content_create" android:title="@string/MainToolbarSettings" /><item android:id="@+id/MainToolbarLogout" android:showAsAction="withText" android:icon="@drawable/ic_action_content_create" android:title="Wyloguj" /></menu>
+       android:title="Edycja" />--><item android:id="@+id/menut_ustawienia" android:showAsAction="withText" android:icon="@drawable/ic_action_content_create" android:title="@string/MainToolbarSettings" /><item android:id="@+id/MainToolbarLogout" android:showAsAction="withText" android:icon="@drawable/ic_action_content_create" android:title="Wyloguj" /></menu>

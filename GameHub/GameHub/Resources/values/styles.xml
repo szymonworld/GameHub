@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<resources>
+<resources
+  xmlns:app="http://schemas.android.com/apk/res-auto">
   <style name="MyTheme" parent="MyTheme.Base">
   </style>
   <style name="MyTheme.Base" parent="Theme.AppCompat">
@@ -65,6 +66,27 @@
     <item name="android:fullDark">#3e4f6a</item>
     <item name="android:topBright">#3e4f6a</item>
     <item name="android:topDark">#3e4f6a</item>-->
+  </style>
+
+  <style name="DarkThemeDialog" parent="Theme.AppCompat">
+    <!--<item name="colorPrimary">#333d59</item>
+    <item name="colorPrimaryDark">#212531</item>
+    <item name="colorAccent">#FFC107</item>
+    <item name="android:textColor">#BDBDBD</item>-->
+    <!--<item name="android:minWidth">1000dp</item>-->
+    <item name="android:windowMinWidthMajor">88%</item>
+    <item name="android:windowMinWidthMinor">88%</item>
+    <item name="colorPrimary">#333d59</item>
+    <item name="colorPrimaryDark">#212531</item>
+    <item name="colorAccent">#FFC107</item>
+    <item name="android:textColor">#BDBDBD</item>
+    <item name="android:windowFrame">@null</item>
+    <item name="android:background">#333d59</item>
+    <item name="android:windowIsFloating">true</item>
+    <item name="android:windowContentOverlay">@null</item>
+    <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+    <item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>
+    <item name="android:colorBackgroundCacheHint">@null</item>
   </style>
 
 </resources>

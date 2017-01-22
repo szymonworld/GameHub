@@ -20,13 +20,16 @@ using Android.Content.PM;
 using System;
 using Refractored.Controls;
 using System.Threading.Tasks;
+using Android.Graphics;
 
 namespace GameHub
 {
-    [Activity(Label = "GameHub", ScreenOrientation = ScreenOrientation.Portrait) ]
+    [Activity(Label = "GameHub", ScreenOrientation = ScreenOrientation.Portrait, LaunchMode = LaunchMode.SingleTask) ]
     public class MainActivity : AppCompatActivity
     {
         private static string LoginDataUser;
+        private static string runActivity;
+        private static string Notyfication;
         private ISharedPreferences pref;
         private DrawerLayout mDrawerLayout;
         private Android.Support.V7.App.ActionBarDrawerToggle drawerToggle;
@@ -38,12 +41,12 @@ namespace GameHub
         {
             base.OnCreate(bundle);
             SetContentView(Resource.Layout.Main);
-
             Intent intent;
             SupportFragment newFragment = new Hub();
             var trans = SupportFragmentManager.BeginTransaction();
             trans.Add(Resource.Id.flContent, newFragment, "Hub");
             trans.Commit();
+            
 
             mDrawerLayout = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
             navigationView = FindViewById<NavigationView>(Resource.Id.nav_view);
@@ -151,29 +154,63 @@ namespace GameHub
                 }
 
                 mDrawerLayout.CloseDrawers();
-
-
-
-
-
             };
-        }
 
-        //public void SendClickListener()
-        //{
-        //    intent = new Intent(this, typeof(Profile));
-        //    OverridePendingTransition(Resource.Animation.animRight, Resource.Animation.animRight2);
-        //    this.StartActivity(intent);
-        // }
-        // }
+            pref = ((AppCompatActivity)this).GetSharedPreferences(Notyfication, FileCreationMode.Private);
+            string noty = pref.GetString("Notification", "");
+            if (noty == "yes")
+            {
+                pref = ((AppCompatActivity)this).GetSharedPreferences(runActivity, FileCreationMode.Private);
+                bool run = pref.GetBoolean("MainActivity", false);
+                if (run)
+                {
+                    Intent notint = new Intent(this, typeof(MainActivity));
+                    notint.SetFlags(ActivityFlags.ClearTop);
+                    notint.SetFlags(ActivityFlags.NewTask);
+                    const int pendingIntentId = 0;
+                    PendingIntent pendingIntent = PendingIntent.GetActivity(this, pendingIntentId, notint, PendingIntentFlags.OneShot);
+                    var notification = new Notification.Builder(this);
+                    notification.SetContentIntent(pendingIntent);
+                    notification.SetContentText("Zaproszenie do gry");
+                    notification.SetContentTitle("GameHub");
+                    notification.SetSmallIcon(Resource.Drawable.Icon4);
+                    notification.SetAutoCancel(true);
+                    notification.SetDefaults(NotificationDefaults.Sound | NotificationDefaults.Vibrate);
+                    NotificationManager NotManager = (NotificationManager)GetSystemService(Context.NotificationService);
+                    NotManager.Notify(0, notification.Build());
+                }
+                else
+                {
+
+                }
+            }
+        }
         private async Task LoadAccount()
         {
             pref = ((AppCompatActivity)this).GetSharedPreferences(LoginDataUser, FileCreationMode.Private);
             currentAccount = await API.getAccountByEmail(pref.GetString("PrefEmailUser", ""));
             TextView profilename = (TextView)navigationView.GetHeaderView(0).FindViewById(Resource.Id.textCustomer2);
             profilename.Text = currentAccount.Login;
-
         }
+
+        protected override void OnStart()
+        {
+            base.OnStart();
+            ISharedPreferences sp = GetSharedPreferences(runActivity, FileCreationMode.Private);
+            ISharedPreferencesEditor ed = sp.Edit();
+            ed.PutBoolean("MainActivity", true);
+            ed.Commit();
+        }
+
+        protected override void OnStop()
+        {
+            base.OnStop();
+            ISharedPreferences sp = GetSharedPreferences(runActivity, FileCreationMode.Private);
+            ISharedPreferencesEditor ed = sp.Edit();
+            ed.PutBoolean("MainActivity", false);
+            ed.Commit();
+        }
+
         public override bool OnCreateOptionsMenu(IMenu menu)
         {
             MenuInflater.Inflate(Resource.Menu.toolbarMenu, menu);
@@ -218,10 +255,10 @@ namespace GameHub
         {
 
 
-            var builder = new Android.Support.V7.App.AlertDialog.Builder(this);
+            var builder = new Android.Support.V7.App.AlertDialog.Builder(this, Resource.Style.DarkThemeDialog);
             var dialogview = LayoutInflater.Inflate(Resource.Layout.SearchDialog, null);
             builder.SetView(dialogview);
-
+            
             Spinner dropdown = dialogview.FindViewById<Spinner>(Resource.Id.spinner1);
             string[] platform = new string[] { "Turniej", "Szybka gra" };
             ArrayAdapter<string> adapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleSpinnerDropDownItem, platform);

@@ -1,0 +1,1 @@
+<layer-list android:fitsSystemWindows="true" android:background="@drawable/background" xmlns:android="http://schemas.android.com/apk/res/android"><item><color android:color="#FF212531" /></item><item><bitmap android:src="@drawable/icon4" android:tileMode="disabled" android:gravity="center" /></item></layer-list>

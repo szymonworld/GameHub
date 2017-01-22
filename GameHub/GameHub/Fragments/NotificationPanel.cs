@@ -65,7 +65,7 @@ namespace GameHub.Fragments
 
         void Dialog(string title, string msg)
         {
-            var builder = new Android.Support.V7.App.AlertDialog.Builder((AppCompatActivity)this.Activity);
+            var builder = new Android.Support.V7.App.AlertDialog.Builder((AppCompatActivity)this.Activity, Resource.Style.DarkThemeDialog);
             builder.SetTitle(title);
             builder.SetMessage(msg);
             builder.SetPositiveButton(GetString(Resource.String.Dialog_Positive), (EventHandler<DialogClickEventArgs>)null);

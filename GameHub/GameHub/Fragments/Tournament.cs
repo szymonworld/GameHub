@@ -36,6 +36,13 @@ namespace GameHub.Fragments
         public override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
+            HasOptionsMenu = true;
+        }
+
+        public override void OnCreateOptionsMenu(IMenu menu, MenuInflater inflater)
+        {
+            ((AppCompatActivity)this.Activity).MenuInflater.Inflate(Resource.Menu.Search_Menu, menu);
+            base.OnCreateOptionsMenu(menu, inflater);
         }
 
         public class Card

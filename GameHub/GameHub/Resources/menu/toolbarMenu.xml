@@ -6,11 +6,6 @@
        local:showAsAction="collapseActionView"
        android:title="Edycja" />-->
   <item
-       android:id="@+id/menut_search"
-       android:icon="@drawable/ic_search_white_48dp"
-       local:showAsAction="always"
-       android:title="Wyszukaj" />
-  <item
        android:id="@+id/menut_ustawienia"
        android:showAsAction="withText"
        android:icon="@drawable/ic_action_content_create"

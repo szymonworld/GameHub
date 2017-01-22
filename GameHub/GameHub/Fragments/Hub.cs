@@ -25,10 +25,24 @@ namespace GameHub.Fragments
         public override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
+            HasOptionsMenu = true;
+        }
+
+        //public override void OnPrepareOptionsMenu(IMenu menu)
+        //{
+        //    ((AppCompatActivity)this.Activity).MenuInflater.Inflate(Resource.Menu.Search_Menu, menu);
+        //    base.OnPrepareOptionsMenu(menu);
+        //}
+
+        public override void OnCreateOptionsMenu(IMenu menu, MenuInflater inflater)
+        {
+            ((AppCompatActivity)this.Activity).MenuInflater.Inflate(Resource.Menu.Search_Menu, menu);
+            base.OnCreateOptionsMenu(menu, inflater);
         }
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
+            
             var view = LayoutInflater.From(container.Context).Inflate(Resource.Layout.Hub, container, false);
 
             
@@ -38,6 +52,7 @@ namespace GameHub.Fragments
             ((AppCompatActivity)this.Activity).SupportActionBar.SetHomeAsUpIndicator(Resource.Drawable.ic_menu);
             ((AppCompatActivity)this.Activity).SupportActionBar.SetDisplayHomeAsUpEnabled(true);
             ((AppCompatActivity)this.Activity).SupportActionBar.Title = "HUB";
+            
 
             tabs = view.FindViewById<TabLayout>(Resource.Id.tabsHub);
 
