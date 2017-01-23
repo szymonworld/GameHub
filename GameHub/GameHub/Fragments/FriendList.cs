@@ -60,8 +60,7 @@ namespace GameHub
             var onScrollListener = new RecyclerViewOnScrollListener(mLayoutManager);
             mRecyclerView.AddOnScrollListener(onScrollListener);
             mRecyclerView.SetLayoutManager(mLayoutManager);
-            mAdapter = new SimpleStringRecyclerViewAdapter(mRecyclerView.Context, list, uri2, view2);
-            
+            mAdapter = new SimpleStringRecyclerViewAdapter(mRecyclerView.Context, list, uri2, view2, 0);
             mRecyclerView.SetAdapter(mAdapter);
 
             FloatingActionButton myFab = (FloatingActionButton)view2.FindViewById(Resource.Id.fab);
@@ -76,7 +75,7 @@ namespace GameHub
                 {
                     uri2 = Resource.Drawable.Icon2;
                 }
-                mAdapter = new SimpleStringRecyclerViewAdapter(mRecyclerView.Context, list, uri2, view2);
+                mAdapter = new SimpleStringRecyclerViewAdapter(mRecyclerView.Context, list, uri2, view2, 0);
                 mRecyclerView.SetAdapter(mAdapter);
                 mAdapter.NotifyDataSetChanged();
 

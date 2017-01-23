@@ -9,9 +9,11 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using SupportFragment = Android.Support.V4.App.Fragment;
 using Android.Support.V7.Widget;
 using Android.Util;
 using Android.Graphics;
+using Android.Support.V7.App;
 
 namespace GameHub
 {
@@ -20,18 +22,22 @@ namespace GameHub
         private readonly TypedValue mTypedValue = new TypedValue();
         private int mBackground;
         private List<string> mValues;
+        public int isFriend;
         public event EventHandler<int> ItemClick;
         public View mainview;
+        //private Context cc;
+        private Android.Support.V7.App.AlertDialog.Builder builder;
         private Dictionary<int, int> mCalculatedSizes;
         private int uri;
 
-        public SimpleStringRecyclerViewAdapter(Context context, List<string> items, int resource, View mView)
+        public SimpleStringRecyclerViewAdapter(Context context, List<string> items, int resource, View mView, int friend = 3)
         {
             //context.Theme.ResolveAttribute(Resource.Attribute.colorPrimary, mTypedValue, true);
             mBackground = mTypedValue.ResourceId;
             mValues = items;
             uri = resource;
             mainview = mView;
+            isFriend = friend;
 
             //mResource = res;
 
@@ -87,9 +93,10 @@ namespace GameHub
         {
             View view = LayoutInflater.From(parent.Context).Inflate(Resource.Layout.List_Item, parent, false);
             //view.SetBackgroundResource(mBackground);
-
-
-            return new SimpleViewHolder(view, OnClick, mainview);
+            
+            builder = new Android.Support.V7.App.AlertDialog.Builder(view.Context);
+            //cc = view.Context;
+            return new SimpleViewHolder(view, OnClick, mainview, isFriend);
         }
         public class SimpleViewHolder : RecyclerView.ViewHolder
         {
@@ -100,29 +107,72 @@ namespace GameHub
             public readonly TextView mTxtView;
             public View moryginalView;
 
-            public SimpleViewHolder(View view, Action<int> listener, View mainView) : base(view)
+            public SimpleViewHolder(View view, Action<int> listener, View mainView, int isFriend) : base(view)
             {
                 mView = view;
                 mImageView = view.FindViewById<ImageView>(Resource.Id.avatar);
                 mTxtView = view.FindViewById<TextView>(Resource.Id.text1);
                 mImageViewChat = view.FindViewById<ImageView>(Resource.Id.chat_icon);
-                
-                //mImageView.Pressed = false;
 
-                mImageViewChat.Click += (sender, e) =>
+                if(isFriend == 3)
                 {
-                    Context context = mainView.Context;
-                    Intent intent = new Intent(context, typeof(Chat));
-                    intent.PutExtra("Name", mTxtView.Text);
-                    context.StartActivity(intent);
-                };
+                    Random rand = new Random();
+                    isFriend = rand.Next(0, 2);
+                }
 
+                //mImageView.Pressed = false;
+                if(isFriend == 0)
+                {
+                    mImageViewChat.Click += (sender, e) =>
+                    {
+                        Context context = mainView.Context;
+                        Intent intent = new Intent(context, typeof(Chat));
+                        intent.PutExtra("Name", mTxtView.Text);
+                        context.StartActivity(intent);
+                    };
+
+                }
+                else
+                {
+                    
+                    mImageViewChat.SetImageResource(Resource.Drawable.ic_plus_circle_white_48dp);
+                    mImageViewChat.Click += (sender, e) =>
+                    {
+                        DialogMenager(mainView.Context);
+                    };
+                }
+
+               
+                
                 view.Click += (sender, e) => listener(Position);
             }
 
             public override string ToString()
             {
                 return base.ToString() + " '" + mTxtView.Text;
+            }
+
+            public void DialogMenager(Context cc)
+            {
+
+                var builder = new Android.Support.V7.App.AlertDialog.Builder(cc, Resource.Style.DarkThemeDialog);
+                //var dialogview =  LayoutInflater.Inflate(Resource.Layout.AddFriendDialog, null);
+                builder.SetView(Resource.Layout.AddFriendDialog);
+
+                builder.SetPositiveButton("AKCEPTUJ", (EventHandler<DialogClickEventArgs>)null);
+                builder.SetNegativeButton("ODRZUÆ", (EventHandler<DialogClickEventArgs>)null);
+                var dialog = builder.Create();
+                dialog.Show();
+                var PositiveButton = dialog.GetButton((int)DialogButtonType.Positive);
+                PositiveButton.Click += delegate
+                {
+                    dialog.Cancel();
+                };
+                var NegativeButton = dialog.GetButton((int)DialogButtonType.Positive);
+                NegativeButton.Click += delegate
+                {
+                    dialog.Cancel();
+                };
             }
         }
     }

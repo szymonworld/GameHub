@@ -55,7 +55,7 @@ namespace GameHub.Fragments
             var onScrollListener = new RecyclerViewOnScrollListener(mLayoutManager);
             mRecyclerView.AddOnScrollListener(onScrollListener);
             mRecyclerView.SetLayoutManager(mLayoutManager);
-            mAdapter = new SimpleStringRecyclerViewAdapter(mRecyclerView.Context, list, uri2, view2);
+            mAdapter = new SimpleStringRecyclerViewAdapter(mRecyclerView.Context, list, uri2, view2, 1);
 
             mRecyclerView.SetAdapter(mAdapter);
 
