@@ -114,6 +114,7 @@
     <Compile Include="Helpers\ConnectAccount.cs" />
     <Compile Include="InAppClasses\Class_Quickgame.cs" />
     <Compile Include="InAppClasses\Class_Tournament.cs" />
+    <Compile Include="InAppClasses\Event_class.cs" />
     <Compile Include="Lists\ExtensionMethods.cs" />
     <Compile Include="Lists\Friends.cs" />
     <Compile Include="LoginSystem.cs" />

@@ -19,7 +19,7 @@ namespace GameHub.Fragments
 
         private RecyclerView mRecyclerView;
         private RecyclerView.Adapter mAdapter;
-        private List<Wydarzenie> lista_wydarzen = new List<Wydarzenie>();
+        private List<Event_class> lista_wydarzen = new List<Event_class>();
         private int naprzemiennieSzybkaITurniej = 0;
 
         public override void OnCreate(Bundle savedInstanceState)
@@ -32,7 +32,7 @@ namespace GameHub.Fragments
 
             for (int a = 0; a < 15; a++)
             {
-                Generuj_wydarzenie();
+                Generuj_Event_class();
             }
             mRecyclerView = inflater.Inflate(Resource.Layout.Friends, container, false) as RecyclerView;
             var mLayoutManager = new LinearLayoutManager(mRecyclerView.Context);
@@ -49,7 +49,7 @@ namespace GameHub.Fragments
 
                 for (int a = 0; a < 5; a++)
                 {
-                    Generuj_wydarzenie();
+                    Generuj_Event_class();
                 }
                 //mAdapter.NotifyDataSetChanged();
                 mAdapter = new RecyclerAdapter(lista_wydarzen);
@@ -61,21 +61,21 @@ namespace GameHub.Fragments
             return mRecyclerView;
         }
 
-        public void Generuj_wydarzenie()
+        public void Generuj_Event_class()
         {
             //Random rnd = new Random();
             //int random = rnd.Next(20);
-            // Wydarzenie nowe_wydarzenie = new Wydarzenie(random, "text ---- Text", "Wydarzenie", 20, 15);
+            // Event_class nowe_Event_class = new Event_class(random, "text ---- Text", "Event_class", 20, 15);
             if (naprzemiennieSzybkaITurniej == 0)
             {
-                Wydarzenie nowe_wydarzenie = new Wydarzenie("Turniej Gfinity 2016 PRO League", "Virtus.pro", "Fnatic", "28.05 20:15", "Counter-Strike: Global Offensive");
-                lista_wydarzen.Add(nowe_wydarzenie);
+                Event_class nowe_Event_class = new Event_class("Turniej Gfinity 2016 PRO League", "Virtus.pro", "Fnatic", "28.05 20:15", "Counter-Strike: Global Offensive");
+                lista_wydarzen.Add(nowe_Event_class);
                 naprzemiennieSzybkaITurniej = 1;
             }
             else
             {
-                Wydarzenie nowe_wydarzenie = new Wydarzenie("ATH CUP", "18.05 22:15", "My Little Pony");
-                lista_wydarzen.Add(nowe_wydarzenie);
+                Event_class nowe_Event_class = new Event_class("ATH CUP", "18.05 22:15", "My Little Pony");
+                lista_wydarzen.Add(nowe_Event_class);
                 naprzemiennieSzybkaITurniej = 0;
 
             }
@@ -83,9 +83,9 @@ namespace GameHub.Fragments
 
         public class RecyclerAdapter : RecyclerView.Adapter
         {
-            private List<Wydarzenie> lista_wydarzen = new List<Wydarzenie>();
+            private List<Event_class> lista_wydarzen = new List<Event_class>();
 
-            public RecyclerAdapter(List<Wydarzenie> list)
+            public RecyclerAdapter(List<Event_class> list)
             {
                 lista_wydarzen = list;
             }
@@ -206,40 +206,6 @@ namespace GameHub.Fragments
             public override int ItemCount
             {
                 get { return lista_wydarzen.Count; }  //iloœæ newsów w przysz³oœci JakasListaNewsów.Count
-            }
-        }
-
-        public class Wydarzenie
-        {
-            public int type = 0;
-            public string etitle;
-            public string efteam;
-            public string esteam;
-            public string edate;
-            public string egame;
-            public Wydarzenie(string title, string team1, string team2, string date, string game)
-            {
-                etitle = title;
-                efteam = team1;
-                esteam = team2;
-                edate = date;
-                egame = game;
-                type = 0;
-                //Czas(godzina, minuta);
-            }
-            public Wydarzenie(string title, string date, string game)
-            {
-                etitle = title;
-                //desc = description;
-                edate = date;
-                egame = game;
-                //Czas(godzina, minuta);
-                type = 1;
-            }
-
-            private void Czas(int godzina, int minuta)
-            {
-                // wydarzenie_czas = Convert.ToString(godzina) + ":" + Convert.ToString(minuta);
             }
         }
 

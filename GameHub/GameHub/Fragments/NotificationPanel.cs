@@ -21,7 +21,7 @@ namespace GameHub.Fragments
 
         private RecyclerView mRecyclerView;
         private RecyclerView.Adapter mAdapter;
-        private List<Wydarzenie> lista_wydarzen = new List<Wydarzenie>();
+        private List<Event_class> lista_wydarzen = new List<Event_class>();
 
         public override void OnCreate(Bundle savedInstanceState)
         {
@@ -32,7 +32,7 @@ namespace GameHub.Fragments
         {
             for (int a = 0; a < 15; a++)
             {
-                Generuj_wydarzenie();
+                Generuj_Event_class();
             }
             mRecyclerView = inflater.Inflate(Resource.Layout.Friends, container, false) as RecyclerView;
             var mLayoutManager = new LinearLayoutManager(mRecyclerView.Context);
@@ -53,7 +53,7 @@ namespace GameHub.Fragments
 
                 for (int a = 0; a < 5; a++)
                 {
-                    Generuj_wydarzenie();
+                    Generuj_Event_class();
                 }
                 //mAdapter.NotifyDataSetChanged();
                 mAdapter = new RecyclerAdapter(lista_wydarzen);
@@ -84,17 +84,17 @@ namespace GameHub.Fragments
             };
         }
 
-        public void Generuj_wydarzenie()
+        public void Generuj_Event_class()
         {
-                Wydarzenie nowe_wydarzenie = new Wydarzenie("U¿ytkownik @AdamPaluch zaprosi³ Ciê do gry.", GetString(Resource.String.not_titleTournament), 20, 15);
-                lista_wydarzen.Add(nowe_wydarzenie);
+                Event_class nowe_Event_class = new Event_class("U¿ytkownik @AdamPaluch zaprosi³ Ciê do gry.", GetString(Resource.String.not_titleTournament), 20, 15);
+                lista_wydarzen.Add(nowe_Event_class);
         }
 
         public class RecyclerAdapter : RecyclerView.Adapter
         {
-            private List<Wydarzenie> lista_wydarzen = new List<Wydarzenie>();
+            private List<Event_class> lista_wydarzen = new List<Event_class>();
 
-            public RecyclerAdapter(List<Wydarzenie> list)
+            public RecyclerAdapter(List<Event_class> list)
             {
                 lista_wydarzen = list;
             }
@@ -144,26 +144,6 @@ namespace GameHub.Fragments
             public override int ItemCount
             {
                 get { return lista_wydarzen.Count; }  //iloœæ newsów w przysz³oœci JakasListaNewsów.Count
-            }
-        }
-
-        public class Wydarzenie
-        {
-            public int czy_turniej = 0;
-            public string wydarzenie_text;
-            public string wydarzenie_tytul;
-            public string wydarzenie_czas;
-            public Wydarzenie(string Text, string tytul, int godzina, int minuta)
-            {
-                //czy_turniej = czyturniej;
-                wydarzenie_text = Text;
-                wydarzenie_tytul = tytul;
-                Czas(godzina, minuta);
-            }
-
-            private void Czas(int godzina, int minuta)
-            {
-                wydarzenie_czas = Convert.ToString(godzina) + ":" + Convert.ToString(minuta);
             }
         }
 
