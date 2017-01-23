@@ -44,15 +44,16 @@ namespace GameHub.Fragments
         {
             
             var view = LayoutInflater.From(container.Context).Inflate(Resource.Layout.Hub, container, false);
-
             
+
+
 
             toolbar = view.FindViewById<SupportToolbar>(Resource.Id.toolbar);
             ((AppCompatActivity)this.Activity).SetSupportActionBar(toolbar);
             ((AppCompatActivity)this.Activity).SupportActionBar.SetHomeAsUpIndicator(Resource.Drawable.ic_menu);
             ((AppCompatActivity)this.Activity).SupportActionBar.SetDisplayHomeAsUpEnabled(true);
             ((AppCompatActivity)this.Activity).SupportActionBar.Title = "HUB";
-            
+            Title(GetString(Resource.String.tab_news));
 
             tabs = view.FindViewById<TabLayout>(Resource.Id.tabsHub);
 

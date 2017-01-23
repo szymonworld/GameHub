@@ -29,7 +29,9 @@ namespace GameHub
         private List<string> list = new List<string>();
         private RecyclerView.Adapter mAdapter;
         private RecyclerView mRecyclerView;
-        
+        View view2;
+
+
 
         public override void OnCreate(Bundle savedInstanceState)
         {
@@ -40,7 +42,7 @@ namespace GameHub
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
 
-            View view2 = inflater.Inflate(Resource.Layout.FriendList, container, false);
+             view2 = inflater.Inflate(Resource.Layout.FriendList, container, false);
 
             SupportToolbar toolBar = view2.FindViewById<SupportToolbar>(Resource.Id.toolbar);
             ((AppCompatActivity)this.Activity).SetSupportActionBar(toolBar);
@@ -79,8 +81,9 @@ namespace GameHub
                 mAdapter.NotifyDataSetChanged();
 
                 FragmentTransaction transaction = ((AppCompatActivity)this.Activity).FragmentManager.BeginTransaction();
-                AddFriendDialogC inviteFriend = new AddFriendDialogC();
-                inviteFriend.Show(transaction, "dialog");
+               // AddFriendDialogC inviteFriend = new AddFriendDialogC();
+                //inviteFriend.Show(transaction, "dialog");
+                DialogMenager();
             };
 
             
@@ -183,10 +186,34 @@ namespace GameHub
             public override void OnActivityCreated(Bundle savedInstanceState)
             {
                 Dialog.Window.RequestFeature(WindowFeatures.NoTitle);
+                
 
                 base.OnActivityCreated(savedInstanceState);
 
             }
+        }
+        public void DialogMenager()
+        {
+
+
+            var builder = new Android.Support.V7.App.AlertDialog.Builder((AppCompatActivity)this.Activity, Resource.Style.DarkThemeDialog);
+            var dialogview = Activity.LayoutInflater.Inflate(Resource.Layout.AddFriendDialog, null);
+            builder.SetView(dialogview);
+
+            builder.SetPositiveButton(GetString(Resource.String.Dialog_Positive), (EventHandler<DialogClickEventArgs>)null);
+            builder.SetNegativeButton(GetString(Resource.String.Dialog_Negative), (EventHandler<DialogClickEventArgs>)null);
+            var dialog = builder.Create();
+            dialog.Show();
+            var PositiveButton = dialog.GetButton((int)DialogButtonType.Positive);
+            PositiveButton.Click += delegate
+            {
+                dialog.Cancel();
+            };
+            var NegativeButton = dialog.GetButton((int)DialogButtonType.Positive);
+            NegativeButton.Click += delegate
+            {
+                dialog.Cancel();
+            };
         }
 
     }
