@@ -21,7 +21,7 @@ namespace GameHub
         private int mBackground;
         private List<string> mValues;
         public event EventHandler<int> ItemClick;
-        public View Mainview;
+        public View mainview;
         private Dictionary<int, int> mCalculatedSizes;
         private int uri;
 
@@ -31,7 +31,7 @@ namespace GameHub
             mBackground = mTypedValue.ResourceId;
             mValues = items;
             uri = resource;
-            Mainview = mView;
+            mainview = mView;
 
             //mResource = res;
 
@@ -89,7 +89,7 @@ namespace GameHub
             //view.SetBackgroundResource(mBackground);
 
 
-            return new SimpleViewHolder(view, OnClick, Mainview);
+            return new SimpleViewHolder(view, OnClick, mainview);
         }
         public class SimpleViewHolder : RecyclerView.ViewHolder
         {
@@ -100,18 +100,18 @@ namespace GameHub
             public readonly TextView mTxtView;
             public View moryginalView;
 
-            public SimpleViewHolder(View view, Action<int> listener, View MainView) : base(view)
+            public SimpleViewHolder(View view, Action<int> listener, View mainView) : base(view)
             {
                 mView = view;
                 mImageView = view.FindViewById<ImageView>(Resource.Id.avatar);
                 mTxtView = view.FindViewById<TextView>(Resource.Id.text1);
                 mImageViewChat = view.FindViewById<ImageView>(Resource.Id.chat_icon);
-                moryginalView = MainView;
+                
                 //mImageView.Pressed = false;
 
                 mImageViewChat.Click += (sender, e) =>
                 {
-                    Context context = moryginalView.Context;
+                    Context context = mainView.Context;
                     Intent intent = new Intent(context, typeof(Chat));
                     intent.PutExtra("Name", mTxtView.Text);
                     context.StartActivity(intent);
