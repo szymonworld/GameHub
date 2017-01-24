@@ -28,15 +28,15 @@ namespace GameHub.Fragments
         {
             base.OnScrolled(recyclerView, dx, dy);
 
-            var visibleItemCount = recyclerView.ChildCount;
-            var totalItemCount = recyclerView.GetAdapter().ItemCount;
-            var pastVisiblesItems = LayoutManager.FindFirstVisibleItemPosition();
+          //  var visibleItemCount = recyclerView.ChildCount;
+         //   var totalItemCount = recyclerView.GetAdapter().ItemCount;
+         //   var pastVisiblesItems = LayoutManager.FindFirstVisibleItemPosition();
 
-            if ((visibleItemCount + pastVisiblesItems) >= totalItemCount)
+          /*  if ((visibleItemCount + pastVisiblesItems) >= totalItemCount)
             {
                 LoadMoreEvent(this, null);
                 LayoutManager.ScrollToPosition(pastVisiblesItems);
-            }
+            }*/
         }
     }
 }

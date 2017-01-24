@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using System.Net;
 using System.Json;
 using System.IO;
+using System.Collections.Generic;
 
 namespace GameHub
 {
@@ -131,6 +132,86 @@ namespace GameHub
             catch
             {
                 return false;
+            }
+        }
+        public static async Task<bool> createEvent(string email, string password, string name, string desc, string date, string hour, string timespan, bool ispublic, string platform, int slots, bool microphone, string game)
+        {
+            try
+            {
+                HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(new System.Uri(Apiurl + "?type=4&email=" + email + "&password=" + password + "&eventName=" + name + "&description=" + desc + "&date=" + date + "&hour=" + hour + "&timespan=" + timespan + "&public=" + ispublic + "&platform=" + platform + "&slots=" + slots + "&microphone=" + microphone + "&gameid=" + game));
+
+                using (WebResponse response = await request.GetResponseAsync())
+                {
+                    using (Stream stream = response.GetResponseStream())
+                    {
+                        JsonValue json = await Task.Run(() => JsonObject.Load(stream));
+                        return json["success"] == 1 ? true : false;
+                    }
+                }
+
+            }
+            catch
+            {
+                return false;
+            }
+        }
+        public static async Task<Event> getEvent(string email, string password, int eventid)
+        {
+
+            try
+            {
+                HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(new System.Uri(Apiurl + "?type=3&email=" + email + "&password=" + password + "&eventid=" + eventid.ToString()));
+
+                using (WebResponse response = await request.GetResponseAsync())
+                {
+                    using (Stream stream = response.GetResponseStream())
+                    {
+                        JsonValue json = await Task.Run(() => JsonObject.Load(stream));
+                        return json["success"] == 1 ? new Event(json) : null;
+                    }
+                }
+
+            }
+            catch
+            {
+                return null;
+            }
+        }
+        public static async Task<List<Event>> getEvents(string email, string password)
+        {
+
+            try
+            {
+                HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(new System.Uri(Apiurl + "?type=2&email=" + email + "&password=" + password));
+
+                using (WebResponse response = await request.GetResponseAsync())
+                {
+                    using (Stream stream = response.GetResponseStream())
+                    {
+                        JsonValue json = await Task.Run(() => JsonObject.Load(stream));
+                        List<Event> eventList = new List<Event>();
+                        if (json["success"] == 1)
+                        {
+                            for (int i = 0; i < json["events"].Count; i++)
+                            {
+                                eventList.Add(new Event(json["events"][i]));
+                            }
+
+                            return eventList;
+                        }
+                        else
+                        {
+                            eventList.Add(new Event { EventName = "jebe na was"});
+                            return eventList;
+                        }
+
+                    }
+                }
+
+            }
+            catch
+            {
+                return null;
             }
         }
         public static async Task<bool> createAccount(Account account/*, LinkAccount links*/)

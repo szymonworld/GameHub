@@ -114,7 +114,13 @@
   <string name="Findplayers_Title">Znajdź gracza</string>
 
   <!--AddQuickgame-->
+  <string name="AddQuickgame_Adding">Dodawanie gry...</string>
   <string name="AddQuickgame_Title">Dodaj szybką gre</string>
+  <string name="AddQuickgame_NoGame">Nie wybrano gry</string>
+  <string name="AddQuickgame_NoTitle">Brak tytułu</string>
+  <string name="AddQuickgame_NoDate">Brak daty</string>
+  <string name="AddQuickgame_NoHours">Brak godziny</string>
+  <string name="AddQuickgame_NoCreated">Nie można utowrzyć Szybkiej gry</string>
   
   <!--QuickgameDetail-->
   <string name="QuickgameDetail_Join">Dołącz</string>

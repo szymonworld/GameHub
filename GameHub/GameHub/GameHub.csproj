@@ -93,6 +93,7 @@
     <Compile Include="ArticlePage.cs" />
     <Compile Include="Browser.cs" />
     <Compile Include="DatabaseClasses\Account.cs" />
+    <Compile Include="DatabaseClasses\Event.cs" />
     <Compile Include="DatabaseClasses\LinkAccount.cs" />
     <Compile Include="Fragments\Findplayers.cs" />
     <Compile Include="Fragments\Friends.cs" />

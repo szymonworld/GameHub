@@ -169,7 +169,7 @@ namespace GameHub
                 }
                 if (FindViewById<EditText>(Resource.Id.ProPSN).Text != currentLinkAccount.PSN_Account)
                 {
-                    string psn = FindViewById<EditText>(Resource.Id.ProBattle).Text;
+                    string psn = FindViewById<EditText>(Resource.Id.ProPSN).Text;
                     updated = await API.updateAccount(pref.GetString("PrefEmailUser", ""), pref.GetString("PrefPasswordUser", ""), 11, psn);
                 }
                 if (FindViewById<EditText>(Resource.Id.ProXBOX).Text != currentLinkAccount.XBOX_Account)

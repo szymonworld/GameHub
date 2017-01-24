@@ -60,13 +60,13 @@ function parseType()
 			getAccountByEmail($_GET['email']);
 			break;
 		case 2:
-			createEvent($_GET['email'], $_GET['password'], $_GET['eventName'], $_GET['description'], $_GET['date'], $_GET['game']);
+			getAllEvents($_GET['email'], $_GET['password']); 
 			break;
 		case 3:
 			getEvent($_GET['email'], $_GET['password'], $_GET['eventid']);
 			break;
 		case 4:
-			addEvent($_GET['email'], $_GET['password'], $_GET['eventName'], $_GET['gameid'], $_GET['description'], $_GET['date']);
+			addEvent($_GET['email'], $_GET['password'], $_GET['eventName'], $_GET['gameid'], $_GET['description'], $_GET['date'], $_GET['hour'], $_GET['timespan'], $_GET['public'], $_GET['platform'], $_GET['slots'], $_GET['microphone']);
 			break;
 		case 5:
 			getEventParticipants($_GET['email'], $_GET['password'], $_GET['eventid']);
@@ -204,7 +204,14 @@ function getEvent($email, $password, $eventID)
 		$response['EventName'] = $fetch['EventName'];
 		$response['GameID'] = $fetch['GameID'];
 		$response['Description'] = $fetch['Description'];
-		$response['Date'] = $fetch['Date'];
+		$response['Datee'] = $fetch['Datee'];
+		$response['Hourr'] = $fetch['Hourr'];
+		$response['Timespan'] = $fetch['Timespan'];
+		$response['Public'] = $fetch['Public'];
+		$response['Platform'] = $fetch['Platform'];
+		$response['Slots'] = $fetch['Slots'];
+		$response['Microphone'] =  $fetch['Microphone'];
+		$response['success'] = 1;
 		
 		echo json_encode($response);
 	}
@@ -215,7 +222,45 @@ function getEvent($email, $password, $eventID)
 	
 }
 
-function addEvent($email, $password, $eventName, $gameID, $description, $date)
+function getAllEvents($email, $password)
+{
+	if(authenticate($email, $password))
+	{	
+		global $conn;
+
+		$query = $conn->prepare("SELECT * FROM Events"); 
+		$query->execute(); 		
+		$response = array();
+		$response['events'] = array();
+
+		while($fetch = $query->fetch(PDO::FETCH_ASSOC))
+		{
+			$event = array();
+			$event['EventID'] = $fetch['EventID'];
+			$event['EventName'] = $fetch['EventName'];
+			$event['GameID'] = $fetch['GameID'];
+			$event['Description'] = $fetch['Description'];
+			$event['Datee'] = $fetch['Datee'];
+			$event['Hourr'] = $fetch['Hourr'];
+			$event['Timespan'] = $fetch['Timespan'];
+			$event['Public'] = $fetch['Public'];
+			$event['Platform'] = $fetch['Platform'];
+			$event['Slots'] = $fetch['Slots'];
+			$event['Microphone'] =  $fetch['Microphone'];
+			array_push($response['events'], $event);
+		}	
+
+		$response['success'] = 1;
+		echo safe_json_encode($response);
+ 
+	}
+	else
+	{
+		jsonResponse(0, "Error.");
+	}
+	
+}
+function addEvent($email, $password, $eventName, $gameID, $description, $date, $hour, $timespan, $public, $platform, $slots, $microphone)
 {
 	if(authenticate($email, $password))
 	{	
@@ -225,13 +270,19 @@ function addEvent($email, $password, $eventName, $gameID, $description, $date)
 			global $conn;		
 			$conn->beginTransaction();
 			
-			$query = $conn->prepare("INSERT INTO Events(EventName, GameID, Description, Date) 
-									 VALUES(:eventName, :gameID, :description, :date)");
+			$query = $conn->prepare("INSERT INTO Events(EventName, GameID, Description, Datee, Hourr, Timespan, Public, Platform, Slots, Microphone) 
+									 VALUES(:eventName, :gameID, :description, :date, :hour, :timespan, :public, :platform, :slots, :microphone)");
 									 
 			$query->bindValue(':eventName', $eventName);
 			$query->bindValue(':gameID', $gameID);
 			$query->bindValue(':description', $description);
 			$query->bindValue(':date', $date);
+			$query->bindValue(':hour', $hour);
+			$query->bindValue(':timespan', $timespan);
+			$query->bindValue(':public', $public);
+			$query->bindValue(':platform', $platform);
+			$query->bindValue(':slots', $slots);
+			$query->bindValue(':microphone', $microphone);
 			$query->execute();
 			
 			$conn->commit();
@@ -750,9 +801,8 @@ function getLinkAccounts($email, $password)
 	{
 			global $conn;
 			
-			$query = $conn->prepare("SELECT LinkAccountID, LinkAccount.AccountID, PSN_Account, XBOX_Account, STEAM_Account, ORIGIN_Account, DISCORD_Account, UPLAY_Account, BATTLE_Account, LOL_Account, SKYPE_Account FROM Accounts, LinkAccount WHERE LinkAccount.AccountID = Accounts.AccountID");
+			$query = $conn->prepare("SELECT LinkAccountID, LinkAccount.AccountID, PSN_Account, XBOX_Account, STEAM_Account, ORIGIN_Account, DISCORD_Account, UPLAY_Account, BATTLE_Account, LOL_Account, SKYPE_Account FROM Accounts, LinkAccount WHERE LinkAccount.AccountID = Accounts.AccountID and Email = :email");
 			$query->bindValue(':email', $email);
-			$query->bindValue(':password', $password);
 			$query->execute();
 			$fetch = $query->fetch();
 			$response = array();
@@ -819,5 +869,41 @@ function getHashByEmail($email)
 		echo json_encode($response);		
 	}
 
+}
+function safe_json_encode($value){
+    if (version_compare(PHP_VERSION, '5.4.0') >= 0) {
+        $encoded = json_encode($value, JSON_PRETTY_PRINT);
+    } else {
+        $encoded = json_encode($value);
+    }
+    switch (json_last_error()) {
+        case JSON_ERROR_NONE:
+            return $encoded;
+        case JSON_ERROR_DEPTH:
+            return 'Maximum stack depth exceeded'; // or trigger_error() or throw new Exception()
+        case JSON_ERROR_STATE_MISMATCH:
+            return 'Underflow or the modes mismatch'; // or trigger_error() or throw new Exception()
+        case JSON_ERROR_CTRL_CHAR:
+            return 'Unexpected control character found';
+        case JSON_ERROR_SYNTAX:
+            return 'Syntax error, malformed JSON'; // or trigger_error() or throw new Exception()
+        case JSON_ERROR_UTF8:
+            $clean = utf8ize($value);
+            return safe_json_encode($clean);
+        default:
+            return 'Unknown error'; // or trigger_error() or throw new Exception()
+
+    }
+}
+
+function utf8ize($mixed) {
+    if (is_array($mixed)) {
+        foreach ($mixed as $key => $value) {
+            $mixed[$key] = utf8ize($value);
+        }
+    } else if (is_string ($mixed)) {
+        return utf8_encode($mixed);
+    }
+    return $mixed;
 }
 ?>

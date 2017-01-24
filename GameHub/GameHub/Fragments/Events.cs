@@ -11,6 +11,7 @@ using Android.OS;
 using Android.Runtime;
 using Android.Support.V7.App;
 using Android.Widget;
+using Android.Support.Design.Widget;
 
 namespace GameHub.Fragments
 {
@@ -19,65 +20,60 @@ namespace GameHub.Fragments
 
         private RecyclerView mRecyclerView;
         private RecyclerView.Adapter mAdapter;
-        private List<Event_class> lista_wydarzen = new List<Event_class>();
-        private int naprzemiennieSzybkaITurniej = 0;
+        private List<Event_class> list = new List<Event_class>();
+        private List<Event> eventList;
+        private string LoginDataUser;
+        private ISharedPreferences pref;
 
         public override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
+            pref = ((AppCompatActivity)this.Activity).GetSharedPreferences(LoginDataUser, FileCreationMode.Private);
         }
-
+        public override void OnResume()
+        {
+            base.OnResume();
+            LoadEvents();
+        }
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
-
-            for (int a = 0; a < 15; a++)
-            {
-                Generuj_Event_class();
-            }
+            
             mRecyclerView = inflater.Inflate(Resource.Layout.Friends, container, false) as RecyclerView;
             var mLayoutManager = new LinearLayoutManager(mRecyclerView.Context);
-            mAdapter = new RecyclerAdapter(lista_wydarzen);
+            mAdapter = new RecyclerAdapter(list);
 
             var onScrollListener = new RecyclerViewOnScrollListener(mLayoutManager);
             mRecyclerView.AddOnScrollListener(onScrollListener);
             mRecyclerView.SetLayoutManager(mLayoutManager);
             mRecyclerView.SetAdapter(mAdapter);
-
-            // £adowanie nastêpnych wydarzeñ po dojechaniu na sam dó³
-            onScrollListener.LoadMoreEvent += (object sender, EventArgs e) =>
-            {
-
-                for (int a = 0; a < 5; a++)
-                {
-                    Generuj_Event_class();
-                }
-                //mAdapter.NotifyDataSetChanged();
-                mAdapter = new RecyclerAdapter(lista_wydarzen);
-                mRecyclerView.SetAdapter(mAdapter);
-            };
-
+            LoadEvents();
+/*       onScrollListener.LoadMoreEvent += (object sender, EventArgs e) =>
+        {
+            mAdapter = new RecyclerAdapter(list);
+            mRecyclerView.SetAdapter(mAdapter);
+        };
+        */
             ((AppCompatActivity)this.Activity).SupportActionBar.Title = "Wydarzenia";
 
             return mRecyclerView;
         }
 
-        public void Generuj_Event_class()
+        public async void LoadEvents()
         {
-            //Random rnd = new Random();
-            //int random = rnd.Next(20);
-            // Event_class nowe_Event_class = new Event_class(random, "text ---- Text", "Event_class", 20, 15);
-            if (naprzemiennieSzybkaITurniej == 0)
+            bool internetConnection = await API.checkForInternetConnection();
+            if (internetConnection)
             {
-                Event_class nowe_Event_class = new Event_class("Turniej Gfinity 2016 PRO League", "Virtus.pro", "Fnatic", "28.05 20:15", "Counter-Strike: Global Offensive");
-                lista_wydarzen.Add(nowe_Event_class);
-                naprzemiennieSzybkaITurniej = 1;
-            }
-            else
-            {
-                Event_class nowe_Event_class = new Event_class("ATH CUP", "18.05 22:15", "My Little Pony");
-                lista_wydarzen.Add(nowe_Event_class);
-                naprzemiennieSzybkaITurniej = 0;
-
+                eventList = await API.getEvents(pref.GetString("PrefEmailUser", ""), pref.GetString("PrefPasswordUser", ""));
+                list.Clear();
+                foreach (Event ev in eventList)
+                {
+                    Event_class e = new Event_class(ev.EventName, ev.Datee + " " + ev.Hourr, ev.GameID);
+                    //Event_class e = new Event_class(ev.EventName, "", "");
+                    list.Add(e);
+                }
+                
+                mAdapter = new RecyclerAdapter(list);
+                mRecyclerView.SetAdapter(mAdapter);
             }
         }
 
@@ -117,8 +113,6 @@ namespace GameHub.Fragments
                     TextView EventSecondaryTeam = row.FindViewById<TextView>(Resource.Id.EventSecondaryTeam);
                     TextView EventDate = row.FindViewById<TextView>(Resource.Id.EventDate);
                     TextView EventGame = row.FindViewById<TextView>(Resource.Id.EventGame);
-
-
 
                     Refractored.Controls.CircleImageView platform = row.FindViewById<Refractored.Controls.CircleImageView>(Resource.Id.EventPlatformIcon);
                     LinearLayout colorLi = row.FindViewById<LinearLayout>(Resource.Id.colorLayoutWydarzenia);

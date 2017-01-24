@@ -43,8 +43,8 @@ namespace GameHub.Fragments
             var TextGamelist = view.FindViewById<AutoCompleteTextView>(Resource.Id.autoCompleteTextView1);
             TextGamelist.Adapter = AutoComGameListAdapter;
 
-            b1 = view.FindViewById<Button>(Resource.Id.button1);
-            b2 = view.FindViewById<Button>(Resource.Id.button2);
+            b1 = view.FindViewById<Button>(Resource.Id.date);
+            b2 = view.FindViewById<Button>(Resource.Id.hours);
             b2.Click += B2_Click;
             b1.Click += B1_Click;
             return view;

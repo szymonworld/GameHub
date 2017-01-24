@@ -1131,7 +1131,6 @@ I:\GameHub GitHub\GameHub\GameHub\GameHub\obj\Debug\android\assets\System.Xml.dl
 I:\GameHub GitHub\GameHub\GameHub\GameHub\obj\Debug\android\assets\System.Xml.Linq.dll.mdb
 I:\GameHub GitHub\GameHub\GameHub\GameHub\obj\Debug\GameHub.csprojResolveAssemblyReference.cache
 I:\GameHub GitHub\GameHub\GameHub\GameHub\obj\Debug\GameHub.dll.mdb
-E:\Projekt\new\GameHub\GameHub\GameHub\obj\Debug\GameHub.csprojResolveAssemblyReference.cache
 E:\Projekt\new\GameHub\GameHub\GameHub\obj\Debug\GameHub.dll
 E:\Projekt\new\GameHub\GameHub\GameHub\obj\Debug\GameHub.pdb
 E:\Projekt\new\GameHub\GameHub\GameHub\bin\Debug\GameHub.dll
@@ -1415,6 +1414,7 @@ E:\Projekt\new\GameHub\GameHub\GameHub\obj\Debug\res\drawable-xxhdpi\ic_plus_cir
 E:\Projekt\new\GameHub\GameHub\GameHub\obj\Debug\res\drawable-xxxhdpi\ic_plus_circle_white_48dp.png
 E:\Projekt\new\GameHub\GameHub\GameHub\obj\Debug\R.cs.flag
 E:\Projekt\new\GameHub\GameHub\GameHub\obj\Debug\uploadflags.txt
+E:\Projekt\new\GameHub\GameHub\GameHub\obj\Debug\res\menu\acceptprofilechanges.xml
 E:\Projekt\new\GameHub\GameHub\GameHub\bin\Debug\GameHub.dll.mdb
 E:\Projekt\new\GameHub\GameHub\GameHub\bin\Debug\Java.Interop.dll.mdb
 E:\Projekt\new\GameHub\GameHub\GameHub\bin\Debug\Mono.Android.dll.mdb
@@ -1442,6 +1442,6 @@ E:\Projekt\new\GameHub\GameHub\GameHub\obj\Debug\android\assets\System.Runtime.S
 E:\Projekt\new\GameHub\GameHub\GameHub\obj\Debug\android\assets\System.ServiceModel.Internals.dll.mdb
 E:\Projekt\new\GameHub\GameHub\GameHub\obj\Debug\android\assets\System.Xml.dll.mdb
 E:\Projekt\new\GameHub\GameHub\GameHub\obj\Debug\android\assets\System.Xml.Linq.dll.mdb
-E:\Projekt\new\GameHub\GameHub\GameHub\obj\Debug\res\menu\acceptprofilechanges.xml
+E:\Projekt\new\GameHub\GameHub\GameHub\obj\Debug\GameHub.csprojResolveAssemblyReference.cache
 E:\Projekt\new\GameHub\GameHub\GameHub\obj\Debug\GameHub.dll.mdb
 E:\Projekt\new\GameHub\GameHub\GameHub\bin\Debug\GameHub.dll.mdb
