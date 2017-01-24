@@ -1442,5 +1442,6 @@ E:\Projekt\new\GameHub\GameHub\GameHub\obj\Debug\android\assets\System.Runtime.S
 E:\Projekt\new\GameHub\GameHub\GameHub\obj\Debug\android\assets\System.ServiceModel.Internals.dll.mdb
 E:\Projekt\new\GameHub\GameHub\GameHub\obj\Debug\android\assets\System.Xml.dll.mdb
 E:\Projekt\new\GameHub\GameHub\GameHub\obj\Debug\android\assets\System.Xml.Linq.dll.mdb
+E:\Projekt\new\GameHub\GameHub\GameHub\obj\Debug\res\menu\acceptprofilechanges.xml
 E:\Projekt\new\GameHub\GameHub\GameHub\obj\Debug\GameHub.dll.mdb
 E:\Projekt\new\GameHub\GameHub\GameHub\bin\Debug\GameHub.dll.mdb

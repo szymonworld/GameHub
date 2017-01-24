@@ -49,6 +49,28 @@ namespace GameHub
                 return null;
             }
         }
+        public static async Task<bool> updateAccount(string email, string password, int column, string value)
+        {
+
+            try
+            {
+                HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(new System.Uri(Apiurl + "?type=17&email=" + email + "&password=" + password + "&c=" + column + "&v=" + value));
+
+                using (WebResponse response = await request.GetResponseAsync())
+                {
+                    using (Stream stream = response.GetResponseStream())
+                    {
+                        JsonValue json = await Task.Run(() => JsonObject.Load(stream));
+                        return json["success"] == 1 ? true : false;
+                    }
+                }
+
+            }
+            catch
+            {
+                return false;
+            }
+        }
         public static async Task<LinkAccount> getLinkAccounts(string email, string password)
         {
 

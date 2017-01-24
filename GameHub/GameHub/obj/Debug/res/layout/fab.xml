@@ -1,4 +1,4 @@
-<RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"><include android:id="@+id/aa" android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true" layout="@layout/friends" /><!--<android.support.design.widget.FloatingActionButton
+<RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:android="http://schemas.android.com/apk/res/android"><include android:id="@+id/aa" android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true" layout="@layout/friends" /><!--<android.support.design.widget.FloatingActionButton
      android:id="@+id/fab"
      android:layout_width="wrap_content"
      android:layout_height="wrap_content"

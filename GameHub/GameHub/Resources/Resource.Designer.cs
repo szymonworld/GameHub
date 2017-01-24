@@ -2122,38 +2122,38 @@ namespace GameHub
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f0600e3
-			public const int Date = 2131099875;
+			// aapt resource value: 0x7f0600ec
+			public const int Date = 2131099884;
 			
 			// aapt resource value: 0x7f0600d1
 			public const int Description = 2131099857;
 			
-			// aapt resource value: 0x7f0600e4
-			public const int EventDate = 2131099876;
+			// aapt resource value: 0x7f0600ed
+			public const int EventDate = 2131099885;
 			
-			// aapt resource value: 0x7f0600f2
-			public const int EventFirstTeam = 2131099890;
+			// aapt resource value: 0x7f0600fc
+			public const int EventFirstTeam = 2131099900;
 			
-			// aapt resource value: 0x7f0600e6
-			public const int EventGame = 2131099878;
+			// aapt resource value: 0x7f0600ef
+			public const int EventGame = 2131099887;
 			
-			// aapt resource value: 0x7f0600e0
-			public const int EventPlatformIcon = 2131099872;
+			// aapt resource value: 0x7f0600e9
+			public const int EventPlatformIcon = 2131099881;
 			
-			// aapt resource value: 0x7f0600f4
-			public const int EventSecondaryTeam = 2131099892;
-			
-			// aapt resource value: 0x7f0600df
-			public const int EventTitle = 2131099871;
-			
-			// aapt resource value: 0x7f0600e7
-			public const int Freespace = 2131099879;
+			// aapt resource value: 0x7f0600fe
+			public const int EventSecondaryTeam = 2131099902;
 			
 			// aapt resource value: 0x7f0600e8
-			public const int FreespaceNumber = 2131099880;
+			public const int EventTitle = 2131099880;
 			
-			// aapt resource value: 0x7f0600e5
-			public const int Game = 2131099877;
+			// aapt resource value: 0x7f0600f0
+			public const int Freespace = 2131099888;
+			
+			// aapt resource value: 0x7f0600f1
+			public const int FreespaceNumber = 2131099889;
+			
+			// aapt resource value: 0x7f0600ee
+			public const int Game = 2131099886;
 			
 			// aapt resource value: 0x7f0600cf
 			public const int Icon_platform = 2131099855;
@@ -2167,8 +2167,23 @@ namespace GameHub
 			// aapt resource value: 0x7f0600a9
 			public const int LoginUp_ButtonRegister = 2131099817;
 			
-			// aapt resource value: 0x7f060108
-			public const int MainToolbarLogout = 2131099912;
+			// aapt resource value: 0x7f060113
+			public const int MainToolbarLogout = 2131099923;
+			
+			// aapt resource value: 0x7f0600e0
+			public const int ProBattle = 2131099872;
+			
+			// aapt resource value: 0x7f0600e3
+			public const int ProDiscord = 2131099875;
+			
+			// aapt resource value: 0x7f0600e6
+			public const int ProLOL = 2131099878;
+			
+			// aapt resource value: 0x7f0600de
+			public const int ProOrigin = 2131099870;
+			
+			// aapt resource value: 0x7f0600e1
+			public const int ProPSN = 2131099873;
 			
 			// aapt resource value: 0x7f0600d7
 			public const int ProSetCountry = 2131099863;
@@ -2191,6 +2206,9 @@ namespace GameHub
 			// aapt resource value: 0x7f0600dc
 			public const int ProSetMic = 2131099868;
 			
+			// aapt resource value: 0x7f0600dd
+			public const int ProSetMicSwitch = 2131099869;
+			
 			// aapt resource value: 0x7f06006e
 			public const int ProSetNick = 2131099758;
 			
@@ -2206,23 +2224,35 @@ namespace GameHub
 			// aapt resource value: 0x7f0600d2
 			public const int ProSetPicChange = 2131099858;
 			
-			// aapt resource value: 0x7f060101
-			public const int ProfilToolbarAddFriend = 2131099905;
+			// aapt resource value: 0x7f0600e5
+			public const int ProSkype = 2131099877;
 			
-			// aapt resource value: 0x7f060102
-			public const int ProfilToolbarEdit = 2131099906;
+			// aapt resource value: 0x7f0600df
+			public const int ProSteam = 2131099871;
 			
-			// aapt resource value: 0x7f060100
-			public const int ProfilToolbarSendMessage = 2131099904;
+			// aapt resource value: 0x7f0600e4
+			public const int ProUplay = 2131099876;
 			
-			// aapt resource value: 0x7f060105
-			public const int QuickgameDetail_Delete = 2131099909;
+			// aapt resource value: 0x7f0600e2
+			public const int ProXBOX = 2131099874;
 			
-			// aapt resource value: 0x7f060103
-			public const int QuickgameDetail_Join = 2131099907;
+			// aapt resource value: 0x7f06010c
+			public const int ProfilToolbarAddFriend = 2131099916;
 			
-			// aapt resource value: 0x7f060104
-			public const int QuickgameDetail_Report = 2131099908;
+			// aapt resource value: 0x7f06010d
+			public const int ProfilToolbarEdit = 2131099917;
+			
+			// aapt resource value: 0x7f06010b
+			public const int ProfilToolbarSendMessage = 2131099915;
+			
+			// aapt resource value: 0x7f060110
+			public const int QuickgameDetail_Delete = 2131099920;
+			
+			// aapt resource value: 0x7f06010e
+			public const int QuickgameDetail_Join = 2131099918;
+			
+			// aapt resource value: 0x7f06010f
+			public const int QuickgameDetail_Report = 2131099919;
 			
 			// aapt resource value: 0x7f0600a5
 			public const int SignInMenu = 2131099813;
@@ -2233,8 +2263,8 @@ namespace GameHub
 			// aapt resource value: 0x7f060095
 			public const int aa = 2131099797;
 			
-			// aapt resource value: 0x7f0600ec
-			public const int about = 2131099884;
+			// aapt resource value: 0x7f0600f6
+			public const int about = 2131099894;
 			
 			// aapt resource value: 0x7f0600b7
 			public const int action0 = 2131099831;
@@ -2338,8 +2368,8 @@ namespace GameHub
 			// aapt resource value: 0x7f06002d
 			public const int center_vertical = 2131099693;
 			
-			// aapt resource value: 0x7f0600ed
-			public const int changes = 2131099885;
+			// aapt resource value: 0x7f0600f7
+			public const int changes = 2131099895;
 			
 			// aapt resource value: 0x7f06009c
 			public const int chat_icon = 2131099804;
@@ -2386,8 +2416,8 @@ namespace GameHub
 			// aapt resource value: 0x7f060040
 			public const int default_activity_button = 2131099712;
 			
-			// aapt resource value: 0x7f0600e9
-			public const int desc = 2131099881;
+			// aapt resource value: 0x7f0600f2
+			public const int desc = 2131099890;
 			
 			// aapt resource value: 0x7f060088
 			public const int design_bottom_sheet = 2131099784;
@@ -2458,17 +2488,17 @@ namespace GameHub
 			// aapt resource value: 0x7f0600ac
 			public const int flContent = 2131099820;
 			
-			// aapt resource value: 0x7f0600f1
-			public const int gamehubSite = 2131099889;
+			// aapt resource value: 0x7f0600fb
+			public const int gamehubSite = 2131099899;
 			
 			// aapt resource value: 0x7f0600aa
 			public const int gotologin = 2131099818;
 			
-			// aapt resource value: 0x7f0600e1
-			public const int gridLayout1 = 2131099873;
+			// aapt resource value: 0x7f0600ea
+			public const int gridLayout1 = 2131099882;
 			
-			// aapt resource value: 0x7f0600e2
-			public const int gridLayout2 = 2131099874;
+			// aapt resource value: 0x7f0600eb
+			public const int gridLayout2 = 2131099883;
 			
 			// aapt resource value: 0x7f060005
 			public const int home = 2131099653;
@@ -2536,8 +2566,8 @@ namespace GameHub
 			// aapt resource value: 0x7f0600c6
 			public const int linearLayout1 = 2131099846;
 			
-			// aapt resource value: 0x7f0600de
-			public const int linearLayout2 = 2131099870;
+			// aapt resource value: 0x7f0600e7
+			public const int linearLayout2 = 2131099879;
 			
 			// aapt resource value: 0x7f060080
 			public const int linearLayoutMessage1 = 2131099776;
@@ -2566,8 +2596,8 @@ namespace GameHub
 			// aapt resource value: 0x7f060041
 			public const int list_item = 2131099713;
 			
-			// aapt resource value: 0x7f0600eb
-			public const int logout = 2131099883;
+			// aapt resource value: 0x7f0600f5
+			public const int logout = 2131099893;
 			
 			// aapt resource value: 0x7f0600a4
 			public const int lostpass = 2131099812;
@@ -2578,17 +2608,20 @@ namespace GameHub
 			// aapt resource value: 0x7f0600ba
 			public const int media_actions = 2131099834;
 			
+			// aapt resource value: 0x7f060101
+			public const int menu_accept = 2131099905;
+			
 			// aapt resource value: 0x7f06009f
 			public const int menulogin = 2131099807;
 			
-			// aapt resource value: 0x7f0600f7
-			public const int menut_save = 2131099895;
+			// aapt resource value: 0x7f060102
+			public const int menut_save = 2131099906;
 			
-			// aapt resource value: 0x7f060106
-			public const int menut_search = 2131099910;
+			// aapt resource value: 0x7f060111
+			public const int menut_search = 2131099921;
 			
-			// aapt resource value: 0x7f060107
-			public const int menut_ustawienia = 2131099911;
+			// aapt resource value: 0x7f060112
+			public const int menut_ustawienia = 2131099922;
 			
 			// aapt resource value: 0x7f0600cc
 			public const int micro = 2131099852;
@@ -2602,29 +2635,29 @@ namespace GameHub
 			// aapt resource value: 0x7f060016
 			public const int multiply = 2131099670;
 			
-			// aapt resource value: 0x7f0600fe
-			public const int nav_addQuickgame = 2131099902;
+			// aapt resource value: 0x7f060109
+			public const int nav_addQuickgame = 2131099913;
 			
-			// aapt resource value: 0x7f0600ff
-			public const int nav_addTournament = 2131099903;
+			// aapt resource value: 0x7f06010a
+			public const int nav_addTournament = 2131099914;
 			
-			// aapt resource value: 0x7f0600fb
-			public const int nav_findplayers = 2131099899;
+			// aapt resource value: 0x7f060106
+			public const int nav_findplayers = 2131099910;
 			
-			// aapt resource value: 0x7f0600fc
-			public const int nav_friends = 2131099900;
+			// aapt resource value: 0x7f060107
+			public const int nav_friends = 2131099911;
 			
-			// aapt resource value: 0x7f0600f8
-			public const int nav_hub = 2131099896;
+			// aapt resource value: 0x7f060103
+			public const int nav_hub = 2131099907;
 			
-			// aapt resource value: 0x7f0600fd
-			public const int nav_profile = 2131099901;
+			// aapt resource value: 0x7f060108
+			public const int nav_profile = 2131099912;
 			
-			// aapt resource value: 0x7f0600fa
-			public const int nav_quickgame = 2131099898;
+			// aapt resource value: 0x7f060105
+			public const int nav_quickgame = 2131099909;
 			
-			// aapt resource value: 0x7f0600f9
-			public const int nav_tournament = 2131099897;
+			// aapt resource value: 0x7f060104
+			public const int nav_tournament = 2131099908;
 			
 			// aapt resource value: 0x7f0600ad
 			public const int nav_view = 2131099821;
@@ -2656,8 +2689,8 @@ namespace GameHub
 			// aapt resource value: 0x7f060029
 			public const int pin = 2131099689;
 			
-			// aapt resource value: 0x7f0600f0
-			public const int priv = 2131099888;
+			// aapt resource value: 0x7f0600fa
+			public const int priv = 2131099898;
 			
 			// aapt resource value: 0x7f0600cd
 			public const int pro_country = 2131099853;
@@ -2665,8 +2698,8 @@ namespace GameHub
 			// aapt resource value: 0x7f0600ce
 			public const int pro_reputation = 2131099854;
 			
-			// aapt resource value: 0x7f0600ea
-			public const int profiledit = 2131099882;
+			// aapt resource value: 0x7f0600f4
+			public const int profiledit = 2131099892;
 			
 			// aapt resource value: 0x7f06007b
 			public const int progbar = 2131099771;
@@ -2683,8 +2716,8 @@ namespace GameHub
 			// aapt resource value: 0x7f060076
 			public const int recyclerview = 2131099766;
 			
-			// aapt resource value: 0x7f0600ee
-			public const int reportbug = 2131099886;
+			// aapt resource value: 0x7f0600f8
+			public const int reportbug = 2131099896;
 			
 			// aapt resource value: 0x7f060030
 			public const int right = 2131099696;
@@ -2797,17 +2830,17 @@ namespace GameHub
 			// aapt resource value: 0x7f060065
 			public const int submit_area = 2131099749;
 			
-			// aapt resource value: 0x7f0600dd
-			public const int switch1 = 2131099869;
+			// aapt resource value: 0x7f0600f3
+			public const int switch1 = 2131099891;
 			
-			// aapt resource value: 0x7f0600f5
-			public const int tabIcon = 2131099893;
+			// aapt resource value: 0x7f0600ff
+			public const int tabIcon = 2131099903;
 			
 			// aapt resource value: 0x7f06000d
 			public const int tabMode = 2131099661;
 			
-			// aapt resource value: 0x7f0600f6
-			public const int tabText = 2131099894;
+			// aapt resource value: 0x7f060100
+			public const int tabText = 2131099904;
 			
 			// aapt resource value: 0x7f060098
 			public const int tabsHub = 2131099800;
@@ -2881,8 +2914,8 @@ namespace GameHub
 			// aapt resource value: 0x7f060087
 			public const int touch_outside = 2131099783;
 			
-			// aapt resource value: 0x7f0600ef
-			public const int tpn = 2131099887;
+			// aapt resource value: 0x7f0600f9
+			public const int tpn = 2131099897;
 			
 			// aapt resource value: 0x7f060091
 			public const int txtEmail = 2131099793;
@@ -2905,8 +2938,8 @@ namespace GameHub
 			// aapt resource value: 0x7f060099
 			public const int viewpagerHub = 2131099801;
 			
-			// aapt resource value: 0x7f0600f3
-			public const int vs = 2131099891;
+			// aapt resource value: 0x7f0600fd
+			public const int vs = 2131099901;
 			
 			// aapt resource value: 0x7f06007c
 			public const int webView1 = 2131099772;
@@ -3236,22 +3269,25 @@ namespace GameHub
 		{
 			
 			// aapt resource value: 0x7f0c0000
-			public const int AddQuickgameToolbar = 2131492864;
+			public const int AcceptProfileChanges = 2131492864;
 			
 			// aapt resource value: 0x7f0c0001
-			public const int menu_navigation = 2131492865;
+			public const int AddQuickgameToolbar = 2131492865;
 			
 			// aapt resource value: 0x7f0c0002
-			public const int Profile_ToolbarMenu = 2131492866;
+			public const int menu_navigation = 2131492866;
 			
 			// aapt resource value: 0x7f0c0003
-			public const int QuickgameDetail_Menu = 2131492867;
+			public const int Profile_ToolbarMenu = 2131492867;
 			
 			// aapt resource value: 0x7f0c0004
-			public const int Search_Menu = 2131492868;
+			public const int QuickgameDetail_Menu = 2131492868;
 			
 			// aapt resource value: 0x7f0c0005
-			public const int toolbarMenu = 2131492869;
+			public const int Search_Menu = 2131492869;
+			
+			// aapt resource value: 0x7f0c0006
+			public const int toolbarMenu = 2131492870;
 			
 			static Menu()
 			{
@@ -3307,6 +3343,9 @@ namespace GameHub
 			
 			// aapt resource value: 0x7f090017
 			public const int Hello = 2131296279;
+			
+			// aapt resource value: 0x7f090069
+			public const int InvalidEmail = 2131296361;
 			
 			// aapt resource value: 0x7f090053
 			public const int InvalidLoginOrPassword = 2131296339;
@@ -3430,6 +3469,9 @@ namespace GameHub
 			
 			// aapt resource value: 0x7f090057
 			public const int TypeNickname = 2131296343;
+			
+			// aapt resource value: 0x7f09006a
+			public const int UpdateSuccess = 2131296362;
 			
 			// aapt resource value: 0x7f090000
 			public const int abc_action_bar_home_description = 2131296256;

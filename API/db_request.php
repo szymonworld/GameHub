@@ -1,7 +1,7 @@
 <?php
  
 require_once __DIR__ . '/db_connect.php';
-error_reporting(E_ERROR | E_PARSE);
+//error_reporting(E_ERROR | E_PARSE);
 
 $selectedType = null;
 $conn = null;
@@ -14,7 +14,7 @@ if(checkType())
 function checkType()
 {
 	global $conn;
-	for ($i = 0; $i < 17; $i++) 
+	for ($i = 0; $i < 18; $i++) 
 	{
 		if($_GET['type'] == $i)
 		{
@@ -103,6 +103,9 @@ function parseType()
 			break;	
 		case 16:
 			getLinkAccounts($_GET['email'], $_GET['password']);
+			break;
+		case 17:
+			updateAccount($_GET['email'], $_GET['password'], $_GET['c'], $_GET['v']);
 			break;
 		default:
 			break;
@@ -549,7 +552,15 @@ function createAccount($login, $password, $firstname, $lastname, $email, $mic, $
 			$query->execute();
 			
 			$conn->commit();
-
+		} 
+		catch (Exception $e) 																																																																								
+		{
+			$conn->rollBack();
+			jsonResponse(0, "Error.");
+			return 0;
+		}	
+		try 
+		{  
 			$conn->beginTransaction();
 			//getAccountByLogin($login);
 			$query = $conn->prepare("INSERT INTO LinkAccount(PSN_Account, XBOX_Account, STEAM_Account, ORIGIN_Account, DISCORD_Account, UPLAY_Account, BATTLE_Account, LOL_Account, SKYPE_Account, AccountID ) 
@@ -580,8 +591,7 @@ function createAccount($login, $password, $firstname, $lastname, $email, $mic, $
 			jsonResponse(0, "Error.");
 			return 0;
 		}		
-			
-			
+				
 	}
 	else
 	{
@@ -592,55 +602,110 @@ function createAccount($login, $password, $firstname, $lastname, $email, $mic, $
 
 function updateAccount($email, $password, $column, $value)
 {
-	switch ($selectedType) 
-	{
-		case 0://Password
-			$query = 'UPDATE Accounts SET Accounts.Password=:value WHERE Accounts.Login=:login';
-			break;
-		case 1://Last
-			$query = 'UPDATE Accounts SET Accounts.Password=:value WHERE Accounts.Login=:login';
-			break;
-		case 2:
-			$query = 'UPDATE Accounts SET Accounts.Password=:value WHERE Accounts.Login=:login';
-			break;
-		case 3:
-			$query = 'UPDATE Accounts SET Accounts.Password=:value WHERE Accounts.Login=:login';
-			break;
-		case 4:
-			$query = 'UPDATE Accounts SET Accounts.Password=:value WHERE Accounts.Login=:login';
-			break;
-		case 5:
-			$query = 'UPDATE Accounts SET Accounts.Password=:value WHERE Accounts.Login=:login';
-			break;
-		case 6:
-			$query = 'UPDATE Accounts SET Accounts.Password=:value WHERE Accounts.Login=:login';
-			break;
-		case 7:
-			$query = 'UPDATE Accounts SET Accounts.Password=:value WHERE Accounts.Login=:login';
-			break;
-		case 8:
-			$query = 'UPDATE Accounts SET Accounts.Password=:value WHERE Accounts.Login=:login';
-			break;
-		case 9:
-			$query = 'UPDATE Accounts SET Accounts.Password=:value WHERE Accounts.Login=:login';
-			break;
-		case 10:
-			$query = 'UPDATE Accounts SET Accounts.Password=:value WHERE Accounts.Login=:login';
-			break;
-		case 11:
-			$query = 'UPDATE Accounts SET Accounts.Password=:value WHERE Accounts.Login=:login';
-			break;
-		case 12:
-			$query = 'UPDATE Accounts SET Accounts.Password=:value WHERE Accounts.Login=:login';
-			break;
-		case 13:
-			$query = 'UPDATE Accounts SET Accounts.Password=:value WHERE Accounts.Login=:login';
-			break;
-		default:
-			break;
+	if(authenticate($email, $password) == true) 
+	{	
+		global $query;
 		
-	}	
+		switch ((int)$column) 
+		{
+			case 0://Password
+				$query = 'UPDATE Accounts SET Accounts.Password=:value WHERE Accounts.Email=:email';
+				break;
+			case 1://Last
+				$query = 'UPDATE Accounts SET Accounts.LastName=:value WHERE Accounts.Email=:email';
+				break;
+			case 2:
+				$query = 'UPDATE Accounts SET Accounts.FirstName=:value WHERE Accounts.Email=:email';
+				break;
+			case 3:
+				$query = 'UPDATE Accounts SET Login=:value WHERE Email=:email';
+				break;
+			case 4:
+				$query = 'UPDATE Accounts SET Accounts.Password=:value WHERE Accounts.Email=:email';
+				break;
+			case 5:
+				$query = 'UPDATE Accounts SET Accounts.Description=:value WHERE Accounts.Email=:email';
+				break;
+			case 6:
+				$query = 'UPDATE Accounts SET Accounts.Microphone=:value WHERE Accounts.Email=:email';
+				break;
+			case 7:
+				$query = 'UPDATE Accounts SET Accounts.ProfilePicture=:value WHERE Accounts.Email=:email';
+				break;
+			case 8:
+				$query = 'UPDATE Accounts SET Accounts.Status=:value WHERE Accounts.Email=:email';
+				break;
+			case 9:
+				$query = 'UPDATE Accounts SET Accounts.Language=:value WHERE Accounts.Email=:email';
+				break;
+			case 10:
+				$query = 'UPDATE Accounts SET Accounts.RepPoint=:value WHERE Accounts.Email=:email';
+				break;
+			case 11:
+				$query = 'UPDATE LinkAccount SET LinkAccount.PSN_Account=:value WHERE LinkAccount.AccountID=:accountid';
+				break;
+			case 12:
+				$query = 'UPDATE LinkAccount SET LinkAccount.XBOX_Account=:value WHERE LinkAccount.AccountID=:accountid';
+				break;
+			case 13:
+				$query = 'UPDATE LinkAccount SET LinkAccount.STEAM_Account=:value WHERE LinkAccount.AccountID=:accountid';
+				break;
+			case 14:
+				$query = 'UPDATE LinkAccount SET LinkAccount.ORIGIN_Account=:value WHERE LinkAccount.AccountID=:accountid';
+				break;
+			case 15:
+				$query = 'UPDATE LinkAccount SET LinkAccount.DISCORD_Account=:value WHERE LinkAccount.AccountID=:accountid';
+				break;
+			case 16:
+				$query = 'UPDATE LinkAccount SET LinkAccount.UPLAY_Account=:value WHERE LinkAccount.AccountID=:accountid';
+				break;	
+			case 17:
+				$query = 'UPDATE LinkAccount SET LinkAccount.BATTLE_Account=:value WHERE LinkAccount.AccountID=:accountid';
+				break;	
+			case 18:
+				$query = 'UPDATE LinkAccount SET LinkAccount.LOL_Account=:value WHERE LinkAccount.AccountID=:accountid';
+				break;	
+			case 19:
+				$query = 'UPDATE LinkAccount SET LinkAccount.SKYPE_Account=:value WHERE LinkAccount.AccountID=:accountid';
+				break;					
+			default:
+				jsonResponse(0, "Error acc.");
+				return;
+				break;
+			
+		}
+		try 
+		{  
+			global $conn;
+		
+			$conn->beginTransaction();
+			$q = $conn->prepare($query);
+			$q->bindValue(':value', $value);
+			
+			if((int)$column > 10)
+			{
+				$acc = getAccountByEmail($email, false);
+				$q->bindValue(':accountid',(int)$acc['AccountID']);
+			}
+			else
+			{
+				$q->bindValue(':email', $email);
+			}
+			$q->execute();
+			$conn->commit();
+			
+			jsonResponse(1, 'Profile edited.');
+	  
+		} 
+		catch (Exception $e) 																																																																								
+		{
+			$conn->rollBack();
+			jsonResponse(0, $e);
+			return 0;
+		}
+	}
 }
+
 
 function getAccountByEmail($email, $json = true)
 {
@@ -668,6 +733,8 @@ function getAccountByEmail($email, $json = true)
 			
 			if($json)
 				echo json_encode($response);
+			
+			return $response;
 	}
 	else
 	{

@@ -129,5 +129,8 @@
   <!--Browser-->
   <string name="Browser">Podgląd</string>
 
-
+  <!--Profile-->
+  <string name="InvalidEmail">Email jest nieprawidlowy.</string>
+  <string name="UpdateSuccess">Profil uaktualniony pomyslnie.</string>
+  
 </resources>
