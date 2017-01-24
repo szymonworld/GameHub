@@ -14,7 +14,7 @@ if(checkType())
 function checkType()
 {
 	global $conn;
-	for ($i = 0; $i < 16; $i++) 
+	for ($i = 0; $i < 17; $i++) 
 	{
 		if($_GET['type'] == $i)
 		{
@@ -100,7 +100,10 @@ function parseType()
 			break;	
 		case 15:
 			getHashByEmail($_GET['email']);
-			break;				
+			break;	
+		case 16:
+			getLinkAccounts($_GET['email'], $_GET['password']);
+			break;
 		default:
 			break;
 		
@@ -645,7 +648,7 @@ function getAccountByEmail($email, $json = true)
 	{
 			global $conn;
 			
-			$query = $conn->prepare("SELECT AccountID, Login, FirstName, LastName, Email, Microphone, ProfilePicture, Status, Language, RepPoint FROM Accounts WHERE Email = :email");
+			$query = $conn->prepare("SELECT AccountID, Login, FirstName, LastName, Email, Microphone, ProfilePicture, Status, Language, RepPoint, Description FROM Accounts WHERE Email = :email");
 			$query->bindValue(':email', $email);
 			$query->execute();
 			$fetch = $query->fetch();
@@ -665,6 +668,41 @@ function getAccountByEmail($email, $json = true)
 			
 			if($json)
 				echo json_encode($response);
+	}
+	else
+	{
+		
+		jsonResponse(0,"Account not exist.");
+	}
+	
+}
+
+function getLinkAccounts($email, $password)
+{
+	if(authenticate($email, $password) == true) 
+	{
+			global $conn;
+			
+			$query = $conn->prepare("SELECT LinkAccountID, LinkAccount.AccountID, PSN_Account, XBOX_Account, STEAM_Account, ORIGIN_Account, DISCORD_Account, UPLAY_Account, BATTLE_Account, LOL_Account, SKYPE_Account FROM Accounts, LinkAccount WHERE LinkAccount.AccountID = Accounts.AccountID");
+			$query->bindValue(':email', $email);
+			$query->bindValue(':password', $password);
+			$query->execute();
+			$fetch = $query->fetch();
+			$response = array();
+			$response['AccountID'] = $fetch['AccountID'];
+			$response['PSN_Account'] = $fetch['PSN_Account'];
+			$response['XBOX_Account'] = $fetch['XBOX_Account'];
+			$response['STEAM_Account'] = $fetch['STEAM_Account'];
+			$response['ORIGIN_Account'] = $fetch['ORIGIN_Account'];
+			$response['DISCORD_Account'] = $fetch['DISCORD_Account'];
+			$response['UPLAY_Account'] = $fetch['UPLAY_Account'];		
+			$response['BATTLE_Account'] = $fetch['BATTLE_Account'];		
+			$response['LOL_Account'] = $fetch['LOL_Account'];		
+			$response['SKYPE_Account'] = $fetch['SKYPE_Account'];		
+			$response['LinkAccountID'] = $fetch['LinkAccountID'];		
+			$response['success'] = 1;		
+
+			echo json_encode($response);
 	}
 	else
 	{

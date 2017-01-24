@@ -15,23 +15,42 @@ namespace GameHub.Fragments
 {
     public class ProfileDescription : SupportFragment
     {
+        private string mDescription;
+        private View mView;
+
+        public string Description
+        {
+            get
+            {
+                return mDescription;
+            }
+            set
+            {
+                mDescription = value;
+                UpdateDescription(value);
+            }
+        }
+
         public override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-
-            // Create your fragment here
         }
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
-            View view = inflater.Inflate(Resource.Layout.ProfileDescription, container, false);
-            TextView Description = view.FindViewById<TextView>(Resource.Id.Description);
-            Description.Text = "To jest opis graczaTo jest opis graczaTo jest opis graczaTo jest opis graczaTo jest opis graczaTo jest opis graczaTo jest opis graczaTo jest opis graczaTo jest opis graczaTo jest opis graczaTo jest opis graczaTo jest opis graczaTo jest opis graczaTo jest opis graczaTo jest opis graczaTo jest opis graczaTo jest opis graczaTo jest opis graczaTo jest opis graczaTo jest opis graczaTo jest opis graczaTo jest opis graczaTo jest opis graczaTo jest opis graczaTo jest opis graczaTo jest opis graczaTo jest opis graczaTo jest opis graczaTo jest opis graczaTo jest opis graczaTo jest opis graczaTo jest opis graczaTo jest opis graczaTo jest opis graczaTo jest opis graczaTo jest opis graczaTo jest opis graczaTo jest opis graczaTo jest opis graczaTo jest opis graczaTo jest opis graczaTo jest opis graczaTo jest opis graczaTo jest opis graczaTo jest opis graczaTo jest opis graczaTo jest opis gracza";
+            mView = inflater.Inflate(Resource.Layout.ProfileDescription, container, false);
+            Description = mDescription;
+            return mView;
 
+        }
 
-
-            return view;
-
+        private void UpdateDescription(string desc)
+        {
+            if (mView != null)
+            { 
+                TextView Description = mView.FindViewById<TextView>(Resource.Id.Description);
+                Description.Text = desc;
+            }
         }
     }
 }

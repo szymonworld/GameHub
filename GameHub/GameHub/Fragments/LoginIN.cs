@@ -106,6 +106,7 @@ namespace GameHub.Fragments
             View snackBarView = snackbar1.View;
             snackBarView.SetBackgroundColor(Color.ParseColor("#333d59"));
             snackbar1.Show();
+
         }
     }
 }

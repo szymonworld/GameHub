@@ -31,31 +31,40 @@ namespace GameHub.Fragments
     public class ProfileAccounts : SupportFragment
     {
         private RecyclerView mRecyclerView;
-        private List<string> list = new List<string>();
-        View view;
+        private View mView;
+        private LinkAccount mLinkedAccounts;
+        public LinkAccount LinkedAccounts
+        {
+            get
+            {
+                return mLinkedAccounts;
+            }
+            set
+            {
+                mLinkedAccounts = value;
+                UpdateIcons();
+            }
+        }
+
         public override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-
-            // Create your fragment here
         }
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
-            var values = GetRandomSubList(ConnectAccount.CheeseStrings, 5);
             mRecyclerView = inflater.Inflate(Resource.Layout.Friends, container, false) as RecyclerView;
-            var mLayoutManager = new LinearLayoutManager(mRecyclerView.Context);
-
-            mRecyclerView.SetLayoutManager(mLayoutManager);
-            mRecyclerView.SetAdapter(new SimpleStringRecyclerViewAdapter(mRecyclerView.Context, values, Activity.Resources));
-
             ((AppCompatActivity)this.Activity).SupportActionBar.Title = "Accounts";
 
             return mRecyclerView;
-
-
         }
 
+        private void UpdateIcons()
+        {
+            var mLayoutManager = new LinearLayoutManager(mRecyclerView.Context);
+            mRecyclerView.SetLayoutManager(mLayoutManager);
+            mRecyclerView.SetAdapter(new SimpleStringRecyclerViewAdapter(mRecyclerView.Context, LinkedAccounts, Activity.Resources));
+        }
 
         private List<string> GetRandomSubList(List<string> items, int amount)
         {
@@ -74,6 +83,7 @@ namespace GameHub.Fragments
             private readonly TypedValue mTypedValue = new TypedValue();
             private int mBackground;
             private List<string> mValues;
+            private List<int> mTypes;
             private Dictionary<int, int> mCalculatedSizes;
             Resources mResource;
 
@@ -98,42 +108,116 @@ namespace GameHub.Fragments
 
             public override RecyclerView.ViewHolder OnCreateViewHolder(ViewGroup parent, int viewType)
             {
-                //View row = LayoutInflater.From(parent.Context).Inflate(Resource.Layout.ProfileAccounts, parent, false);
-
-                //TextView Nick = row.FindViewById<TextView>(Resource.Id.nick);
-                //Refractored.Controls.CircleImageView platform = row.FindViewById<Refractored.Controls.CircleImageView>(Resource.Id.EventPlatformIcon);
-
-                //MyView view = new MyView(row) { Nick = Nick, Platform = platform };
-                //return view;
-
                 View view = LayoutInflater.From(parent.Context).Inflate(Resource.Layout.ProfileAccounts, parent, false);
                 view.SetBackgroundResource(mBackground);
 
                 return new SimpleViewHolder(view);
             }
 
+            private List<string> ConvertAccountsToList(LinkAccount acc)
+            {
 
-            public SimpleStringRecyclerViewAdapter(Context context, List<string> items, Resources res)
+                List<string> list = new List<string>();
+                mTypes = new List<int>();
+
+                if (acc != null)
+                {
+                    if (acc.PSN_Account != null && acc.PSN_Account.Length > 4)
+                    {
+                        list.Add(acc.PSN_Account);
+                        mTypes.Add(0);
+                    }
+                    if (acc.XBOX_Account != null && acc.XBOX_Account.Length > 4)
+                    {
+                        list.Add(acc.XBOX_Account);
+                        mTypes.Add(1);
+                    }
+                    if (acc.STEAM_Account != null && acc.STEAM_Account.Length > 4)
+                    {
+                        list.Add(acc.STEAM_Account);
+                        mTypes.Add(2);
+                    }
+                    if (acc.ORIGIN_Account != null && acc.ORIGIN_Account.Length > 4)
+                    {
+                        list.Add(acc.ORIGIN_Account);
+                        mTypes.Add(3);
+                    }
+                    if (acc.DISCORD_Account != null && acc.DISCORD_Account.Length > 4)
+                    {
+                        list.Add(acc.DISCORD_Account);
+                        mTypes.Add(4);
+                    }
+                    if (acc.UPLAY_Account != null && acc.UPLAY_Account.Length > 4)
+                    {
+                        list.Add(acc.UPLAY_Account);
+                        mTypes.Add(5);
+                    }
+                    if (acc.BATTLE_Account != null && acc.BATTLE_Account.Length > 4)
+                    {
+                        list.Add(acc.BATTLE_Account);
+                        mTypes.Add(6);
+                    }
+                    if (acc.LOL_Account != null && acc.LOL_Account.Length > 4)
+                    {
+                        list.Add(acc.LOL_Account);
+                        mTypes.Add(7);
+                    }
+                    if (acc.SKYPE_Account != null && acc.SKYPE_Account.Length > 4)
+                    {
+                        list.Add(acc.SKYPE_Account);
+                        mTypes.Add(8);
+                    }
+                }
+
+                return list; 
+            }
+
+            public SimpleStringRecyclerViewAdapter(Context context, LinkAccount items, Resources res)
             {
                 context.Theme.ResolveAttribute(Resource.Attribute.selectableItemBackground, mTypedValue, true);
                 mBackground = mTypedValue.ResourceId;
-                mValues = items;
+                mValues = ConvertAccountsToList(items);
                 mResource = res;
 
                 mCalculatedSizes = new Dictionary<int, int>();
             }
+            private int GetIcon(int pos)
+            {
 
-            //public override void OnBindViewHolder(RecyclerView.ViewHolder holder, int position)
-            //{
-            //    var simpleHolder = holder as SimpleViewHolder;
-
-            //    simpleHolder.mBoundString = mValues[position];
-            //    simpleHolder.nick.Text = mValues[position];
-
-
-
-            //}
-
+                switch (pos)
+                {
+                    case 0:
+                        return Resource.Drawable.Icon_psn;
+                    break;
+                    case 1:
+                        return Resource.Drawable.Icon_xbox;
+                    break;
+                    case 2:
+                        return Resource.Drawable.Icon_steam;
+                    break;
+                    case 3:
+                        return Resource.Drawable.Icon_origin;
+                    break;
+                    case 4:
+                        return Resource.Drawable.Icon_discord;
+                    break;
+                    case 5:
+                        return Resource.Drawable.Icon_uplay;
+                    break;
+                    case 6:
+                        return Resource.Drawable.Icon_battle;
+                    break;
+                    case 7:
+                        return Resource.Drawable.Icon_lol;
+                    break;
+                    case 8:
+                        return Resource.Drawable.Icon_skype;
+                    break;
+                    default:
+                        return -1;
+                    break;
+                }
+            }
 
             public override async void OnBindViewHolder(RecyclerView.ViewHolder holder, int position)
             {
@@ -142,7 +226,7 @@ namespace GameHub.Fragments
                 simpleHolder.mBoundString = mValues[position];
                 simpleHolder.nick.Text = mValues[position];
 
-                int drawableID = ConnectAccount.RandomAccount;
+                int drawableID = GetIcon(mTypes[position]);
                 BitmapFactory.Options options = new BitmapFactory.Options();
 
                 if (mCalculatedSizes.ContainsKey(drawableID))
@@ -167,7 +251,6 @@ namespace GameHub.Fragments
 
                 simpleHolder.platform.SetImageBitmap(bitMap);
             }
-
 
         }
         public class SimpleViewHolder : RecyclerView.ViewHolder
