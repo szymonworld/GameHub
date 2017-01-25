@@ -95,6 +95,9 @@ namespace GameHub
         }
         public async void LoadAccount()
         {
+            ProgressDialog dialog = new ProgressDialog(this, Resource.Style.AppCompatAlertDialogStyle);
+            dialog.SetMessage(GetString(Resource.String.Pro_Loading));
+            dialog.Show();
             bool internetConnection = await API.checkForInternetConnection();
 
             if (internetConnection)
@@ -111,6 +114,7 @@ namespace GameHub
             {
                 ShowSnack(GetString(Resource.String.NoInternetConnection));
             }
+            dialog.Dismiss();
         }
         private void ShowSnack(string msg)
         {

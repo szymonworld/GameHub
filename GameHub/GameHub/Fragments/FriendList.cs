@@ -1,3 +1,4 @@
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,7 +26,8 @@ namespace GameHub
     [Activity(Label = "FriendList")]
     public class FriendList : SupportFragment
     {
-
+        Button PositiveButton;
+        Button NegativeButton;
         private List<string> list = new List<string>();
         private RecyclerView.Adapter mAdapter;
         private RecyclerView mRecyclerView;
@@ -42,7 +44,7 @@ namespace GameHub
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
 
-             view2 = inflater.Inflate(Resource.Layout.FriendList, container, false);
+            view2 = inflater.Inflate(Resource.Layout.FriendList, container, false);
 
             SupportToolbar toolBar = view2.FindViewById<SupportToolbar>(Resource.Id.toolbar);
             ((AppCompatActivity)this.Activity).SetSupportActionBar(toolBar);
@@ -80,12 +82,10 @@ namespace GameHub
                 mAdapter.NotifyDataSetChanged();
 
                 FragmentTransaction transaction = ((AppCompatActivity)this.Activity).FragmentManager.BeginTransaction();
-               // AddFriendDialogC inviteFriend = new AddFriendDialogC();
-                //inviteFriend.Show(transaction, "dialog");
                 DialogMenager();
             };
 
-            
+
 
             mRecyclerView.SetItemClickListener((rv, position, view) =>
             {
@@ -96,7 +96,7 @@ namespace GameHub
                 context.StartActivity(intent);
 
             });
-            
+
 
             // Dodanie nowych obiektów do listy po dojechaniu na dó³
             onScrollListener.LoadMoreEvent += (object sender, EventArgs e) => {
@@ -135,62 +135,6 @@ namespace GameHub
             }
             //return list;
         }
-        
-
-        class AddFriendDialogC : DialogFragment
-        {
-            private Button mSendInvitation;
-            private EditText mText;
-
-            public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
-            {
-                base.OnCreateView(inflater, container, savedInstanceState);
-
-                var view = inflater.Inflate(Resource.Layout.AddFriendDialog, container, false);
-
-                mSendInvitation = view.FindViewById<Button>(Resource.Id.buttonAccept);
-                mText = view.FindViewById<EditText>(Resource.Id.input_Email);
-
-                mSendInvitation.Click += MBtnSend_Click;
-
-                return view;
-            }
-
-            private void MBtnSend_Click(object sender, EventArgs e)
-            {
-                string mail = mSendInvitation.Text;
-                try
-                {
-                    var addr = new System.Net.Mail.MailAddress(mSendInvitation.Text);
-                    //mail = addr.Address;
-                }
-                catch
-                {
-                    mail = "err";
-                }
-                
-                
-                if (mail == mSendInvitation.Text)
-                {
-                    this.Dismiss();
-                }
-                else
-                {
-                    //Context.Resources.GetString(Resource.String);
-                    mSendInvitation.SetError("Poda³êœ niepoprawny email!", null);
-                }
-               
-            }
-
-            public override void OnActivityCreated(Bundle savedInstanceState)
-            {
-                Dialog.Window.RequestFeature(WindowFeatures.NoTitle);
-                
-
-                base.OnActivityCreated(savedInstanceState);
-
-            }
-        }
         public void DialogMenager()
         {
 
@@ -203,17 +147,29 @@ namespace GameHub
             builder.SetNegativeButton(GetString(Resource.String.Dialog_Negative), (EventHandler<DialogClickEventArgs>)null);
             var dialog = builder.Create();
             dialog.Show();
-            var PositiveButton = dialog.GetButton((int)DialogButtonType.Positive);
-            PositiveButton.Click += delegate
-            {
-                dialog.Cancel();
-            };
-            var NegativeButton = dialog.GetButton((int)DialogButtonType.Positive);
+            PositiveButton = dialog.GetButton((int)DialogButtonType.Positive);
+            NegativeButton = dialog.GetButton((int)DialogButtonType.Positive);
             NegativeButton.Click += delegate
             {
                 dialog.Cancel();
             };
         }
+
+        private void MBtnSend_Click(object sender, EventArgs e)
+        {
+            string mail = PositiveButton.Text;
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(PositiveButton.Text);
+                //mail = addr.Address;
+            }
+            catch
+            {
+                mail = "err";
+            }
+        }
+
+
 
     }
 }

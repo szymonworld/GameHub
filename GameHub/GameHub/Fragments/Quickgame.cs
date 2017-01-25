@@ -23,15 +23,40 @@ namespace GameHub.Fragments
     {
         private RecyclerView mRecyclerView;
         private RecyclerView.Adapter mAdapter;
-        private List<Event_class> lista_wydarzen = new List<Event_class>();
-        private List<string> list = new List<string>();
+        private List<Event_class> list = new List<Event_class>();
+        private List<Event> eventList;
+        private string LoginDataUser;
+        private ISharedPreferences pref;
         View view;
 
         public override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             HasOptionsMenu = true;
-            // Create your fragment here
+            pref = ((AppCompatActivity)this.Activity).GetSharedPreferences(LoginDataUser, FileCreationMode.Private);
+        }
+        public override void OnResume()
+        {
+            base.OnResume();
+            LoadEvents();
+        }
+        public async void LoadEvents()
+        {
+            bool internetConnection = await API.checkForInternetConnection();
+            if (internetConnection)
+            {
+                eventList = await API.getEvents(pref.GetString("PrefEmailUser", ""), pref.GetString("PrefPasswordUser", ""));
+                list.Clear();
+                foreach (Event ev in eventList)
+                {
+                    Event_class e = new Event_class(ev.EventName, ev.Datee + " " + ev.Hourr, ev.GameID);
+                    //Event_class e = new Event_class(ev.EventName, "", "");
+                    list.Add(e);
+                }
+
+                mAdapter = new RecyclerAdapter(list);
+                mRecyclerView.SetAdapter(mAdapter);
+            }
         }
 
         public override void OnCreateOptionsMenu(IMenu menu, MenuInflater inflater)
@@ -43,33 +68,15 @@ namespace GameHub.Fragments
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
             view = inflater.Inflate(Resource.Layout.Quickgame, container, false);
-
-            for (int a = 0; a < 15; a++)
-            {
-                Generuj_Event_class();
-            }
             mRecyclerView = view.FindViewById<RecyclerView>(Resource.Id.recyclerview);
             //mRecyclerView = inflater.Inflate(Resource.Layout.Friends, container, false) as RecyclerView;
             var mLayoutManager = new LinearLayoutManager(((AppCompatActivity)this.Activity));
-            mAdapter = new RecyclerAdapter(lista_wydarzen);
+            mAdapter = new RecyclerAdapter(list);
 
             var onScrollListener = new RecyclerViewOnScrollListener(mLayoutManager);
             mRecyclerView.AddOnScrollListener(onScrollListener);
             mRecyclerView.SetLayoutManager(mLayoutManager);
             mRecyclerView.SetAdapter(mAdapter);
-
-            // £adowanie nastêpnych wydarzeñ po dojechaniu na sam dó³
-            onScrollListener.LoadMoreEvent += (object sender, EventArgs e) =>
-            {
-
-                for (int a = 0; a < 5; a++)
-                {
-                    Generuj_Event_class();
-                }
-                //mAdapter.NotifyDataSetChanged();
-                mAdapter = new RecyclerAdapter(lista_wydarzen);
-                mRecyclerView.SetAdapter(mAdapter);
-            };
 
             SupportToolbar toolBar = view.FindViewById<SupportToolbar>(Resource.Id.toolbar);
             ((AppCompatActivity)this.Activity).SetSupportActionBar(toolBar);
@@ -98,35 +105,14 @@ namespace GameHub.Fragments
         }
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
-            GetRandomSubList(Lists.Friends.NickStrings, 2);
             switch (item.ItemId)
             {
                 case Android.Resource.Id.Home:
-                    GetRandomSubList(Lists.Friends.NickStrings, 2);
                     ((AppCompatActivity)this.Activity).Finish();
                     return true;
             }
 
             return base.OnOptionsItemSelected(item);
-        }
-
-        private void GetRandomSubList(List<string> items, int a)
-        {
-            //List<string> list = new List<string>();
-            Random random = new Random();
-            while (a > 0)
-            {
-                list.Add(items[random.Next(items.Count)]);
-                a--;
-            }
-            //return list;
-        }
-
-        public void Generuj_Event_class()
-        {
-            Event_class nowe_Event_class = new Event_class("ATH CUP", "18.05 22:15", "My Little Pony");
-            lista_wydarzen.Add(nowe_Event_class);
-
         }
         public class RecyclerAdapter : RecyclerView.Adapter
         {

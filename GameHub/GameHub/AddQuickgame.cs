@@ -58,7 +58,7 @@ namespace GameHub
 
             var AutoComGameList = new string[] { "CS:GO", "", "LOL", "DOTA", "Watch Dogs 2", "Call of Duty Modern Warfare 2", "GTA 5", "Tomb Raider: Rise of the", "Uncharted 4", "Dota 2", "Overwatch", "HearthStone", "World of Warcraft", "RANDOM", "LOSOWA GRA", "MineCraft", "StarCraft 2", "World of Tanks", "Heroes of the storm", "The Division", "Smite", "FIFA 17", "FIFA 16", "FIFA 15", "FIFA 14", "Poker", "ARK", "Black Desert Online", "Arma 3", "Day Z", "H1Z1", "Diablo 3", "Rainbow SIX: SIEGE", "DEstiny", "Rocket League", "Tibia", "Lineage 2", "Rust", "Gwint", "Battlefield 1" };
             ArrayAdapter AutoComGameListAdapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleDropDownItem1Line, AutoComGameList);
-            var TextGamelist = FindViewById<AutoCompleteTextView>(Resource.Id.autoCompleteTextView1);
+            var TextGamelist = FindViewById<AutoCompleteTextView>(Resource.Id.gametitle);
             TextGamelist.Adapter = AutoComGameListAdapter;
 
             b1 = FindViewById<Button>(Resource.Id.date);
@@ -68,6 +68,8 @@ namespace GameHub
 
             // Create your application here
         }
+
+
 
         public override void OnBackPressed()
         {
@@ -146,22 +148,32 @@ namespace GameHub
                             Button hours = FindViewById<Button>(Resource.Id.hours);
                             if (hours.Text != "Godzina")
                             {
-                                Event ev = new Event();
-
-                                Spinner dropdown = FindViewById<Spinner>(Resource.Id.spinner1);
-                                Spinner dropdown2 = FindViewById<Spinner>(Resource.Id.spinner2);
-
-                                bool eventCreated = await API.createEvent(pref.GetString("PrefEmailUser", ""), pref.GetString("PrefPasswordUser", ""), title.Text, FindViewById<EditText>(Resource.Id.description).Text,date.Text, hours.Text, dropdown2.SelectedItem.ToString(), FindViewById<CheckBox>(Resource.Id.checkBox1).Checked, dropdown.SelectedItem.ToString(), Convert.ToInt32(FindViewById<EditText>(Resource.Id.editText1).Text), FindViewById<CheckBox>(Resource.Id.microphone).Checked, gametitle.Text);
-                                if (eventCreated)
+                                EditText players = FindViewById<EditText>(Resource.Id.numberofplayers);
+                                if ((players.Text != null) && (players.Text != "0") && (players.Text != ""))
                                 {
-                                    dialog.Dismiss();
-                                    Context context = view.Context;
-                                    Intent intent = new Intent(context, typeof(MainActivity));
-                                    context.StartActivity(intent);
+
+
+                                    Event ev = new Event();
+
+                                    Spinner dropdown = FindViewById<Spinner>(Resource.Id.spinner1);
+                                    Spinner dropdown2 = FindViewById<Spinner>(Resource.Id.spinner2);
+
+                                    bool eventCreated = await API.createEvent(pref.GetString("PrefEmailUser", ""), pref.GetString("PrefPasswordUser", ""), title.Text, FindViewById<EditText>(Resource.Id.description).Text, date.Text, hours.Text, dropdown2.SelectedItem.ToString(), FindViewById<CheckBox>(Resource.Id.checkBox1).Checked, dropdown.SelectedItem.ToString(), Convert.ToInt32(FindViewById<EditText>(Resource.Id.numberofplayers).Text), FindViewById<CheckBox>(Resource.Id.microphone).Checked, gametitle.Text);
+                                    if (eventCreated)
+                                    {
+                                        dialog.Dismiss();
+                                        Context context = view.Context;
+                                        Intent intent = new Intent(context, typeof(MainActivity));
+                                        context.StartActivity(intent);
+                                    }
+                                    else
+                                    {
+                                        ShowSnack(view, GetString(Resource.String.AddQuickgame_NoCreated));
+                                    }
                                 }
                                 else
                                 {
-                                    ShowSnack(view, GetString(Resource.String.AddQuickgame_NoCreated));
+                                    ShowSnack(view, GetString(Resource.String.AddQuickgame_NoPlayers));
                                 }
                             }
                             else

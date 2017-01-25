@@ -14,6 +14,7 @@ using Android.Widget;
 using GameHub.Fragments;
 using System.Text.RegularExpressions;
 using Android.Graphics;
+using Android.Views.InputMethods;
 
 namespace GameHub
 {
@@ -27,7 +28,7 @@ namespace GameHub
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-
+            CloseKey();
             pref = this.GetSharedPreferences(LoginDataUser, FileCreationMode.Private);
 
             SetContentView(Resource.Layout.ProfileSettings);
@@ -46,8 +47,8 @@ namespace GameHub
                 OverridePendingTransition(Resource.Animation.animRight, Resource.Animation.animRight2);
                 this.StartActivity(intent);
             };
-
             LoadAccount();
+            CloseKey();
         }
         public async void LoadAccount()
         {
@@ -99,6 +100,7 @@ namespace GameHub
         }
         public async void EditAccount()
         {
+            CloseKey();
             bool internetConnection = await API.checkForInternetConnection();
 
             if (internetConnection)
@@ -207,7 +209,20 @@ namespace GameHub
             {
                 ShowSnack(GetString(Resource.String.NoInternetConnection));
             }
+            Finish();
         }
+
+        public void CloseKey()
+        {
+            InputMethodManager inputManager = (InputMethodManager)GetSystemService(Context.InputMethodService);
+            var currentFocus = Window.CurrentFocus;
+
+            if (currentFocus != null)
+            {
+                inputManager.HideSoftInputFromWindow(currentFocus.WindowToken, HideSoftInputFlags.None);
+            }
+        }
+
         private void ShowSnack(string msg)
         {
             Snackbar snackbar1 = Snackbar.Make(FindViewById(Android.Resource.Id.Content), msg, Snackbar.LengthShort);

@@ -34,10 +34,6 @@ GameHub.FriendList, GameHub;md56ae528d61c96dc74eb64356ec3b54bcd.FriendList
 GameHub.FriendList, GameHub, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md56ae528d61c96dc74eb64356ec3b54bcd.FriendList
 GameHub.FriendList;md56ae528d61c96dc74eb64356ec3b54bcd.FriendList
 gamehub.FriendList;md56ae528d61c96dc74eb64356ec3b54bcd.FriendList
-GameHub.FriendList/AddFriendDialogC, GameHub;md56ae528d61c96dc74eb64356ec3b54bcd.FriendList_AddFriendDialogC
-GameHub.FriendList+AddFriendDialogC, GameHub, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md56ae528d61c96dc74eb64356ec3b54bcd.FriendList_AddFriendDialogC
-GameHub.FriendList.AddFriendDialogC;md56ae528d61c96dc74eb64356ec3b54bcd.FriendList_AddFriendDialogC
-gamehub.FriendList_AddFriendDialogC;md56ae528d61c96dc74eb64356ec3b54bcd.FriendList_AddFriendDialogC
 GameHub.LoginSystem, GameHub;md56ae528d61c96dc74eb64356ec3b54bcd.LoginSystem
 GameHub.LoginSystem, GameHub, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md56ae528d61c96dc74eb64356ec3b54bcd.LoginSystem
 GameHub.LoginSystem;md56ae528d61c96dc74eb64356ec3b54bcd.LoginSystem

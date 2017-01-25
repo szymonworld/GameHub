@@ -236,7 +236,7 @@
                     android:inputType="number"
                     android:layout_width="50dp"
                     android:layout_height="wrap_content"
-                    android:id="@+id/editText1"
+                    android:id="@+id/numberofplayers"
                     android:textColor="#000"
                     android:textColorHint="#626a77"
                     android:alpha="0.7"

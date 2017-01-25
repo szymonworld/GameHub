@@ -121,6 +121,7 @@
   <string name="AddQuickgame_NoDate">Brak daty</string>
   <string name="AddQuickgame_NoHours">Brak godziny</string>
   <string name="AddQuickgame_NoCreated">Nie można utowrzyć Szybkiej gry</string>
+  <string name="AddQuickgame_NoPlayers">Brak graczy</string>
   
   <!--QuickgameDetail-->
   <string name="QuickgameDetail_Join">Dołącz</string>
@@ -138,5 +139,6 @@
   <!--Profile-->
   <string name="InvalidEmail">Email jest nieprawidlowy.</string>
   <string name="UpdateSuccess">Profil uaktualniony pomyslnie.</string>
+  <string name="Pro_Loading">Ładowanie</string>
   
 </resources>

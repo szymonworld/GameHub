@@ -152,7 +152,7 @@ namespace GameHub
             Button site = FindViewById<Button>(Resource.Id.gamehubSite);
             site.Click += delegate
             {
-                string Link = "http://www.2bdesign.pl/gamehub";
+                string Link = "http://2bdesign.lh.pl/all/gamehub/";
                 Intent intent = new Intent(this, typeof(Browser));
                 intent.PutExtra("BrowserLink", Link);
                 OverridePendingTransition(Resource.Animation.animRight, Resource.Animation.animRight2);

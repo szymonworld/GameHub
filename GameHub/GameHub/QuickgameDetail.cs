@@ -100,7 +100,7 @@ namespace GameHub
 
         void Dialog(string title, string msg)
         {
-            var builder = new Android.Support.V7.App.AlertDialog.Builder(this);
+            var builder = new Android.Support.V7.App.AlertDialog.Builder(this, Resource.Style.DarkThemeDialog);
             builder.SetTitle(title);
             builder.SetMessage(msg);
             builder.SetPositiveButton(GetString(Resource.String.Dialog_Positive), (EventHandler<DialogClickEventArgs>)null);

@@ -15,6 +15,7 @@ using Android.Support.Design.Widget;
 using Android.Support.V7.App;
 using GameHub.Fragments;
 using Android.Graphics;
+using Android.Views.InputMethods;
 
 namespace GameHub.Fragments
 {
@@ -49,6 +50,13 @@ namespace GameHub.Fragments
 
             login.Click += async (object sender, EventArgs args) =>
             {
+                InputMethodManager inputManager = (InputMethodManager)Activity.GetSystemService(Context.InputMethodService);
+                var currentFocus = Activity.CurrentFocus;
+                if (currentFocus != null)
+                {
+                    inputManager.HideSoftInputFromWindow(currentFocus.WindowToken, HideSoftInputFlags.None);
+                }
+
                 bool internetConnection = await API.checkForInternetConnection();
                 ProgressDialog dialog;
                 if (internetConnection)
